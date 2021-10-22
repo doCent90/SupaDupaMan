@@ -23,7 +23,6 @@ public class AttackState : StatePlayer
 
     private const float Delay = 0.3f;
     private const float MaxLength = 40f;
-    private const float StartPositionCirlceGunPlace = 180f;
 
     public event UnityAction<bool> ReadyToAttacked;
     public event UnityAction<bool> Fired;
@@ -57,29 +56,19 @@ public class AttackState : StatePlayer
 
     private void Update()
     {
-        AimTarget();
-
-        if (Input.GetMouseButtonDown(0) && !_isOverHeated && !_panelUI.IsPanelOpen)
+        if (!_panelUI.IsPanelOpen)
         {
-            Attack(true);
+            Attack();
+            AimTarget();
         }
     }
 
-    private void Attack(bool isShooting)
-    {
-        Fired?.Invoke(isShooting);
-
-        if (isShooting)
-        {
+    private void Attack()
+    {   
+        if(!_isOverHeated)
             ActivateLaser();
-            Shoted?.Invoke();
-            _rayCast.SetActive(true);
-        }
-        else
-        {
-            DeactivateLaser();
-            _rayCast.SetActive(false);
-        }
+
+        DeactivateLaser();
     }
 
     private void ResetAttake(bool isOverHeated)
@@ -93,9 +82,12 @@ public class AttackState : StatePlayer
         {
             Destroy(_instance);
             _instance = Instantiate(_lasers[_laserNumber], _rayCast.transform.position, _rayCast.transform.rotation);
-
             _instance.transform.parent = _shootPosition;
             _laserPrefab = _instance.GetComponent<Hovl_Laser2>();
+
+            _rayCast.SetActive(true);
+            Fired?.Invoke(true);
+            Shoted?.Invoke();
         }
     }
 
@@ -106,9 +98,8 @@ public class AttackState : StatePlayer
             if (_laserPrefab)
                 _laserPrefab.DisablePrepare();
 
-            if (_instance != null)
-                _instance.transform.parent = _shootPosition;
-
+            _rayCast.SetActive(false);
+            Fired?.Invoke(false);
             Destroy(_instance, Delay);
         }
     }

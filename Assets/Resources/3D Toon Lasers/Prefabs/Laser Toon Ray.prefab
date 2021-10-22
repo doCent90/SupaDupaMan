@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4249170700258312}
   - component: {fileID: 198218217116832704}
   - component: {fileID: 199219050193386836}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4889,7 +4889,7 @@ GameObject:
   - component: {fileID: 4215200024138642}
   - component: {fileID: 198574548267110672}
   - component: {fileID: 199035413599953216}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9774,7 +9774,7 @@ GameObject:
   - component: {fileID: 4258936841701176}
   - component: {fileID: 198537810720586068}
   - component: {fileID: 199112212849358286}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14653,7 +14653,7 @@ GameObject:
   - component: {fileID: 4277221401153544}
   - component: {fileID: 198818064947152984}
   - component: {fileID: 199235596641052592}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19538,7 +19538,7 @@ GameObject:
   - component: {fileID: 4468784338598908}
   - component: {fileID: 198797574035562284}
   - component: {fileID: 199390971068261578}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Trails
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24365,7 +24365,7 @@ GameObject:
   - component: {fileID: 4925992790362698}
   - component: {fileID: 114373721087596714}
   - component: {fileID: 120259910876211832}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Laser Toon Ray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24381,7 +24381,7 @@ Transform:
   m_GameObject: {fileID: 1485167307701956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4258936841701176}
   - {fileID: 4249170700258312}
@@ -24447,7 +24447,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.50860053
+    widthMultiplier: 0.25
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -24520,7 +24520,7 @@ GameObject:
   - component: {fileID: 4044665419111790}
   - component: {fileID: 198190093368918348}
   - component: {fileID: 199088786437734608}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29396,7 +29396,7 @@ GameObject:
   - component: {fileID: 4677240136037996}
   - component: {fileID: 198459696465251128}
   - component: {fileID: 199616252983516036}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flare
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4120715904248774}
   - component: {fileID: 198689438387635684}
   - component: {fileID: 199249063155627394}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4887,7 +4887,7 @@ GameObject:
   - component: {fileID: 4887479163508228}
   - component: {fileID: 198776319121702372}
   - component: {fileID: 199045921135436436}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Shine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9799,7 +9799,7 @@ GameObject:
   - component: {fileID: 4627730682091414}
   - component: {fileID: 198732503489224552}
   - component: {fileID: 199957149200013958}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Electro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14681,7 +14681,7 @@ GameObject:
   - component: {fileID: 4227838472246054}
   - component: {fileID: 198830275284314122}
   - component: {fileID: 199955012110448620}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Trails
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19508,7 +19508,7 @@ GameObject:
   - component: {fileID: 4919014834166178}
   - component: {fileID: 198710666444295636}
   - component: {fileID: 199930776873949084}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: ShockWaves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24384,7 +24384,7 @@ GameObject:
   - component: {fileID: 4192878086608550}
   - component: {fileID: 198930281064127298}
   - component: {fileID: 199122505244917176}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29267,7 +29267,7 @@ GameObject:
   - component: {fileID: 4746520948764970}
   - component: {fileID: 198056165489868066}
   - component: {fileID: 199509117392829132}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34152,7 +34152,7 @@ GameObject:
   - component: {fileID: 4503161767264946}
   - component: {fileID: 198088365669196666}
   - component: {fileID: 199848464847708578}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: ShineLightning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38970,7 +38970,7 @@ GameObject:
   - component: {fileID: 4971462974751906}
   - component: {fileID: 198414435863721378}
   - component: {fileID: 199404003385918980}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Trails
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43797,7 +43797,7 @@ GameObject:
   - component: {fileID: 4245430077208396}
   - component: {fileID: 198854220867403324}
   - component: {fileID: 199738513326976734}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: BigSparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48673,7 +48673,7 @@ GameObject:
   - component: {fileID: 4557122259304616}
   - component: {fileID: 198149481935044224}
   - component: {fileID: 199966674131640534}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53493,7 +53493,7 @@ GameObject:
   - component: {fileID: 4419999949185646}
   - component: {fileID: 114008910386843990}
   - component: {fileID: 120985675070875736}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Laser Toon Lightning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53509,7 +53509,7 @@ Transform:
   m_GameObject: {fileID: 1997207017492988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4557122259304616}
   - {fileID: 4192878086608550}
@@ -53575,7 +53575,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.6502395
+    widthMultiplier: 0.3
     widthCurve:
       serializedVersion: 2
       m_Curve:

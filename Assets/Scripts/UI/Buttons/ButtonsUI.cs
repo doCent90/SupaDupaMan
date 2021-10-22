@@ -143,22 +143,22 @@ public class ButtonsUI : MonoBehaviour
     {
         _player = FindObjectOfType<Player>();
         _game = FindObjectOfType<StartGame>();
-        //_gameOver = FindObjectOfType<GameOverField>();
+        _gameOver = FindObjectOfType<GameOverField>();
         _loadLevel = FindObjectOfType<GameLevelsLoader>();
         _playerMover = _player.GetComponent<PlayerMover>();
         _soundMaster = FindObjectOfType<SoundsFXSettings>();
         _coinsViewer = FindObjectOfType<CurrentCoinsViewer>();
 
         _playerMover.LastPointCompleted += ShowContinueButton;
-        //_gameOver.Defeated += ShowRetryButton;
+        _gameOver.Defeated += ShowRetryButton;
 
-        //Init();
+        Init();
     }
 
     private void OnDisable()
     {
         _playerMover.LastPointCompleted -= ShowContinueButton;
-        //_gameOver.Defeated -= ShowRetryButton;
+        _gameOver.Defeated -= ShowRetryButton;
     }
 
     private void Init()

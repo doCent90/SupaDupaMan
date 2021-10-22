@@ -1,24 +1,33 @@
 using UnityEngine;
+using DG.Tweening;
 
 public class CameraMover : MonoBehaviour
 {
-    private Player _player;
+    [SerializeField] private Transform _viewPoint;
 
-    private const float Distance = 4f;
+    private AttackState _attackState;
+    private Transform _startPosition;
+
+    private const float Duration = 0.3f;
 
     private void OnEnable()
     {
-        _player = FindObjectOfType<Player>();
+        _attackState = GetComponentInParent<AttackState>();
+        _startPosition = transform;
+
+        _attackState.ReadyToAttacked += FocusView;
     }
 
-    private void Update()
+    private void OnDisable()
     {
-        Follow();
+        _attackState.ReadyToAttacked -= FocusView;
     }
 
-    private void Follow()
+    private void FocusView(bool isRaeady)
     {
-        transform.position = new Vector3(_player.transform.position.x, transform.position.y, _player.transform.position.z - Distance);
-        transform.rotation = new Quaternion(transform.rotation.x, _player.transform.rotation.y, transform.rotation.z, transform.rotation.w);
+        if (isRaeady)
+            transform.DOMove(_viewPoint.position, Duration);
+        else
+            transform.DOMove(_startPosition.position, Duration);
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4654397900035982}
   - component: {fileID: 198813677647329438}
   - component: {fileID: 199756147809171078}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Electro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,8 +284,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.08
-      minScalar: 0.05
+      scalar: 0.04
+      minScalar: 0.03
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4951,7 +4951,7 @@ GameObject:
   - component: {fileID: 4641459286502048}
   - component: {fileID: 198829415164116130}
   - component: {fileID: 199258777303054698}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5224,7 +5224,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3.52
+      scalar: 1.6
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -9771,6 +9771,7 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 58caa2f7da28dac4a8fb1d16d377313a, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9827,7 +9828,7 @@ GameObject:
   - component: {fileID: 4506012322604788}
   - component: {fileID: 198033153047532342}
   - component: {fileID: 199657500995370946}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10100,7 +10101,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 7.04
+      scalar: 4
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -14647,6 +14648,7 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 58caa2f7da28dac4a8fb1d16d377313a, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14703,7 +14705,7 @@ GameObject:
   - component: {fileID: 4274725189757130}
   - component: {fileID: 198050608920400406}
   - component: {fileID: 199222842050086686}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: ShockWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14976,8 +14978,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 4
-      minScalar: 2
+      scalar: 2.5
+      minScalar: 1.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -19523,6 +19525,7 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 0e1abc933455e0247ad2cd6ac9ba5da6, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19579,7 +19582,7 @@ GameObject:
   - component: {fileID: 4020316385095098}
   - component: {fileID: 198929500895548344}
   - component: {fileID: 199586422930145680}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Lightning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24399,6 +24402,7 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 2ac0fd9fa7d384047a598dbfb7c2f044, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -24455,7 +24459,7 @@ GameObject:
   - component: {fileID: 4194857652531388}
   - component: {fileID: 198041677944746458}
   - component: {fileID: 199859713996147664}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Desbis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24728,8 +24732,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.9
-      minScalar: 0.4
+      scalar: 0.2
+      minScalar: 0.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -25420,7 +25424,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 2.62
+        scalar: 1
         minScalar: 0
         maxCurve:
           serializedVersion: 2
@@ -29284,6 +29288,7 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 35f5e6dc715494f44b17248eee5426bd, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -29340,7 +29345,7 @@ GameObject:
   - component: {fileID: 4739663921173916}
   - component: {fileID: 198609836830589748}
   - component: {fileID: 199339403401304352}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29355,7 +29360,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1293882999492180}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4194857652531388}
@@ -29619,7 +29624,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 6.51
+      scalar: 3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -34165,6 +34170,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: d5dfb7b499f5de840871d37b9f54d073, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -34222,7 +34228,7 @@ GameObject:
   - component: {fileID: 4027555704568316}
   - component: {fileID: 198858970194063178}
   - component: {fileID: 199316673205945818}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: SparksLong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34326,8 +34332,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
-      minScalar: 0.5
+      scalar: 0.7
+      minScalar: 0.15
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34495,8 +34501,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.2
-      minScalar: 0.09
+      scalar: 0.06
+      minScalar: 0.04
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -37889,9 +37895,9 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
-    type: 1
+    type: 0
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -37960,7 +37966,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -38068,9 +38074,9 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 72
+      m_Bits: 4294967295
     maxCollisionShapes: 256
-    quality: 1
+    quality: 0
     voxelSize: 0.5
     collisionMessages: 0
     collidesWithDynamic: 1
@@ -39050,6 +39056,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: 0711ea139cbfdb04aa3f8bbbb67bca98, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -39107,7 +39114,7 @@ GameObject:
   - component: {fileID: 4867059613648546}
   - component: {fileID: 198096736352096904}
   - component: {fileID: 199027190246045944}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flashes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39380,7 +39387,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 0.9
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -43945,6 +43952,7 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: b2bcced4c3bf44b4387e9681e8e9dce0, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -44001,7 +44009,7 @@ GameObject:
   - component: {fileID: 4028420294282934}
   - component: {fileID: 198557902962249522}
   - component: {fileID: 199339618230831958}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: SparksLong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44105,8 +44113,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 0.7
+      scalar: 0.7
+      minScalar: 0.15
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -44274,8 +44282,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.1
-      minScalar: 0.08
+      scalar: 0.06
+      minScalar: 0.04
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -47847,7 +47855,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 72
+      m_Bits: 4294967295
     maxCollisionShapes: 256
     quality: 1
     voxelSize: 0.5
@@ -48829,6 +48837,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: 0711ea139cbfdb04aa3f8bbbb67bca98, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -48887,7 +48896,7 @@ GameObject:
   - component: {fileID: 114657702856252536}
   - component: {fileID: 198788981587489396}
   - component: {fileID: 199021097216948548}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Laser Toon Blaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48901,7 +48910,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607573853919354}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -48922,12 +48931,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7c107ae524aed749b3de3034023eb9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserScale: 2
+  laserScale: 1
   laserColor: {r: 0.16470587, g: 0.25115097, b: 1, a: 1}
   HitEffect: {fileID: 1293882999492180}
   FlashEffect: {fileID: 1968987440525538}
   HitOffset: 0.1
-  MaxLength: 25
+  MaxLength: 30
 --- !u!198 &198788981587489396
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -53727,6 +53736,7 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 6774920656a6ef24db0f016ede3cff27, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -53783,7 +53793,7 @@ GameObject:
   - component: {fileID: 4268694001850618}
   - component: {fileID: 198365014001731118}
   - component: {fileID: 199864134225945396}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Lightning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54056,8 +54066,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 3
-      minScalar: 2
+      scalar: 2
+      minScalar: 1.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -58603,6 +58613,7 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 2ac0fd9fa7d384047a598dbfb7c2f044, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -58659,7 +58670,7 @@ GameObject:
   - component: {fileID: 4134320612879406}
   - component: {fileID: 198667542325348754}
   - component: {fileID: 199052298654590516}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58936,7 +58947,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 4
+      scalar: 1.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -63482,6 +63493,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: d5dfb7b499f5de840871d37b9f54d073, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
