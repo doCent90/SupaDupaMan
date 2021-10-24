@@ -5,6 +5,7 @@ public class StartGame : MonoBehaviour
 {
     private Player _player;
     private PlayerMover _playerMover;
+    private CameraObjectsSelector _objectsSelector;
 
     private int _countStartSessions = 0;
 
@@ -18,12 +19,14 @@ public class StartGame : MonoBehaviour
     {
         _player.enabled = true;
         _playerMover.enabled = true;
+        _objectsSelector.enabled = true;
     }
 
     private void OnEnable()
     {
         _player = FindObjectOfType<Player>();
         _playerMover = _player.GetComponent<PlayerMover>();
+        _objectsSelector = _player.GetComponentInChildren<CameraObjectsSelector>();
     }
 
     private void Start()

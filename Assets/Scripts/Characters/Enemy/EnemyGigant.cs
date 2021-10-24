@@ -6,6 +6,8 @@ public class EnemyGigant : MonoBehaviour
 {
     [SerializeField] private Material _targetMaterial;
 
+    private Environments _cube;
+    private BoxCollider _cubeCollider;
     private Enemy[] _smallAliveEnemies;
     private CapsuleCollider _capsuleCollider;
     private SkinnedMeshRenderer _meshRenderer;
@@ -13,6 +15,9 @@ public class EnemyGigant : MonoBehaviour
     private void OnEnable()
     {
         var enemies = FindObjectsOfType<Enemy>();
+
+        _cube = GetComponentInParent<Environments>();
+        _cubeCollider = _cube.GetComponentInParent<BoxCollider>();
         _capsuleCollider = GetComponent<CapsuleCollider>();
         _meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
 
@@ -39,6 +44,9 @@ public class EnemyGigant : MonoBehaviour
         if (diedEnemies.Length == _smallAliveEnemies.Length)
         {
             _capsuleCollider.isTrigger = false;
+            _cubeCollider.enabled = true;
+
+            _cube.MoveDown();
             SetMaterial();
         }
         else

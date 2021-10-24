@@ -3,80 +3,101 @@ using DG.Tweening;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Player))]
-[RequireComponent(typeof(Rigidbody))]
 public class PlayerMover : MonoBehaviour
 {
-    [SerializeField] private float _moveDuration;
+    private Transform _wayPoint;
+    private WayPointData[] _wayPoints;
+    private LaserActivator[] _laserActivators;
 
-    private EnemiesOnPoint _enemiiesOnPoint;
-    private WayPoint[] _wayPoints;
-    private int _currentPointIndex = 0;
-
-    private Rigidbody _rigidbodySpaceShip;
-
-    private const float RotateSpeed = 50f;
+    private const float Duration = 2f;
+    private const string MouseX = "Mouse X";
+    private const string MouseY = "Mouse Y";
 
     public bool IsLastWayPoint { get; private set; }
     public bool HasCurrentPositions { get; private set; }
 
-    public event UnityAction LastPointCompleted;
     public event UnityAction<bool> Moved;
+
+    public Transform GetWayPoinPosition(Transform wayPoint)
+    {
+        return wayPoint;
+    }
 
     private void OnEnable()
     {
-        _rigidbodySpaceShip = GetComponent<Rigidbody>();
-        _enemiiesOnPoint = FindObjectOfType<EnemiesOnPoint>();
-        FillWayPoints();
+        _wayPoints = FindObjectsOfType<WayPointData>();
+        _laserActivators = GetComponentsInChildren<LaserActivator>();
 
-        HasCurrentPositions = false;
-        Move();
+        foreach (var laser in _laserActivators)
+        {
+            laser.enabled = false;
+        }
+
+        foreach (var point in _wayPoints)
+        {
+            point.Clicked += Move;
+        }
     }
 
     private void OnDisable()
     {
         Moved?.Invoke(false);
-        HasCurrentPositions = false;
-    }
 
-    private void FillWayPoints()
-    {
-        _wayPoints = _enemiiesOnPoint.GetComponentsInChildren<WayPoint>();
-    }
-
-    private void ChangeCurrentIndexPosition()
-    {
-        if (_currentPointIndex == (_wayPoints.Length - 2))
+        foreach (var laser in _laserActivators)
         {
-            _currentPointIndex++;
-            Move();
-            LastPointCompleted?.Invoke();
-            HasCurrentPositions = false;
+            laser.enabled = true;
         }
-        else
-        {
-            HasCurrentPositions = true;         
-            _currentPointIndex++;
-        }
-    }
 
-    private void Move()
-    {
-        if (_currentPointIndex != _wayPoints.Length)
+        foreach (var point in _wayPoints)
         {
-            Moved?.Invoke(true);
-            var tweenMove = _rigidbodySpaceShip.DOMove(_wayPoints[_currentPointIndex].transform.position, _moveDuration);
-            tweenMove.SetEase(Ease.InOutSine);
-            tweenMove.OnComplete(ChangeCurrentIndexPosition);
+            point.Clicked -= Move;
         }
-    }
-
-    private void Rotation(int index)
-    {
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, _wayPoints[_currentPointIndex].transform.rotation, RotateSpeed * Time.deltaTime);
     }
 
     private void Update()
     {
-        Rotation(_currentPointIndex);
+        Rotate();
+    }
+
+    private void Move(Transform wayPoint)
+    {
+        Moved?.Invoke(true);
+        _wayPoint = wayPoint;
+
+        var tweenMove = transform.DOMove(_wayPoint.position, Duration);
+        tweenMove.SetEase(Ease.InOutSine);
+
+        LookAtWayPoint(wayPoint);
+        tweenMove.OnComplete(DisableMover);
+    }
+
+    private void LookAtWayPoint(Transform wayPoint)
+    {
+        var tweenRotate = transform.DOLookAt(new Vector3(0, _wayPoint.position.y, 0), Duration);
+        tweenRotate.SetEase(Ease.InOutSine);
+        tweenRotate.OnComplete(LookAtEnemies);
+    }
+
+    private void LookAtEnemies()
+    {
+        var tweenRotate = transform.DORotate(new Vector3(0, _wayPoint.position.y, 0), Duration / 2);
+        tweenRotate.SetEase(Ease.InOutSine);
+    }
+
+    private void Rotate()
+    {
+        float x;
+        float y;
+
+        x = Input.GetAxis(MouseX);
+        y = Input.GetAxis(MouseY);
+
+        if(Input.GetMouseButton(0))
+            transform.localEulerAngles += new Vector3(y, x, 0);
+    }
+
+    private void DisableMover()
+    {
+        enabled = false;
     }
 }

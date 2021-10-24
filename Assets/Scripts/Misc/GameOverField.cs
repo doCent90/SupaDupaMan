@@ -17,11 +17,11 @@ public class GameOverField : MonoBehaviour
 
     private void OnEnable()
     {
-        _loseText = FindObjectOfType<YouLose>();
+        //_loseText = FindObjectOfType<YouLose>();
         _gameLevelsLoader = FindObjectOfType<GameLevelsLoader>();
         _groundMover = GetComponentInParent<BackGroundMover>();
 
-        _loseText.gameObject.SetActive(false);
+        //_loseText.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -36,7 +36,7 @@ public class GameOverField : MonoBehaviour
 
             Defeated?.Invoke();
             _groundMover.enabled = false;
-            _loseText.gameObject.SetActive(true);
+            //_loseText.gameObject.SetActive(true);
 
             _isLevelDone = true;
 

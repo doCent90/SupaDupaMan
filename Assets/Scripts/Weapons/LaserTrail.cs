@@ -6,7 +6,7 @@ public class LaserTrail : MonoBehaviour
 
     private bool _isReady = false;
 
-    private AttackState _attack;
+    private LaserActivator _attack;
     private PlayerMover _playerMover;
     private GameOverField _gameOverField;
     private ParticleSystem[] _hits;
@@ -17,7 +17,7 @@ public class LaserTrail : MonoBehaviour
     private void OnEnable()
     {
         _hits = GetComponentsInChildren<ParticleSystem>();
-        _attack = GetComponentInParent<AttackState>();
+        _attack = GetComponentInParent<LaserActivator>();
         _playerMover = FindObjectOfType<PlayerMover>();
         _gameOverField = FindObjectOfType<GameOverField>();
 

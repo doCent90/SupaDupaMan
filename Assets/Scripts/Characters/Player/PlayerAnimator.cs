@@ -4,7 +4,7 @@ public class PlayerAnimator : MonoBehaviour
 {
     private Animator _animator;
     private PlayerMover _mover;
-    private AttackState _attack;
+    private LaserActivator _attack;
 
     private const string RunAnimation = "Run";
     private const string ShootAnimation = "Shoot";
@@ -14,7 +14,7 @@ public class PlayerAnimator : MonoBehaviour
     {
         _animator = GetComponentInChildren<Animator>();
         _mover = GetComponent<PlayerMover>();
-        _attack = GetComponent<AttackState>();
+        _attack = GetComponent<LaserActivator>();
 
         _mover.Moved += Move;
         _attack.Shoted += Shot;

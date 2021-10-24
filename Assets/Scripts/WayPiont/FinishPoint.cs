@@ -6,14 +6,12 @@ public class FinishPoint : MonoBehaviour
     private EnemyGigant _lastEnemy;
     private PlayerMover _playerMover;
     private CameraMover _cameraMover;
-    private PlayerFinish _celebration;
 
     private void OnEnable()
     {
         //_winText = FindObjectOfType<YouWin>();
         _playerMover = FindObjectOfType<PlayerMover>();
         _cameraMover = FindObjectOfType<CameraMover>();
-        _celebration = FindObjectOfType<PlayerFinish>();
         _lastEnemy = FindObjectOfType<EnemyGigant>();
 
         //_winText.gameObject.SetActive(false);
@@ -29,7 +27,6 @@ public class FinishPoint : MonoBehaviour
     {
         _lastEnemy.GetComponent<EnemyMover>().enabled = false;
         _cameraMover.enabled = false;
-        _celebration.enabled = true;
         //_winText.gameObject.SetActive(true);
     }
 }

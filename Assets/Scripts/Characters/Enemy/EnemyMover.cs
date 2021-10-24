@@ -7,7 +7,7 @@ public class EnemyMover : MonoBehaviour
 {
     [SerializeField] private bool _isLastQueuEnemy;
 
-    private WayPoint _enemiesPoint;
+    private WayPointData _enemiesPoint;
     private Enemy _enemy;
 
     private const float Speed = 0f;
@@ -19,6 +19,6 @@ public class EnemyMover : MonoBehaviour
     private void OnEnable()
     {
         _enemy = GetComponent<Enemy>();
-        _enemiesPoint = GetComponentInParent<WayPoint>();
+        _enemiesPoint = GetComponentInParent<WayPointData>();
     }
 }
