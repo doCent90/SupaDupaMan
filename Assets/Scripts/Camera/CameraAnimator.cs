@@ -5,7 +5,7 @@ public class CameraAnimator : MonoBehaviour
 {
     private Transform _camera;
     private Vector3 _originalPosition;
-    private LaserActivator _lasers;
+    private Lasers _lasers;
 
     private bool _isAttack;
 
@@ -14,7 +14,7 @@ public class CameraAnimator : MonoBehaviour
 
     private void OnEnable()
     {
-        _lasers = FindObjectOfType<LaserActivator>();
+        _lasers = FindObjectOfType<Lasers>();
         _camera = GetComponent<Transform>();
 
         _originalPosition = _camera.transform.localEulerAngles;

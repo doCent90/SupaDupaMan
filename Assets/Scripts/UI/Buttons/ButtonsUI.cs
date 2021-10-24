@@ -149,7 +149,6 @@ public class ButtonsUI : MonoBehaviour
         _soundMaster = FindObjectOfType<SoundsFXSettings>();
         _coinsViewer = FindObjectOfType<CurrentCoinsViewer>();
 
-        _playerMover.LastPointCompleted += ShowContinueButton;
         _gameOver.Defeated += ShowRetryButton;
 
         Init();
@@ -157,7 +156,6 @@ public class ButtonsUI : MonoBehaviour
 
     private void OnDisable()
     {
-        _playerMover.LastPointCompleted -= ShowContinueButton;
         _gameOver.Defeated -= ShowRetryButton;
     }
 

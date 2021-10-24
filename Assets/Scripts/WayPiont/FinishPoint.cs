@@ -15,12 +15,6 @@ public class FinishPoint : MonoBehaviour
         _lastEnemy = FindObjectOfType<EnemyGigant>();
 
         //_winText.gameObject.SetActive(false);
-        _playerMover.LastPointCompleted += EndLevel;
-    }
-
-    private void OnDisable()
-    {
-        _playerMover.LastPointCompleted -= EndLevel;
     }
 
     private void EndLevel()

@@ -28,6 +28,7 @@ public class Enemy : MonoBehaviour
     private const float Multiply = 2f;
 
     public event UnityAction Died;
+    public event UnityAction<Transform> TargetLocked;
 
     public bool IsGigant => _isGigant;
 
@@ -50,6 +51,17 @@ public class Enemy : MonoBehaviour
             _emojiLaugh.Play();
         else
             _emojiLaugh.Stop();
+    }
+
+    public Enemy GetEnemy()
+    {
+        return this;
+    }
+
+    public void LockTarget()
+    {
+        Debug.Log("Target Lock");
+        TargetLocked?.Invoke(transform);
     }
 
     private void Die()

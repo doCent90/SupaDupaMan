@@ -1,12 +1,12 @@
 public class SoundsPlayer : SoundsPlaying
 {
     private PlayerMover _player;
-    private LaserActivator _attack;
+    private Lasers _attack;
 
     private void Start()
     {
         _player = GetComponentInParent<PlayerMover>();
-        _attack = GetComponentInParent<LaserActivator>();
+        _attack = GetComponentInParent<Lasers>();
 
         _attack.Shoted += Shot;
         _player.Moved += Fly;

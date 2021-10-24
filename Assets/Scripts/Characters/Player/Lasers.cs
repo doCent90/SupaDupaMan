@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class LaserActivator : MonoBehaviour
+public class Lasers : MonoBehaviour
 {
     [Header("Laser")]
     [SerializeField] private int _laserNumber;
@@ -11,12 +11,11 @@ public class LaserActivator : MonoBehaviour
     [Header("Settings of Shot")]
     [SerializeField] private Transform _shootPosition;
 
-    private LaserPlace _laserPlace;
+    private Enemy[] _enemies;
     private OverHeatBar _overHeat;
 
     private bool _isOverHeated = false;
 
-    private Camera _camera;
     private ButtonsUI _panelUI;
     private GameObject _instance;
     private Hovl_Laser2 _laserPrefab;
@@ -31,15 +30,19 @@ public class LaserActivator : MonoBehaviour
     private void OnEnable()
     {
         _panelUI = FindObjectOfType<ButtonsUI>();
-        _camera = FindObjectOfType<Camera>();
         _overHeat = FindObjectOfType<OverHeatBar>();
-        _laserPlace = GetComponentInChildren<LaserPlace>();
+        _enemies = FindObjectsOfType<Enemy>();
 
         _overHeat.OverHeated += ResetAttake;
         ReadyToAttacked?.Invoke(true);
 
         _rayCast.SetActive(false);
         _aim.SetActive(true);
+
+        foreach (var enemy in _enemies)
+        {
+            enemy.TargetLocked += AimTarget;
+        }
     }
 
     private void OnDisable()
@@ -52,6 +55,12 @@ public class LaserActivator : MonoBehaviour
 
         _rayCast.SetActive(false);
         _aim.SetActive(false);
+
+        foreach (var enemy in _enemies)
+        {
+            enemy.TargetLocked -= AimTarget;
+            enemy.Died -= DisableLasers;
+        }
     }
 
     private void Update()
@@ -59,7 +68,6 @@ public class LaserActivator : MonoBehaviour
         if (!_panelUI.IsPanelOpen)
         {
             Attack();
-            AimTarget();
         }
     }
 
@@ -118,27 +126,14 @@ public class LaserActivator : MonoBehaviour
         }
     }
 
-    private void AimTarget()
+    private void AimTarget(Transform target)
     {
-        RaycastHit hit;
-        var mousePos = Input.mousePosition;
-        var rayMouse = _camera.ScreenPointToRay(mousePos);
-        
-        if (Physics.Raycast(rayMouse.origin, rayMouse.direction, out hit, MaxLength))
-        {
-            RotateToMouseDirection(_laserPlace.gameObject, hit.point);
-        }
-        else
-        {
-            var pos = rayMouse.GetPoint(MaxLength);
-            RotateToMouseDirection(_laserPlace.gameObject, pos);
-        }
+        enabled = true;
+        _shootPosition.LookAt(target);
     }
 
-    private void RotateToMouseDirection(GameObject obj, Vector3 destination)
+    private void DisableLasers()
     {
-        var direction = destination - obj.transform.position;
-        var rotation = Quaternion.LookRotation(direction);
-        obj.transform.localRotation = Quaternion.Lerp(obj.transform.rotation, rotation, 1);
+        enabled = false;
     }
 }

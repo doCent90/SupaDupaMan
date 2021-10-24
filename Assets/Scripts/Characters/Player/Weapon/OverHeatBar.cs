@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class OverHeatBar : MonoBehaviour
 {
     private Slider _slider;
-    private LaserActivator _attack;
+    private Lasers _attack;
     private Text _overHeatText;
 
     private bool _isReady;
@@ -20,7 +20,7 @@ public class OverHeatBar : MonoBehaviour
 
     private void OnEnable()
     {
-        _attack = FindObjectOfType<LaserActivator>();
+        _attack = FindObjectOfType<Lasers>();
         _slider = GetComponent<Slider>();
         _overHeatText = GetComponentInChildren<Text>();
 

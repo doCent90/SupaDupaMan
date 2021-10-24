@@ -7,7 +7,7 @@ public class PlayerMover : MonoBehaviour
 {
     private Transform _wayPoint;
     private WayPointData[] _wayPoints;
-    private LaserActivator[] _laserActivators;
+    private Lasers[] _laserActivators;
 
     private const float Duration = 2f;
     private const string MouseX = "Mouse X";
@@ -26,7 +26,7 @@ public class PlayerMover : MonoBehaviour
     private void OnEnable()
     {
         _wayPoints = FindObjectsOfType<WayPointData>();
-        _laserActivators = GetComponentsInChildren<LaserActivator>();
+        _laserActivators = GetComponentsInChildren<Lasers>();
 
         foreach (var laser in _laserActivators)
         {

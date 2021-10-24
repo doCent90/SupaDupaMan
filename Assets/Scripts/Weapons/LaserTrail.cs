@@ -6,9 +6,8 @@ public class LaserTrail : MonoBehaviour
 
     private bool _isReady = false;
 
-    private LaserActivator _attack;
+    private Lasers _attack;
     private PlayerMover _playerMover;
-    private GameOverField _gameOverField;
     private ParticleSystem[] _hits;
 
     private const float _maxLength = 25f;
@@ -17,20 +16,15 @@ public class LaserTrail : MonoBehaviour
     private void OnEnable()
     {
         _hits = GetComponentsInChildren<ParticleSystem>();
-        _attack = GetComponentInParent<LaserActivator>();
+        _attack = GetComponentInParent<Lasers>();
         _playerMover = FindObjectOfType<PlayerMover>();
-        _gameOverField = FindObjectOfType<GameOverField>();
 
         _attack.Fired += ActivatLaser;
-        _playerMover.LastPointCompleted += OnLastPoint;
-        _gameOverField.Defeated += OnLastPoint;
     }
 
     private void OnDisable()
     {
         _attack.Fired -= ActivatLaser;
-        _playerMover.LastPointCompleted += OnLastPoint;
-        _gameOverField.Defeated -= OnLastPoint;
     }
 
     private void Update()
@@ -41,14 +35,6 @@ public class LaserTrail : MonoBehaviour
     private void ActivatLaser(bool isAttack)
     {
         _isReady = isAttack;
-    }
-
-    private void OnLastPoint()
-    {
-        foreach (var partical in _hits)
-        {
-            partical.Pause();
-        }
     }
 
     private void StartTrailLaser()
