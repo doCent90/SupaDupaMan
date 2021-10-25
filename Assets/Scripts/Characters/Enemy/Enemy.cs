@@ -60,7 +60,6 @@ public class Enemy : MonoBehaviour
 
     public void LockTarget()
     {
-        Debug.Log("Target Lock");
         TargetLocked?.Invoke(transform);
     }
 
@@ -77,7 +76,7 @@ public class Enemy : MonoBehaviour
             _mover.enabled = true;
 
             _emoji.Stop();
-            _capsuleCollider.isTrigger = true;
+            _capsuleCollider.enabled = false;
         }
     }
 

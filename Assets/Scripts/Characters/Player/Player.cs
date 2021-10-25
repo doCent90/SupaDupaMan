@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class Player : MonoBehaviour
 {
     private PlayerMover _mover;
-    private GameOverField _gameOver;
+    private GameOver _gameOver;
 
     public event UnityAction Started;
 
@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
         Started?.Invoke();
 
         _mover = GetComponent<PlayerMover>();
-        _gameOver = FindObjectOfType<GameOverField>();
+        _gameOver = FindObjectOfType<GameOver>();
 
         _gameOver.Defeated += StopGame;
     }

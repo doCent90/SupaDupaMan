@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using DG.Tweening;
 
 public class CameraAnimator : MonoBehaviour
 {
@@ -10,7 +11,17 @@ public class CameraAnimator : MonoBehaviour
     private bool _isAttack;
 
     private const float Range = 0.3f;
+    private const float Duration = 3f;
     private const float Delay = 0.025f;
+
+    private const float MultyplyX = 10f;
+    private const float MultyplyY = 5f;
+    private const float MultyplyZ = 2f;
+
+    public void StopShake()
+    {
+        StopCoroutine(Shake());
+    }
 
     private void OnEnable()
     {
@@ -19,16 +30,18 @@ public class CameraAnimator : MonoBehaviour
 
         _originalPosition = _camera.transform.localEulerAngles;
 
-        _lasers.Fired += StartShake;
+        _lasers.Fired += ShakeTransform;
         _isAttack = false;
+
+        PlayIdle();
     }
 
     private void OnDisable()
     {
-        _lasers.Fired -= StartShake;
+        _lasers.Fired -= ShakeTransform;
     }
 
-    private void StartShake(bool isAttack)
+    private void ShakeTransform(bool isAttack)
     {
         _isAttack = isAttack;
 
@@ -57,5 +70,27 @@ public class CameraAnimator : MonoBehaviour
         }
 
         _camera.localEulerAngles = _originalPosition;
+    }
+
+    private void PlayIdle()
+    {
+        float x;
+        float y;
+        float z;
+
+        x = Random.Range(-Range, Range) * MultyplyX;
+        y = Random.Range(-Range, Range) * MultyplyY;
+        z = Random.Range(-Range, Range) * MultyplyZ;
+
+        var tweenRotate = transform.DOLocalRotate(new Vector3(_originalPosition.x + x, y, z), Duration);
+        tweenRotate.SetEase(Ease.InOutSine);
+        tweenRotate.OnComplete(ResetPosition);
+    }
+
+    private void ResetPosition()
+    {
+        var tweenResetPosition = transform.DOLocalRotate(_originalPosition, Duration);
+        tweenResetPosition.SetEase(Ease.InOutSine);
+        tweenResetPosition.OnComplete(PlayIdle);
     }
 }

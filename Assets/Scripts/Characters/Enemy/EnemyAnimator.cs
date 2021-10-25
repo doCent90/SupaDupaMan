@@ -46,7 +46,7 @@ public class EnemyAnimator : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.TryGetComponent(out GameOverField gameOverField))
+        if (collision.TryGetComponent(out GameOver gameOverField))
         {
             EnemyAnimator[] enemies = FindObjectsOfType<EnemyAnimator>();
 

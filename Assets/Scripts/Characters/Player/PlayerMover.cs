@@ -5,11 +5,11 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Player))]
 public class PlayerMover : MonoBehaviour
 {
-    private Transform _wayPoint;
+    private Transform _platform;
     private WayPointData[] _wayPoints;
     private Lasers[] _laserActivators;
 
-    private const float Duration = 2f;
+    private const float Duration = 0.5f;
     private const string MouseX = "Mouse X";
     private const string MouseY = "Mouse Y";
 
@@ -59,29 +59,22 @@ public class PlayerMover : MonoBehaviour
         Rotate();
     }
 
-    private void Move(Transform wayPoint)
+    private void Move(Transform wayPoint, Transform platform)
     {
         Moved?.Invoke(true);
-        _wayPoint = wayPoint;
+        _platform = platform;
 
-        var tweenMove = transform.DOMove(_wayPoint.position, Duration);
+        var tweenMove = transform.DOMove(wayPoint.position, Duration);
         tweenMove.SetEase(Ease.InOutSine);
-
-        LookAtWayPoint(wayPoint);
-        tweenMove.OnComplete(DisableMover);
+        tweenMove.OnComplete(LookAtPlatform);
     }
 
-    private void LookAtWayPoint(Transform wayPoint)
+    private void LookAtPlatform()
     {
-        var tweenRotate = transform.DOLookAt(new Vector3(0, _wayPoint.position.y, 0), Duration);
+        var tweenRotate = transform.DOLookAt(_platform.position, Duration / 2);
         tweenRotate.SetEase(Ease.InOutSine);
-        tweenRotate.OnComplete(LookAtEnemies);
-    }
 
-    private void LookAtEnemies()
-    {
-        var tweenRotate = transform.DORotate(new Vector3(0, _wayPoint.position.y, 0), Duration / 2);
-        tweenRotate.SetEase(Ease.InOutSine);
+        DisableMover();
     }
 
     private void Rotate()
