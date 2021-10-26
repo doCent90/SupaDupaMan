@@ -23,7 +23,7 @@ public class ButtonsUI : MonoBehaviour
     private CurrentCoinsViewer _coinsViewer;
     private SoundsFXSettings _soundMaster;
     private GameLevelsLoader _loadLevel;
-    private GameOverField _gameOver;
+    private GameOver _gameOver;
     private PlayerMover _playerMover;
     private StartGame _game;
     private Player _player;
@@ -143,22 +143,20 @@ public class ButtonsUI : MonoBehaviour
     {
         _player = FindObjectOfType<Player>();
         _game = FindObjectOfType<StartGame>();
-        //_gameOver = FindObjectOfType<GameOverField>();
+        _gameOver = FindObjectOfType<GameOver>();
         _loadLevel = FindObjectOfType<GameLevelsLoader>();
         _playerMover = _player.GetComponent<PlayerMover>();
         _soundMaster = FindObjectOfType<SoundsFXSettings>();
         _coinsViewer = FindObjectOfType<CurrentCoinsViewer>();
 
-        _playerMover.LastPointCompleted += ShowContinueButton;
-        //_gameOver.Defeated += ShowRetryButton;
+        _gameOver.Defeated += ShowRetryButton;
 
-        //Init();
+        Init();
     }
 
     private void OnDisable()
     {
-        _playerMover.LastPointCompleted -= ShowContinueButton;
-        //_gameOver.Defeated -= ShowRetryButton;
+        _gameOver.Defeated -= ShowRetryButton;
     }
 
     private void Init()

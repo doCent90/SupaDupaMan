@@ -3,80 +3,94 @@ using DG.Tweening;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Player))]
-[RequireComponent(typeof(Rigidbody))]
 public class PlayerMover : MonoBehaviour
 {
-    [SerializeField] private float _moveDuration;
+    private Transform _platform;
+    private Lasers[] _laserActivators;
+    private WayPointData[] _wayPoints;
 
-    private EnemiesOnPoint _enemiiesOnPoint;
-    private WayPoint[] _wayPoints;
-    private int _currentPointIndex = 0;
-
-    private Rigidbody _rigidbodySpaceShip;
-
-    private const float RotateSpeed = 50f;
+    private const float Duration = 0.5f;
+    private const string MouseX = "Mouse X";
+    private const string MouseY = "Mouse Y";
 
     public bool IsLastWayPoint { get; private set; }
     public bool HasCurrentPositions { get; private set; }
 
-    public event UnityAction LastPointCompleted;
     public event UnityAction<bool> Moved;
+
+    public Transform GetWayPoinPosition(Transform wayPoint)
+    {
+        return wayPoint;
+    }
 
     private void OnEnable()
     {
-        _rigidbodySpaceShip = GetComponent<Rigidbody>();
-        _enemiiesOnPoint = FindObjectOfType<EnemiesOnPoint>();
-        FillWayPoints();
+        _wayPoints = FindObjectsOfType<WayPointData>();
+        _laserActivators = GetComponentsInChildren<Lasers>();
 
-        HasCurrentPositions = false;
-        Move();
+        foreach (var laser in _laserActivators)
+        {
+            laser.enabled = false;
+        }
+
+        foreach (var point in _wayPoints)
+        {
+            point.Clicked += Move;
+        }
     }
 
     private void OnDisable()
     {
         Moved?.Invoke(false);
-        HasCurrentPositions = false;
-    }
 
-    private void FillWayPoints()
-    {
-        _wayPoints = _enemiiesOnPoint.GetComponentsInChildren<WayPoint>();
-    }
-
-    private void ChangeCurrentIndexPosition()
-    {
-        if (_currentPointIndex == (_wayPoints.Length - 2))
+        foreach (var laser in _laserActivators)
         {
-            _currentPointIndex++;
-            Move();
-            LastPointCompleted?.Invoke();
-            HasCurrentPositions = false;
+            laser.enabled = true;
         }
-        else
-        {
-            HasCurrentPositions = true;         
-            _currentPointIndex++;
-        }
-    }
 
-    private void Move()
-    {
-        if (_currentPointIndex != _wayPoints.Length)
+        foreach (var point in _wayPoints)
         {
-            Moved?.Invoke(true);
-            var tweenMove = _rigidbodySpaceShip.DOMove(_wayPoints[_currentPointIndex].transform.position, _moveDuration);
-            tweenMove.SetEase(Ease.InOutSine);
-            tweenMove.OnComplete(ChangeCurrentIndexPosition);
+            point.Clicked -= Move;
         }
-    }
-
-    private void Rotation(int index)
-    {
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, _wayPoints[_currentPointIndex].transform.rotation, RotateSpeed * Time.deltaTime);
     }
 
     private void Update()
     {
-        Rotation(_currentPointIndex);
+        RotateCamera();
+    }
+
+    private void Move(Transform wayPoint, Transform platform)
+    {
+        Moved?.Invoke(true);
+        _platform = platform;
+
+        var tweenMove = transform.DOMove(wayPoint.position, Duration);
+        tweenMove.SetEase(Ease.InOutSine);
+        tweenMove.OnComplete(LookAtPlatform);
+    }
+
+    private void LookAtPlatform()
+    {
+        var tweenRotate = transform.DOLookAt(_platform.position, Duration / 2);
+        tweenRotate.SetEase(Ease.InOutSine);
+
+        DisableMover();
+    }
+
+    private void RotateCamera()
+    {
+        float x;
+        float y;
+
+        x = Input.GetAxis(MouseX);
+        y = Input.GetAxis(MouseY);
+
+        if(Input.GetMouseButton(0))
+            transform.localEulerAngles += new Vector3(y, x, 0);
+    }
+
+    private void DisableMover()
+    {
+        enabled = false;
     }
 }

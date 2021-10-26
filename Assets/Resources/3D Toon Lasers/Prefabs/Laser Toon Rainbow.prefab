@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4059171674713896}
   - component: {fileID: 198208037911688714}
   - component: {fileID: 199185651323395514}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4890,7 +4890,7 @@ GameObject:
   - component: {fileID: 4512138639958834}
   - component: {fileID: 198789619422688176}
   - component: {fileID: 199582183833592942}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: ShockWaves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9766,7 +9766,7 @@ GameObject:
   - component: {fileID: 4606945043847622}
   - component: {fileID: 198008985867538278}
   - component: {fileID: 199855424590927304}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14651,7 +14651,7 @@ GameObject:
   - component: {fileID: 4332731898532076}
   - component: {fileID: 198913715760389296}
   - component: {fileID: 199387983860320910}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19536,7 +19536,7 @@ GameObject:
   - component: {fileID: 4706982691932802}
   - component: {fileID: 198647082484193238}
   - component: {fileID: 199163425304223076}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: SideAura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24421,7 +24421,7 @@ GameObject:
   - component: {fileID: 4877004303653474}
   - component: {fileID: 114399923819318736}
   - component: {fileID: 120678287707896484}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Laser Toon Rainbow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24437,7 +24437,7 @@ Transform:
   m_GameObject: {fileID: 1204471137167242}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4479931273405702}
   - {fileID: 4059171674713896}
@@ -24503,7 +24503,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.4340595
+    widthMultiplier: 0.25
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -24576,7 +24576,7 @@ GameObject:
   - component: {fileID: 4479931273405702}
   - component: {fileID: 198953283587880094}
   - component: {fileID: 199511085230267542}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29455,7 +29455,7 @@ GameObject:
   - component: {fileID: 4000826192902202}
   - component: {fileID: 198285389540775526}
   - component: {fileID: 199160930231303468}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34331,7 +34331,7 @@ GameObject:
   - component: {fileID: 4868738461856814}
   - component: {fileID: 198678614484951350}
   - component: {fileID: 199652502334911354}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flare
   m_TagString: Untagged
   m_Icon: {fileID: 0}

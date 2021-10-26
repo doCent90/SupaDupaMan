@@ -2,7 +2,7 @@ public class SoundsEnemy : SoundsPlaying
 {
     private Enemy _enemy;
 
-    private void Start()
+    private void OnEnable()
     {
         _enemy = GetComponentInParent<Enemy>();
         _enemy.Died += Death;

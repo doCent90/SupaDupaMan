@@ -1,10 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class StartGame : MonoBehaviour
 {
     private Player _player;
     private PlayerMover _playerMover;
+    private ObjectsSelector _objectsSelector;
 
     private int _countStartSessions = 0;
 
@@ -14,16 +16,21 @@ public class StartGame : MonoBehaviour
     private const string GameStart = "game_start";
     private const string RegDay = "reg_day";
 
+    public event UnityAction Started;
+
     public void StartLevel()
     {
-        _player.enabled = true;
+        Started?.Invoke();
+
         _playerMover.enabled = true;
+        _objectsSelector.enabled = true;
     }
 
     private void OnEnable()
     {
         _player = FindObjectOfType<Player>();
         _playerMover = _player.GetComponent<PlayerMover>();
+        _objectsSelector = _player.GetComponentInChildren<ObjectsSelector>();
     }
 
     private void Start()

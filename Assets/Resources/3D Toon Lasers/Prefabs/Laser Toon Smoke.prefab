@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4282019567936406}
   - component: {fileID: 198673259650619708}
   - component: {fileID: 199055843114092428}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4887,7 +4887,7 @@ GameObject:
   - component: {fileID: 4039170980797422}
   - component: {fileID: 198937771148974760}
   - component: {fileID: 199368888782160796}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9714,7 +9714,7 @@ GameObject:
   - component: {fileID: 4985296844146362}
   - component: {fileID: 198712157875228472}
   - component: {fileID: 199483252954646480}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14590,7 +14590,7 @@ GameObject:
   - component: {fileID: 4635060245986954}
   - component: {fileID: 114214617416663396}
   - component: {fileID: 120557904614105044}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Laser Toon Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14606,7 +14606,7 @@ Transform:
   m_GameObject: {fileID: 1518134643281010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4374104867276442}
   - {fileID: 4039170980797422}
@@ -14672,7 +14672,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.50990295
+    widthMultiplier: 0.25
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -14745,7 +14745,7 @@ GameObject:
   - component: {fileID: 4786046351947978}
   - component: {fileID: 198189986118539464}
   - component: {fileID: 199151074506643840}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19630,7 +19630,7 @@ GameObject:
   - component: {fileID: 4374104867276442}
   - component: {fileID: 198923239248364072}
   - component: {fileID: 199051474438544948}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24454,7 +24454,7 @@ GameObject:
   - component: {fileID: 4511088482924110}
   - component: {fileID: 198259486078056708}
   - component: {fileID: 199997406831773498}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: ShockWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29330,7 +29330,7 @@ GameObject:
   - component: {fileID: 4990488038733530}
   - component: {fileID: 198132408406062948}
   - component: {fileID: 199538022492772730}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34152,7 +34152,7 @@ GameObject:
   - component: {fileID: 4295274020362112}
   - component: {fileID: 198525459778384332}
   - component: {fileID: 199280271238651300}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: SmokeDark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39028,7 +39028,7 @@ GameObject:
   - component: {fileID: 4323719618528620}
   - component: {fileID: 198733023735429242}
   - component: {fileID: 199020078814861456}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -3,34 +3,46 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class EnemyAnimator : MonoBehaviour
 {
-    private Animator _animator;
     private Enemy _enemy;
-    private Player _player;
+    private GameOver _gameOver;
+    private Animator _animator;
+    private StartGame _startGame;
 
     private const string Run = "Run";
     private const string Die = "Die";
     private const string Victory = "Victory";
-
-    public void Celebrate()
-    {
-        _animator.SetBool(Run, false);
-        _animator.SetTrigger(Victory);
-    }
+    private const string TakeDamage = "TakeDamage";
 
     private void OnEnable()
     {
-        _animator = GetComponent<Animator>();
         _enemy = GetComponent<Enemy>();
-        _player = FindObjectOfType<Player>();
+        _animator = GetComponent<Animator>();
+        _gameOver = FindObjectOfType<GameOver>();
+        _startGame = FindObjectOfType<StartGame>();
 
-        _player.Started += OnStarted;
+        _gameOver.Defeated += OnGameOver;
+        _startGame.Started += OnStarted;
+        _enemy.Damaged += OnDamageTaked;
         _enemy.Died += OnDied;
     }
 
     private void OnDisable()
     {
-        _player.Started -= OnStarted;
+        _gameOver.Defeated -= OnGameOver;
+        _startGame.Started -= OnStarted;
+        _enemy.Damaged -= OnDamageTaked;
         _enemy.Died -= OnDied;
+    }
+
+    private void OnDamageTaked()
+    {
+        _animator.SetBool(TakeDamage, true);
+    }
+
+    private void Celebrate()
+    {
+        _animator.SetBool(Run, false);
+        _animator.SetTrigger(Victory);
     }
 
     private void OnStarted()
@@ -41,20 +53,13 @@ public class EnemyAnimator : MonoBehaviour
     private void OnDied()
     {
         _animator.SetBool(Run, false);
+        _animator.SetBool(TakeDamage, false);
         _animator.SetTrigger(Die);
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnGameOver()
     {
-        if (collision.TryGetComponent(out GameOverField gameOverField))
-        {
-            EnemyAnimator[] enemies = FindObjectsOfType<EnemyAnimator>();
-
-            foreach (var enemy in enemies)
-            {
-                if(enemy.GetComponent<Enemy>().enabled)
-                    enemy.Celebrate();
-            }
-        }
+        if (_enemy.enabled)
+             Celebrate();
     }
 }
