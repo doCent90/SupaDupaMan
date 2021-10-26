@@ -12,7 +12,7 @@ public class OverHeatBar : MonoBehaviour
     private bool _isReady;
     private float _value;
 
-    private const float _multiUp = 0.2f;
+    private const float _multiUp = 1f;
     private const float _multiDown = 1f;
 
     public event UnityAction<bool> OverHeated;

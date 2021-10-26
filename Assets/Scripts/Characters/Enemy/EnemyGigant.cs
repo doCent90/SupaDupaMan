@@ -10,7 +10,6 @@ public class EnemyGigant : MonoBehaviour
     private BoxCollider _cubeCollider;
     private Enemy[] _smallAliveEnemies;
     private CapsuleCollider _capsuleCollider;
-    private SkinnedMeshRenderer _meshRenderer;
 
     private void OnEnable()
     {
@@ -19,7 +18,6 @@ public class EnemyGigant : MonoBehaviour
         _cube = GetComponentInParent<Environments>();
         _cubeCollider = _cube.GetComponentInParent<BoxCollider>();
         _capsuleCollider = GetComponent<CapsuleCollider>();
-        _meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
 
         _smallAliveEnemies = enemies.Where(enemy => enemy.IsGigant == false).ToArray();
 
@@ -47,16 +45,10 @@ public class EnemyGigant : MonoBehaviour
             _cubeCollider.enabled = true;
 
             _cube.MoveDown();
-            SetMaterial();
         }
         else
         {
             _capsuleCollider.isTrigger = true;
         }
-    }
-
-    private void SetMaterial()
-    {
-        _meshRenderer.material = _targetMaterial;
     }
 }

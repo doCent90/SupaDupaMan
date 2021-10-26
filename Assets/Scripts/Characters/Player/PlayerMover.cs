@@ -6,8 +6,8 @@ using UnityEngine.Events;
 public class PlayerMover : MonoBehaviour
 {
     private Transform _platform;
-    private WayPointData[] _wayPoints;
     private Lasers[] _laserActivators;
+    private WayPointData[] _wayPoints;
 
     private const float Duration = 0.5f;
     private const string MouseX = "Mouse X";
@@ -56,7 +56,7 @@ public class PlayerMover : MonoBehaviour
 
     private void Update()
     {
-        Rotate();
+        RotateCamera();
     }
 
     private void Move(Transform wayPoint, Transform platform)
@@ -77,7 +77,7 @@ public class PlayerMover : MonoBehaviour
         DisableMover();
     }
 
-    private void Rotate()
+    private void RotateCamera()
     {
         float x;
         float y;

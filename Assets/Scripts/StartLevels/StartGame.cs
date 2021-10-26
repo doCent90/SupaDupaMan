@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class StartGame : MonoBehaviour
 {
@@ -15,9 +16,12 @@ public class StartGame : MonoBehaviour
     private const string GameStart = "game_start";
     private const string RegDay = "reg_day";
 
+    public event UnityAction Started;
+
     public void StartLevel()
     {
-        _player.enabled = true;
+        Started?.Invoke();
+
         _playerMover.enabled = true;
         _objectsSelector.enabled = true;
     }

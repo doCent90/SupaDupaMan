@@ -17,7 +17,6 @@ public class Lasers : MonoBehaviour
     private bool _isOverHeated = false;
     private bool _isReady = false;
 
-    private ButtonsUI _panelUI;
     private GameObject _instance;
     private Hovl_Laser2 _reset;
 
@@ -29,7 +28,6 @@ public class Lasers : MonoBehaviour
 
     private void OnEnable()
     {
-        _panelUI = FindObjectOfType<ButtonsUI>();
         _overHeat = FindObjectOfType<OverHeatBar>();
         _enemies = FindObjectsOfType<Enemy>();
 
@@ -42,7 +40,6 @@ public class Lasers : MonoBehaviour
         foreach (var enemy in _enemies)
         {
             enemy.TargetLocked += AimTarget;
-            enemy.Died += Disable;
         }
     }
 
@@ -60,7 +57,6 @@ public class Lasers : MonoBehaviour
         foreach (var enemy in _enemies)
         {
             enemy.TargetLocked -= AimTarget;
-            enemy.Died -= Disable;
         }
     }
 
@@ -94,7 +90,6 @@ public class Lasers : MonoBehaviour
         {
             Destroy(_instance);
             _instance = Instantiate(_lasers[_laserNumber], _rayCast.transform.position, _rayCast.transform.rotation);
-            //_instance.transform.parent = _shootPosition;
             _reset = _instance.GetComponent<Hovl_Laser2>();
 
             _rayCast.SetActive(true);
@@ -124,11 +119,5 @@ public class Lasers : MonoBehaviour
             Fired?.Invoke(false);
             _rayCast.SetActive(false);
         }
-    }
-
-    private void Disable()
-    {
-        enabled = false;
-        _isReady = false;
     }
 }

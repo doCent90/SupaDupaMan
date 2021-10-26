@@ -24,6 +24,8 @@ public class GameOver : MonoBehaviour
 
     private void LoseLevel()
     {
+        Defeated?.Invoke();
+
         Amplitude.Instance.logEvent(Fail, _gameLevelsLoader.Level);
         Amplitude.Instance.logEvent(TimeSpent, (int)_elapsedTime);
     }

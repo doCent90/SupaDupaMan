@@ -10,47 +10,36 @@ public class Enemy : MonoBehaviour
     [SerializeField] private bool _isGigant;
     [Header("Emoji Particals")]
     [SerializeField] private ParticleSystem _emoji;
-    [SerializeField] private ParticleSystem _emojiLaugh;
 
     private EnemyMover _mover;
+    private StartGame _startGame;
     private Vector4 _currentColor;
-    private Vector4 _targetColor = Color.black;
     private ParticleSystem[] _particalFX;
     private SkinnedMeshRenderer _renderer;
     private EnemyParticals _enemyParticals;
     private CapsuleCollider _capsuleCollider;
     private SkinnedMeshRenderer _meshRenderer;
+    private Vector4 _targetColor = Color.black;
 
-    private bool _hasInvisible = false;
     private float _hitPoints;
 
     private const float StandartHitPoints = 1f;
     private const float Multiply = 2f;
 
     public event UnityAction Died;
+    public event UnityAction Damaged;
     public event UnityAction<Transform> TargetLocked;
 
     public bool IsGigant => _isGigant;
 
     public void TakeDamage(float damage)
     {
-        if (!_hasInvisible)
-        {
-            _hitPoints = !_isGigant? (_hitPoints -= damage) : (_hitPoints -= damage / Multiply);
-        }
+        _hitPoints = !_isGigant ? (_hitPoints -= damage) : (_hitPoints -= damage / Multiply);
+        _mover.enabled = false;
 
+        Damaged?.Invoke();
         ChangeColor();
         Die();
-    }
-
-    public void SetTempInvisible(bool hasInvis)
-    {
-        _hasInvisible = hasInvis;
-
-        if (_hasInvisible)
-            _emojiLaugh.Play();
-        else
-            _emojiLaugh.Stop();
     }
 
     public Enemy GetEnemy()
@@ -65,7 +54,7 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
-        if (!_hasInvisible && _hitPoints <= 0)
+        if (_hitPoints <= 0)
         {
             enabled = false;
 
@@ -73,7 +62,7 @@ public class Enemy : MonoBehaviour
             SetDieMaterial();
 
             PlayFX();
-            _mover.enabled = true;
+            _mover.enabled = false;
 
             _emoji.Stop();
             _capsuleCollider.enabled = false;
@@ -97,6 +86,7 @@ public class Enemy : MonoBehaviour
     private void OnEnable()
     {
         _mover = GetComponent<EnemyMover>();
+        _startGame = FindObjectOfType<StartGame>();
         _capsuleCollider = GetComponent<CapsuleCollider>();
         _enemyParticals = GetComponentInChildren<EnemyParticals>();
         _meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
@@ -105,12 +95,23 @@ public class Enemy : MonoBehaviour
         _particalFX = _enemyParticals.GetComponentsInChildren<ParticleSystem>();
 
         _currentColor = _meshRenderer.material.color;
-
         _hitPoints = StandartHitPoints;
+
+        _startGame.Started += EnableMover;
+    }
+
+    private void OnDisable()
+    {
+        _startGame.Started -= EnableMover;
     }
 
     private void SetDieMaterial()
     {
         _renderer.material = _dieMaterial;
+    }
+
+    private void EnableMover()
+    {
+        _mover.enabled = true;
     }
 }

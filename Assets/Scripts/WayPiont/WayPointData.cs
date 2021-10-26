@@ -3,8 +3,8 @@ using UnityEngine.Events;
 
 public class WayPointData : MonoBehaviour
 {
-    private Environments _platform;
     private Transform _transform;
+    private Environments _platform;
     private Transform _cubePosition;
 
     public event UnityAction<Transform, Transform> Clicked;
