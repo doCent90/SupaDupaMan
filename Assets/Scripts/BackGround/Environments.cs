@@ -11,13 +11,14 @@ public class Environments : MonoBehaviour
     private PlatformSwitcher _nextPlatform;
 
     private const float Duration = 1f;
-    private const float Distance = -256f;
+    private const float DistanceLastPlatfom = -241f;
+    private const float DistanceStandartPlatform = -256f;
 
     public bool IsLastPlatform => _isLastPlatform;
 
     public void MoveDown()
     {
-        transform.DOMoveY(Distance, Duration);
+        transform.DOMoveY(DistanceLastPlatfom, Duration);
     }
 
     private void OnEnable()
@@ -37,8 +38,15 @@ public class Environments : MonoBehaviour
         _nextPlatform.Switched -= SetColor;
     }
 
+    private void DropDownPlatform()
+    {
+        transform.DOMoveY(DistanceStandartPlatform, Duration);
+    }
+
     private void SetColor()
     {
         _mesh.material = _targetMaterial;
+        if (!_isLastPlatform)
+            DropDownPlatform();
     }
 }

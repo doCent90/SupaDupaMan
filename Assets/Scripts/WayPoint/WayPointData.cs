@@ -3,6 +3,8 @@ using UnityEngine.Events;
 
 public class WayPointData : MonoBehaviour
 {
+    [SerializeField] private SphereCollider _sphereCollider;
+
     private Transform _transform;
     private Environments _platform;
     private Transform _cubePosition;
@@ -11,9 +13,9 @@ public class WayPointData : MonoBehaviour
 
     public void SetTransformWayPoint()
     {
-        Debug.Log("Popal");
         Clicked?.Invoke(_transform, _cubePosition);
         _platform.GetComponent<BoxCollider>().enabled = false;
+        _sphereCollider.gameObject.SetActive(false);
     }
 
     private void OnEnable()

@@ -37,6 +37,7 @@ public class Lasers : MonoBehaviour
         foreach (var enemy in _enemies)
         {
             enemy.TargetLocked += AimTarget;
+            enemy.Died += Stop;
         }
     }
 
@@ -53,6 +54,7 @@ public class Lasers : MonoBehaviour
         foreach (var enemy in _enemies)
         {
             enemy.TargetLocked -= AimTarget;
+            enemy.Died += Stop;
         }
     }
 

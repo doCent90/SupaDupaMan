@@ -3090,6 +3090,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OverHeatBar
       objectReference: {fileID: 0}
+    - target: {fileID: 5400753562503257230, guid: a81418ec7b8efcb4d9dea09709d79cee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5400753562503257231, guid: a81418ec7b8efcb4d9dea09709d79cee, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

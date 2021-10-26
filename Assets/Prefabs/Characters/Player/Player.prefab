@@ -447,8 +447,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8627085180578044914}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 11.01, z: -28.25}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 8648940458143978704}
@@ -580,6 +580,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 848704765362772953}
     m_Modifications:
+    - target: {fileID: 138039969019363681, guid: 66d4078f3b4500d47ac2be2c2070824f, type: 3}
+      propertyPath: _laser
+      value: 
+      objectReference: {fileID: 733844084931129268}
     - target: {fileID: 2920630240887227644, guid: 66d4078f3b4500d47ac2be2c2070824f, type: 3}
       propertyPath: m_Name
       value: Main Camera

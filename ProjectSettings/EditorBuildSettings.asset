@@ -17,4 +17,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartApp.unity
     guid: a2b802d4526944a4ab2825a8914ce4e7
+  - enabled: 1
+    path: Assets/Materials/JMO Assets/Toony Colors Pro/Demo TCP2/Demo_TCP2_PBS.unity
+    guid: cddbaad2f2b3a2c48995e0f94f2d153d
+  - enabled: 1
+    path: Assets/Materials/JMO Assets/Toony Colors Pro/Demo TCP2/Demo_TCP2_ShaderGenerator_2.unity
+    guid: 403aff623a60ffe4b9e86caf327ef4ed
+  - enabled: 1
+    path: Assets/Materials/JMO Assets/Toony Colors Pro/Demo TCP2/Demo_TCP2_Cat.unity
+    guid: 3de8f1d1afbc14d439030a90d1dc96d0
+  - enabled: 1
+    path: Assets/Materials/JMO Assets/Toony Colors Pro/Demo TCP2/Demo_TCP2_ShaderGenerator.unity
+    guid: 870492dbe5aadc940b9d0bdd091eec76
+  - enabled: 1
+    path: Assets/Materials/JMO Assets/Toony Colors Pro/Demo TCP2/Demo_TCP2_Hybrid_Shader.unity
+    guid: 08a39a799bcbaa64294374f763bf802b
   m_configObjects: {}
