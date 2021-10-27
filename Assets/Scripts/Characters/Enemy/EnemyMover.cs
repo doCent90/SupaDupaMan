@@ -4,15 +4,18 @@ using DG.Tweening;
 public class EnemyMover : MonoBehaviour
 {
     private Vector3 _targetPosition;
+    private Vector3 _originalPosition;
     private bool _onTargetPosition = false;
 
-    private const float Range = 0.4f;
+    private const float Range = 10f;
     private const float Duration = 0.2f;
-    private const float Speed = 0.4f;
+    private const float Speed = 4f;
     private const int Multiply = 100;
+    private const int Decrease = 8;
 
     private void OnEnable()
     {
+        _originalPosition = transform.localPosition;
         _targetPosition = GetPosition();
     }
 
@@ -29,7 +32,7 @@ public class EnemyMover : MonoBehaviour
         {
             _onTargetPosition = false;
             _targetPosition = GetPosition();
-            targetLookPoint = transform.position + new Vector3(_targetPosition.x, 0, _targetPosition.z) * Multiply;
+            targetLookPoint = transform.localPosition + new Vector3(_targetPosition.x, 0, _targetPosition.z) * Multiply;
             LookAtPoint(targetLookPoint);
         }
 
@@ -47,7 +50,7 @@ public class EnemyMover : MonoBehaviour
         x = Random.Range(-Range, Range);
         z = Random.Range(-Range, Range);
 
-        Vector3 targetPosition = new Vector3(x, transform.localPosition.y, z);
+        Vector3 targetPosition = new Vector3(x, _originalPosition.y, z / Decrease);
         return targetPosition;
     }
 

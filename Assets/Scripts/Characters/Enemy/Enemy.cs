@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
     private float _hitPoints;
 
     private const float StandartHitPoints = 1f;
-    private const float Multiply = 2f;
+    private const float Multiply = 1.3f;
 
     public event UnityAction Died;
     public event UnityAction Damaged;

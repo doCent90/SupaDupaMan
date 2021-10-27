@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7377432423586201375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7249155473742958347}
@@ -109,8 +109,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8442623690604886364}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
   - {fileID: 6769804514553175695}
   - {fileID: 2077401724029373692}
@@ -133,148 +133,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
-  m_WarningMessage: '
-
-    Transform ''mixamorig:LeftToeBase'' has been deleted
-
-    Transform
-    ''mixamorig:LeftFoot'' has been deleted
-
-    Transform ''mixamorig:LeftLeg''
-    has been deleted
-
-    Transform ''mixamorig:LeftUpLeg'' has been deleted
-
-    Transform
-    ''mixamorig:RightToeBase'' has been deleted
-
-    Transform ''mixamorig:RightFoot''
-    has been deleted
-
-    Transform ''mixamorig:RightLeg'' has been deleted
-
-    Transform
-    ''mixamorig:RightUpLeg'' has been deleted
-
-    Transform ''mixamorig:LeftHandIndex3''
-    has been deleted
-
-    Transform ''mixamorig:LeftHandIndex2'' has been deleted
-
-    Transform
-    ''mixamorig:LeftHandIndex1'' has been deleted
-
-    Transform ''mixamorig:LeftHandMiddle3''
-    has been deleted
-
-    Transform ''mixamorig:LeftHandMiddle2'' has been deleted
-
-    Transform
-    ''mixamorig:LeftHandMiddle1'' has been deleted
-
-    Transform ''mixamorig:LeftHandPinky3''
-    has been deleted
-
-    Transform ''mixamorig:LeftHandPinky2'' has been deleted
-
-    Transform
-    ''mixamorig:LeftHandPinky1'' has been deleted
-
-    Transform ''mixamorig:LeftHandRing3''
-    has been deleted
-
-    Transform ''mixamorig:LeftHandRing2'' has been deleted
-
-    Transform
-    ''mixamorig:LeftHandRing1'' has been deleted
-
-    Transform ''mixamorig:LeftHandThumb3''
-    has been deleted
-
-    Transform ''mixamorig:LeftHandThumb2'' has been deleted
-
-    Transform
-    ''mixamorig:LeftHandThumb1'' has been deleted
-
-    Transform ''mixamorig:LeftHand''
-    has been deleted
-
-    Transform ''mixamorig:LeftForeArm'' has been deleted
-
-    Transform
-    ''mixamorig:LeftArm'' has been deleted
-
-    Transform ''mixamorig:LeftShoulder''
-    has been deleted
-
-    Transform ''mixamorig:Head'' has been deleted
-
-    Transform
-    ''mixamorig:Neck'' has been deleted
-
-    Transform ''mixamorig:RightHandIndex3''
-    has been deleted
-
-    Transform ''mixamorig:RightHandIndex2'' has been deleted
-
-    Transform
-    ''mixamorig:RightHandIndex1'' has been deleted
-
-    Transform ''mixamorig:RightHandMiddle3''
-    has been deleted
-
-    Transform ''mixamorig:RightHandMiddle2'' has been deleted
-
-    Transform
-    ''mixamorig:RightHandMiddle1'' has been deleted
-
-    Transform ''mixamorig:RightHandPinky3''
-    has been deleted
-
-    Transform ''mixamorig:RightHandPinky2'' has been deleted
-
-    Transform
-    ''mixamorig:RightHandPinky1'' has been deleted
-
-    Transform ''mixamorig:RightHandRing3''
-    has been deleted
-
-    Transform ''mixamorig:RightHandRing2'' has been deleted
-
-    Transform
-    ''mixamorig:RightHandRing1'' has been deleted
-
-    Transform ''mixamorig:RightHandThumb3''
-    has been deleted
-
-    Transform ''mixamorig:RightHandThumb2'' has been deleted
-
-    Transform
-    ''mixamorig:RightHandThumb1'' has been deleted
-
-    Transform ''mixamorig:RightHand''
-    has been deleted
-
-    Transform ''mixamorig:RightForeArm'' has been deleted
-
-    Transform
-    ''mixamorig:RightArm'' has been deleted
-
-    Transform ''mixamorig:RightShoulder''
-    has been deleted
-
-    Transform ''mixamorig:Spine2'' has been deleted
-
-    Transform
-    ''mixamorig:Spine1'' has been deleted
-
-    Transform ''mixamorig:Spine'' has
-    been deleted
-
-    Transform ''mixamorig:Hips'' has been deleted
-
-    Transform
-    ''Armature'' has been deleted'
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -302,12 +161,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8442623690604886364}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.3086159
-  m_Height: 1.9926172
+  m_IsTrigger: 0
+  m_Enabled: 0
+  m_Radius: 0.35305044
+  m_Height: 1.3142908
   m_Direction: 1
-  m_Center: {x: -0.007445723, y: 0.7294299, z: 0}
+  m_Center: {x: 0.036988854, y: 0.64937943, z: 0}
 --- !u!114 &1228147996592164860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,7 +194,6 @@ MonoBehaviour:
   _dieMaterial: {fileID: 2100000, guid: c8eb020621a62b941bd37ce4a7ae4914, type: 2}
   _isGigant: 1
   _emoji: {fileID: 3316967249714486086}
-  _emojiLaugh: {fileID: 7242703369009178163}
 --- !u!114 &2733481612470500236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,7 +206,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a806badfacf9d547adaa458174467c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isLastQueuEnemy: 1
 --- !u!114 &5303755160945898163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,7 +218,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d884667b3db6244a26a2e7505c0f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetMaterial: {fileID: 2100000, guid: 6e5e1e43e57c12545bbf2e3360e2b9ca, type: 2}
 --- !u!1001 &3301212819279120348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -383,7 +239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1658070841978270727, guid: f7033ba0462a5c943baa20c261524bb8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.675
+      value: 0.418
       objectReference: {fileID: 0}
     - target: {fileID: 1658070841978270727, guid: f7033ba0462a5c943baa20c261524bb8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -437,18 +293,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 143880, guid: 579f4fdf289cbd14e893e6bdc258ec64, type: 3}
       propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 454462, guid: 579f4fdf289cbd14e893e6bdc258ec64, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 454462, guid: 579f4fdf289cbd14e893e6bdc258ec64, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 454462, guid: 579f4fdf289cbd14e893e6bdc258ec64, type: 3}
-      propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 454462, guid: 579f4fdf289cbd14e893e6bdc258ec64, type: 3}
@@ -586,11 +430,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 430288, guid: 09d9de58ef3bf5444ac94afa0e6013cb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.465
       objectReference: {fileID: 0}
     - target: {fileID: 430288, guid: 09d9de58ef3bf5444ac94afa0e6013cb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 430288, guid: 09d9de58ef3bf5444ac94afa0e6013cb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -691,6 +535,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4427180982569280, guid: b369efb4abe69e044890b664115fab9e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.441
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427180982569280, guid: b369efb4abe69e044890b664115fab9e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
@@ -722,7 +570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1028507206187210, guid: 28765ba8fe1d7654aaf05bc05d3757bd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4675099540735748, guid: 28765ba8fe1d7654aaf05bc05d3757bd, type: 3}
       propertyPath: m_RootOrder
@@ -745,10 +593,5 @@ PrefabInstance:
 --- !u!4 &7372766292019049073 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4675099540735748, guid: 28765ba8fe1d7654aaf05bc05d3757bd, type: 3}
-  m_PrefabInstance: {fileID: 7368390484327052661}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &7242703369009178163 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198871194026349382, guid: 28765ba8fe1d7654aaf05bc05d3757bd, type: 3}
   m_PrefabInstance: {fileID: 7368390484327052661}
   m_PrefabAsset: {fileID: 0}

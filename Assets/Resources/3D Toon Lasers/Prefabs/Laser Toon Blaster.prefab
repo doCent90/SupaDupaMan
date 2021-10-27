@@ -48931,7 +48931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7c107ae524aed749b3de3034023eb9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserScale: 1
+  laserScale: 0.5
   laserColor: {r: 0.16470587, g: 0.25115097, b: 1, a: 1}
   HitEffect: {fileID: 1293882999492180}
   FlashEffect: {fileID: 1968987440525538}

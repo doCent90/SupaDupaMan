@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class LaserParticalCollisions : MonoBehaviour
 {
-    private readonly float _damage = 0.01f;
+    private readonly float _damage = 0.02f;
 
     private void OnParticleCollision(GameObject collision)
     {

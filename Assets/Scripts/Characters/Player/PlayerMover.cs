@@ -2,11 +2,9 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Player))]
 public class PlayerMover : MonoBehaviour
 {
-    private Transform _platform;
-    private Lasers[] _laserActivators;
+    private Transform _aimPoint;
     private WayPointData[] _wayPoints;
 
     private const float Duration = 0.5f;
@@ -26,12 +24,6 @@ public class PlayerMover : MonoBehaviour
     private void OnEnable()
     {
         _wayPoints = FindObjectsOfType<WayPointData>();
-        _laserActivators = GetComponentsInChildren<Lasers>();
-
-        foreach (var laser in _laserActivators)
-        {
-            laser.enabled = false;
-        }
 
         foreach (var point in _wayPoints)
         {
@@ -42,11 +34,6 @@ public class PlayerMover : MonoBehaviour
     private void OnDisable()
     {
         Moved?.Invoke(false);
-
-        foreach (var laser in _laserActivators)
-        {
-            laser.enabled = true;
-        }
 
         foreach (var point in _wayPoints)
         {
@@ -59,10 +46,10 @@ public class PlayerMover : MonoBehaviour
         RotateCamera();
     }
 
-    private void Move(Transform wayPoint, Transform platform)
+    private void Move(Transform wayPoint, Transform aimPoint)
     {
         Moved?.Invoke(true);
-        _platform = platform;
+        _aimPoint = aimPoint;
 
         var tweenMove = transform.DOMove(wayPoint.position, Duration);
         tweenMove.SetEase(Ease.InOutSine);
@@ -71,10 +58,8 @@ public class PlayerMover : MonoBehaviour
 
     private void LookAtPlatform()
     {
-        var tweenRotate = transform.DOLookAt(_platform.position, Duration / 2);
+        var tweenRotate = transform.DOLookAt(_aimPoint.position, Duration / 2);
         tweenRotate.SetEase(Ease.InOutSine);
-
-        DisableMover();
     }
 
     private void RotateCamera()
@@ -87,10 +72,5 @@ public class PlayerMover : MonoBehaviour
 
         if(Input.GetMouseButton(0))
             transform.localEulerAngles += new Vector3(y, x, 0);
-    }
-
-    private void DisableMover()
-    {
-        enabled = false;
     }
 }

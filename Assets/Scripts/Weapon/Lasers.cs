@@ -7,17 +7,17 @@ public class Lasers : MonoBehaviour
     [SerializeField] private int _laserNumber;
     [SerializeField] private GameObject[] _lasers;
     [SerializeField] private GameObject _rayCast;
-    [SerializeField] private GameObject _aim;
     [Header("Settings of Shot")]
     [SerializeField] private Transform _shootPosition;
 
     private Enemy[] _enemies;
+    private Hovl_Laser2 _reset;
+    private GameObject _instance;
+    private PlayerMover _playerMover;
 
     private bool _isOverHeated = false;
     private bool _isReady = false;
 
-    private GameObject _instance;
-    private Hovl_Laser2 _reset;
 
     private const float Delay = 0.3f;
 
@@ -28,11 +28,11 @@ public class Lasers : MonoBehaviour
     private void OnEnable()
     {
         _enemies = FindObjectsOfType<Enemy>();
+        _playerMover = GetComponentInParent<PlayerMover>();
 
         ReadyToAttacked?.Invoke(true);
 
         _rayCast.SetActive(false);
-        _aim.SetActive(true);
 
         foreach (var enemy in _enemies)
         {
@@ -49,7 +49,6 @@ public class Lasers : MonoBehaviour
         Fired?.Invoke(false);
 
         _rayCast.SetActive(false);
-        _aim.SetActive(false);
 
         foreach (var enemy in _enemies)
         {
@@ -60,9 +59,9 @@ public class Lasers : MonoBehaviour
 
     private void AimTarget(Transform target)
     {
-        enabled = true;
-        _shootPosition.LookAt(target);
         _isReady = true;
+
+        _shootPosition.LookAt(target);
         Attack();
     }
 
@@ -78,6 +77,7 @@ public class Lasers : MonoBehaviour
     {
         if (_isReady)
         {
+            _playerMover.enabled = false;
             Destroy(_instance);
             _instance = Instantiate(_lasers[_laserNumber], _rayCast.transform.position, _rayCast.transform.rotation);
             _reset = _instance.GetComponent<Hovl_Laser2>();
@@ -93,15 +93,18 @@ public class Lasers : MonoBehaviour
         if (_reset)
             _reset.DisablePrepare();
 
+        _playerMover.enabled = true;
         _rayCast.SetActive(false);
         Fired?.Invoke(false);
         Destroy(_instance, Delay);
     }
 
     private void Deactivate()
-    {
+    {     
         if (!_isReady)
         {
+            _playerMover.enabled = true;
+
             if (_reset)
                 _reset.DisablePrepare();
 

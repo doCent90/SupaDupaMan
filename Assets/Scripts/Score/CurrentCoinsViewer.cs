@@ -14,7 +14,7 @@ public class CurrentCoinsViewer : MonoBehaviour
     private void OnEnable()
     {
         _coinScaler = GetComponentInChildren<CoinScaler>();
-        _coinsTxt = GetComponent<TMP_Text>();
+        _coinsTxt = GetComponentInChildren<TMP_Text>();
 
         _coinScaler.Rewarded += AddCoin;
     }

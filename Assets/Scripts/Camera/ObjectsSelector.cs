@@ -5,15 +5,12 @@ public class ObjectsSelector : MonoBehaviour
     [SerializeField] private Lasers _laser;
 
     private Camera _camera;
-    private PlayerMover _playerMover;
 
     private bool _isFired = false;
 
     private void OnEnable()
     {
         _camera = GetComponent<Camera>();
-        _playerMover = GetComponentInParent<PlayerMover>();
-
         _laser.Fired += OnLaserFired;
     }
 
@@ -35,7 +32,7 @@ public class ObjectsSelector : MonoBehaviour
 
     private void SelectPlatform()
     {
-        if (Input.GetMouseButtonDown(0) && _playerMover.enabled && !_isFired)
+        if (Input.GetMouseButtonDown(0) && !_isFired)
         {
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
 
@@ -44,7 +41,7 @@ public class ObjectsSelector : MonoBehaviour
             {
                 if (hit.collider != null)
                 {
-                    if (hit.collider)
+                    if (hit.collider && hit.collider.TryGetComponent(out WayPoint wayPoint))
                         hit.collider.GetComponentInParent<WayPointData>().SetTransformWayPoint();
                 }
             }
@@ -53,7 +50,7 @@ public class ObjectsSelector : MonoBehaviour
 
     private void SelectEnemy()
     {
-        if (Input.GetMouseButtonDown(0) && !_playerMover.enabled && !_isFired)
+        if (Input.GetMouseButtonDown(0) && !_isFired)
         {
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
 

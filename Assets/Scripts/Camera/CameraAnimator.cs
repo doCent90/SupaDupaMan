@@ -4,9 +4,10 @@ using DG.Tweening;
 
 public class CameraAnimator : MonoBehaviour
 {
-    private Transform _camera;
-    private Vector3 _originalPosition;
     private Lasers _lasers;
+    private Enemy[] _enemies;
+    private Transform _position;
+    private Vector3 _originalPosition;
 
     private bool _isAttack;
 
@@ -26,12 +27,18 @@ public class CameraAnimator : MonoBehaviour
     private void OnEnable()
     {
         _lasers = FindObjectOfType<Lasers>();
-        _camera = GetComponent<Transform>();
+        _enemies = FindObjectsOfType<Enemy>();
+        _position = GetComponent<Transform>();
 
-        _originalPosition = _camera.transform.localEulerAngles;
+        _originalPosition = _position.transform.localEulerAngles;
 
         _lasers.Fired += ShakeTransform;
         _isAttack = false;
+
+        foreach (var enemy in _enemies)
+        {
+            enemy.Died += OnEmeyDied;
+        }
 
         PlayIdle();
     }
@@ -39,6 +46,11 @@ public class CameraAnimator : MonoBehaviour
     private void OnDisable()
     {
         _lasers.Fired -= ShakeTransform;
+
+        foreach (var enemy in _enemies)
+        {
+            enemy.Died -= OnEmeyDied;
+        }
     }
 
     private void ShakeTransform(bool isAttack)
@@ -65,11 +77,11 @@ public class CameraAnimator : MonoBehaviour
             y = Random.Range(-Range, Range);
             z = Random.Range(-Range, Range);
 
-            _camera.localEulerAngles += new Vector3(x, y, z);
+            _position.localEulerAngles += new Vector3(x, y, z);
             yield return waitForSecond;
         }
 
-        _camera.localEulerAngles = _originalPosition;
+        _position.localEulerAngles = _originalPosition;
     }
 
     private void PlayIdle()
@@ -92,5 +104,10 @@ public class CameraAnimator : MonoBehaviour
         var tweenResetPosition = transform.DOLocalRotate(_originalPosition, Duration);
         tweenResetPosition.SetEase(Ease.InOutSine);
         tweenResetPosition.OnComplete(PlayIdle);
+    }
+
+    private void OnEmeyDied()
+    {
+        StopShake();
     }
 }
