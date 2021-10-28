@@ -20,7 +20,7 @@ public class Lasers : MonoBehaviour
     private bool _isOverHeated = false;
     private bool _isReady = false;
 
-    private const float Duration = 0.8f;
+    private const float Duration = 1.5f;
     private const float Delay = 0.3f;
     private const float Euler = 2f;
 

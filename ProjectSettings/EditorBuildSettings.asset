@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Resources/FPS Hands/FPS_Demo_Scene.unity
     guid: dcbda6c3880c06d4a87f308e153a7e0b
   - enabled: 1
-    path: Assets/Resources/GUI Kit Casual Game/Scenes/DemoScene.unity
-    guid: 78addc77d730f4f38a4a7d5e73530376
-  - enabled: 1
     path: Assets/Scenes/StartApp.unity
     guid: a2b802d4526944a4ab2825a8914ce4e7
   - enabled: 1
@@ -32,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Materials/JMO Assets/Toony Colors Pro/Demo TCP2/Demo_TCP2_Hybrid_Shader.unity
     guid: 08a39a799bcbaa64294374f763bf802b
+  - enabled: 1
+    path: Assets/Resources/BattleRoyaleDuoPAPBR/Scene/MainScene.unity
+    guid: 6f8c7925d48698e48b6b2b5d670dbcf0
   m_configObjects: {}
