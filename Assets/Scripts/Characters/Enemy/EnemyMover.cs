@@ -5,18 +5,22 @@ public class EnemyMover : MonoBehaviour
 {
     private Vector3 _targetPosition;
     private Vector3 _originalPosition;
+
+    private int _direction;
     private bool _onTargetPosition = false;
 
-    private const float Range = 10f;
+    private const float RangeMax = 20f;
+    private const float RangeMin = 10f;
     private const float Duration = 0.2f;
     private const float Speed = 4f;
     private const int Multiply = 100;
-    private const int Decrease = 8;
 
     private void OnEnable()
     {
         _originalPosition = transform.localPosition;
         _targetPosition = GetPosition();
+
+        _direction = Random.Range(0, 2);
     }
 
     private void Update()
@@ -44,13 +48,15 @@ public class EnemyMover : MonoBehaviour
 
     private Vector3 GetPosition()
     {
+        _direction++;
         float x;
-        float z;
 
-        x = Random.Range(-Range, Range);
-        z = Random.Range(-Range, Range);
+        if(_direction % 2 == 0)
+            x = Random.Range(RangeMin, RangeMax);
+        else
+            x = Random.Range(RangeMin, RangeMax) * -1;
 
-        Vector3 targetPosition = new Vector3(x, _originalPosition.y, z / Decrease);
+        Vector3 targetPosition = new Vector3(x, _originalPosition.y, _originalPosition.z);
         return targetPosition;
     }
 
