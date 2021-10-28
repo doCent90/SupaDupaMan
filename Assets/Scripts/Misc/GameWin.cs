@@ -1,4 +1,5 @@
 using UnityEngine;
+using DG.Tweening;
 
 public class GameWin : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class GameWin : MonoBehaviour
     private void OnDisable()
     {
         _enemy.Died -= OnEnemyDied;
+        DOTween.Clear();
     }
 
     private void OnEnemyDied()
