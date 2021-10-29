@@ -48,8 +48,26 @@ public class AimLineRenderer : MonoBehaviour
             {
                 _aimPrefab.GetComponent<SpriteRenderer>().enabled = true;
                 _aimPrefab.transform.position = hit.point + hit.normal;
-                //_aimPrefab.transform.rotation = Quaternion.identity;
+                
+
+                var spriteRenderer = _aimPrefab.GetComponent<SpriteRenderer>();
+
+                if (hit.collider.TryGetComponent(out Enemy enemy))
+                {
+                    spriteRenderer.color = Color.red;
+                    _aimPrefab.transform.rotation = new Quaternion(_aimPrefab.transform.rotation.x, transform.position.y,
+                        transform.rotation.z, _aimPrefab.transform.rotation.w);
+                }
+                else
+                {
+                    spriteRenderer.color = Color.green;
+                    _aimPrefab.transform.rotation = new Quaternion(hit.transform.rotation.x * 90, transform.rotation.y * 90,
+                        _aimPrefab.transform.rotation.z, _aimPrefab.transform.rotation.w);
+                }
+                    
             }
+            else
+                _aimPrefab.GetComponent<SpriteRenderer>().enabled = false;
         }
         else
             _aimPrefab.GetComponent<SpriteRenderer>().enabled = false;

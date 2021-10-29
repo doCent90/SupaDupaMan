@@ -7,7 +7,7 @@ public class PlayerMover : MonoBehaviour
     private Enemy[] _enemies;
 
     private const float Duration = 0.5f;
-    private const float Distance = 50f;
+    private const float Distance = 70f;
 
     public bool IsLastWayPoint { get; private set; }
     public bool HasCurrentPositions { get; private set; }
@@ -36,7 +36,7 @@ public class PlayerMover : MonoBehaviour
         {
             float distance = Vector3.Distance(enemy.transform.position, transform.position);
 
-            if (distance <= Distance)
+            if (distance < Distance && enemy.enabled)
                 lookAtPoint = enemy.transform.position;
         }
 

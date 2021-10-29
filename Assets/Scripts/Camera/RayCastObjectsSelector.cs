@@ -3,9 +3,11 @@ using UnityEngine;
 [RequireComponent(typeof(AimLineRenderer))]
 public class RayCastObjectsSelector : MonoBehaviour
 {
+    [SerializeField] private SpriteRenderer _aimSpriteRenderer;
     [SerializeField] private Lasers _laser;
 
-    private AimLineRenderer _lineRenderer;
+    private AimLineRenderer _aimLineRenderer;
+    private LineRenderer _lineRenderer;
     private PlayerMover _playerMover;
     private bool _isFired = false;
 
@@ -13,17 +15,22 @@ public class RayCastObjectsSelector : MonoBehaviour
 
     private void OnEnable()
     {
+        _lineRenderer = GetComponent<LineRenderer>();
         _playerMover = GetComponentInParent<PlayerMover>();
-        _lineRenderer = GetComponent<AimLineRenderer>();
+        _aimLineRenderer = GetComponent<AimLineRenderer>();
 
-        _lineRenderer.enabled = true;
+        _aimLineRenderer.enabled = true;
+
+        _playerMover.Moved += OnMoved;
         _laser.Fired += OnLaserFired;
     }
 
     private void OnDisable()
     {
-        _lineRenderer.enabled = false;
-        _laser.Fired += OnLaserFired;
+        _aimLineRenderer.enabled = false;
+
+        _playerMover.Moved -= OnMoved;
+        _laser.Fired -= OnLaserFired;
     }
 
     private void Update()
@@ -35,6 +42,18 @@ public class RayCastObjectsSelector : MonoBehaviour
     private void OnLaserFired(bool isFired)
     {
         _isFired = isFired;
+
+        if (isFired)
+        {
+            _lineRenderer.enabled = false;
+            _aimSpriteRenderer.enabled = false;
+        }
+    }
+
+    private void OnMoved(bool isMoving)
+    {
+        if(isMoving)
+            _aimSpriteRenderer.enabled = false;
     }
 
     private void SelectPlaceMove()

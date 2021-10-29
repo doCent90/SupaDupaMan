@@ -16,8 +16,8 @@ public class Lasers : MonoBehaviour
     private GameObject _instance;
     private PlayerMover _playerMover;
     private Vector3 _originalPosition;
+    private Transform _aimPoint;
 
-    private bool _isOverHeated = false;
     private bool _isReady = false;
 
     private const float Duration = 1.5f;
@@ -57,22 +57,25 @@ public class Lasers : MonoBehaviour
         foreach (var enemy in _enemies)
         {
             enemy.TargetLocked -= AimTarget;
-            enemy.Died += Stop;
+            enemy.Died -= Stop;
         }
     }
 
-    private void AimTarget(Transform target)
+    private void AimTarget(Transform aimPoint)
     {
         _isReady = true;
+        _aimPoint = aimPoint;
 
-        _shootPosition.LookAt(target);
         Attack();
     }
 
     private void Attack()
     {   
-        if(!_isOverHeated && _isReady)
+        if(_isReady)
+        {
             Activate();
+            RotateShootPosition();
+        }
 
         Deactivate();
     }
@@ -86,7 +89,6 @@ public class Lasers : MonoBehaviour
             _instance = Instantiate(_lasers[_laserNumber], _rayCast.transform.position, _rayCast.transform.rotation);
             _reset = _instance.GetComponent<Hovl_Laser2>();
 
-            RotateShootPosition();
             _rayCast.SetActive(true);
             Fired?.Invoke(true);
             Shoted?.Invoke();
@@ -109,6 +111,7 @@ public class Lasers : MonoBehaviour
         if (!_isReady)
         {
             _playerMover.enabled = true;
+            ResetPosition();
 
             if (_reset)
                 _reset.DisablePrepare();
@@ -121,13 +124,8 @@ public class Lasers : MonoBehaviour
 
     private void RotateShootPosition()
     {
-        var tweeRotate = _shootPosition.DOLocalRotate
-            (new Vector3(-Euler, _shootPosition.localEulerAngles.y, _shootPosition.localEulerAngles.z), Duration);
-        tweeRotate.SetEase(Ease.InOutSine);
-        var tweenRotateLaser = _instance.transform.DOLocalRotate
-            (new Vector3(-Euler, _instance.transform.localEulerAngles.y, _instance.transform.localEulerAngles.z), Duration);
-
-        tweeRotate.OnComplete(ResetPosition);
+        _shootPosition.LookAt(_aimPoint);
+        _instance.transform.LookAt(_aimPoint);
     }
 
     private void ResetPosition()

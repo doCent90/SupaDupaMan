@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     private StartGame _startGame;
     private Vector4 _currentColor;
     private ParticleSystem[] _particalFX;
+    private ShotPointCharacter _shotPoint;
     private SkinnedMeshRenderer _renderer;
     private EnemyParticals _enemyParticals;
     private CapsuleCollider _capsuleCollider;
@@ -49,7 +50,9 @@ public class Enemy : MonoBehaviour
 
     public void LockTarget()
     {
-        TargetLocked?.Invoke(transform);
+        var shotPoint = _shotPoint.transform;
+
+        TargetLocked?.Invoke(shotPoint);
     }
 
     private void Die()
@@ -88,6 +91,7 @@ public class Enemy : MonoBehaviour
         _mover = GetComponent<EnemyMover>();
         _startGame = FindObjectOfType<StartGame>();
         _capsuleCollider = GetComponent<CapsuleCollider>();
+        _shotPoint = GetComponentInChildren<ShotPointCharacter>();
         _enemyParticals = GetComponentInChildren<EnemyParticals>();
         _meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
 

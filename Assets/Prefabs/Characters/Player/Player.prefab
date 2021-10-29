@@ -2391,6 +2391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa062d4c2ebc55b4b98c7741c03fd6c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _aimSpriteRenderer: {fileID: 4073799630131481394}
   _laser: {fileID: 733844084931129268}
 --- !u!114 &7159700789899947910
 MonoBehaviour:
@@ -2399,7 +2400,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8368565071499803012}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26e06ae488abd7649975a8ee20df7885, type: 3}
   m_Name: 
