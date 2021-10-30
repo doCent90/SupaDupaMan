@@ -22,10 +22,10 @@ public class Enemy : MonoBehaviour
     private SkinnedMeshRenderer _meshRenderer;
     private Vector4 _targetColor = Color.black;
 
-    private float _hitPoints;
+    private float _elapsedTime;
+    private bool _isDamaged = false;
 
-    private const float StandartHitPoints = 1f;
-    private const float Multiply = 1.3f;
+    private const float Delay = 1f;
 
     public event UnityAction Died;
     public event UnityAction Damaged;
@@ -33,19 +33,13 @@ public class Enemy : MonoBehaviour
 
     public bool IsGigant => _isGigant;
 
-    public void TakeDamage(float damage)
+    public void TakeDamage()
     {
-        _hitPoints = !_isGigant ? (_hitPoints -= damage) : (_hitPoints -= damage / Multiply);
+        _elapsedTime = Delay;
         _mover.enabled = false;
+        _isDamaged = true;
 
         Damaged?.Invoke();
-        ChangeColor();
-        Die();
-    }
-
-    public Enemy GetEnemy()
-    {
-        return this;
     }
 
     public void LockTarget()
@@ -55,26 +49,37 @@ public class Enemy : MonoBehaviour
         TargetLocked?.Invoke(shotPoint);
     }
 
+    private void Update()
+    {
+        if (_isDamaged)
+        {
+            if (_elapsedTime <= 0)
+                Die();
+
+            _elapsedTime -= Time.deltaTime;
+            ChangeColor();
+        }
+        else
+            return;        
+    }
+
     private void Die()
     {
-        if (_hitPoints <= 0)
-        {
-            enabled = false;
+        enabled = false;
 
-            Died?.Invoke();
-            SetDieMaterial();
+        Died?.Invoke();
+        SetDieMaterial();
 
-            PlayFX();
-            _mover.enabled = false;
+        PlayFX();
+        _mover.enabled = false;
 
-            _emoji.Stop();
-            _capsuleCollider.enabled = false;
-        }
+        _emoji.Stop();
+        _capsuleCollider.enabled = false;
     }
 
     private void ChangeColor()
     {
-        _meshRenderer.material.color = Vector4.Lerp(_targetColor, _currentColor, _hitPoints);
+        _meshRenderer.material.color = Vector4.Lerp(_currentColor, _targetColor, _elapsedTime);
         _emoji.Play();
     }
 
@@ -99,7 +104,6 @@ public class Enemy : MonoBehaviour
         _particalFX = _enemyParticals.GetComponentsInChildren<ParticleSystem>();
 
         _currentColor = _meshRenderer.material.color;
-        _hitPoints = StandartHitPoints;
 
         _startGame.Started += EnableMover;
     }

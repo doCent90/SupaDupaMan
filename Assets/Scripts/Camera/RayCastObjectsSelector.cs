@@ -88,6 +88,7 @@ public class RayCastObjectsSelector : MonoBehaviour
                     {
                         hit.collider.TryGetComponent(out Enemy enemy);
                         enemy.LockTarget();
+                        enemy.TakeDamage();
                     }
                 }
             }

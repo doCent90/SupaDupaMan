@@ -3,7 +3,6 @@ using UnityEngine.Events;
 
 public class PlayerRotater : MonoBehaviour
 {
-
     private const string MouseX = "Mouse X";
     private const string MouseY = "Mouse Y";
 

@@ -5,9 +5,10 @@ using UnityEngine.Events;
 public class PlayerMover : MonoBehaviour
 {
     private Enemy[] _enemies;
+    private PlayerRotater _rotater;
 
     private const float Duration = 0.5f;
-    private const float Distance = 70f;
+    private const float Distance = 75f;
 
     public bool IsLastWayPoint { get; private set; }
     public bool HasCurrentPositions { get; private set; }
@@ -26,6 +27,15 @@ public class PlayerMover : MonoBehaviour
     private void OnEnable()
     {
         _enemies = FindObjectsOfType<Enemy>();
+        _rotater = GetComponent<PlayerRotater>();
+
+        _rotater.enabled = true;
+    }
+
+
+    private void OnDisable()
+    {
+        _rotater.enabled = false;
     }
 
     private void LookAtClosetstEnemy()

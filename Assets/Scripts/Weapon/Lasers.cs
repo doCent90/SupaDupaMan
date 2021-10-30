@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Events;
-using DG.Tweening;
 
 public class Lasers : MonoBehaviour
 {
@@ -12,7 +11,7 @@ public class Lasers : MonoBehaviour
     [SerializeField] private Transform _shootPosition;
 
     private Enemy[] _enemies;
-    private Hovl_Laser2 _reset;
+    private LaserRenderer2 _reset;
     private GameObject _instance;
     private PlayerMover _playerMover;
     private Vector3 _originalPosition;
@@ -20,9 +19,7 @@ public class Lasers : MonoBehaviour
 
     private bool _isReady = false;
 
-    private const float Duration = 1.5f;
-    private const float Delay = 0.3f;
-    private const float Euler = 2f;
+    private const float Delay = 0.6f;
 
     public event UnityAction<bool> ReadyToAttacked;
     public event UnityAction<bool> Fired;
@@ -73,8 +70,8 @@ public class Lasers : MonoBehaviour
     {   
         if(_isReady)
         {
-            Activate();
             RotateShootPosition();
+            Activate();
         }
 
         Deactivate();
@@ -87,7 +84,8 @@ public class Lasers : MonoBehaviour
             _playerMover.enabled = false;
             Destroy(_instance);
             _instance = Instantiate(_lasers[_laserNumber], _rayCast.transform.position, _rayCast.transform.rotation);
-            _reset = _instance.GetComponent<Hovl_Laser2>();
+            _instance.transform.LookAt(_aimPoint);
+            _reset = _instance.GetComponent<LaserRenderer2>();
 
             _rayCast.SetActive(true);
             Fired?.Invoke(true);
@@ -124,8 +122,7 @@ public class Lasers : MonoBehaviour
 
     private void RotateShootPosition()
     {
-        _shootPosition.LookAt(_aimPoint);
-        _instance.transform.LookAt(_aimPoint);
+        _shootPosition.LookAt(_aimPoint);        
     }
 
     private void ResetPosition()

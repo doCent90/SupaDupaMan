@@ -16,7 +16,7 @@ public class Hovl_DemoLasers : MonoBehaviour
 
     private int Prefab;
     private GameObject Instance;
-    private Hovl_Laser2 LaserScript2;
+    private LaserRenderer2 LaserScript2;
 
     //Double-click protection
     private float buttonSaver = 0f;
@@ -38,7 +38,7 @@ public class Hovl_DemoLasers : MonoBehaviour
             Destroy(Instance);
             Instance = Instantiate(Prefabs[Prefab], FirePoint.transform.position, FirePoint.transform.rotation);
             Instance.transform.parent = transform;
-            LaserScript2 = Instance.GetComponent<Hovl_Laser2>();
+            LaserScript2 = Instance.GetComponent<LaserRenderer2>();
         }
 
         //Disable lazer prefab

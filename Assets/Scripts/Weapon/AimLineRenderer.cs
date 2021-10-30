@@ -4,6 +4,7 @@ using UnityEngine;
 public class AimLineRenderer : MonoBehaviour
 {
     [SerializeField] private GameObject _aimPrefab;
+    [SerializeField] private GameObject _aimOutOfRangePrefab;
 
     private LineRenderer _line;
     private PlayerRotater _playerRotater;
@@ -29,7 +30,6 @@ public class AimLineRenderer : MonoBehaviour
 
     private void Update()
     {
-        DrawLine();
         DrawAim();
     }
 
@@ -46,6 +46,7 @@ public class AimLineRenderer : MonoBehaviour
 
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, _maxLength))
             {
+                _aimOutOfRangePrefab.GetComponent<SpriteRenderer>().enabled = false;
                 _aimPrefab.GetComponent<SpriteRenderer>().enabled = true;
                 _aimPrefab.transform.position = hit.point + hit.normal;
                 
@@ -55,22 +56,25 @@ public class AimLineRenderer : MonoBehaviour
                 if (hit.collider.TryGetComponent(out Enemy enemy))
                 {
                     spriteRenderer.color = Color.red;
-                    _aimPrefab.transform.rotation = new Quaternion(_aimPrefab.transform.rotation.x, transform.position.y,
-                        transform.rotation.z, _aimPrefab.transform.rotation.w);
+                    _aimPrefab.transform.rotation = transform.rotation;
                 }
                 else
                 {
                     spriteRenderer.color = Color.green;
-                    _aimPrefab.transform.rotation = new Quaternion(hit.transform.rotation.x * 90, transform.rotation.y * 90,
-                        _aimPrefab.transform.rotation.z, _aimPrefab.transform.rotation.w);
-                }
-                    
+                    _aimPrefab.transform.rotation = Quaternion.FromToRotation(_aimPrefab.transform.forward, hit.normal) * _aimPrefab.transform.rotation;
+                }                    
             }
             else
+            {
                 _aimPrefab.GetComponent<SpriteRenderer>().enabled = false;
+                _aimOutOfRangePrefab.GetComponent<SpriteRenderer>().enabled = true;
+            }
         }
         else
+        {
             _aimPrefab.GetComponent<SpriteRenderer>().enabled = false;
+            _aimOutOfRangePrefab.GetComponent<SpriteRenderer>().enabled = false;
+        }
     }
 
     private void DrawLine()
