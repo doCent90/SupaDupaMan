@@ -1,33 +1,33 @@
 using UnityEngine;
 
-[RequireComponent(typeof(AimLineRenderer))]
+[RequireComponent(typeof(AimRenderer))]
 public class RayCastObjectsSelector : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer _aimSpriteRenderer;
     [SerializeField] private Lasers _laser;
 
-    private AimLineRenderer _aimLineRenderer;
-    private LineRenderer _lineRenderer;
+    private SpriteRenderer _spriteRenderer;
     private PlayerMover _playerMover;
+    private AimRenderer _aimRenderer;
+    private AimMain _aimMain;
     private bool _isFired = false;
 
     private const float _maxLength = 60f;
 
     private void OnEnable()
     {
-        _lineRenderer = GetComponent<LineRenderer>();
+        _aimRenderer = GetComponent<AimRenderer>();
+        _aimMain = GetComponentInChildren<AimMain>();
         _playerMover = GetComponentInParent<PlayerMover>();
-        _aimLineRenderer = GetComponent<AimLineRenderer>();
+        _spriteRenderer = _aimMain.GetComponent<SpriteRenderer>();
 
-        _aimLineRenderer.enabled = true;
-
+        _aimRenderer.enabled = true;
         _playerMover.Moved += OnMoved;
         _laser.Fired += OnLaserFired;
     }
 
     private void OnDisable()
     {
-        _aimLineRenderer.enabled = false;
+        _aimMain.gameObject.SetActive(false);
 
         _playerMover.Moved -= OnMoved;
         _laser.Fired -= OnLaserFired;
@@ -45,15 +45,14 @@ public class RayCastObjectsSelector : MonoBehaviour
 
         if (isFired)
         {
-            _lineRenderer.enabled = false;
-            _aimSpriteRenderer.enabled = false;
+            _spriteRenderer.enabled = false;
         }
     }
 
     private void OnMoved(bool isMoving)
     {
         if(isMoving)
-            _aimSpriteRenderer.enabled = false;
+            _spriteRenderer.enabled = false;
     }
 
     private void SelectPlaceMove()

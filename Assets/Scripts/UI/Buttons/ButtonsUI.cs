@@ -24,6 +24,7 @@ public class ButtonsUI : MonoBehaviour
     private SoundsFXSettings _soundMaster;
     private GameLevelsLoader _loadLevel;
     private GameOver _gameOver;
+    private GameWin _gameWin;
     private StartGame _game;
     private Player _player;
 
@@ -142,11 +143,13 @@ public class ButtonsUI : MonoBehaviour
     {
         _player = FindObjectOfType<Player>();
         _game = FindObjectOfType<StartGame>();
+        _gameWin = FindObjectOfType<GameWin>();
         _gameOver = FindObjectOfType<GameOver>();
         _loadLevel = FindObjectOfType<GameLevelsLoader>();
         _soundMaster = FindObjectOfType<SoundsFXSettings>();
         _coinsViewer = FindObjectOfType<CurrentCoinsViewer>();
 
+        _gameWin.Win += ShowContinueButton;
         _gameOver.Defeated += ShowRetryButton;
 
         Init();
@@ -154,6 +157,7 @@ public class ButtonsUI : MonoBehaviour
 
     private void OnDisable()
     {
+        _gameWin.Win -= ShowContinueButton;
         _gameOver.Defeated -= ShowRetryButton;
     }
 

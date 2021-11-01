@@ -36,7 +36,7 @@ public class EnemyMover : MonoBehaviour
         {
             _onTargetPosition = false;
             _targetPosition = GetPosition();
-            targetLookPoint = transform.localPosition + new Vector3(_targetPosition.x, 0, _targetPosition.z) * Multiply;
+            targetLookPoint = transform.localPosition + new Vector3(_targetPosition.x, 0, 0) * Multiply;
             LookAtPoint(targetLookPoint);
         }
 

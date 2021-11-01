@@ -6,6 +6,7 @@ public class PlayerMover : MonoBehaviour
 {
     private Enemy[] _enemies;
     private PlayerRotater _rotater;
+    private Transform _originalPosition;
 
     private const float Duration = 0.5f;
     private const float Distance = 75f;
@@ -29,6 +30,7 @@ public class PlayerMover : MonoBehaviour
         _enemies = FindObjectsOfType<Enemy>();
         _rotater = GetComponent<PlayerRotater>();
 
+        _originalPosition = transform;
         _rotater.enabled = true;
     }
 

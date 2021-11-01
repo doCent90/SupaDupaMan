@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5491967538478371969}
-  - component: {fileID: 9161022502406149577}
   - component: {fileID: 4415721929941767721}
   m_Layer: 0
   m_Name: 3
@@ -33,18 +32,6 @@ Transform:
   m_Father: {fileID: 1573108249815710762}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9161022502406149577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 229483392984871620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b44baa4f642ad84488d5ada459e9cea0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4415721929941767721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,7 +53,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1573108249815710762}
-  - component: {fileID: 1848016408431296892}
   m_Layer: 0
   m_Name: EnemiesOnPoints
   m_TagString: Untagged
@@ -93,18 +79,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1848016408431296892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1573108249815710763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6693c8e9ca027194bb48786eb1bf6899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4034504335110016510
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +184,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5440292380202342262}
-  - component: {fileID: 3488344094009669025}
   - component: {fileID: 1358908936794688700}
   m_Layer: 0
   m_Name: 2
@@ -234,18 +207,6 @@ Transform:
   m_Father: {fileID: 1573108249815710762}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3488344094009669025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5440292380202342263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b44baa4f642ad84488d5ada459e9cea0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1358908936794688700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,7 +228,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5440292380570707009}
-  - component: {fileID: 5855802123339963950}
   - component: {fileID: 1116208905439760894}
   m_Layer: 0
   m_Name: 1
@@ -291,18 +251,6 @@ Transform:
   m_Father: {fileID: 1573108249815710762}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5855802123339963950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5440292380570707038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b44baa4f642ad84488d5ada459e9cea0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1116208905439760894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,7 +311,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 278146316965445255}
-  - component: {fileID: 4279898556577812991}
   - component: {fileID: 8082097286741681358}
   m_Layer: 0
   m_Name: 4
@@ -387,18 +334,6 @@ Transform:
   m_Father: {fileID: 1573108249815710762}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4279898556577812991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8395166108630725996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b44baa4f642ad84488d5ada459e9cea0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8082097286741681358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,6 +501,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 278146316965445255}
     m_Modifications:
+    - target: {fileID: 1860769372152433394, guid: 28bd3d228ca773c4b9a744bb53e7358d, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860769372152433394, guid: 28bd3d228ca773c4b9a744bb53e7358d, type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3546702063041742012, guid: 28bd3d228ca773c4b9a744bb53e7358d, type: 3}
       propertyPath: m_Enabled
       value: 0
