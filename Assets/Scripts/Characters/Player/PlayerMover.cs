@@ -4,12 +4,13 @@ using UnityEngine.Events;
 
 public class PlayerMover : MonoBehaviour
 {
+    private Exit _exit;
     private Enemy[] _enemies;
+    private GameWin _gameWin;
     private PlayerRotater _rotater;
-    private Transform _originalPosition;
 
     private const float Duration = 0.5f;
-    private const float Distance = 75f;
+    private const float Distance = 60f;
 
     public bool IsLastWayPoint { get; private set; }
     public bool HasCurrentPositions { get; private set; }
@@ -27,32 +28,47 @@ public class PlayerMover : MonoBehaviour
 
     private void OnEnable()
     {
+        _exit = FindObjectOfType<Exit>();
         _enemies = FindObjectsOfType<Enemy>();
+        _gameWin = FindObjectOfType<GameWin>();
         _rotater = GetComponent<PlayerRotater>();
 
-        _originalPosition = transform;
         _rotater.enabled = true;
+        _gameWin.Win += MoveFinishView;
     }
 
 
     private void OnDisable()
     {
         _rotater.enabled = false;
+        _gameWin.Win -= MoveFinishView;
     }
 
     private void LookAtClosetstEnemy()
     {
-        Vector3 lookAtPoint = Vector3.forward;
+        Vector3 lookAtPoint = _exit.transform.position;
 
         foreach (var enemy in _enemies)
         {
-            float distance = Vector3.Distance(enemy.transform.position, transform.position);
+            float distance = Vector3.Distance(transform.position, enemy.transform.position);
+            Debug.Log(distance);
 
             if (distance < Distance && enemy.enabled)
+            {
                 lookAtPoint = enemy.transform.position;
+                continue;
+            }
         }
 
         var tweenRotate = transform.DOLookAt(lookAtPoint, Duration / 2);
         tweenRotate.SetEase(Ease.InOutSine);
+    }
+
+    private void MoveFinishView()
+    {
+        var tweeLookAt = transform.DOLookAt(_exit.transform.position, Duration);
+        var tweenMove = transform.DOMove(_gameWin.transform.position, Duration);
+
+        enabled = false;
     }
 }

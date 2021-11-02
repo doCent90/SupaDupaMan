@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 3708220797053431612}
   - component: {fileID: 4231420704520199506}
   m_Layer: 3
-  m_Name: Sliced_Soldiers_Runing 2
+  m_Name: Runing_Criminal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 2733481612470500236}
   - component: {fileID: 5303755160945898163}
   m_Layer: 3
-  m_Name: Soldiers_Gigant
+  m_Name: Gigant_Criminal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

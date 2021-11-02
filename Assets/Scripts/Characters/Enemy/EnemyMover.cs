@@ -3,23 +3,21 @@ using DG.Tweening;
 
 public class EnemyMover : MonoBehaviour
 {
+    [SerializeField] private Transform _wayPoint1;
+    [SerializeField] private Transform _wayPoint2;
+
     private Vector3 _targetPosition;
-    private Vector3 _originalPosition;
 
     private int _direction;
     private bool _onTargetPosition = false;
 
-    private const float RangeMax = 20f;
-    private const float RangeMin = 10f;
     private const float Duration = 0.2f;
-    private const float Speed = 4f;
-    private const int Multiply = 100;
+    private const float Speed = 8f;
+    private const int Multiply = 10;
 
     private void OnEnable()
     {
-        _originalPosition = transform.localPosition;
         _targetPosition = GetPosition();
-
         _direction = Random.Range(0, 2);
     }
 
@@ -36,7 +34,7 @@ public class EnemyMover : MonoBehaviour
         {
             _onTargetPosition = false;
             _targetPosition = GetPosition();
-            targetLookPoint = transform.localPosition + new Vector3(_targetPosition.x, 0, 0) * Multiply;
+            targetLookPoint = transform.localPosition + _targetPosition * Multiply;
             LookAtPoint(targetLookPoint);
         }
 
@@ -48,15 +46,14 @@ public class EnemyMover : MonoBehaviour
 
     private Vector3 GetPosition()
     {
+        Vector3 targetPosition;
         _direction++;
-        float x;
 
         if(_direction % 2 == 0)
-            x = Random.Range(RangeMin, RangeMax);
+            targetPosition = new Vector3(_wayPoint1.localPosition.x, transform.localPosition.y, transform.localPosition.z);
         else
-            x = Random.Range(RangeMin, RangeMax) * -1;
+            targetPosition = new Vector3(_wayPoint2.localPosition.x, transform.localPosition.y, transform.localPosition.z);
 
-        Vector3 targetPosition = new Vector3(x, _originalPosition.y, _originalPosition.z);
         return targetPosition;
     }
 

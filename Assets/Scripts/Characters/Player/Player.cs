@@ -38,7 +38,6 @@ public class Player : MonoBehaviour
     {
         enabled = false;
 
-        _mover.enabled = false;
         _rotater.enabled = false;
         _pointSelector.enabled = false;
     }
