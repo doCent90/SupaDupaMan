@@ -657,6 +657,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8648940458143978704, guid: e2f597967c0d3bb4a84d0f7c8187773e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8648940458143978704, guid: e2f597967c0d3bb4a84d0f7c8187773e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2f597967c0d3bb4a84d0f7c8187773e, type: 3}
 --- !u!1 &1187186529
@@ -889,6 +897,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -1.9107666
       objectReference: {fileID: 0}
+    - target: {fileID: 8953673465938778705, guid: 83e2bb5de04f31348919cda15dcfadac, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 185.29999
+      objectReference: {fileID: 0}
     - target: {fileID: 8953673466499273704, guid: 83e2bb5de04f31348919cda15dcfadac, type: 3}
       propertyPath: m_Name
       value: UI
@@ -981,6 +993,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 11937059}
+    - target: {fileID: 8953673466503831679, guid: 83e2bb5de04f31348919cda15dcfadac, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 205.99997
+      objectReference: {fileID: 0}
     - target: {fileID: 8953673467256033431, guid: 83e2bb5de04f31348919cda15dcfadac, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 6.348999
