@@ -51,7 +51,6 @@ public class PlayerMover : MonoBehaviour
         foreach (var enemy in _enemies)
         {
             float distance = Vector3.Distance(transform.position, enemy.transform.position);
-            Debug.Log(distance);
 
             if (distance < Distance && enemy.enabled)
             {

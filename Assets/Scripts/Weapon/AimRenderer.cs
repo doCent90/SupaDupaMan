@@ -52,12 +52,12 @@ public class AimRenderer : MonoBehaviour
                 _aimMainPrefab.transform.position = hit.point + hit.normal;
                 var spriteRenderer = _aimMainPrefab.GetComponent<SpriteRenderer>();
 
-                if (hit.collider.TryGetComponent(out Enemy enemy))
+                if (hit.collider.TryGetComponent(out Enemy enemy) || hit.collider.TryGetComponent(out WallSliced sclicer))
                 {
                     spriteRenderer.color = Color.red;
                     _aimMainPrefab.transform.rotation = transform.rotation;
                 }
-                else
+                else if(hit.collider.TryGetComponent(out Platform platform))
                 {
                     spriteRenderer.color = Color.green;
                     _aimMainPrefab.transform.rotation = Quaternion.FromToRotation(_aimMainPrefab.transform.forward, hit.normal) * _aimMainPrefab.transform.rotation;

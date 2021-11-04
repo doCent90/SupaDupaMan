@@ -37,6 +37,7 @@ public class RayCastObjectsSelector : MonoBehaviour
     {
         SelectPlaceMove();
         SelectEnemy();
+        SelectWallDestroy();
     }
 
     private void OnLaserFired(bool isFired)
@@ -86,11 +87,30 @@ public class RayCastObjectsSelector : MonoBehaviour
                     if (hit.collider && hit.collider.TryGetComponent(out Enemy other))
                     {
                         hit.collider.TryGetComponent(out Enemy enemy);
-                        enemy.LockTarget();
                         enemy.TakeDamage();
                     }
                 }
             }
         }
     }
+
+    private void SelectWallDestroy()
+    {
+        if (Input.GetMouseButtonUp(0) && !_isFired)
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, _maxLength))
+            {
+                if (hit.collider != null)
+                {
+                    if (hit.collider && hit.collider.TryGetComponent(out WallSliced cube))
+                    {
+                        hit.collider.TryGetComponent(out WallSliced cubeSclicer);
+                        cubeSclicer.TakeDamage();
+                    }
+                }
+            }
+        }
+    }
+
 }

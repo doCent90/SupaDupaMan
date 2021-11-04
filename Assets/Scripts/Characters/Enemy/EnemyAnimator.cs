@@ -9,7 +9,6 @@ public class EnemyAnimator : MonoBehaviour
     private StartGame _startGame;
 
     private const string Run = "Run";
-    private const string Die = "Die";
     private const string Victory = "Victory";
     private const string TakeDamage = "TakeDamage";
 
@@ -54,7 +53,6 @@ public class EnemyAnimator : MonoBehaviour
     {
         _animator.SetBool(Run, false);
         _animator.SetBool(TakeDamage, false);
-        _animator.SetTrigger(Die);
     }
 
     private void OnGameOver()

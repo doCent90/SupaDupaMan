@@ -14,10 +14,15 @@ public class Enemy : MonoBehaviour
     private EnemyMover _mover;
     private StartGame _startGame;
     private Vector4 _currentColor;
+    private SlicedRegDoll _slicedRegDoll;
     private ParticleSystem[] _particalFX;
+
     private ShotPointCharacter _shotPoint;
     private SkinnedMeshRenderer _renderer;
+    private StickmanSliced _stickmanSliced;
     private EnemyParticals _enemyParticals;
+
+    private PrisonerRegDoll _prisonerRegDoll;
     private CapsuleCollider _capsuleCollider;
     private SkinnedMeshRenderer _meshRenderer;
     private Vector4 _targetColor = Color.black;
@@ -25,28 +30,23 @@ public class Enemy : MonoBehaviour
     private float _elapsedTime;
     private bool _isDamaged = false;
 
-    private const float Delay = 1f;
+    private const float DestroyTime = 1f;
 
     public event UnityAction Died;
     public event UnityAction Damaged;
-    public event UnityAction<Transform> TargetLocked;
+    public event UnityAction<Transform> ShotPointSeted;
 
     public bool IsGigant => _isGigant;
 
     public void TakeDamage()
     {
-        _elapsedTime = Delay;
+        SetShotPoint();
+
+        _elapsedTime = DestroyTime;
         _mover.enabled = false;
         _isDamaged = true;
 
         Damaged?.Invoke();
-    }
-
-    public void LockTarget()
-    {
-        var shotPoint = _shotPoint.transform;
-
-        TargetLocked?.Invoke(shotPoint);
     }
 
     private void Update()
@@ -63,6 +63,13 @@ public class Enemy : MonoBehaviour
             return;        
     }
 
+    private void SetShotPoint()
+    {
+        var shotPoint = _shotPoint.transform;
+
+        ShotPointSeted?.Invoke(shotPoint);
+    }
+
     private void Die()
     {
         enabled = false;
@@ -75,6 +82,10 @@ public class Enemy : MonoBehaviour
 
         _emoji.Stop();
         _capsuleCollider.enabled = false;
+
+        _prisonerRegDoll.gameObject.SetActive(false);
+        _slicedRegDoll.gameObject.SetActive(true);
+        _stickmanSliced.StartSclice();
     }
 
     private void ChangeColor()
@@ -96,14 +107,19 @@ public class Enemy : MonoBehaviour
         _mover = GetComponent<EnemyMover>();
         _startGame = FindObjectOfType<StartGame>();
         _capsuleCollider = GetComponent<CapsuleCollider>();
+        _slicedRegDoll = GetComponentInChildren<SlicedRegDoll>();
         _shotPoint = GetComponentInChildren<ShotPointCharacter>();
+
         _enemyParticals = GetComponentInChildren<EnemyParticals>();
+        _prisonerRegDoll = GetComponentInChildren<PrisonerRegDoll>();
         _meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+        _stickmanSliced = _slicedRegDoll.GetComponentInChildren<StickmanSliced>();
 
         _renderer = GetComponentInChildren<SkinnedMeshRenderer>();
         _particalFX = _enemyParticals.GetComponentsInChildren<ParticleSystem>();
 
         _currentColor = _meshRenderer.material.color;
+        _slicedRegDoll.gameObject.SetActive(false);
 
         _startGame.Started += EnableMover;
     }

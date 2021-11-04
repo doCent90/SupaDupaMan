@@ -11,6 +11,7 @@ public class Lasers : MonoBehaviour
     [SerializeField] private Transform _shootPosition;
 
     private Enemy[] _enemies;
+    private WallSliced[] _walls;
     private LaserRenderer2 _reset;
     private GameObject _instance;
     private PlayerMover _playerMover;
@@ -28,6 +29,7 @@ public class Lasers : MonoBehaviour
     private void OnEnable()
     {
         _enemies = FindObjectsOfType<Enemy>();
+        _walls = FindObjectsOfType<WallSliced>();
         _playerMover = GetComponentInParent<PlayerMover>();
 
         ReadyToAttacked?.Invoke(true);
@@ -35,9 +37,15 @@ public class Lasers : MonoBehaviour
         _rayCast.SetActive(false);
         _originalPosition = _shootPosition.localEulerAngles;
 
+        foreach (var wall in _walls)
+        {
+            wall.ApplyDamage += AimTarget;
+            wall.Destroyed += Stop;
+        }
+
         foreach (var enemy in _enemies)
         {
-            enemy.TargetLocked += AimTarget;
+            enemy.ShotPointSeted += AimTarget;
             enemy.Died += Stop;
         }
     }
@@ -51,9 +59,15 @@ public class Lasers : MonoBehaviour
 
         _rayCast.SetActive(false);
 
+        foreach (var wall in _walls)
+        {
+            wall.ApplyDamage -= AimTarget;
+            wall.Destroyed -= Stop;
+        }
+
         foreach (var enemy in _enemies)
         {
-            enemy.TargetLocked -= AimTarget;
+            enemy.ShotPointSeted -= AimTarget;
             enemy.Died -= Stop;
         }
     }
