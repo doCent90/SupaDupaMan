@@ -25,6 +25,13 @@ public class StartRegDollMover : MonoBehaviour
     {
         transform.position = new Vector3(_player.transform.position.x, _enemyGigant.transform.position.y, _player.transform.position.z);
 
-        var tweenMove = transform.DOMove(new Vector3(_exit.transform.position.x, transform.position.y, _exit.transform.position.z), Duration);
+        var tweenMove = transform.DOMove(new Vector3(_exit.transform.position.x,
+            transform.position.y, _exit.transform.position.z), Duration);
+        tweenMove.OnComplete(DisableObject);
+    }
+
+    private void DisableObject()
+    {
+        gameObject.SetActive(false);
     }
 }

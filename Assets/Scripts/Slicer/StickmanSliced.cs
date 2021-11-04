@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class StickmanSliced : Slicer
 {
-    private StickmanCells _cells;
+    private CellsDestroyer _cellsDestroyer;
 
     public void StartSclice()
     {
@@ -11,12 +11,12 @@ public class StickmanSliced : Slicer
 
     protected override void DisableDafaultObjects()
     {
-        _cells.enabled = true;
+        _cellsDestroyer.enabled = true;
         enabled = false;
     }
 
     private void Start()
     {
-        _cells = GetComponent<StickmanCells>();
+        _cellsDestroyer = GetComponent<CellsDestroyer>();
     }
 }

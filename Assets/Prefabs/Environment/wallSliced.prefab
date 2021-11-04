@@ -2595,7 +2595,7 @@ GameObject:
   - component: {fileID: 6409913818656041850}
   - component: {fileID: 5445864709389005530}
   - component: {fileID: 5896687549475951245}
-  - component: {fileID: 5897866471061450174}
+  - component: {fileID: 3314413191066198474}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -2719,7 +2719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964b61ca5b879e0499fd4b79ab0b3907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5897866471061450174
+--- !u!114 &3314413191066198474
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2728,7 +2728,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8078068986573392635}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e2a4bf0d45b90a48aa1b7b61d6d7e1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ce039dabbc1bcf4f800f7d14e59be86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8185868504826166896

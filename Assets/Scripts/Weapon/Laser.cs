@@ -9,7 +9,7 @@ public class Laser : MonoBehaviour
 
     private Vector4 _length = new Vector4(1,1,1,1);
     private LineRenderer _laser;
-    private Lasers _attack;
+    private LasersActivator _attack;
     private ParticleSystem[] _effects;
     private ParticleSystem[] _hits;
 
@@ -26,7 +26,7 @@ public class Laser : MonoBehaviour
         _laser = GetComponent<LineRenderer>();
         _effects = GetComponentsInChildren<ParticleSystem>();
         _hits = _hitEffect.GetComponentsInChildren<ParticleSystem>();
-        _attack = GetComponentInParent<Lasers>();
+        _attack = GetComponentInParent<LasersActivator>();
 
         _attack.Fired += ActivatLaser;
 

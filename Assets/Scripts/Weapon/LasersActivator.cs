@@ -1,22 +1,25 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Lasers : MonoBehaviour
+public class LasersActivator : MonoBehaviour
 {
-    [Header("Laser")]
+    [Header("Lasers")]
     [SerializeField] private int _laserNumber;
-    [SerializeField] private GameObject _rayCast;
     [SerializeField] private GameObject[] _lasers;
     [Header("Settings of Shot")]
-    [SerializeField] private Transform _shootPosition;
+    [SerializeField] private Transform _shootPosition1;
+    [SerializeField] private Transform _shootPosition2;
 
     private Enemy[] _enemies;
-    private WallSliced[] _walls;
-    private LaserRenderer2 _reset;
-    private GameObject _instance;
-    private PlayerMover _playerMover;
-    private Vector3 _originalPosition;
     private Transform _aimPoint;
+    private WallSliced[] _walls;
+    private GameObject _laserPrefab1;
+    private GameObject _laserPrefab2;
+    private LaserRenderer2 _reset1;
+    private LaserRenderer2 _reset2;
+    private PlayerMover _playerMover;
+    private Vector3 _originalPosition1;
+    private Vector3 _originalPosition2;
 
     private bool _isReady = false;
 
@@ -33,9 +36,8 @@ public class Lasers : MonoBehaviour
         _playerMover = GetComponentInParent<PlayerMover>();
 
         ReadyToAttacked?.Invoke(true);
-
-        _rayCast.SetActive(false);
-        _originalPosition = _shootPosition.localEulerAngles;
+        _originalPosition1 = _shootPosition1.localEulerAngles;
+        _originalPosition2 = _shootPosition2.localEulerAngles;
 
         foreach (var wall in _walls)
         {
@@ -56,8 +58,6 @@ public class Lasers : MonoBehaviour
 
         ReadyToAttacked?.Invoke(false);
         Fired?.Invoke(false);
-
-        _rayCast.SetActive(false);
 
         foreach (var wall in _walls)
         {
@@ -96,12 +96,18 @@ public class Lasers : MonoBehaviour
         if (_isReady)
         {
             _playerMover.enabled = false;
-            Destroy(_instance);
-            _instance = Instantiate(_lasers[_laserNumber], _rayCast.transform.position, _rayCast.transform.rotation);
-            _instance.transform.LookAt(_aimPoint);
-            _reset = _instance.GetComponent<LaserRenderer2>();
+            Destroy(_laserPrefab1);
+            Destroy(_laserPrefab2);
 
-            _rayCast.SetActive(true);
+            _laserPrefab1 = Instantiate(_lasers[_laserNumber], _shootPosition1.position, _shootPosition1.rotation);
+            _laserPrefab2 = Instantiate(_lasers[_laserNumber], _shootPosition2.position, _shootPosition2.rotation);
+
+            _laserPrefab1.transform.LookAt(_aimPoint);
+            _laserPrefab2.transform.LookAt(_aimPoint);
+
+            _reset1 = _laserPrefab1.GetComponent<LaserRenderer2>();
+            _reset2 = _laserPrefab2.GetComponent<LaserRenderer2>();
+
             Fired?.Invoke(true);
             Shoted?.Invoke();
         }
@@ -109,13 +115,16 @@ public class Lasers : MonoBehaviour
 
     private void Stop()
     {
-        if (_reset)
-            _reset.DisablePrepare();
+        if (_reset1)
+        {
+            _reset1.DisablePrepare();
+            _reset2.DisablePrepare();
+        }
 
         _playerMover.enabled = true;
-        _rayCast.SetActive(false);
         Fired?.Invoke(false);
-        Destroy(_instance, Delay);
+        Destroy(_laserPrefab1, Delay);
+        Destroy(_laserPrefab2, Delay);
     }
 
     private void Deactivate()
@@ -125,22 +134,28 @@ public class Lasers : MonoBehaviour
             _playerMover.enabled = true;
             ResetPosition();
 
-            if (_reset)
-                _reset.DisablePrepare();
+            if (_reset1)
+            {
+                _reset1.DisablePrepare();
+                _reset2.DisablePrepare();
+            }
 
-            Destroy(_instance, Delay);
+            Destroy(_laserPrefab1, Delay);
+            Destroy(_laserPrefab2, Delay);
+
             Fired?.Invoke(false);
-            _rayCast.SetActive(false);
         }
     }
 
     private void RotateShootPosition()
     {
-        _shootPosition.LookAt(_aimPoint);        
+        _shootPosition1.LookAt(_aimPoint);
+        _shootPosition2.LookAt(_aimPoint);
     }
 
     private void ResetPosition()
     {
-        _shootPosition.localPosition = _originalPosition;
+        _shootPosition1.localPosition = _originalPosition1;
+        _shootPosition2.localPosition = _originalPosition2;
     }
 }

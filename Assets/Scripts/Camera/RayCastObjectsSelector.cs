@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(AimRenderer))]
 public class RayCastObjectsSelector : MonoBehaviour
 {
-    [SerializeField] private Lasers _laser;
+    [SerializeField] private LasersActivator _laser;
 
     private SpriteRenderer _spriteRenderer;
     private PlayerMover _playerMover;
@@ -11,7 +11,7 @@ public class RayCastObjectsSelector : MonoBehaviour
     private AimMain _aimMain;
     private bool _isFired = false;
 
-    private const float _maxLength = 60f;
+    private const float _maxLength = 50f;
 
     private void OnEnable()
     {

@@ -6,7 +6,7 @@ public class WallSliced : Slicer
     private BoxCollider _boxCollider;
     private MeshRenderer _meshRenderer;
     private Transform _damagePointPosition;
-    private WallCells _cellsDestroyer;
+    private CellsDestroyer _cellsDestroyer;
     private WallDamagePointMover _damagePointMover;
 
     public event UnityAction<Transform> ApplyDamage;
@@ -37,7 +37,7 @@ public class WallSliced : Slicer
     {
         _boxCollider = GetComponent<BoxCollider>();
         _meshRenderer = GetComponent<MeshRenderer>();
-        _cellsDestroyer = GetComponent<WallCells>();
+        _cellsDestroyer = GetComponent<CellsDestroyer>();
         _damagePointMover = GetComponentInChildren<WallDamagePointMover>();
 
         _damagePointPosition = _damagePointMover.transform;

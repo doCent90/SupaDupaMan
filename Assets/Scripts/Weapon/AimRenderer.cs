@@ -4,11 +4,14 @@ using UnityEngine.Events;
 [RequireComponent(typeof(LineRenderer))]
 public class AimRenderer : MonoBehaviour
 {
+    private LasersActivator _laser;
     private AimMain _aimMainPrefab;
     private PlayerRotater _playerRotater;
     private AimOutOfRange _aimOutOfRangePrefab;
 
     private bool _isReady;
+    private readonly Color _green = Color.green;
+    private readonly Color _red = Color.red;
 
     private const float _maxLength = 50f;
 
@@ -17,15 +20,19 @@ public class AimRenderer : MonoBehaviour
 
     private void OnEnable()
     {
+        _laser = FindObjectOfType<LasersActivator>();
         _aimMainPrefab = GetComponentInChildren<AimMain>();
         _playerRotater = GetComponentInParent<PlayerRotater>();
         _aimOutOfRangePrefab = GetComponentInChildren<AimOutOfRange>();
+
         _playerRotater.AimMoved += OnAimMove;
+        _laser.Fired += OnLasersFire;
     }
 
     private void OnDisable()
     {
         _playerRotater.AimMoved -= OnAimMove;
+        _laser.Fired -= OnLasersFire;
     }
 
     private void Update()
@@ -36,6 +43,11 @@ public class AimRenderer : MonoBehaviour
     private void OnAimMove(bool isReady)
     {
         _isReady = isReady;
+    }
+
+    private void OnLasersFire(bool isFire)
+    {
+        _isReady = true ? isFire = false : isFire = true;
     }
 
     private void DrawAim()
@@ -52,16 +64,12 @@ public class AimRenderer : MonoBehaviour
                 _aimMainPrefab.transform.position = hit.point + hit.normal;
                 var spriteRenderer = _aimMainPrefab.GetComponent<SpriteRenderer>();
 
-                if (hit.collider.TryGetComponent(out Enemy enemy) || hit.collider.TryGetComponent(out WallSliced sclicer))
-                {
-                    spriteRenderer.color = Color.red;
-                    _aimMainPrefab.transform.rotation = transform.rotation;
-                }
+                if (hit.collider.TryGetComponent(out WallSliced slicer) && slicer.enabled)
+                    RotateAtNormal(hit, spriteRenderer, _red);
+                else if(hit.collider.TryGetComponent(out Enemy enemy))
+                    RotateAtLook(hit, spriteRenderer, _red);
                 else if(hit.collider.TryGetComponent(out Platform platform))
-                {
-                    spriteRenderer.color = Color.green;
-                    _aimMainPrefab.transform.rotation = Quaternion.FromToRotation(_aimMainPrefab.transform.forward, hit.normal) * _aimMainPrefab.transform.rotation;
-                }                    
+                    RotateAtNormal(hit, spriteRenderer, _green);
             }
             else
             {
@@ -74,6 +82,18 @@ public class AimRenderer : MonoBehaviour
             MainAimActivate(false);
             OutOfRangeAimActivate(false);
         }
+    }
+
+    private void RotateAtLook(RaycastHit hit, SpriteRenderer spriteRenderer, Color color)
+    {
+        spriteRenderer.color = color;
+        _aimMainPrefab.transform.rotation = transform.rotation;
+    }
+
+    private void RotateAtNormal(RaycastHit hit, SpriteRenderer spriteRenderer, Color color)
+    {
+        spriteRenderer.color = color;
+        _aimMainPrefab.transform.rotation = Quaternion.FromToRotation(_aimMainPrefab.transform.forward, hit.normal) * _aimMainPrefab.transform.rotation;
     }
 
     private void MainAimActivate(bool isActivate)

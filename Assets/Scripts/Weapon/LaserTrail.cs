@@ -6,7 +6,7 @@ public class LaserTrail : MonoBehaviour
 
     private bool _isReady = false;
 
-    private Lasers _attack;
+    private LasersActivator _attack;
     private ParticleSystem[] _hits;
 
     private const float _maxLength = 25f;
@@ -15,7 +15,7 @@ public class LaserTrail : MonoBehaviour
     private void OnEnable()
     {
         _hits = GetComponentsInChildren<ParticleSystem>();
-        _attack = GetComponentInParent<Lasers>();
+        _attack = GetComponentInParent<LasersActivator>();
 
         _attack.Fired += ActivatLaser;
     }

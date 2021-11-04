@@ -4,7 +4,7 @@ using DG.Tweening;
 
 public class CameraAnimator : MonoBehaviour
 {
-    private Lasers _lasers;
+    private LasersActivator _lasers;
     private Enemy[] _enemies;
     private Transform _position;
     private Vector3 _originalPosition;
@@ -26,7 +26,7 @@ public class CameraAnimator : MonoBehaviour
 
     private void OnEnable()
     {
-        _lasers = FindObjectOfType<Lasers>();
+        _lasers = FindObjectOfType<LasersActivator>();
         _enemies = FindObjectsOfType<Enemy>();
         _position = GetComponent<Transform>();
 
