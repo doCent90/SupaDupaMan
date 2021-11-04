@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class WallSliced : Slicer
+public class WallSliced : SlicerType1
 {
     private BoxCollider _boxCollider;
     private MeshRenderer _meshRenderer;

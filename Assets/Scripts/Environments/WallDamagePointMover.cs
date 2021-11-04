@@ -10,8 +10,8 @@ public class WallDamagePointMover : MonoBehaviour
     private int _direction;
 
     private const float Speed = 4f;
-    private const float RangeY = 0.34f;
-    private const float RangeZ = 0.2f;
+    private const float RangeY = 0.3f;
+    private const float RangeZ = 0.4f;
 
     private const float Positive = 1f;
     private const float Negative = -1f;
@@ -55,9 +55,9 @@ public class WallDamagePointMover : MonoBehaviour
             _onTargetPosition = false;
 
             if (_direction % 2 == 0)
-                _targetPosition = new Vector3(0, -RangeY, RangeZ * Random.Range(Negative, Positive));
+                _targetPosition = new Vector3(0, RangeY * Random.Range(Negative, Positive), -RangeZ);
             else
-                _targetPosition = new Vector3(0, RangeY, RangeZ * Random.Range(Negative, Positive));
+                _targetPosition = new Vector3(0,  RangeY * Random.Range(Negative, Positive), RangeZ);
 
             _direction = _direction > 10 ? _direction = 0 : _direction;
         }

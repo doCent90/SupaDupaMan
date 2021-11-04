@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Slicer : MonoBehaviour
+public abstract class SlicerType1 : MonoBehaviour
 {
     protected Rigidbody[] _rigidbodies;
 

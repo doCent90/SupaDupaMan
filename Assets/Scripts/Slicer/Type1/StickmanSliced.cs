@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class StickmanSliced : Slicer
+public class StickmanSliced : SlicerType1
 {
     private CellsDestroyer _cellsDestroyer;
 
