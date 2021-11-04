@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     private PlayerMover _mover;
     private StartGame _startGame;
     private PlayerRotater _rotater;
-    private RayCastObjectsSelector _pointSelector;
+    private ObjectsSelector _pointSelector;
 
     private void OnEnable()
     {
@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
         _rotater = GetComponent<PlayerRotater>();
         _gameOver = FindObjectOfType<GameOver>();
         _startGame = FindObjectOfType<StartGame>();
-        _pointSelector = GetComponentInChildren<RayCastObjectsSelector>();
+        _pointSelector = GetComponentInChildren<ObjectsSelector>();
 
         _startGame.Started += OnStart;
         _gameOver.Defeated += OnDefeatGame;

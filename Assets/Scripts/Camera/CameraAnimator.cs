@@ -4,20 +4,18 @@ using DG.Tweening;
 
 public class CameraAnimator : MonoBehaviour
 {
-    private LasersActivator _lasers;
     private Enemy[] _enemies;
-    private Transform _position;
+    private LasersActivator _lasers;
+    private Transform _targetPosition;
     private Vector3 _originalPosition;
 
-    private bool _isAttack;
+    private bool _isShake;
 
     private const float Range = 0.3f;
     private const float Duration = 3f;
     private const float Delay = 0.025f;
 
-    private const float MultyplyX = 10f;
-    private const float MultyplyY = 5f;
-    private const float MultyplyZ = 2f;
+    private const float Multyply = 10f;
 
     public void StopShake()
     {
@@ -26,14 +24,14 @@ public class CameraAnimator : MonoBehaviour
 
     private void OnEnable()
     {
-        _lasers = FindObjectOfType<LasersActivator>();
         _enemies = FindObjectsOfType<Enemy>();
-        _position = GetComponent<Transform>();
+        _targetPosition = GetComponent<Transform>();
+        _lasers = FindObjectOfType<LasersActivator>();
 
-        _originalPosition = _position.transform.localEulerAngles;
+        _originalPosition = _targetPosition.transform.localEulerAngles;
 
-        _lasers.Fired += ShakeTransform;
-        _isAttack = false;
+        _lasers.Fired += TryShake;
+        _isShake = false;
 
         foreach (var enemy in _enemies)
         {
@@ -45,7 +43,7 @@ public class CameraAnimator : MonoBehaviour
 
     private void OnDisable()
     {
-        _lasers.Fired -= ShakeTransform;
+        _lasers.Fired -= TryShake;
 
         foreach (var enemy in _enemies)
         {
@@ -53,9 +51,9 @@ public class CameraAnimator : MonoBehaviour
         }
     }
 
-    private void ShakeTransform(bool isAttack)
+    private void TryShake(bool isAttack)
     {
-        _isAttack = isAttack;
+        _isShake = isAttack;
 
         if (!isAttack)
             StopCoroutine(Shake());
@@ -65,38 +63,38 @@ public class CameraAnimator : MonoBehaviour
 
     private IEnumerator Shake()
     {
-        float x;
-        float y;
-        float z;
-
         var waitForSecond = new WaitForSeconds(Delay);
 
-        while (_isAttack)
+        while (_isShake)
         {
-            x = Random.Range(-Range, Range);
-            y = Random.Range(-Range, Range);
-            z = Random.Range(-Range, Range);
-
-            _position.localEulerAngles += new Vector3(x, y, z);
+            _targetPosition.localEulerAngles += GetDirection();
             yield return waitForSecond;
         }
 
-        _position.localEulerAngles = _originalPosition;
+        _targetPosition.localEulerAngles = _originalPosition;
     }
 
     private void PlayIdle()
+    {
+        Vector3 rotateDirection = GetDirection(Multyply);
+
+        var tweenRotate = transform.DOLocalRotate(new Vector3(_originalPosition.x + rotateDirection.x, 
+                                                    rotateDirection.y, rotateDirection.z), Duration);
+        tweenRotate.SetEase(Ease.InOutSine);
+        tweenRotate.OnComplete(ResetPosition);
+    }
+
+    private Vector3 GetDirection(float multyply = 1f)
     {
         float x;
         float y;
         float z;
 
-        x = Random.Range(-Range, Range) * MultyplyX;
-        y = Random.Range(-Range, Range) * MultyplyY;
-        z = Random.Range(-Range, Range) * MultyplyZ;
+        x = Random.Range(-Range, Range) * multyply;
+        y = Random.Range(-Range, Range) * multyply;
+        z = Random.Range(-Range, Range) * multyply;
 
-        var tweenRotate = transform.DOLocalRotate(new Vector3(_originalPosition.x + x, y, z), Duration);
-        tweenRotate.SetEase(Ease.InOutSine);
-        tweenRotate.OnComplete(ResetPosition);
+        return new Vector3(x, y, z);
     }
 
     private void ResetPosition()

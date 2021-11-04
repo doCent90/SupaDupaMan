@@ -6,7 +6,7 @@ public class StartGame : MonoBehaviour
 {
     private Player _player;
     private PlayerMover _playerMover;
-    private RayCastObjectsSelector _objectsSelector;
+    private ObjectsSelector _objectsSelector;
 
     private int _countStartSessions = 0;
 
@@ -30,7 +30,7 @@ public class StartGame : MonoBehaviour
     {
         _player = FindObjectOfType<Player>();
         _playerMover = _player.GetComponent<PlayerMover>();
-        _objectsSelector = _player.GetComponentInChildren<RayCastObjectsSelector>();
+        _objectsSelector = _player.GetComponentInChildren<ObjectsSelector>();
     }
 
     private void Start()

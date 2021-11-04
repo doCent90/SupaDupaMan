@@ -9,7 +9,7 @@ public class GameWin : MonoBehaviour
     private EnemyGigant _enemyGigant;
     private PlayerMover _playerMover;
     private PlayerRotater _playerRotater;
-    private RayCastObjectsSelector _objectsSelector;
+    private ObjectsSelector _objectsSelector;
 
     public event UnityAction Win;
 
@@ -17,7 +17,7 @@ public class GameWin : MonoBehaviour
     {
         _playerMover = FindObjectOfType<PlayerMover>();
         _playerRotater = _playerMover.GetComponent<PlayerRotater>();
-        _objectsSelector = _playerMover.GetComponentInChildren<RayCastObjectsSelector>();
+        _objectsSelector = _playerMover.GetComponentInChildren<ObjectsSelector>();
         _enemyGigant = FindObjectOfType<EnemyGigant>();
         _enemy = _enemyGigant.GetComponent<Enemy>();
         _winText = FindObjectOfType<YouWin>();

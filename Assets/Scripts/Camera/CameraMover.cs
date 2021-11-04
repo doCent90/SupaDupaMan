@@ -1,6 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 
+[RequireComponent(typeof(CameraAnimator))]
 public class CameraMover : MonoBehaviour
 {
 
@@ -15,6 +16,7 @@ public class CameraMover : MonoBehaviour
     private void OnEnable()
     {
         _playPosition = transform.localEulerAngles;
+
         _startGame = FindObjectOfType<StartGame>();
         _cameraAnimator = GetComponent<CameraAnimator>();
 

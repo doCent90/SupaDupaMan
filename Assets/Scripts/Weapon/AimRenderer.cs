@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(LineRenderer))]
 public class AimRenderer : MonoBehaviour
 {
     private LasersActivator _laser;

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(AimRenderer))]
-public class RayCastObjectsSelector : MonoBehaviour
+public class ObjectsSelector : MonoBehaviour
 {
     [SerializeField] private LasersActivator _laser;
 
@@ -9,9 +9,9 @@ public class RayCastObjectsSelector : MonoBehaviour
     private PlayerMover _playerMover;
     private AimRenderer _aimRenderer;
     private AimMain _aimMain;
-    private bool _isFired = false;
+    private bool _isFire = false;
 
-    private const float _maxLength = 50f;
+    private const float _maxLength = 51f;
 
     private void OnEnable()
     {
@@ -21,6 +21,7 @@ public class RayCastObjectsSelector : MonoBehaviour
         _spriteRenderer = _aimMain.GetComponent<SpriteRenderer>();
 
         _aimRenderer.enabled = true;
+
         _playerMover.Moved += OnMoved;
         _laser.Fired += OnLaserFired;
     }
@@ -35,19 +36,17 @@ public class RayCastObjectsSelector : MonoBehaviour
 
     private void Update()
     {
-        SelectPlaceMove();
-        SelectEnemy();
-        SelectWallDestroy();
+        TryMove();
+        TryDestroyEnemy();
+        TryDestroyWall();
     }
 
-    private void OnLaserFired(bool isFired)
+    private void OnLaserFired(bool isFire)
     {
-        _isFired = isFired;
+        _isFire = isFire;
 
-        if (isFired)
-        {
-            _spriteRenderer.enabled = false;
-        }
+        if (isFire)        
+            _spriteRenderer.enabled = false;        
     }
 
     private void OnMoved(bool isMoving)
@@ -56,18 +55,17 @@ public class RayCastObjectsSelector : MonoBehaviour
             _spriteRenderer.enabled = false;
     }
 
-    private void SelectPlaceMove()
+    private void TryMove()
     {
-        if (Input.GetMouseButtonUp(0) && !_isFired)
+        if (Input.GetMouseButtonUp(0) && !_isFire)
         {
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, _maxLength))
             {
                 if (hit.collider != null)
                 {
-                    if (hit.collider && hit.collider.TryGetComponent(out Platform platform))
+                    if (hit.collider.TryGetComponent(out Platform platform))
                     {
-                        hit.collider.TryGetComponent(out Platform point);
                         _playerMover.Move(hit.point);
                     }
                 }
@@ -75,18 +73,17 @@ public class RayCastObjectsSelector : MonoBehaviour
         }
     }
 
-    private void SelectEnemy()
+    private void TryDestroyEnemy()
     {
-        if (Input.GetMouseButtonUp(0) && !_isFired)
+        if (Input.GetMouseButtonUp(0) && !_isFire)
         {
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, _maxLength))
             {
                 if (hit.collider != null)
                 {
-                    if (hit.collider && hit.collider.TryGetComponent(out Enemy other))
+                    if (hit.collider.TryGetComponent(out Enemy enemy))
                     {
-                        hit.collider.TryGetComponent(out Enemy enemy);
                         enemy.TakeDamage();
                     }
                 }
@@ -94,23 +91,21 @@ public class RayCastObjectsSelector : MonoBehaviour
         }
     }
 
-    private void SelectWallDestroy()
+    private void TryDestroyWall()
     {
-        if (Input.GetMouseButtonUp(0) && !_isFired)
+        if (Input.GetMouseButtonUp(0) && !_isFire)
         {
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, _maxLength))
             {
                 if (hit.collider != null)
                 {
-                    if (hit.collider && hit.collider.TryGetComponent(out WallSliced cube))
+                    if (hit.collider.TryGetComponent(out WallSliced wall))
                     {
-                        hit.collider.TryGetComponent(out WallSliced cubeSclicer);
-                        cubeSclicer.TakeDamage();
+                        wall.TakeDamage();
                     }
                 }
             }
         }
     }
-
 }
