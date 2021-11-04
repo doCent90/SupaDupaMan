@@ -1,32 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Rendering;
+﻿using UnityEngine;
 
 namespace Assets.Scripts
 {
     class Slicer
     {
-        /// <summary>
-        /// Slice the object by the plane 
-        /// </summary>
-        /// <param name="plane"></param>
-        /// <param name="objectToCut"></param>
-        /// <returns></returns>
         public static GameObject[] Slice(Plane plane, GameObject objectToCut)
         {            
-            //Get the current mesh and its verts and tris
             Mesh mesh = objectToCut.GetComponent<MeshFilter>().mesh;
             var a = mesh.GetSubMesh(0);
             Sliceable sliceable = objectToCut.GetComponent<Sliceable>();
 
-            if(sliceable == null)
-            {
-                throw new NotSupportedException("Cannot slice non sliceable object, add the sliceable script to the object or inherit from sliceable to support slicing");
-            }
+            if(sliceable == null){}
             
-            //Create left and right slice of hollow object
-            SlicesMetadata slicesMeta = new SlicesMetadata(plane, mesh, sliceable.IsSolid, sliceable.ReverseWireTriangles, sliceable.ShareVertices, sliceable.SmoothVertices);            
+            SlicesMetadata slicesMeta = new SlicesMetadata(plane, mesh, sliceable.IsSolid, sliceable.ReverseWireTriangles, sliceable.ShareVertices, sliceable.SmoothVertices);
 
             GameObject positiveObject = CreateMeshGameObject(objectToCut);
             positiveObject.name = string.Format("{0}_positive", objectToCut.name);
@@ -46,11 +32,6 @@ namespace Assets.Scripts
             return new GameObject[] { positiveObject, negativeObject};
         }        
 
-        /// <summary>
-        /// Creates the default mesh game object.
-        /// </summary>
-        /// <param name="originalObject">The original object.</param>
-        /// <returns></returns>
         private static GameObject CreateMeshGameObject(GameObject originalObject)
         {
             var originalMaterial = originalObject.GetComponent<MeshRenderer>().materials;
@@ -77,11 +58,6 @@ namespace Assets.Scripts
             return meshGameObject;
         }
 
-        /// <summary>
-        /// Add mesh collider and rigid body to game object
-        /// </summary>
-        /// <param name="gameObject"></param>
-        /// <param name="mesh"></param>
         private static void SetupCollidersAndRigidBodys(ref GameObject gameObject, Mesh mesh, bool useGravity)
         {                     
             MeshCollider meshCollider = gameObject.AddComponent<MeshCollider>();
@@ -90,6 +66,8 @@ namespace Assets.Scripts
 
             var rb = gameObject.AddComponent<Rigidbody>();
             rb.useGravity = useGravity;
+
+            gameObject.AddComponent<SlicedWallTile>();
         }
     }
 }

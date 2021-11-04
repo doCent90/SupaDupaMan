@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Security.AccessControl;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Sliceable : MonoBehaviour
 {
@@ -79,5 +76,4 @@ public class Sliceable : MonoBehaviour
             _smoothVertices = value;
         }
     }
-
 }

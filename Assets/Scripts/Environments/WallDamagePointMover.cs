@@ -4,14 +4,15 @@ public class WallDamagePointMover : MonoBehaviour
 {
     private LaserRenderer2[] _laserRenderers;
     private Vector3 _targetPosition;
+    private Vector3 _startPosition;
 
     private bool _onTargetPosition = false;
     private bool _isReady = false;
     private int _direction;
 
-    private const float Speed = 4f;
-    private const float RangeY = 0.3f;
-    private const float RangeZ = 0.4f;
+    private const float Speed = 200f;
+    private const float RangeY = 10f;
+    private const float RangeZ = 17f;
 
     private const float Positive = 1f;
     private const float Negative = -1f;
@@ -25,7 +26,13 @@ public class WallDamagePointMover : MonoBehaviour
     private void OnEnable()
     {
         _direction = 0;
-        _targetPosition = Vector3.zero;
+        _startPosition = transform.localPosition;
+        _targetPosition = _startPosition;
+    }
+
+    private void OnDisable()
+    {
+        transform.localPosition = _startPosition;
     }
 
     private void Update()

@@ -42,20 +42,17 @@ public class Lighsaber : MonoBehaviour
         _vertices = new Vector3[_trailFrameLength * NunmberVertices];
         _triangles = new int[_vertices.Length];
 
-        //Set starting position for tip and base
         _previousTipPosition = _tip.transform.position;
         _previousBasePosition = _base.transform.position;
     }
     
     private void LateUpdate()
     {
-        //Reset the frame count one we reach the frame length
         if(_frameCount == (_trailFrameLength * NunmberVertices))
         {
             _frameCount = 0;
         }
 
-        //Draw first triangle vertices for back and front
         _vertices[_frameCount] = _base.transform.position;
         _vertices[_frameCount + 1] = _tip.transform.position;
         _vertices[_frameCount + 2] = _previousTipPosition;
@@ -63,7 +60,6 @@ public class Lighsaber : MonoBehaviour
         _vertices[_frameCount + 4] = _previousTipPosition;
         _vertices[_frameCount + 5] = _tip.transform.position;
 
-        //Draw fill in triangle vertices
         _vertices[_frameCount + 6] = _previousTipPosition;
         _vertices[_frameCount + 7] = _base.transform.position;
         _vertices[_frameCount + 8] = _previousBasePosition;
@@ -71,7 +67,6 @@ public class Lighsaber : MonoBehaviour
         _vertices[_frameCount + 10] = _previousBasePosition;
         _vertices[_frameCount + 11] = _base.transform.position;
 
-        //Set triangles
         _triangles[_frameCount] = _frameCount;
         _triangles[_frameCount + 1] = _frameCount + 1;
         _triangles[_frameCount + 2] = _frameCount + 2;
@@ -85,7 +80,6 @@ public class Lighsaber : MonoBehaviour
         _triangles[_frameCount + 10] = _frameCount + 10;
         _triangles[_frameCount + 11] = _frameCount + 11;
 
-        //Track the previous base and tip positions for the next frame
         _previousTipPosition = _tip.transform.position;
         _previousBasePosition = _base.transform.position;
         _frameCount += NunmberVertices;
@@ -101,18 +95,13 @@ public class Lighsaber : MonoBehaviour
     {
         _triggerExitTipPosition = _tip.transform.position;
 
-        //Create a triangle between the tip and base so that we can get the normal
         Vector3 side1 = _triggerExitTipPosition - _triggerEnterTipPosition;
         Vector3 side2 = _triggerExitTipPosition - _triggerEnterBasePosition;
 
-        //Get the point perpendicular to the triangle above which is the normal
-        //https://docs.unity3d.com/Manual/ComputingNormalPerpendicularVector.html
         Vector3 normal = Vector3.Cross(side1, side2).normalized;
 
-        //Transform the normal so that it is aligned with the object we are slicing's transform.
         Vector3 transformedNormal = ((Vector3)(other.gameObject.transform.localToWorldMatrix.transpose * normal)).normalized;
 
-        //Get the enter position relative to the object we're cutting's local transform
         Vector3 transformedStartingPoint = other.gameObject.transform.InverseTransformPoint(_triggerEnterTipPosition);
 
         Plane plane = new Plane();
@@ -123,7 +112,6 @@ public class Lighsaber : MonoBehaviour
 
         var direction = Vector3.Dot(Vector3.up, transformedNormal);
 
-        //Flip the plane so that we always know which side the positive mesh is on
         if (direction < 0)
         {
             plane = plane.flipped;

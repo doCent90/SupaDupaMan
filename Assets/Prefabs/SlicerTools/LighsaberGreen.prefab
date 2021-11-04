@@ -64,8 +64,8 @@ MonoBehaviour:
   _blade: {fileID: 1435020879837718176}
   _tip: {fileID: 6002168252591943976}
   _base: {fileID: 3530468882645969155}
-  _trailFrameLength: 5
-  _forceAppliedToCut: 5
+  _trailFrameLength: 10
+  _forceAppliedToCut: 10
 --- !u!1 &1435020879837718176
 GameObject:
   m_ObjectHideFlags: 0

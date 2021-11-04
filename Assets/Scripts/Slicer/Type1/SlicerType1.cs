@@ -7,7 +7,7 @@ public abstract class SlicerType1 : MonoBehaviour
     protected float _elapsedTime = 0;
     protected bool _isDamaged = false;
 
-    protected const float DestroyTime = 1f;
+    protected const float DestroyTime = 1.5f;
     protected const float Range = 10f;
 
     protected abstract void DisableDafaultObjects();
