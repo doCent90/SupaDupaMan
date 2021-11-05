@@ -15,15 +15,14 @@ public class GameWin : MonoBehaviour
 
     private void OnEnable()
     {
+        _winText = FindObjectOfType<YouWin>();
+        _enemyGigant = FindObjectOfType<EnemyGigant>();
+        _enemy = _enemyGigant.GetComponent<Enemy>();
         _playerMover = FindObjectOfType<PlayerMover>();
         _playerRotater = _playerMover.GetComponent<PlayerRotater>();
         _objectsSelector = _playerMover.GetComponentInChildren<ObjectsSelector>();
-        _enemyGigant = FindObjectOfType<EnemyGigant>();
-        _enemy = _enemyGigant.GetComponent<Enemy>();
-        _winText = FindObjectOfType<YouWin>();
 
         _winText.gameObject.SetActive(false);
-
         _enemy.Died += OnEnemyDied;
     }
 

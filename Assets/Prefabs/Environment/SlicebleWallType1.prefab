@@ -1606,7 +1606,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6375759031780077695}
   m_Layer: 0
-  m_Name: wallSliced
+  m_Name: SlicebleWallType1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

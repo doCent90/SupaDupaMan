@@ -1,44 +1,33 @@
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerMover))]
+[RequireComponent(typeof(PlayerRotater))]
 public class Player : MonoBehaviour
 {
-    private GameOver _gameOver;
     private PlayerMover _mover;
     private StartGame _startGame;
     private PlayerRotater _rotater;
-    private ObjectsSelector _pointSelector;
+    private ObjectsSelector _objectsSelector;
 
     private void OnEnable()
     {
         _mover = GetComponent<PlayerMover>();
         _rotater = GetComponent<PlayerRotater>();
-        _gameOver = FindObjectOfType<GameOver>();
         _startGame = FindObjectOfType<StartGame>();
-        _pointSelector = GetComponentInChildren<ObjectsSelector>();
+        _objectsSelector = GetComponentInChildren<ObjectsSelector>();
 
-        _startGame.Started += OnStart;
-        _gameOver.Defeated += OnDefeatGame;
+        _startGame.Started += OnStarted;
     }
 
     private void OnDisable()
     {
-        _startGame.Started -= OnStart;
-        _gameOver.Defeated -= OnDefeatGame;
+        _startGame.Started -= OnStarted;
     }
 
-    private void OnStart()
+    private void OnStarted()
     {
         _mover.enabled = true;
         _rotater.enabled = true;
-        _pointSelector.enabled = true;
-    }
-
-    private void OnDefeatGame()
-    {
-        enabled = false;
-
-        _rotater.enabled = false;
-        _pointSelector.enabled = false;
+        _objectsSelector.enabled = true;
     }
 }

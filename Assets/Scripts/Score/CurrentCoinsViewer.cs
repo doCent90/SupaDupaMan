@@ -3,10 +3,10 @@ using TMPro;
 
 public class CurrentCoinsViewer : MonoBehaviour
 {
-    private CoinScaler _coinScaler;
     private TMP_Text _coinsTxt;
+    private CoinScaler _coinScaler;
 
-    private int _currentCoins = 0;
+    private int _currentCoinsCount = 0;
 
     private const int Multiply = 10;
     private const string Coins = "Coins";
@@ -28,19 +28,19 @@ public class CurrentCoinsViewer : MonoBehaviour
 
     private void AddCoin()
     {
-        _currentCoins += Multiply;
+        _currentCoinsCount += Multiply;
         Show();
     }
 
     private void Show()
     {
-        _coinsTxt.text = _currentCoins.ToString();
+        _coinsTxt.text = _currentCoinsCount.ToString();
     }
 
     private void SafeScore()
     {
         int totalCoins = PlayerPrefs.GetInt(Coins);
-        totalCoins += _currentCoins;
+        totalCoins += _currentCoinsCount;
 
         PlayerPrefs.SetInt(Coins, totalCoins);
     }

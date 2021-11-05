@@ -7,7 +7,7 @@ public abstract class SlicerType1 : MonoBehaviour
     protected float _elapsedTime = 0;
     protected bool _isDamaged = false;
 
-    protected const float DestroyTime = 1.5f;
+    protected const float DestroingTime = 1.5f;
     protected const float Range = 10f;
 
     protected abstract void DisableDafaultObjects();
@@ -19,15 +19,15 @@ public abstract class SlicerType1 : MonoBehaviour
 
     private void Update()
     {
-        if (_isDamaged)
+        if (!_isDamaged)
+            return;
+        else
         {
             if (_elapsedTime <= 0)
                 Destroy();
 
             _elapsedTime -= Time.deltaTime;
         }
-        else
-            return;
     }
 
     private void Destroy()

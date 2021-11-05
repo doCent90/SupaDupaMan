@@ -9,6 +9,9 @@ public class StartSession : MonoBehaviour
     {
         int sessionCount = PlayerPrefs.GetInt(SessionCount);
 
+        if (sessionCount <= 0)
+            PlayerPrefs.SetInt(SessionCount, 0);
+
         if (sessionCount != 0)
         {
             sessionCount++;
@@ -16,13 +19,5 @@ public class StartSession : MonoBehaviour
         }
 
         LVL1.Load();
-    }
-
-    private void Init()
-    {
-        int sessionCount = PlayerPrefs.GetInt(SessionCount);
-
-        if (sessionCount <= 0)
-            PlayerPrefs.SetInt(SessionCount, 0);
     }
 }

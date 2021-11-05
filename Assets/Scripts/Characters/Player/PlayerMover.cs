@@ -2,6 +2,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(PlayerRotater))]
 public class PlayerMover : MonoBehaviour
 {
     private Exit _exit;
@@ -10,10 +11,7 @@ public class PlayerMover : MonoBehaviour
     private PlayerRotater _rotater;
 
     private const float Duration = 0.5f;
-    private const float Distance = 60f;
-
-    public bool IsLastWayPoint { get; private set; }
-    public bool HasCurrentPositions { get; private set; }
+    private const float Distance = 65f;
 
     public event UnityAction<bool> Moved;
 

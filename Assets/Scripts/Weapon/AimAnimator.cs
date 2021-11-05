@@ -1,9 +1,10 @@
 using UnityEngine;
 
+[RequireComponent(typeof(AimRenderer))]
 public class AimAnimator : MonoBehaviour
 {
     private AimMain _aimMain;
-    private AimOutOfRange _aimOutOfRange;
+    private AimOutOfRangeView _aimOutOfRange;
 
     private Transform _main;
     private Transform _outOfRange;
@@ -19,19 +20,19 @@ public class AimAnimator : MonoBehaviour
     {
         _renderer = GetComponent<AimRenderer>();
         _aimMain = GetComponentInChildren<AimMain>();
-        _aimOutOfRange = GetComponentInChildren<AimOutOfRange>();
+        _aimOutOfRange = GetComponentInChildren<AimOutOfRangeView>();
 
         _main = _aimMain.transform;
         _outOfRange = _aimOutOfRange.transform;
 
-        _renderer.MainAimActivated += OnMainActivated;
-        _renderer.OutOfRangeAimActivated += OnOutOfRangeActivated;
+        _renderer.MainEnabled += OnMainActivated;
+        _renderer.OutOfRangeEnabled += OnOutOfRangeActivated;
     }
 
     private void OnDisable()
     {
-        _renderer.MainAimActivated -= OnMainActivated;
-        _renderer.OutOfRangeAimActivated -= OnOutOfRangeActivated;
+        _renderer.MainEnabled -= OnMainActivated;
+        _renderer.OutOfRangeEnabled -= OnOutOfRangeActivated;
     }
 
     private void OnMainActivated(bool isActivate)

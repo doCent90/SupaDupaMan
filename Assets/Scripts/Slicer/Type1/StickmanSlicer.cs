@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class StickmanSliced : SlicerType1
+public class StickmanSlicer : SlicerType1
 {
     private CellsDestroyer _cellsDestroyer;
 
-    public void StartSclice()
+    public void TakeDamage()
     {
         _isDamaged = true;
     }

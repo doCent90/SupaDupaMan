@@ -1,55 +1,59 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(AimAnimator))]
+[RequireComponent(typeof(ObjectsSelector))]
 public class AimRenderer : MonoBehaviour
 {
     private LasersActivator _laser;
-    private AimMain _aimMainPrefab;
+    private AimMain _mainPrefab;
     private PlayerRotater _playerRotater;
-    private AimOutOfRange _aimOutOfRangePrefab;
+    private ObjectsSelector _objectsSelector;
+    private AimOutOfRangeView _outOfViewPrefab;
 
     private bool _isReady;
-    private readonly Color _green = Color.green;
+    private float _maxLength;
     private readonly Color _red = Color.red;
+    private readonly Color _green = Color.green;
 
-    private const float _maxLength = 50f;
-
-    public event UnityAction<bool> MainAimActivated;
-    public event UnityAction<bool> OutOfRangeAimActivated;
+    public event UnityAction<bool> MainEnabled;
+    public event UnityAction<bool> OutOfRangeEnabled;
 
     private void OnEnable()
     {
         _laser = FindObjectOfType<LasersActivator>();
-        _aimMainPrefab = GetComponentInChildren<AimMain>();
+        _mainPrefab = GetComponentInChildren<AimMain>();
+        _objectsSelector = GetComponent<ObjectsSelector>();
         _playerRotater = GetComponentInParent<PlayerRotater>();
-        _aimOutOfRangePrefab = GetComponentInChildren<AimOutOfRange>();
+        _outOfViewPrefab = GetComponentInChildren<AimOutOfRangeView>();
 
-        _playerRotater.AimMoved += OnAimMove;
-        _laser.Fired += OnLasersFire;
+        _maxLength = _objectsSelector.MaxLength;
+        _playerRotater.Rotate += OnPlayerRotated;
+        _laser.Fired += OnLasersFired;
     }
 
     private void OnDisable()
     {
-        _playerRotater.AimMoved -= OnAimMove;
-        _laser.Fired -= OnLasersFire;
+        _playerRotater.Rotate -= OnPlayerRotated;
+        _laser.Fired -= OnLasersFired;
     }
 
     private void Update()
     {
-        DrawAim();
+        Draw();
     }
 
-    private void OnAimMove(bool isReady)
+    private void OnPlayerRotated(bool isReady)
     {
         _isReady = isReady;
     }
 
-    private void OnLasersFire(bool isFire)
+    private void OnLasersFired(bool isFire)
     {
         _isReady = true ? isFire = false : isFire = true;
     }
 
-    private void DrawAim()
+    private void Draw()
     {
         if (_isReady)
         {
@@ -57,53 +61,53 @@ public class AimRenderer : MonoBehaviour
 
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, _maxLength))
             {
-                MainAimActivate(true);
-                OutOfRangeAimActivate(false);
+                SetSwitchMain(isEnable: true);
+                SetSwitchOutOfRange(isEnable: false);
 
-                _aimMainPrefab.transform.position = hit.point + hit.normal;
-                var spriteRenderer = _aimMainPrefab.GetComponent<SpriteRenderer>();
+                _mainPrefab.transform.position = hit.point + hit.normal;
+                var spriteRenderer = _mainPrefab.GetComponent<SpriteRenderer>();
 
-                if (hit.collider.TryGetComponent(out WallSliced slicer) && slicer.enabled)
+                if (hit.collider.TryGetComponent(out WallSlicer wall) && wall.enabled)
                     RotateAtNormal(hit, spriteRenderer, _red);
                 else if(hit.collider.TryGetComponent(out Enemy enemy))
-                    RotateAtLook(hit, spriteRenderer, _red);
+                    RotateAtLook(spriteRenderer, _red);
                 else if(hit.collider.TryGetComponent(out Platform platform))
                     RotateAtNormal(hit, spriteRenderer, _green);
             }
             else
             {
-                MainAimActivate(false);
-                OutOfRangeAimActivate(true);
+                SetSwitchMain(isEnable: false);
+                SetSwitchOutOfRange(isEnable: true);
             }
         }
         else
         {
-            MainAimActivate(false);
-            OutOfRangeAimActivate(false);
+            SetSwitchMain(isEnable: false);
+            SetSwitchOutOfRange(isEnable: false);
         }
     }
 
-    private void RotateAtLook(RaycastHit hit, SpriteRenderer spriteRenderer, Color color)
+    private void RotateAtLook(SpriteRenderer spriteRenderer, Color color)
     {
         spriteRenderer.color = color;
-        _aimMainPrefab.transform.rotation = transform.rotation;
+        _mainPrefab.transform.rotation = transform.rotation;
     }
 
     private void RotateAtNormal(RaycastHit hit, SpriteRenderer spriteRenderer, Color color)
     {
         spriteRenderer.color = color;
-        _aimMainPrefab.transform.rotation = Quaternion.FromToRotation(_aimMainPrefab.transform.forward, hit.normal) * _aimMainPrefab.transform.rotation;
+        _mainPrefab.transform.rotation = Quaternion.FromToRotation(_mainPrefab.transform.forward, hit.normal) * _mainPrefab.transform.rotation;
     }
 
-    private void MainAimActivate(bool isActivate)
+    private void SetSwitchMain(bool isEnable)
     {
-        _aimMainPrefab.GetComponent<SpriteRenderer>().enabled = isActivate;
-        MainAimActivated?.Invoke(isActivate);
+        _mainPrefab.GetComponent<SpriteRenderer>().enabled = isEnable;
+        MainEnabled?.Invoke(isEnable);
     }
 
-    private void OutOfRangeAimActivate(bool isActivate)
+    private void SetSwitchOutOfRange(bool isEnable)
     {
-        _aimOutOfRangePrefab.GetComponent<SpriteRenderer>().enabled = isActivate;
-        OutOfRangeAimActivated?.Invoke(isActivate);
+        _outOfViewPrefab.GetComponent<SpriteRenderer>().enabled = isEnable;
+        OutOfRangeEnabled?.Invoke(isEnable);
     }
 }

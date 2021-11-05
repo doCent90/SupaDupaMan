@@ -1,9 +1,9 @@
 using UnityEngine;
 
+[RequireComponent(typeof(StartRegDollMover))]
 public class StartRegDoll : MonoBehaviour
 {
-    [SerializeField] private GameObject _regDoll;
-
+    private RegDoll _regDoll;
     private GameWin _gameWin;
     private StartGame _startGame;
     private StartRegDollMover _dollMover;
@@ -12,6 +12,7 @@ public class StartRegDoll : MonoBehaviour
     {
         _gameWin = FindObjectOfType<GameWin>();
         _startGame = FindObjectOfType<StartGame>();
+        _regDoll = GetComponentInChildren<RegDoll>();
         _dollMover = GetComponent<StartRegDollMover>();
 
         _gameWin.Win += OnWinned;

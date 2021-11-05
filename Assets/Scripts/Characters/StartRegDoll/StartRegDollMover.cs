@@ -1,6 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 
+[RequireComponent(typeof(StartRegDollAnimator))]
 public class StartRegDollMover : MonoBehaviour
 {
     private Exit _exit;
@@ -8,7 +9,7 @@ public class StartRegDollMover : MonoBehaviour
     private EnemyGigant _enemyGigant;
     private StartRegDollAnimator _dollAnimator;
 
-    private const float Duration = 4f;
+    private const float Duration = 3f;
 
     private void OnEnable()
     {
@@ -27,6 +28,7 @@ public class StartRegDollMover : MonoBehaviour
 
         var tweenMove = transform.DOMove(new Vector3(_exit.transform.position.x,
             transform.position.y, _exit.transform.position.z), Duration);
+        tweenMove.SetEase(Ease.InFlash);
         tweenMove.OnComplete(DisableObject);
     }
 

@@ -5,16 +5,16 @@ public class CellsDestroyer : MonoBehaviour
     private MeshCollider[] _meshColliders;
 
     private float _elapsedTime;
-    private bool _isMeshesTrigger = false;
     private bool _isDestroy = false;
+    private bool _isMeshesTrigger = false;
 
-    private const float DelayColliderTriggerOff = 4f;
-    private const float DelayDestroy = 2f;
+    private const float DelayDisable = 2f;
+    private const float DelayCollidersTriggerOn = 4f;
 
     private void OnEnable()
     {
         _meshColliders = GetComponentsInChildren<MeshCollider>();
-        _elapsedTime = DelayColliderTriggerOff;
+        _elapsedTime = DelayCollidersTriggerOn;
     }
 
     private void Update()
@@ -22,20 +22,22 @@ public class CellsDestroyer : MonoBehaviour
         if (!_isMeshesTrigger)
         {
             if (_elapsedTime <= 0)
-                SetColliderTrigger();
+                SetCollidersTriggerOn();
 
             _elapsedTime -= Time.deltaTime;
         }
         else if (!_isDestroy)
         {
             if (_elapsedTime <= 0)
-                Destroy();
+                Disable();
 
             _elapsedTime -= Time.deltaTime;
         }
+        else
+            return;
     }
 
-    private void SetColliderTrigger()
+    private void SetCollidersTriggerOn()
     {
         foreach (var mesh in _meshColliders)
         {
@@ -43,10 +45,10 @@ public class CellsDestroyer : MonoBehaviour
         }
 
         _isMeshesTrigger = true;
-        _elapsedTime = DelayDestroy;
+        _elapsedTime = DelayDisable;
     }
 
-    private void Destroy()
+    private void Disable()
     {
         foreach (var mesh in _meshColliders)
         {

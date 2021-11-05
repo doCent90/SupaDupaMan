@@ -11,9 +11,9 @@ public class EnemyMover : MonoBehaviour
     private int _direction;
     private bool _onTargetPosition = false;
 
-    private const float Duration = 0.2f;
     private const float Speed = 8f;
     private const int Multiply = 10;
+    private const float Duration = 0.2f;
 
     private void OnEnable()
     {

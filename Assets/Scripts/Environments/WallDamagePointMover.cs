@@ -66,7 +66,7 @@ public class WallDamagePointMover : MonoBehaviour
             else
                 _targetPosition = new Vector3(0,  RangeY * Random.Range(Negative, Positive), RangeZ);
 
-            _direction = _direction > 10 ? _direction = 0 : _direction;
+            _direction = _direction > 100 ? _direction = 0 : _direction;
         }
 
         transform.localPosition = Vector3.MoveTowards(transform.localPosition, _targetPosition, Speed * Time.deltaTime);

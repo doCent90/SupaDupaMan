@@ -1,5 +1,7 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(MeshCollider))]
 public class SlicedWallTile : MonoBehaviour
 {
     private Rigidbody _rigidbody;
@@ -22,7 +24,7 @@ public class SlicedWallTile : MonoBehaviour
 
         AddForce();
 
-        _rigidbody.mass = _rigidbody.mass * Multyply;
+        _rigidbody.mass *= Multyply;
         _elapsedTime = TriggerActiveTime;
     }
 

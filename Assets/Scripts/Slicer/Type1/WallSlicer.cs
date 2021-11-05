@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class WallSliced : SlicerType1
+[RequireComponent(typeof(BoxCollider))]
+public class WallSlicer : SlicerType1
 {
     private BoxCollider _boxCollider;
     private MeshCollider _meshCollider;
@@ -13,7 +14,7 @@ public class WallSliced : SlicerType1
 
     public void TakeDamage()
     {
-        _elapsedTime = DestroyTime;
+        _elapsedTime = DestroingTime;
         _isDamaged = true;
 
         _meshCollider.convex = true;

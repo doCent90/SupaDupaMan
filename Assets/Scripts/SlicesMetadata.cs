@@ -1,26 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using System.Text;
-using System.Threading.Tasks;
-using System.Runtime.InteropServices;
-using UnityEngine.UIElements;
 
 namespace Assets.Scripts
 {
-    /// <summary>
-    /// The side of the mesh
-    /// </summary>
     public enum MeshSide
     {
         Positive = 0,
         Negative = 1
     }
 
-    /// <summary>
-    /// An object used to manage the positive and negative side mesh data for a sliced object
-    /// </summary>
     class SlicesMetadata
     {
         private Mesh _positiveSideMesh;
@@ -105,17 +94,6 @@ namespace Assets.Scripts
             ComputeNewMeshes();
         }
 
-        /// <summary>
-        /// Add the mesh data to the correct side and calulate normals
-        /// </summary>
-        /// <param name="side"></param>
-        /// <param name="vertex1"></param>
-        /// <param name="vertex1Uv"></param>
-        /// <param name="vertex2"></param>
-        /// <param name="vertex2Uv"></param>
-        /// <param name="vertex3"></param>
-        /// <param name="vertex3Uv"></param>
-        /// <param name="shareVertices"></param>
         private void AddTrianglesNormalAndUvs(MeshSide side, Vector3 vertex1, Vector3? normal1, Vector2 uv1, Vector3 vertex2, Vector3? normal2, Vector2 uv2, Vector3 vertex3, Vector3? normal3, Vector2 uv3, bool shareVertices, bool addFirst)
         {
             if (side == MeshSide.Positive)
@@ -129,25 +107,6 @@ namespace Assets.Scripts
         }
 
 
-        /// <summary>
-        /// Adds the vertices to the mesh sets the triangles in the order that the vertices are provided.
-        /// If shared vertices is false vertices will be added to the list even if a matching vertex already exists
-        /// Does not compute normals
-        /// </summary>
-        /// <param name="vertices"></param>
-        /// <param name="triangles"></param>
-        /// <param name="uvs"></param>
-        /// <param name="normals"></param>
-        /// <param name="vertex1"></param>
-        /// <param name="vertex1Uv"></param>
-        /// <param name="normal1"></param>
-        /// <param name="vertex2"></param>
-        /// <param name="vertex2Uv"></param>
-        /// <param name="normal2"></param>
-        /// <param name="vertex3"></param>
-        /// <param name="vertex3Uv"></param>
-        /// <param name="normal3"></param>
-        /// <param name="shareVertices"></param>
         private void AddTrianglesNormalsAndUvs(ref List<Vector3> vertices, ref List<int> triangles, ref List<Vector3> normals, ref List<Vector2> uvs, Vector3 vertex1, Vector3? normal1, Vector2 uv1, Vector3 vertex2, Vector3? normal2, Vector2 uv2, Vector3 vertex3, Vector3? normal3, Vector2 uv3, bool shareVertices, bool addFirst)
         {
             int tri1Index = vertices.IndexOf(vertex1);
@@ -157,7 +116,6 @@ namespace Assets.Scripts
                 ShiftTriangleIndeces(ref triangles);
             }
 
-            //If a the vertex already exists we just add a triangle reference to it, if not add the vert to the list and then add the tri index
             if (tri1Index > -1 && shareVertices)
             {                
                 triangles.Add(tri1Index);
@@ -253,21 +211,15 @@ namespace Assets.Scripts
             }
         }
 
-        /// <summary>
-        /// Will render the inside of an object
-        /// This is heavy as it duplicates all the vertices and creates opposite winding direction
-        /// </summary>
         private void AddReverseTriangleWinding()
         {
             int positiveVertsStartIndex = _positiveSideVertices.Count;
-            //Duplicate the original vertices
             _positiveSideVertices.AddRange(_positiveSideVertices);
             _positiveSideUvs.AddRange(_positiveSideUvs);
             _positiveSideNormals.AddRange(FlipNormals(_positiveSideNormals));
 
             int numPositiveTriangles = _positiveSideTriangles.Count;
 
-            //Add reverse windings
             for (int i = 0; i < numPositiveTriangles; i += 3)
             {
                 _positiveSideTriangles.Add(positiveVertsStartIndex + _positiveSideTriangles[i]);
@@ -276,14 +228,12 @@ namespace Assets.Scripts
             }
 
             int negativeVertextStartIndex = _negativeSideVertices.Count;
-            //Duplicate the original vertices
             _negativeSideVertices.AddRange(_negativeSideVertices);
             _negativeSideUvs.AddRange(_negativeSideUvs);
             _negativeSideNormals.AddRange(FlipNormals(_negativeSideNormals));
 
             int numNegativeTriangles = _negativeSideTriangles.Count;
 
-            //Add reverse windings
             for (int i = 0; i < numNegativeTriangles; i += 3)
             {
                 _negativeSideTriangles.Add(negativeVertextStartIndex + _negativeSideTriangles[i]);
@@ -292,9 +242,6 @@ namespace Assets.Scripts
             }
         }
 
-        /// <summary>
-        /// Join the points along the plane to the halfway point
-        /// </summary>
         private void JoinPointsAlongPlane()
         {
             Vector3 halfway = GetHalfwayPoint(out float distance);
@@ -325,10 +272,6 @@ namespace Assets.Scripts
             }
         }
 
-        /// <summary>
-        /// For all the points added along the plane cut, get the half way between the first and furthest point
-        /// </summary>
-        /// <returns></returns>
         private Vector3 GetHalfwayPoint(out float distance)
         {
             if(_pointsAlongPlane.Count > 0)
@@ -358,10 +301,6 @@ namespace Assets.Scripts
             }
         }
 
-        /// <summary>
-        /// Setup the mesh object for the specified side
-        /// </summary>
-        /// <param name="side"></param>
         private void SetMeshData(MeshSide side)
         {
             if (side == MeshSide.Positive)
@@ -380,9 +319,6 @@ namespace Assets.Scripts
             }
         }
 
-        /// <summary>
-        /// Compute the positive and negative meshes based on the plane and mesh
-        /// </summary>
         private void ComputeNewMeshes()
         {
             int[] meshTriangles = _mesh.triangles;
@@ -392,7 +328,6 @@ namespace Assets.Scripts
 
             for (int i = 0; i < meshTriangles.Length; i += 3)
             {
-                //We need the verts in order so that we know which way to wind our new mesh triangles.
                 Vector3 vert1 = meshVerts[meshTriangles[i]];
                 int vert1Index = Array.IndexOf(meshVerts, vert1);
                 Vector2 uv1 = meshUvs[vert1Index];
@@ -411,16 +346,13 @@ namespace Assets.Scripts
                 Vector3 normal3 = meshNormals[vert3Index];
                 Vector2 uv3 = meshUvs[vert3Index];
 
-                //All verts are on the same side
                 if (vert1Side == vert2Side && vert2Side == vert3Side)
                 {
-                    //Add the relevant triangle
                     MeshSide side = (vert1Side) ? MeshSide.Positive : MeshSide.Negative;
                     AddTrianglesNormalAndUvs(side, vert1, normal1, uv1, vert2, normal2, uv2, vert3, normal3, uv3, true, false);
                 }
                 else
                 {
-                    //we need the two points where the plane intersects the triangle.
                     Vector3 intersection1;
                     Vector3 intersection2;
 
@@ -430,37 +362,29 @@ namespace Assets.Scripts
                     MeshSide side1 = (vert1Side) ? MeshSide.Positive : MeshSide.Negative;
                     MeshSide side2 = (vert1Side) ? MeshSide.Negative : MeshSide.Positive;
 
-                    //vert 1 and 2 are on the same side
                     if (vert1Side == vert2Side)
                     {
-                        //Cast a ray from v2 to v3 and from v3 to v1 to get the intersections                       
                         intersection1 = GetRayPlaneIntersectionPointAndUv(vert2, uv2, vert3, uv3, out intersection1Uv);
                         intersection2 = GetRayPlaneIntersectionPointAndUv(vert3, uv3, vert1, uv1, out intersection2Uv);
 
-                        //Add the positive or negative triangles
                         AddTrianglesNormalAndUvs(side1, vert1, null, uv1, vert2, null, uv2, intersection1, null, intersection1Uv, _useSharedVertices, false);
                         AddTrianglesNormalAndUvs(side1, vert1, null, uv1, intersection1, null, intersection1Uv, intersection2, null, intersection2Uv, _useSharedVertices, false);
 
                         AddTrianglesNormalAndUvs(side2, intersection1, null, intersection1Uv, vert3, null, uv3, intersection2, null, intersection2Uv, _useSharedVertices, false);
 
                     }
-                    //vert 1 and 3 are on the same side
                     else if (vert1Side == vert3Side)
                     {
-                        //Cast a ray from v1 to v2 and from v2 to v3 to get the intersections                       
                         intersection1 = GetRayPlaneIntersectionPointAndUv(vert1, uv1, vert2, uv2, out intersection1Uv);
                         intersection2 = GetRayPlaneIntersectionPointAndUv(vert2, uv2, vert3, uv3, out intersection2Uv);
 
-                        //Add the positive triangles
                         AddTrianglesNormalAndUvs(side1, vert1, null, uv1, intersection1, null, intersection1Uv, vert3, null, uv3, _useSharedVertices, false);
                         AddTrianglesNormalAndUvs(side1, intersection1, null, intersection1Uv, intersection2, null, intersection2Uv, vert3, null, uv3, _useSharedVertices, false);
 
                         AddTrianglesNormalAndUvs(side2, intersection1, null, intersection1Uv, vert2, null, uv2, intersection2, null, intersection2Uv, _useSharedVertices, false);
                     }
-                    //Vert1 is alone
                     else
                     {
-                        //Cast a ray from v1 to v2 and from v1 to v3 to get the intersections                       
                         intersection1 = GetRayPlaneIntersectionPointAndUv(vert1, uv1, vert2, uv2, out intersection1Uv);
                         intersection2 = GetRayPlaneIntersectionPointAndUv(vert1, uv1, vert3, uv3, out intersection2Uv);
 
@@ -470,13 +394,11 @@ namespace Assets.Scripts
                         AddTrianglesNormalAndUvs(side2, intersection1, null, intersection1Uv, vert3, null, uv3, intersection2, null, intersection2Uv, _useSharedVertices, false);
                     }
 
-                    //Add the newly created points on the plane.
                     _pointsAlongPlane.Add(intersection1);
                     _pointsAlongPlane.Add(intersection2);
                 }
             }
 
-            //If the object is solid, join the new points along the plane otherwise do the reverse winding
             if (_isSolid)
             {
                 JoinPointsAlongPlane();
@@ -493,16 +415,6 @@ namespace Assets.Scripts
 
         }
 
-        /// <summary>
-        /// Casts a reay from vertex1 to vertex2 and gets the point of intersection with the plan, calculates the new uv as well.
-        /// </summary>
-        /// <param name="plane">The plane.</param>
-        /// <param name="vertex1">The vertex1.</param>
-        /// <param name="vertex1Uv">The vertex1 uv.</param>
-        /// <param name="vertex2">The vertex2.</param>
-        /// <param name="vertex2Uv">The vertex2 uv.</param>
-        /// <param name="uv">The uv.</param>
-        /// <returns>Point of intersection</returns>
         private Vector3 GetRayPlaneIntersectionPointAndUv(Vector3 vertex1, Vector2 vertex1Uv, Vector3 vertex2, Vector2 vertex2Uv, out Vector2 uv)
         {
             float distance = GetDistanceRelativeToPlane(vertex1, vertex2, out Vector3 pointOfIntersection);
@@ -510,13 +422,6 @@ namespace Assets.Scripts
             return pointOfIntersection;
         }
 
-        /// <summary>
-        /// Computes the distance based on the plane.
-        /// </summary>
-        /// <param name="vertex1">The vertex1.</param>
-        /// <param name="vertex2">The vertex2.</param>
-        /// <param name="pointOfintersection">The point ofintersection.</param>
-        /// <returns></returns>
         private float GetDistanceRelativeToPlane(Vector3 vertex1, Vector3 vertex2, out Vector3 pointOfintersection)
         {
             Ray ray = new Ray(vertex1, (vertex2 - vertex1));
@@ -525,27 +430,12 @@ namespace Assets.Scripts
             return distance;
         }
 
-        /// <summary>
-        /// Get a uv between the two provided uvs by the distance.
-        /// </summary>
-        /// <param name="uv1">The uv1.</param>
-        /// <param name="uv2">The uv2.</param>
-        /// <param name="distance">The distance.</param>
-        /// <returns></returns>
         private Vector2 InterpolateUvs(Vector2 uv1, Vector2 uv2, float distance)
         {
             Vector2 uv = Vector2.Lerp(uv1, uv2, distance);
             return uv;
         }
 
-        /// <summary>
-        /// Gets the point perpendicular to the face defined by the provided vertices        
-        //https://docs.unity3d.com/Manual/ComputingNormalPerpendicularVector.html
-        /// </summary>
-        /// <param name="vertex1"></param>
-        /// <param name="vertex2"></param>
-        /// <param name="vertex3"></param>
-        /// <returns></returns>
         private Vector3 ComputeNormal(Vector3 vertex1, Vector3 vertex2, Vector3 vertex3)
         {
             Vector3 side1 = vertex2 - vertex1;
@@ -556,11 +446,6 @@ namespace Assets.Scripts
             return normal;
         }
 
-        /// <summary>
-        /// Reverese the normals in a given list
-        /// </summary>
-        /// <param name="currentNormals"></param>
-        /// <returns></returns>
         private List<Vector3> FlipNormals(List<Vector3> currentNormals)
         {
             List<Vector3> flippedNormals = new List<Vector3>();
@@ -573,7 +458,6 @@ namespace Assets.Scripts
             return flippedNormals;
         }
 
-        //
         private void SmoothVertices()
         {
             DoSmoothing(ref _positiveSideVertices, ref _positiveSideNormals, ref _positiveSideTriangles);

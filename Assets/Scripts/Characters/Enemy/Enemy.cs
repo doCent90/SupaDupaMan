@@ -7,9 +7,10 @@ using UnityEngine.Events;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private Material _dieMaterial;
-    [SerializeField] private bool _isGigant;
-    [Header("Emoji Particals")]
-    [SerializeField] private ParticleSystem _emoji;
+
+    [SerializeField]
+    [Tooltip("If this Enemy is Last (Boss)")]
+    private bool _isGigant;
 
     private EnemyMover _mover;
     private StartGame _startGame;
@@ -19,7 +20,7 @@ public class Enemy : MonoBehaviour
 
     private ShotPointCharacter _shotPoint;
     private SkinnedMeshRenderer _renderer;
-    private StickmanSliced _stickmanSliced;
+    private StickmanSlicer _stickmanSliced;
     private EnemyParticals _enemyParticals;
 
     private PrisonerRegDoll _prisonerRegDoll;
@@ -51,16 +52,17 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if (_isDamaged)
+        if (!_isDamaged)
+            return;        
+        else
         {
+            _elapsedTime -= Time.deltaTime;
+
             if (_elapsedTime <= 0)
                 Die();
 
-            _elapsedTime -= Time.deltaTime;
             ChangeColor();
         }
-        else
-            return;        
     }
 
     private void SetShotPoint()
@@ -78,20 +80,16 @@ public class Enemy : MonoBehaviour
         SetDieMaterial();
 
         PlayFX();
-        _mover.enabled = false;
-
-        _emoji.Stop();
         _capsuleCollider.enabled = false;
 
         _prisonerRegDoll.gameObject.SetActive(false);
         _slicedRegDoll.gameObject.SetActive(true);
-        _stickmanSliced.StartSclice();
+        _stickmanSliced.TakeDamage();
     }
 
     private void ChangeColor()
     {
         _meshRenderer.material.color = Vector4.Lerp(_currentColor, _targetColor, _elapsedTime);
-        _emoji.Play();
     }
 
     private void PlayFX()
@@ -113,7 +111,7 @@ public class Enemy : MonoBehaviour
         _enemyParticals = GetComponentInChildren<EnemyParticals>();
         _prisonerRegDoll = GetComponentInChildren<PrisonerRegDoll>();
         _meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
-        _stickmanSliced = _slicedRegDoll.GetComponentInChildren<StickmanSliced>();
+        _stickmanSliced = _slicedRegDoll.GetComponentInChildren<StickmanSlicer>();
 
         _renderer = GetComponentInChildren<SkinnedMeshRenderer>();
         _particalFX = _enemyParticals.GetComponentsInChildren<ParticleSystem>();

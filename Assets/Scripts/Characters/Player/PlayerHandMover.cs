@@ -17,7 +17,7 @@ public class PlayerHandMover : MonoBehaviour
 
     private void OnDisable()
     {
-        _gameWin.Win += OnWinned;
+        _gameWin.Win -= OnWinned;
     }
 
     private void OnWinned()

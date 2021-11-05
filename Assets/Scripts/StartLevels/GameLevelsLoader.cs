@@ -6,15 +6,15 @@ public class GameLevelsLoader : MonoBehaviour
 {
     [SerializeField] protected int _levelIndex;
 
-    private const string LevelDone = "LevelDone";
-    private const string LevelStart = "level_start";
-    private const string LastLevel = "last_level";
     private const int FirstLevel = 1;
+    private const string LevelDone = "LevelDone";
+    private const string LastLevel = "last_level";
+    private const string LevelStart = "level_start";
 
     public int Level => _levelIndex;
 
-    public event UnityAction<int> StartLevel;
-    public event UnityAction<int> EndLevel;
+    public event UnityAction<int> LevelStarted;
+    public event UnityAction<int> LevelFinished;
 
     public void LoadNext()
     {
@@ -22,7 +22,7 @@ public class GameLevelsLoader : MonoBehaviour
         numberLevel++;
 
         LoadScene(numberLevel);
-        SetLevelDoneValue(numberLevel);
+        SetLevelFinishPrefsValue(numberLevel);
     }
 
     public void Retry()
@@ -37,12 +37,12 @@ public class GameLevelsLoader : MonoBehaviour
         if(level <= FirstLevel)
             PlayerPrefs.SetInt(LevelDone, FirstLevel);
 
-        StartLevel?.Invoke(_levelIndex);
+        LevelStarted?.Invoke(_levelIndex);
     }
 
     private void OnDisable()
     {
-        EndLevel?.Invoke(_levelIndex);
+        LevelFinished?.Invoke(_levelIndex);
     }
 
     private void Start()
@@ -66,7 +66,7 @@ public class GameLevelsLoader : MonoBehaviour
         }
     }
 
-    private void SetLevelDoneValue(int numberLevel)
+    private void SetLevelFinishPrefsValue(int numberLevel)
     {
         var level = PlayerPrefs.GetInt(LevelDone);
 

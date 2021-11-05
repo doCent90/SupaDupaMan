@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Linq;
-using UnityEngine.Events;
 
 [RequireComponent(typeof(CapsuleCollider))]
 public class EnemyGigant : MonoBehaviour
@@ -8,18 +7,17 @@ public class EnemyGigant : MonoBehaviour
     private Enemy[] _smallAliveEnemies;
     private CapsuleCollider _capsuleCollider;
 
-    public event UnityAction Activated;
-
     private void OnEnable()
     {
         var enemies = FindObjectsOfType<Enemy>();
         _capsuleCollider = GetComponent<CapsuleCollider>();
+        _capsuleCollider.enabled = false;
 
         _smallAliveEnemies = enemies.Where(enemy => enemy.IsGigant == false).ToArray();
 
         foreach (var enemy in _smallAliveEnemies)
         {
-            enemy.Died += DisableCollider;
+            enemy.Died += SetActiveCollider;
         }
     }
 
@@ -27,22 +25,15 @@ public class EnemyGigant : MonoBehaviour
     {
         foreach (var enemy in _smallAliveEnemies)
         {
-            enemy.Died -= DisableCollider;
+            enemy.Died -= SetActiveCollider;
         }
     }
 
-    private void DisableCollider()
+    private void SetActiveCollider()
     {
         var diedEnemies = _smallAliveEnemies.Where(enemy => enemy.enabled == false).ToArray();
 
         if (diedEnemies.Length == _smallAliveEnemies.Length)
-        {
-            _capsuleCollider.enabled = true;
-            Activated?.Invoke();
-        }
-        else
-        {
-            _capsuleCollider.enabled = false;
-        }
+            _capsuleCollider.enabled = true;        
     }
 }

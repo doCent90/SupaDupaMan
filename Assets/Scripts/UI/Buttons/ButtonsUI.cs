@@ -6,7 +6,6 @@ public class ButtonsUI : MonoBehaviour
 {    
     [Header("Buttons")]
     [SerializeField] private Button _buttonStart;
-    [SerializeField] private Button _buttonRetry;
     [SerializeField] private Button _buttonContinue;
     [Header("Shop")]
     [SerializeField] private GameObject _shop;
@@ -23,17 +22,14 @@ public class ButtonsUI : MonoBehaviour
     private CurrentCoinsViewer _coinsViewer;
     private SoundsFXSettings _soundMaster;
     private GameLevelsLoader _loadLevel;
-    private GameOver _gameOver;
     private GameWin _gameWin;
     private StartGame _game;
-    private Player _player;
 
     private float _elapsedTime = 0;
     private bool _isLevelDone = false;
 
     private const string LevelComplete = "level_complete";
     private const string TimeSpent = "time_spent_lvl_complete";
-    private const string Restart = "restart";
 
     public bool IsPanelOpen { get; private set; } = false;
 
@@ -43,15 +39,6 @@ public class ButtonsUI : MonoBehaviour
     {
         _game.StartLevel();
         _buttonStart.gameObject.SetActive(false);
-    }
-
-    public void RetryLevel()
-    {
-        _buttonRetry.gameObject.SetActive(false);
-        _loadLevel.Retry();
-        Clicked?.Invoke();
-
-        Amplitude.Instance.logEvent(Restart, _loadLevel.Level);
     }
 
     public void NextLevel()
@@ -134,23 +121,15 @@ public class ButtonsUI : MonoBehaviour
         _openOptions.gameObject.SetActive(true);
     }
 
-    public void Exit()
-    {
-        Application.Quit();
-    }
-
     private void OnEnable()
     {
-        _player = FindObjectOfType<Player>();
         _game = FindObjectOfType<StartGame>();
         _gameWin = FindObjectOfType<GameWin>();
-        _gameOver = FindObjectOfType<GameOver>();
         _loadLevel = FindObjectOfType<GameLevelsLoader>();
         _soundMaster = FindObjectOfType<SoundsFXSettings>();
         _coinsViewer = FindObjectOfType<CurrentCoinsViewer>();
 
         _gameWin.Win += ShowContinueButton;
-        _gameOver.Defeated += ShowRetryButton;
 
         Init();
     }
@@ -158,13 +137,11 @@ public class ButtonsUI : MonoBehaviour
     private void OnDisable()
     {
         _gameWin.Win -= ShowContinueButton;
-        _gameOver.Defeated -= ShowRetryButton;
     }
 
     private void Init()
     {
         _panelOptions.SetActive(false);
-        _buttonRetry.gameObject.SetActive(false);
         _closeOptions.gameObject.SetActive(false);
         _buttonContinue.gameObject.SetActive(false);
 
@@ -178,12 +155,7 @@ public class ButtonsUI : MonoBehaviour
             _onSoundButton.gameObject.SetActive(false);
             _offSoundButton.gameObject.SetActive(true);
         }
-    }
-    
-    private void ShowRetryButton()
-    {
-        _buttonRetry.gameObject.SetActive(true);
-    }
+    }    
 
     private void ShowContinueButton()
     {

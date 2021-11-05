@@ -11,7 +11,7 @@ public class ObjectsSelector : MonoBehaviour
     private AimMain _aimMain;
     private bool _isFire = false;
 
-    private const float _maxLength = 51f;
+    public readonly float MaxLength = 50f;
 
     private void OnEnable()
     {
@@ -60,7 +60,7 @@ public class ObjectsSelector : MonoBehaviour
         if (Input.GetMouseButtonUp(0) && !_isFire)
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, _maxLength))
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, MaxLength))
             {
                 if (hit.collider != null)
                 {
@@ -78,7 +78,7 @@ public class ObjectsSelector : MonoBehaviour
         if (Input.GetMouseButtonUp(0) && !_isFire)
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, _maxLength))
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, MaxLength))
             {
                 if (hit.collider != null)
                 {
@@ -96,11 +96,11 @@ public class ObjectsSelector : MonoBehaviour
         if (Input.GetMouseButtonUp(0) && !_isFire)
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, _maxLength))
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, MaxLength))
             {
                 if (hit.collider != null)
                 {
-                    if (hit.collider.TryGetComponent(out WallSliced wall))
+                    if (hit.collider.TryGetComponent(out WallSlicer wall))
                     {
                         wall.TakeDamage();
                     }

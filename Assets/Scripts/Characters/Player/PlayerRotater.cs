@@ -6,14 +6,14 @@ public class PlayerRotater : MonoBehaviour
     private const string MouseX = "Mouse X";
     private const string MouseY = "Mouse Y";
 
-    public event UnityAction<bool> AimMoved;
+    public event UnityAction<bool> Rotate;
 
     private void Update()
     {
-        Rotate();
+        ViewRotate();
     }
 
-    private void Rotate()
+    private void ViewRotate()
     {
         float x;
         float y;
@@ -24,9 +24,9 @@ public class PlayerRotater : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             transform.localEulerAngles += new Vector3(y, x, 0);
-            AimMoved?.Invoke(true);
+            Rotate?.Invoke(true);
         }
         else
-            AimMoved?.Invoke(false);
+            Rotate?.Invoke(false);
     }
 }

@@ -13,10 +13,10 @@ public class Laser : MonoBehaviour
     private ParticleSystem[] _effects;
     private ParticleSystem[] _hits;
 
-    private const float _hitOffset = 0.1f;
-    private const float _noiseTextureLength = 0.5f;
-    private const float _mainTextureLength = 0.5f;
-    private const float _maxLength = 35f;
+    private const float HitOffset = 0.1f;
+    private const float NoiseTextureLength = 0.5f;
+    private const float MainTextureLength = 0.5f;
+    private const float MaxLength = 35f;
 
     private const string MainTexture = "_MainTex";
     private const string Noise = "_Noise";
@@ -24,12 +24,11 @@ public class Laser : MonoBehaviour
     private void OnEnable()
     {
         _laser = GetComponent<LineRenderer>();
+        _attack = GetComponentInParent<LasersActivator>();
         _effects = GetComponentsInChildren<ParticleSystem>();
         _hits = _hitEffect.GetComponentsInChildren<ParticleSystem>();
-        _attack = GetComponentInParent<LasersActivator>();
 
         _attack.Fired += ActivatLaser;
-
         ResetLaser();
     }
 
@@ -72,10 +71,10 @@ public class Laser : MonoBehaviour
             _laser.SetPosition(0, transform.position);
             RaycastHit hit;
 
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, _maxLength))
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, MaxLength))
             {
                 _laser.SetPosition(1, hit.point);
-                _hitEffect.transform.position = hit.point + hit.normal * _hitOffset;
+                _hitEffect.transform.position = hit.point + hit.normal * HitOffset;
                 _hitEffect.transform.rotation = Quaternion.identity;
 
                 foreach (var partical in _effects)
@@ -84,12 +83,12 @@ public class Laser : MonoBehaviour
                         partical.Play();
                 }
 
-                _length[0] = _mainTextureLength * (Vector3.Distance(transform.position, hit.point));
-                _length[2] = _noiseTextureLength * (Vector3.Distance(transform.position, hit.point));
+                _length[0] = MainTextureLength * (Vector3.Distance(transform.position, hit.point));
+                _length[2] = NoiseTextureLength * (Vector3.Distance(transform.position, hit.point));
             }
             else
             {
-                var endPos = transform.position + transform.forward * _maxLength;
+                var endPos = transform.position + transform.forward * MaxLength;
                 _laser.SetPosition(1, endPos);
                 _hitEffect.transform.position = endPos;
 
@@ -99,8 +98,8 @@ public class Laser : MonoBehaviour
                         partical.Stop();
                 }
 
-                _length[0] = _mainTextureLength * (Vector3.Distance(transform.position, endPos));
-                _length[2] = _noiseTextureLength * (Vector3.Distance(transform.position, endPos));
+                _length[0] = MainTextureLength * (Vector3.Distance(transform.position, endPos));
+                _length[2] = NoiseTextureLength * (Vector3.Distance(transform.position, endPos));
             }
 
             if (_laser.enabled == false && _isReady == true)

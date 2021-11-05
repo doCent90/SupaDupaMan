@@ -4,21 +4,22 @@ namespace Assets.Scripts
 {
     class Slicer
     {
+        private const string Positive = "{0}_positive";
+        private const string Negative = "{0}_negative";
+
         public static GameObject[] Slice(Plane plane, GameObject objectToCut)
         {            
             Mesh mesh = objectToCut.GetComponent<MeshFilter>().mesh;
             var a = mesh.GetSubMesh(0);
             Sliceable sliceable = objectToCut.GetComponent<Sliceable>();
-
-            if(sliceable == null){}
-            
+           
             SlicesMetadata slicesMeta = new SlicesMetadata(plane, mesh, sliceable.IsSolid, sliceable.ReverseWireTriangles, sliceable.ShareVertices, sliceable.SmoothVertices);
 
             GameObject positiveObject = CreateMeshGameObject(objectToCut);
-            positiveObject.name = string.Format("{0}_positive", objectToCut.name);
+            positiveObject.name = string.Format(Positive, objectToCut.name);
 
             GameObject negativeObject = CreateMeshGameObject(objectToCut);
-            negativeObject.name = string.Format("{0}_negative", objectToCut.name);
+            negativeObject.name = string.Format(Negative, objectToCut.name);
 
             var positiveSideMeshData = slicesMeta.PositiveSideMesh;
             var negativeSideMeshData = slicesMeta.NegativeSideMesh;

@@ -3,8 +3,8 @@ using DG.Tweening;
 
 public class Coin : MonoBehaviour
 {
-    private Transform _scorePosition;
     private CoinScaler _coinScaler;
+    private Transform _scorePosition;
 
     private const float Duration = 1f;
     private const float CanvasSize = 0.15f;
