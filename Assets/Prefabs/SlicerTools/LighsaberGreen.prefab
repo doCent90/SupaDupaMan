@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 368831510371052419}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 5.83}
+  m_LocalScale: {x: 1, y: 1, z: 22.23}
   m_Children:
   - {fileID: 5494654333755829989}
   m_Father: {fileID: 0}
@@ -64,8 +64,7 @@ MonoBehaviour:
   _blade: {fileID: 1435020879837718176}
   _tip: {fileID: 6002168252591943976}
   _base: {fileID: 3530468882645969155}
-  _trailFrameLength: 10
-  _forceAppliedToCut: 10
+  _forceAppliedToCut: 15
 --- !u!1 &1435020879837718176
 GameObject:
   m_ObjectHideFlags: 0

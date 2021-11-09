@@ -5,10 +5,13 @@ using UnityEngine.Events;
 [RequireComponent(typeof(PlayerRotater))]
 public class PlayerMover : MonoBehaviour
 {
+    [SerializeField] private Transform _lookPoint;
+
     private Exit _exit;
     private Enemy[] _enemies;
     private GameWin _gameWin;
     private PlayerRotater _rotater;
+    private Vector3 _lookAtPoint;
 
     private const float Duration = 0.5f;
     private const float Distance = 65f;
@@ -42,9 +45,9 @@ public class PlayerMover : MonoBehaviour
         _gameWin.Win -= MoveFinishView;
     }
 
-    private void LookAtClosetstEnemy()
+    private void LookAtClosetstEnemy() 
     {
-        Vector3 lookAtPoint = _exit.transform.position;
+        _lookAtPoint = _lookPoint.position;
 
         foreach (var enemy in _enemies)
         {
@@ -52,12 +55,12 @@ public class PlayerMover : MonoBehaviour
 
             if (distance < Distance && enemy.enabled)
             {
-                lookAtPoint = enemy.transform.position;
+                _lookAtPoint = enemy.transform.position;
                 continue;
             }
         }
 
-        var tweenRotate = transform.DOLookAt(lookAtPoint, Duration / 2);
+        var tweenRotate = transform.DOLookAt(_lookAtPoint, Duration / 2);
         tweenRotate.SetEase(Ease.InOutSine);
     }
 

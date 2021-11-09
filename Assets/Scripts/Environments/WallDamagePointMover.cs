@@ -12,7 +12,7 @@ public class WallDamagePointMover : MonoBehaviour
 
     private const float Speed = 200f;
     private const float RangeY = 10f;
-    private const float RangeZ = 17f;
+    private const float RangeZ = 29f;
 
     private const float Positive = 1f;
     private const float Negative = -1f;
