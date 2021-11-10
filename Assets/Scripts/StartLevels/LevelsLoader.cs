@@ -2,7 +2,7 @@ using UnityEngine;
 using IJunior.TypedScenes;
 using UnityEngine.Events;
 
-public class GameLevelsLoader : MonoBehaviour
+public class LevelsLoader : MonoBehaviour
 {
     [SerializeField] protected int _levelIndex;
 
@@ -62,6 +62,9 @@ public class GameLevelsLoader : MonoBehaviour
         {
             case 1:
                 LVL1.Load();
+                break;
+            case 2:
+                LVL2.Load();
                 break;
         }
     }

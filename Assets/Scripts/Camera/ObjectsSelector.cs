@@ -11,7 +11,7 @@ public class ObjectsSelector : MonoBehaviour
     private AimMain _aimMain;
     private bool _isFire = false;
 
-    public readonly float MaxLength = 65f;
+    public readonly float MaxLength = 60f;
 
     private void OnEnable()
     {

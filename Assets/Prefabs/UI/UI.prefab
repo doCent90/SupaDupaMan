@@ -7716,7 +7716,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _buttonStart: {fileID: 8953673465668929553}
-  _buttonRetry: {fileID: 0}
   _buttonContinue: {fileID: 8953673465938778704}
   _shop: {fileID: 6061796527310714129}
   _openShop: {fileID: 4567671899041984884}

@@ -21,7 +21,7 @@ public class ButtonsUI : MonoBehaviour
 
     private CurrentCoinsViewer _coinsViewer;
     private SoundsFXSettings _soundMaster;
-    private GameLevelsLoader _loadLevel;
+    private LevelsLoader _loadLevel;
     private GameWin _gameWin;
     private StartGame _game;
 
@@ -125,7 +125,7 @@ public class ButtonsUI : MonoBehaviour
     {
         _game = FindObjectOfType<StartGame>();
         _gameWin = FindObjectOfType<GameWin>();
-        _loadLevel = FindObjectOfType<GameLevelsLoader>();
+        _loadLevel = FindObjectOfType<LevelsLoader>();
         _soundMaster = FindObjectOfType<SoundsFXSettings>();
         _coinsViewer = FindObjectOfType<CurrentCoinsViewer>();
 
