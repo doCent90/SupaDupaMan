@@ -194,7 +194,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dieMaterial: {fileID: 2100000, guid: c8eb020621a62b941bd37ce4a7ae4914, type: 2}
   _isGigant: 1
-  _emoji: {fileID: 3316967249714486086}
 --- !u!114 &2733481612470500236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -466,11 +465,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 454462, guid: 579f4fdf289cbd14e893e6bdc258ec64, type: 3}
   m_PrefabInstance: {fileID: 3316967249733576750}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &3316967249714486086 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 19886952, guid: 579f4fdf289cbd14e893e6bdc258ec64, type: 3}
-  m_PrefabInstance: {fileID: 3316967249733576750}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3360831448357644710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -478,12 +472,52 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8442623690604717372}
     m_Modifications:
+    - target: {fileID: 1071353128813393154, guid: 3fa8b98e8ec001b4aa1b373a9d1c38fa, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071353128813393154, guid: 3fa8b98e8ec001b4aa1b373a9d1c38fa, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071353128813393154, guid: 3fa8b98e8ec001b4aa1b373a9d1c38fa, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071353128813393154, guid: 3fa8b98e8ec001b4aa1b373a9d1c38fa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.063
+      objectReference: {fileID: 0}
+    - target: {fileID: 3296209728836356517, guid: 3fa8b98e8ec001b4aa1b373a9d1c38fa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703272343437965287, guid: 3fa8b98e8ec001b4aa1b373a9d1c38fa, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703272343437965287, guid: 3fa8b98e8ec001b4aa1b373a9d1c38fa, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703272343437965287, guid: 3fa8b98e8ec001b4aa1b373a9d1c38fa, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.95
+      objectReference: {fileID: 0}
     - target: {fileID: 3774177091450645249, guid: 3fa8b98e8ec001b4aa1b373a9d1c38fa, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3914345847561957549, guid: 3fa8b98e8ec001b4aa1b373a9d1c38fa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4090799204115256149, guid: 3fa8b98e8ec001b4aa1b373a9d1c38fa, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504978101042701312, guid: 3fa8b98e8ec001b4aa1b373a9d1c38fa, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4569889123246585987, guid: 3fa8b98e8ec001b4aa1b373a9d1c38fa, type: 3}
@@ -550,6 +584,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sliced_Criminal
       objectReference: {fileID: 0}
+    - target: {fileID: 9135934993869003812, guid: 3fa8b98e8ec001b4aa1b373a9d1c38fa, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135934993869003812, guid: 3fa8b98e8ec001b4aa1b373a9d1c38fa, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135934993869003812, guid: 3fa8b98e8ec001b4aa1b373a9d1c38fa, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.95
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fa8b98e8ec001b4aa1b373a9d1c38fa, type: 3}
 --- !u!4 &5672082620213649643 stripped
@@ -564,6 +610,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8442623690604717372}
     m_Modifications:
+    - target: {fileID: 8875094817185654756, guid: 73a99725b26dd4f498080fe935cbb996, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875094817185654756, guid: 73a99725b26dd4f498080fe935cbb996, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0bcdca085445acc4aa21304ffa02deba, type: 2}
+    - target: {fileID: 8875094817185654756, guid: 73a99725b26dd4f498080fe935cbb996, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0bcdca085445acc4aa21304ffa02deba, type: 2}
     - target: {fileID: 8875094817190865558, guid: 73a99725b26dd4f498080fe935cbb996, type: 3}
       propertyPath: m_Name
       value: Stickman_sphere_Criminal_01

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 287143830260451231}
   - component: {fileID: 8542479957007910423}
   - component: {fileID: 7035859373777856912}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Street 4 2M prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 4285674003731666}
   - component: {fileID: 33837854661762396}
   - component: {fileID: 23910408433680958}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: street
   m_TagString: Untagged
   m_Icon: {fileID: 0}
