@@ -12,12 +12,13 @@ public class LasersActivator : MonoBehaviour
 
     private Enemy[] _enemies;
     private Transform _aimPoint;
-    private WallSlicer[] _walls;
     private LaserRenderer2 _reset1;
     private LaserRenderer2 _reset2;
     private GameObject _laserPrefab1;
     private GameObject _laserPrefab2;
     private PlayerMover _playerMover;
+    private WallSlicer[] _wallsSliced;
+    private ObjectsSclicer[] _objectsScliced;
 
     private const float Delay = 0.6f;
 
@@ -28,12 +29,19 @@ public class LasersActivator : MonoBehaviour
     private void OnEnable()
     {
         _enemies = FindObjectsOfType<Enemy>();
-        _walls = FindObjectsOfType<WallSlicer>();
+        _wallsSliced = FindObjectsOfType<WallSlicer>();
         _playerMover = GetComponentInParent<PlayerMover>();
+        _objectsScliced = FindObjectsOfType<ObjectsSclicer>();
 
         ReadyToAttacked?.Invoke(true);
 
-        foreach (var wall in _walls)
+        foreach (var prop in _objectsScliced)
+        {
+            prop.ApplyDamage += Attack;
+            prop.Destroyed += Stop;
+        }
+
+        foreach (var wall in _wallsSliced)
         {
             wall.ApplyDamage += Attack;
             wall.Destroyed += Stop;
@@ -53,7 +61,13 @@ public class LasersActivator : MonoBehaviour
         ReadyToAttacked?.Invoke(false);
         Fired?.Invoke(false);
 
-        foreach (var wall in _walls)
+        foreach (var prop in _objectsScliced)
+        {
+            prop.ApplyDamage -= Attack;
+            prop.Destroyed -= Stop;
+        }
+
+        foreach (var wall in _wallsSliced)
         {
             wall.ApplyDamage -= Attack;
             wall.Destroyed -= Stop;

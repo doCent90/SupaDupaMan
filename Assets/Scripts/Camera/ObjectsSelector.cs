@@ -11,7 +11,7 @@ public class ObjectsSelector : MonoBehaviour
     private AimMain _aimMain;
     private bool _isFire = false;
 
-    public readonly float MaxLength = 50f;
+    public readonly float MaxLength = 65f;
 
     private void OnEnable()
     {
@@ -39,6 +39,7 @@ public class ObjectsSelector : MonoBehaviour
         TryMove();
         TryDestroyEnemy();
         TryDestroyWall();
+        TryDestroyObject();
     }
 
     private void OnLaserFired(bool isFire)
@@ -103,6 +104,24 @@ public class ObjectsSelector : MonoBehaviour
                     if (hit.collider.TryGetComponent(out WallSlicer wall))
                     {
                         wall.TakeDamage();
+                    }
+                }
+            }
+        }
+    }
+
+    private void TryDestroyObject()
+    {
+        if (Input.GetMouseButtonUp(0) && !_isFire)
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, MaxLength))
+            {
+                if (hit.collider != null)
+                {
+                    if (hit.collider.TryGetComponent(out ObjectsSclicer objectSliced))
+                    {
+                        objectSliced.TakeDamage();
                     }
                 }
             }

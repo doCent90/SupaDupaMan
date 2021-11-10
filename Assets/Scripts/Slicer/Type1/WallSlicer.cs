@@ -12,10 +12,9 @@ public class WallSlicer : SlicerType1
     public event UnityAction<Transform> ApplyDamage;
     public event UnityAction Destroyed;
 
-    public void TakeDamage()
+    protected override void InitDamage()
     {
-        _elapsedTime = DestroingTime;
-        _isDamaged = true;
+        _elapsedTime = DestroingWallTime;
 
         _meshCollider.convex = true;
         _boxCollider.enabled = false;
@@ -27,9 +26,7 @@ public class WallSlicer : SlicerType1
     protected override void DisableDafaultObjects()
     {
         _damagePointMover.enabled = false;
-        Destroyed?.Invoke();
-        
-        enabled = false;
+        Destroyed?.Invoke();        
     }
 
     private void Start()
