@@ -15,11 +15,11 @@ D:/Git/Supa Dupa Man
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-54252
+57871
 Successfully changed project path to: D:/Git/Supa Dupa Man
 D:/Git/Supa Dupa Man
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 164.23 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 151.22 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.7f1 (d91830b65d9b)
 [Subsystems] Discovering subsystems at path G:/1/2021.1.7f1/Editor/Data/Resources/UnitySubsystems
@@ -35,641 +35,786 @@ Initialize mono
 Mono path[0] = 'G:/1/2021.1.7f1/Editor/Data/Managed'
 Mono path[1] = 'G:/1/2021.1.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'G:/1/2021.1.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56432
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56704
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: G:/1/2021.1.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003569 seconds.
+Registered in 0.003145 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 150.77 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 139.59 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.367 seconds
+- Completed reload, in  2.216 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006506 seconds.
+Registered in 0.005695 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.88 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.66 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.255 seconds
+- Completed reload, in  1.343 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 1.37 ms, found 1 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 1.65 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2965 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 158.8 MB.
-System memory in use after: 158.8 MB.
+Unloading 2967 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 158.9 MB.
+System memory in use after: 112.2 MB.
 
-Unloading 67 unused Assets to reduce memory usage. Loaded Objects now: 3397.
-Total: 2.543800 ms (FindLiveObjects: 0.275000 ms CreateObjectMapping: 0.076600 ms MarkObjects: 1.974500 ms  DeleteObjects: 0.216200 ms)
+Unloading 67 unused Assets to reduce memory usage. Loaded Objects now: 3399.
+Total: 5.080700 ms (FindLiveObjects: 0.425500 ms CreateObjectMapping: 0.106900 ms MarkObjects: 4.309600 ms  DeleteObjects: 0.237400 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Prefabs/Characters/Enemy/Gigant_Criminal.prefab
-  artifactKey: Guid(28bd3d228ca773c4b9a744bb53e7358d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Characters/Enemy/Gigant_Criminal.prefab using Guid(28bd3d228ca773c4b9a744bb53e7358d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7aaa21aaf706c8e2978cc10d6bbfeec4') in 0.251171 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000365 seconds.
-  path: Assets/Prefabs/Characters/Player/Player.prefab
-  artifactKey: Guid(e2f597967c0d3bb4a84d0f7c8187773e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Characters/Player/Player.prefab using Guid(e2f597967c0d3bb4a84d0f7c8187773e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0c51435009276e9c2c17b776307ac26') in 0.132835 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 74.885121 seconds.
-  path: Assets/Prefabs/Characters/Enemy/Runing_Criminal.prefab
-  artifactKey: Guid(4a8caa064b9d7ac41ad64fdc64a11d45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Characters/Enemy/Runing_Criminal.prefab using Guid(4a8caa064b9d7ac41ad64fdc64a11d45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59b00d503a348b5e351dda6e9d22494c') in 0.051312 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 24.430663 seconds.
-  path: Assets/Prefabs/Characters/Enemy/Runing_Criminal.prefab
-  artifactKey: Guid(4a8caa064b9d7ac41ad64fdc64a11d45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Characters/Enemy/Runing_Criminal.prefab using Guid(4a8caa064b9d7ac41ad64fdc64a11d45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '075c05069299f161b241a857a01cc312') in 0.054015 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.906149 seconds.
-  path: Assets/Prefabs/Characters/Enemy/Runing_Criminal.prefab
-  artifactKey: Guid(4a8caa064b9d7ac41ad64fdc64a11d45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Characters/Enemy/Runing_Criminal.prefab using Guid(4a8caa064b9d7ac41ad64fdc64a11d45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f2236b4711bf0a76b2ad3caf3fa4c5f') in 0.054671 seconds 
+  path: Assets/Scenes/LVL2.unity
+  artifactKey: Guid(602e42fee886a86438b7a2334c048513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/LVL2.unity using Guid(602e42fee886a86438b7a2334c048513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbb485057ed00bef5327df37a67c9a02') in 0.015081 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.005880 seconds.
+Registered in 0.004812 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 3.05 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 2.32 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.768 seconds
+- Completed reload, in  1.251 seconds
 Platform modules already initialized, skipping
 Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 1.48 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.50 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2875 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 165.5 MB.
-System memory in use after: 165.5 MB.
+Unloading 2877 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 147.1 MB.
+System memory in use after: 147.2 MB.
 
-Unloading 63 unused Assets to reduce memory usage. Loaded Objects now: 3412.
-Total: 2.966300 ms (FindLiveObjects: 0.291500 ms CreateObjectMapping: 0.077800 ms MarkObjects: 2.418500 ms  DeleteObjects: 0.177100 ms)
+Unloading 63 unused Assets to reduce memory usage. Loaded Objects now: 3401.
+Total: 2.564800 ms (FindLiveObjects: 0.288700 ms CreateObjectMapping: 0.078200 ms MarkObjects: 2.040200 ms  DeleteObjects: 0.156400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 68.571776 seconds.
+  path: Assets/Scenes/LVL1.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/LVL1.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64e1d54efb332335ae253fa2038b4fa1') in 0.017719 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 75.213477 seconds.
+  path: Assets/Scenes/LVL2.unity
+  artifactKey: Guid(602e42fee886a86438b7a2334c048513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/LVL2.unity using Guid(602e42fee886a86438b7a2334c048513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '590a435d059d4bb190b9f23330ca28fe') in 0.003043 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.048117 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.74 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.547 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.47 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2877 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 147.2 MB.
+System memory in use after: 147.3 MB.
+
+Unloading 63 unused Assets to reduce memory usage. Loaded Objects now: 3403.
+Total: 2.604300 ms (FindLiveObjects: 0.278100 ms CreateObjectMapping: 0.080500 ms MarkObjects: 2.083800 ms  DeleteObjects: 0.159800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.006661 seconds.
+Registered in 0.005754 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.54 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.72 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.155 seconds
+- Completed reload, in  1.090 seconds
 Platform modules already initialized, skipping
 Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 1.53 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.87 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2875 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 165.5 MB.
-System memory in use after: 165.6 MB.
+Unloading 2879 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 147.4 MB.
+System memory in use after: 147.4 MB.
 
-Unloading 63 unused Assets to reduce memory usage. Loaded Objects now: 3414.
-Total: 2.481900 ms (FindLiveObjects: 0.376000 ms CreateObjectMapping: 0.089700 ms MarkObjects: 1.787400 ms  DeleteObjects: 0.227700 ms)
+Unloading 64 unused Assets to reduce memory usage. Loaded Objects now: 3406.
+Total: 2.733600 ms (FindLiveObjects: 0.313100 ms CreateObjectMapping: 0.087800 ms MarkObjects: 2.137600 ms  DeleteObjects: 0.193400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
 ========================================================================
 Received Import Request.
-  Time since last request: 223.203635 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Material_meshs/Sideway.mat
-  artifactKey: Guid(ade4d9b3b14d5b045884be40b327deb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Material_meshs/Sideway.mat using Guid(ade4d9b3b14d5b045884be40b327deb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45662032aae20701f853d3d5c727aa91') in 0.080745 seconds 
+  Time since last request: 1959.027147 seconds.
+  path: Assets/Resources/SimpleFX/Materials/FX_Base.mat
+  artifactKey: Guid(a0cec58fc32f482418596ffdf7c0d693) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Materials/FX_Base.mat using Guid(a0cec58fc32f482418596ffdf7c0d693) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28bad562e9ccb7aa33d0ecff247e0521') in 0.637655 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.413998 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/A2.mat
-  artifactKey: Guid(5188c7492ef51d143a7128aa9700788a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/A2.mat using Guid(5188c7492ef51d143a7128aa9700788a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef67142d9e345e59f381393178ec387c') in 0.009511 seconds 
+  Time since last request: 0.000357 seconds.
+  path: Assets/Resources/SimpleFX/Models/FX_Lightray.fbx
+  artifactKey: Guid(e27c39df43b866b469e491273c885c51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Models/FX_Lightray.fbx using Guid(e27c39df43b866b469e491273c885c51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5249867d7b679583e61cb3be8c6bdfd3') in 0.220739 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000225 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/G3.mat
-  artifactKey: Guid(ed6309fcf2465f8459ee0d575167c0ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/G3.mat using Guid(ed6309fcf2465f8459ee0d575167c0ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f68b481669ba05e6f272f3f93e85e27b') in 0.009726 seconds 
+  Time since last request: 0.000313 seconds.
+  path: Assets/Resources/SimpleFX/Models/FX_PoolSplash_02.fbx
+  artifactKey: Guid(7f803617a1072ec42820168bc40edb46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Models/FX_PoolSplash_02.fbx using Guid(7f803617a1072ec42820168bc40edb46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd13112578ac107dbb94edf27f2140ba5') in 0.016065 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000280 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/A3.mat
-  artifactKey: Guid(c4d3a0c81c5ffb34889379e1a1cf85bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/A3.mat using Guid(c4d3a0c81c5ffb34889379e1a1cf85bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b49c6fc90308a9295864f267008c0a14') in 0.010564 seconds 
+  Time since last request: 0.000317 seconds.
+  path: Assets/Resources/SimpleFX/Materials/FX_Lightray.mat
+  artifactKey: Guid(7e0b60daf18511249a209d52beda2988) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Materials/FX_Lightray.mat using Guid(7e0b60daf18511249a209d52beda2988) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69625f0a231baade5f35329257f18fba') in 0.124648 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000394 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_DirtSplatter.prefab
+  artifactKey: Guid(834c99069a124aa439d5795c3579843b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_DirtSplatter.prefab using Guid(834c99069a124aa439d5795c3579843b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ce1ddec861ea8d1c8fa45be0ea721c6') in 0.113129 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000303 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_Steam.prefab
+  artifactKey: Guid(5b6c2f68addb63847b151f0d41a9d3b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_Steam.prefab using Guid(5b6c2f68addb63847b151f0d41a9d3b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be94ad8acc6fc42a161f83b5d3165c00') in 0.005252 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000318 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_Fireworks_Blue_Large.prefab
+  artifactKey: Guid(5702e2a6fea804b45b49b70d8feaf7ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_Fireworks_Blue_Large.prefab using Guid(5702e2a6fea804b45b49b70d8feaf7ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90c5ab5deb39368a8dd684fe248b1dfb') in 0.005435 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000236 seconds.
+  path: Assets/Resources/SimpleFX/Materials/FX_Water.mat
+  artifactKey: Guid(daf5714b1bd61c84fb8f439922ec2664) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Materials/FX_Water.mat using Guid(daf5714b1bd61c84fb8f439922ec2664) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0fa5e527e8ab5957a3279ba51fe5fd6') in 0.037477 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000338 seconds.
+  path: Assets/Resources/SimpleFX/Materials/FX_GunFlash.mat
+  artifactKey: Guid(f1b0fea076fb0574d868f6e3d9523f52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Materials/FX_GunFlash.mat using Guid(f1b0fea076fb0574d868f6e3d9523f52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32a292cb8667ec435965d0effa33d9c2') in 0.013761 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000298 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_Fireworks_Green_Small.prefab
+  artifactKey: Guid(cd4d7020429cde74db076ffa72495419) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_Fireworks_Green_Small.prefab using Guid(cd4d7020429cde74db076ffa72495419) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bd5cc3363527c3a1062b37ff7a1a3cf') in 0.006425 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000307 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_TireSmoke.prefab
+  artifactKey: Guid(d7bf18dd20422304ea868e95c3518f19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_TireSmoke.prefab using Guid(d7bf18dd20422304ea868e95c3518f19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61df1cf8ffd211518687807e0dc35d70') in 0.005083 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000289 seconds.
+  path: Assets/Resources/SimpleFX/Models/FX_PoolSplash_03.fbx
+  artifactKey: Guid(104d9f0364dc5e8438f4350ff7e726dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Models/FX_PoolSplash_03.fbx using Guid(104d9f0364dc5e8438f4350ff7e726dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f74c59a936e23cd1918af64cd3de9625') in 0.014233 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000274 seconds.
+  path: Assets/Resources/SimpleFX/Models/FX_Rubble.fbx
+  artifactKey: Guid(42e0384be8104584cbcc3a1fadaafb79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Models/FX_Rubble.fbx using Guid(42e0384be8104584cbcc3a1fadaafb79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '959aacdbe2e6a33ac54348a43cda952e') in 0.015461 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_GunFlash.prefab
+  artifactKey: Guid(b955daae02e019d45a8fb68cfd843784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_GunFlash.prefab using Guid(b955daae02e019d45a8fb68cfd843784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfebd49ddd785518e5de70115b78494e') in 0.009990 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000303 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_BloodSplatter.prefab
+  artifactKey: Guid(8c27aeead6d968e4ba986702d6b84335) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_BloodSplatter.prefab using Guid(8c27aeead6d968e4ba986702d6b84335) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94a27bad9db0370f80ec95db1c7881a8') in 0.005461 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000295 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_Fireworks_Green_Large.prefab
+  artifactKey: Guid(26d069e6f78e6f8478e4dc0152bd6939) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_Fireworks_Green_Large.prefab using Guid(26d069e6f78e6f8478e4dc0152bd6939) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a6efa650df82d4c4d8fb20c20fa1d3b') in 0.005834 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000288 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_Dust_Prefab_02.prefab
+  artifactKey: Guid(cd427f0dc853ec74a9ba1c5ff0e48ca2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_Dust_Prefab_02.prefab using Guid(cd427f0dc853ec74a9ba1c5ff0e48ca2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc71a7d753bc3581f136a1b10bae4aec') in 0.006219 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/Resources/SimpleFX/Materials/FX_Glow.mat
+  artifactKey: Guid(040cfa3c61ad57946ae16c627e338920) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Materials/FX_Glow.mat using Guid(040cfa3c61ad57946ae16c627e338920) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ec59450c0721b301e5548ea1bcf9fe4') in 0.013326 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000309 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_Fire.prefab
+  artifactKey: Guid(756d99540142b5e4a8d174e18a6310d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_Fire.prefab using Guid(756d99540142b5e4a8d174e18a6310d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58f49991493b02b51bd64d9725f2b6f9') in 0.005596 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_WaterSplatter.prefab
+  artifactKey: Guid(263867d4955e3644f9a1dfa779ab7d1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_WaterSplatter.prefab using Guid(263867d4955e3644f9a1dfa779ab7d1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1ad516826fbee0f6622764e5ed22d87') in 0.005578 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000271 seconds.
+  path: Assets/Resources/SimpleFX/Models/FX_GunFlash.fbx
+  artifactKey: Guid(50a5b61475aba5649a793b8d076e8681) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Models/FX_GunFlash.fbx using Guid(50a5b61475aba5649a793b8d076e8681) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae9858fc62eb6934002b5c08bdaf365e') in 0.014384 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_Explosion_Rubble.prefab
+  artifactKey: Guid(079954accd64b32419ec069129c81273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_Explosion_Rubble.prefab using Guid(079954accd64b32419ec069129c81273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80554018e844590d639f2e9644f9d2a8') in 0.005981 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000313 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_Rubble.prefab
+  artifactKey: Guid(7904355fdf7fdcb4ebc3dca81eb5890e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_Rubble.prefab using Guid(7904355fdf7fdcb4ebc3dca81eb5890e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef84b01430789232b555bac50ec13345') in 0.010514 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000273 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/G1.mat
-  artifactKey: Guid(73daffab7784ec040ba2d4d7302527f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/G1.mat using Guid(73daffab7784ec040ba2d4d7302527f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c912b3435c637703223249209561189') in 0.009406 seconds 
+  path: Assets/Resources/SimpleFX/Prefabs/FX_Smoke.prefab
+  artifactKey: Guid(ab1112643ee572748b01dede71158272) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_Smoke.prefab using Guid(ab1112643ee572748b01dede71158272) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c542019cc85c37e036286b6ce2bacf6e') in 0.005170 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000241 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/H3.mat
-  artifactKey: Guid(9db90062b4af0004b94c5754b65e4379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/H3.mat using Guid(9db90062b4af0004b94c5754b65e4379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2658264547c77e4c6334161026015203') in 0.009524 seconds 
+  Time since last request: 0.000268 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_Dust_Prefab_01.prefab
+  artifactKey: Guid(c83a45822d0d3f94991e76a87670125c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_Dust_Prefab_01.prefab using Guid(c83a45822d0d3f94991e76a87670125c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33b98fb807a54c36d62ba96cddefd479') in 0.005239 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000312 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/I1.mat
-  artifactKey: Guid(09bb7389d12b7fe4cb01b4d2afb6b0a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/I1.mat using Guid(09bb7389d12b7fe4cb01b4d2afb6b0a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ccbe4c3979d4f625b44a0774a3b706e') in 0.009496 seconds 
+  Time since last request: 0.000295 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_Lightray.prefab
+  artifactKey: Guid(e7aa3eba36ce5d04c84a01925e585932) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_Lightray.prefab using Guid(e7aa3eba36ce5d04c84a01925e585932) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5b6f85855b5ae1d76a83dabace89d83') in 0.010277 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_Fireworks_Blue_Small .prefab
+  artifactKey: Guid(6636b3078b0905e489f698a11b7a6b6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_Fireworks_Blue_Small .prefab using Guid(6636b3078b0905e489f698a11b7a6b6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb4d4a745da6ca4ade3a3667272e16dd') in 0.005114 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000289 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_Dust_Prefab_03.prefab
+  artifactKey: Guid(1570b78163aaedc44bfd35cf13a9f13f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_Dust_Prefab_03.prefab using Guid(1570b78163aaedc44bfd35cf13a9f13f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45e2fb3755ea01972c0c8e2968a231a4') in 0.005423 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000285 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_PoolSplash_01.prefab
+  artifactKey: Guid(ad879d352fd419047bdfc53b3d2a1961) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_PoolSplash_01.prefab using Guid(ad879d352fd419047bdfc53b3d2a1961) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2670d38e0f74af8cb217d99d4cc99c42') in 0.009191 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000318 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_Fireworks_Yellow_Small.prefab
+  artifactKey: Guid(6586ff0f14125534cae2f5d8f04b7871) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_Fireworks_Yellow_Small.prefab using Guid(6586ff0f14125534cae2f5d8f04b7871) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab870224125b52b4504036dbb54ed15e') in 0.005587 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/Resources/SimpleFX/Models/FX_PoolSplash_01.fbx
+  artifactKey: Guid(89f5c0aef85208c47827ce19d9767acb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Models/FX_PoolSplash_01.fbx using Guid(89f5c0aef85208c47827ce19d9767acb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2a0e4bbb1b1f6da099a6cb8b24d50c2') in 0.018343 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_WaterSplash.prefab
+  artifactKey: Guid(e49403f034d74ee44aa8a41b0ee4abfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_WaterSplash.prefab using Guid(e49403f034d74ee44aa8a41b0ee4abfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '132743e1922958c6fe7b57a2d4eb25f5') in 0.005714 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/Resources/SimpleFX/Materials/FX_Splash.mat
+  artifactKey: Guid(1ee00051305bdb049b02c923f047227d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Materials/FX_Splash.mat using Guid(1ee00051305bdb049b02c923f047227d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93a4e260625740a2a8d108fcae2275ea') in 0.009240 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000276 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_Fireworks_Yellow_Large.prefab
+  artifactKey: Guid(0f75f6db4a318f54382e0c98b2226db8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_Fireworks_Yellow_Large.prefab using Guid(0f75f6db4a318f54382e0c98b2226db8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '231f0979dbebfbf322d4a5ef3af58c03') in 0.005080 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_FlameThrower.prefab
+  artifactKey: Guid(5cd5599e01f32bd418f20a3b9eac1c57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_FlameThrower.prefab using Guid(5cd5599e01f32bd418f20a3b9eac1c57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46550cb159b339a952b1ec9e84c18342') in 0.005723 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_PoolSplash_02.prefab
+  artifactKey: Guid(0d37f80e5a9508346b0ec65e1917e053) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_PoolSplash_02.prefab using Guid(0d37f80e5a9508346b0ec65e1917e053) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d53e5da26fe986b108971318f7e3291') in 0.009459 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/Resources/SimpleFX/Materials/FX_Rubble.mat
+  artifactKey: Guid(7a9bced7715b2c047b5413e33bc60d5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Materials/FX_Rubble.mat using Guid(7a9bced7715b2c047b5413e33bc60d5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3dbce8d2510ac57ef2569a99d87d56e') in 0.011460 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000320 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_PoolSplash_03.prefab
+  artifactKey: Guid(b147df4880cd0df449352ee652f14686) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_PoolSplash_03.prefab using Guid(b147df4880cd0df449352ee652f14686) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b4011143229e2197a55b76fcee4a735') in 0.009494 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.210076 seconds.
+  path: Assets/Resources/SimpleFX/_Demo/Demo.unity
+  artifactKey: Guid(dbe9743d9065a2445a22fa67fa9fdbb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/_Demo/Demo.unity using Guid(dbe9743d9065a2445a22fa67fa9fdbb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3dad538a88a107e78d6f25b8e771dc2a') in 0.003376 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 113.189986 seconds.
+  path: Assets/Scenes/LVL1.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/LVL1.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '042e596fed4cf33ac4ab4e6a8a7194e4') in 0.003383 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 77.130856 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_Explosion_Rubble.prefab
+  artifactKey: Guid(079954accd64b32419ec069129c81273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_Explosion_Rubble.prefab using Guid(079954accd64b32419ec069129c81273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc1d2b288d679db3bbf683524fa2c3e7') in 0.006710 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 31.068344 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_Explosion_Rubble.prefab
+  artifactKey: Guid(079954accd64b32419ec069129c81273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_Explosion_Rubble.prefab using Guid(079954accd64b32419ec069129c81273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de5fe29c3d550163c7f7a7acad0e2e7d') in 0.006086 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 58.933894 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_Explosion_Rubble.prefab
+  artifactKey: Guid(079954accd64b32419ec069129c81273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_Explosion_Rubble.prefab using Guid(079954accd64b32419ec069129c81273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3835ae6b6f90bb608c3a2661a1d6039') in 0.006864 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 122.588285 seconds.
+  path: Assets/Prefabs/Ligths
+  artifactKey: Guid(95a2de7395b131141b4073b396cc20ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Ligths using Guid(95a2de7395b131141b4073b396cc20ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bae89350986222cd9367b8c27aa55dd') in 0.003269 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 139.283696 seconds.
+  path: Assets/Prefabs/Ligths/FX.prefab
+  artifactKey: Guid(549ea6c276650684c96a54e897aaf414) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Ligths/FX.prefab using Guid(549ea6c276650684c96a54e897aaf414) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '221776368b6b9b84eee2eed7293e8e7a') in 0.005411 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.005423 seconds.
+Registered in 0.055793 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.54 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.33 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.298 seconds
+- Completed reload, in  1.311 seconds
 Platform modules already initialized, skipping
 Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 1.54 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.46 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2875 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 165.7 MB.
-System memory in use after: 165.8 MB.
+Unloading 2879 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.6 MB.
+System memory in use after: 151.7 MB.
 
-Unloading 63 unused Assets to reduce memory usage. Loaded Objects now: 3449.
-Total: 2.643900 ms (FindLiveObjects: 0.359400 ms CreateObjectMapping: 0.101000 ms MarkObjects: 1.969500 ms  DeleteObjects: 0.212300 ms)
+Unloading 64 unused Assets to reduce memory usage. Loaded Objects now: 3455.
+Total: 2.868000 ms (FindLiveObjects: 0.288200 ms CreateObjectMapping: 0.079300 ms MarkObjects: 2.352500 ms  DeleteObjects: 0.146400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005788 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.03 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.194 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.67 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2878 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.5 MB.
+System memory in use after: 151.6 MB.
+
+Unloading 63 unused Assets to reduce memory usage. Loaded Objects now: 3457.
+Total: 4.227900 ms (FindLiveObjects: 0.564100 ms CreateObjectMapping: 0.262200 ms MarkObjects: 3.207000 ms  DeleteObjects: 0.193400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006253 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.210 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.43 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2878 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.5 MB.
+System memory in use after: 151.6 MB.
+
+Unloading 63 unused Assets to reduce memory usage. Loaded Objects now: 3459.
+Total: 2.734500 ms (FindLiveObjects: 0.295400 ms CreateObjectMapping: 0.113100 ms MarkObjects: 2.134700 ms  DeleteObjects: 0.189800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
 ========================================================================
 Received Import Request.
-  Time since last request: 37.188220 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/A2.mat
-  artifactKey: Guid(5188c7492ef51d143a7128aa9700788a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/A2.mat using Guid(5188c7492ef51d143a7128aa9700788a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3ba04c9e09221febed048e1f32bc1d8') in 0.074517 seconds 
+  Time since last request: 370.222452 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_Explosion_Rubble.prefab
+  artifactKey: Guid(079954accd64b32419ec069129c81273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_Explosion_Rubble.prefab using Guid(079954accd64b32419ec069129c81273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d37cf96a7b6fb3e3f32b1b12d06006e') in 0.063583 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 31.254488 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_Fireworks_Green_Small.prefab
+  artifactKey: Guid(cd4d7020429cde74db076ffa72495419) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_Fireworks_Green_Small.prefab using Guid(cd4d7020429cde74db076ffa72495419) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '489d47181270b21f4a0948de8992888b') in 0.006109 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.006785 seconds.
+Registered in 0.006375 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.16 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.72 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.227 seconds
+- Completed reload, in  1.242 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 2.33 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2878 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.5 MB.
+System memory in use after: 151.6 MB.
+
+Unloading 63 unused Assets to reduce memory usage. Loaded Objects now: 3461.
+Total: 3.287200 ms (FindLiveObjects: 0.295300 ms CreateObjectMapping: 0.077300 ms MarkObjects: 2.749000 ms  DeleteObjects: 0.164400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 299.081948 seconds.
+  path: Assets/Prefabs/Characters/Enemy
+  artifactKey: Guid(b4df28930e02feb4b91b0267b15c3856) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Characters/Enemy using Guid(b4df28930e02feb4b91b0267b15c3856) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2465e09c39c36329551b55a17984dc09') in 0.008733 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006687 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.46 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.248 seconds
 Platform modules already initialized, skipping
 Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
 Refreshing native plugins compatible for Editor in 2.11 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2876 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 165.8 MB.
-System memory in use after: 165.9 MB.
+Unloading 2878 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.6 MB.
+System memory in use after: 151.6 MB.
 
-Unloading 63 unused Assets to reduce memory usage. Loaded Objects now: 3453.
-Total: 3.597400 ms (FindLiveObjects: 0.383500 ms CreateObjectMapping: 0.076400 ms MarkObjects: 2.902200 ms  DeleteObjects: 0.233500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Import Request.
-  Time since last request: 279.654550 seconds.
-  path: Assets/Scenes/LVL1.unity
-  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/LVL1.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1de12dc691f03e954862470b137b73de') in 0.015104 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.895922 seconds.
-  path: Assets/Scenes/LVL1_1.unity
-  artifactKey: Guid(602e42fee886a86438b7a2334c048513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/LVL1_1.unity using Guid(602e42fee886a86438b7a2334c048513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cfabef2e7db6601d6c95348a1451f12') in 0.004079 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007540 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.41 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.186 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 1.57 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2877 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 165.9 MB.
-System memory in use after: 166.0 MB.
-
-Unloading 63 unused Assets to reduce memory usage. Loaded Objects now: 3456.
-Total: 2.592400 ms (FindLiveObjects: 0.301100 ms CreateObjectMapping: 0.078100 ms MarkObjects: 2.048800 ms  DeleteObjects: 0.163300 ms)
+Unloading 63 unused Assets to reduce memory usage. Loaded Objects now: 3463.
+Total: 3.126300 ms (FindLiveObjects: 0.347200 ms CreateObjectMapping: 0.086200 ms MarkObjects: 2.511600 ms  DeleteObjects: 0.180200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
 ========================================================================
-Received Import Request.
-  Time since last request: 10.078163 seconds.
-  path: Assets/Scenes/LVL2.unity
-  artifactKey: Guid(602e42fee886a86438b7a2334c048513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/LVL2.unity using Guid(602e42fee886a86438b7a2334c048513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44bd323a0672d3e1d11355ac2b21efd2') in 0.014851 seconds 
-========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.005582 seconds.
+Registered in 0.006268 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.45 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 2.39 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.180 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 1.42 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2877 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 166.0 MB.
-System memory in use after: 166.0 MB.
-
-Unloading 64 unused Assets to reduce memory usage. Loaded Objects now: 3458.
-Total: 2.308600 ms (FindLiveObjects: 0.287000 ms CreateObjectMapping: 0.076600 ms MarkObjects: 1.786700 ms  DeleteObjects: 0.156800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Import Request.
-  Time since last request: 18.397512 seconds.
-  path: Assets/Scripts/StartLevels/GameLevelsLoader.cs
-  artifactKey: Guid(5c88db30f5c3e08439a96a7a24895a2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/StartLevels/GameLevelsLoader.cs using Guid(5c88db30f5c3e08439a96a7a24895a2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0f69684b84f846f3fb570839d496738') in 0.010209 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 15.553239 seconds.
-  path: Assets/Scripts/StartLevels/LevelsLoader.cs
-  artifactKey: Guid(5c88db30f5c3e08439a96a7a24895a2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/StartLevels/LevelsLoader.cs using Guid(5c88db30f5c3e08439a96a7a24895a2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd38569fa7d23604e031826d35079806e') in 0.004632 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 16.040700 seconds.
-  path: Assets/Scripts/StartLevels/LevelsLoader.cs
-  artifactKey: Guid(5c88db30f5c3e08439a96a7a24895a2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/StartLevels/LevelsLoader.cs using Guid(5c88db30f5c3e08439a96a7a24895a2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4035174381533a3f1c01f07c58366699') in 0.003204 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006989 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.40 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.171 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 2.05 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2877 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 166.0 MB.
-System memory in use after: 166.0 MB.
-
-Unloading 63 unused Assets to reduce memory usage. Loaded Objects now: 3460.
-Total: 2.647700 ms (FindLiveObjects: 0.379300 ms CreateObjectMapping: 0.117500 ms MarkObjects: 1.953000 ms  DeleteObjects: 0.196700 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Import Request.
-  Time since last request: 1052.526421 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/SPW_Urban_Road Props_Street Light_01.prefab
-  artifactKey: Guid(e488d840548057d499ce1d2ed7991a22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/SPW_Urban_Road Props_Street Light_01.prefab using Guid(e488d840548057d499ce1d2ed7991a22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1756a16a6fb5df85b0a602a4ff3f123e') in 0.082416 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.460438 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs
-  artifactKey: Guid(c07313ead3f5e7347bd06546a281d1a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs using Guid(c07313ead3f5e7347bd06546a281d1a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8ed648ea9b0aa62b2e0dbec8b914247') in 0.003698 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.056299 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Ahead Only.prefab
-  artifactKey: Guid(910df42f76b560f46a70687026143fed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Ahead Only.prefab using Guid(910df42f76b560f46a70687026143fed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71dae568a69b4486e3b5b72e7d5976c2') in 0.040317 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000242 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Airport.prefab
-  artifactKey: Guid(6f4d4d664d59e2143a64300c841e71e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Airport.prefab using Guid(6f4d4d664d59e2143a64300c841e71e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f44c69645dd2b024800b07c9d04523f0') in 0.032099 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000266 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Gas Station.prefab
-  artifactKey: Guid(013604c85cb816246aaf34be9d3ef0a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Gas Station.prefab using Guid(013604c85cb816246aaf34be9d3ef0a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0b28bf5761bf0b5385bab2451cc3561') in 0.041854 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000230 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Highway_03.prefab
-  artifactKey: Guid(ca2098b25533ce642b438fc0d7e9b233) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Highway_03.prefab using Guid(ca2098b25533ce642b438fc0d7e9b233) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a7194e938e1444908b269ab8c382cf9') in 0.035416 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000240 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Danger.prefab
-  artifactKey: Guid(374e4d1bd522610449f6f810f35f0ff3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Danger.prefab using Guid(374e4d1bd522610449f6f810f35f0ff3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a43c4f9fd76b4ee98ca5cee6822da7e4') in 0.050382 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000279 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Speed Limit 50.prefab
-  artifactKey: Guid(a4278cff52380304b96bd1b57a42ee54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Speed Limit 50.prefab using Guid(a4278cff52380304b96bd1b57a42ee54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23a81e6af35feac24337055d218b30dc') in 0.031416 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000243 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Train Station.prefab
-  artifactKey: Guid(904b6e91d5281264bb2d0d8ff41c85ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Train Station.prefab using Guid(904b6e91d5281264bb2d0d8ff41c85ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f515c5ee56080bfed582e8e668f748f0') in 0.032286 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000300 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Turn Right.prefab
-  artifactKey: Guid(7e20147c546399e42ae0dd83026b3c4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Turn Right.prefab using Guid(7e20147c546399e42ae0dd83026b3c4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3206dcea4c626d240ced2053c2e5f0db') in 0.028525 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000266 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Turn Left.prefab
-  artifactKey: Guid(8e8dfe9d8a9d749469d38e1844f6da62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Turn Left.prefab using Guid(8e8dfe9d8a9d749469d38e1844f6da62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55ab49aae45c207554b294238741b3bf') in 0.051630 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000269 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Highway_01.prefab
-  artifactKey: Guid(2d4aade619f7ab948bb36811b807f1c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Highway_01.prefab using Guid(2d4aade619f7ab948bb36811b807f1c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f247ac27ec5dc8f76f868d8ef329e7d') in 0.038195 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000330 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Speed Limit 100.prefab
-  artifactKey: Guid(e86fe5e8ae1bfdf439df9032c62f308c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Speed Limit 100.prefab using Guid(e86fe5e8ae1bfdf439df9032c62f308c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e29ad656da1c089176b7ddf910a0579c') in 0.026813 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000342 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_RailRoad Cross.prefab
-  artifactKey: Guid(9f2fe8680795b814caaffa11887cb163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_RailRoad Cross.prefab using Guid(9f2fe8680795b814caaffa11887cb163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c84ea267aeb4d6f098e1f17cf30fa69') in 0.025696 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000262 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Highway_02.prefab
-  artifactKey: Guid(a1e938378ce621446881dc49a1a3ca1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Highway_02.prefab using Guid(a1e938378ce621446881dc49a1a3ca1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'acb63389dee3730cd83e0bbfca49457d') in 0.025632 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000285 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_No Entry.prefab
-  artifactKey: Guid(8c8bbf3e115f63b48b187284749432f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_No Entry.prefab using Guid(8c8bbf3e115f63b48b187284749432f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f797156741092f0a909640504e453ef') in 0.027581 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000322 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Two-way Traffic.prefab
-  artifactKey: Guid(ac8988785c01a77469834ea5aa73f8ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Two-way Traffic.prefab using Guid(ac8988785c01a77469834ea5aa73f8ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68a019770cb0e34b7e7b29a505ca2ae9') in 0.029965 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000302 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Highway_04.prefab
-  artifactKey: Guid(7282501d091047a4890662ac8403b2a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Highway_04.prefab using Guid(7282501d091047a4890662ac8403b2a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a41e62b3b7c755362123c8d480799412') in 0.033425 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000249 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Bus Stop.prefab
-  artifactKey: Guid(3b0eecee7414bc5488f99c515d8f61f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Bus Stop.prefab using Guid(3b0eecee7414bc5488f99c515d8f61f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60329bfdce1747245ad2e72e779e5394') in 0.034698 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000296 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Speed Limit 30.prefab
-  artifactKey: Guid(168ae8e0eb1a2a44c9b8de62ffde8703) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Speed Limit 30.prefab using Guid(168ae8e0eb1a2a44c9b8de62ffde8703) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '930c5c8412b621a2f31072ab256b6ac9') in 0.051870 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000354 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Airfield.prefab
-  artifactKey: Guid(cc09323f2b502c64a9e393dbedc3760e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Airfield.prefab using Guid(cc09323f2b502c64a9e393dbedc3760e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d68c16c419b8dc5fa0eb3210afba397') in 0.025781 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000373 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Parking Lot.prefab
-  artifactKey: Guid(46c7d2c04af4a364c9b1be24aa0eb778) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Parking Lot.prefab using Guid(46c7d2c04af4a364c9b1be24aa0eb778) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce5cd148a48bb0f9245a1482ffa6479b') in 0.024796 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000276 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Stop.prefab
-  artifactKey: Guid(a315767633336b849b3d1eda6c974b7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Stop.prefab using Guid(a315767633336b849b3d1eda6c974b7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0500756cb3fc5c5e3e88555bbaaf556a') in 0.035389 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000358 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Speed Limit 80.prefab
-  artifactKey: Guid(6fed03f84e66daa4f83764e28dfee587) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Roads & Bridges/Road Props/Road Signs/SPW_Urban_Road Sign_Speed Limit 80.prefab using Guid(6fed03f84e66daa4f83764e28dfee587) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc4f5ddc5cbd7ca5e07e51d333159501') in 0.015612 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 10.914592 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Props/City Props/SPW_Urban_Props_Bench_01.prefab
-  artifactKey: Guid(718ce37e08deab84ea209b2d4f67cff0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Props/City Props/SPW_Urban_Props_Bench_01.prefab using Guid(718ce37e08deab84ea209b2d4f67cff0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61e8238669e8624e30391b207b057e52') in 0.013900 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000215 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Props/City Props/SPW_Urban_Props_Bench_02.prefab
-  artifactKey: Guid(137f149dca9db034c96f4b89808ce6fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Props/City Props/SPW_Urban_Props_Bench_02.prefab using Guid(137f149dca9db034c96f4b89808ce6fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e0fb434d3ee7ee13bf96a8699432e9a') in 0.013007 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000305 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Props/City Props/SPW_Urban_Props_Bench_03.prefab
-  artifactKey: Guid(3200049c305844148a4932b6cf04bb7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Props/City Props/SPW_Urban_Props_Bench_03.prefab using Guid(3200049c305844148a4932b6cf04bb7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb9cdc4e0f1a045827606eeed84bf12d') in 0.012701 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000227 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Props/City Props/SPW_Urban_Props_Dumpster_01.prefab
-  artifactKey: Guid(9f7f56bf90b4cdb44ae27dcf0af21d1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Props/City Props/SPW_Urban_Props_Dumpster_01.prefab using Guid(9f7f56bf90b4cdb44ae27dcf0af21d1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b920a579f63426f71381b7567dc4585c') in 0.015211 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000267 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Props/City Props/SPW_Urban_Props_Dumpster_03.prefab
-  artifactKey: Guid(8edfd8d6b263f2243b40001f34afc65e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Props/City Props/SPW_Urban_Props_Dumpster_03.prefab using Guid(8edfd8d6b263f2243b40001f34afc65e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce81c49444abe88dd0ad8e216180b849') in 0.017365 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000319 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Props/City Props/SPW_Urban_Props_Bus Stop.prefab
-  artifactKey: Guid(c22d4b4f35b71024f8f9e63401842a5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Props/City Props/SPW_Urban_Props_Bus Stop.prefab using Guid(c22d4b4f35b71024f8f9e63401842a5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7918dd8a695388676fd2b1a3cdfb0e1c') in 0.014533 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000266 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Props/City Props/SPW_Urban_Props_Dumpster_02.prefab
-  artifactKey: Guid(76412c6133342e14cb6683764861bbce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Props/City Props/SPW_Urban_Props_Dumpster_02.prefab using Guid(76412c6133342e14cb6683764861bbce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58e31a2347f6d3a73f19ffadc5b1f1bd') in 0.017515 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000253 seconds.
-  path: Assets/Resources/SimplePoly World/Prefab/Urban/Props/City Props/SPW_Urban_Props_Hydrant.prefab
-  artifactKey: Guid(09f587853e9ea964791d1c8b7e59f35c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Props/City Props/SPW_Urban_Props_Hydrant.prefab using Guid(09f587853e9ea964791d1c8b7e59f35c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bde0679416d8c779c15d501e7407e992') in 0.015277 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005301 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.49 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.275 seconds
+- Completed reload, in  1.289 seconds
 Platform modules already initialized, skipping
 Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
 Refreshing native plugins compatible for Editor in 1.65 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2877 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 166.0 MB.
-System memory in use after: 166.1 MB.
-
-Unloading 63 unused Assets to reduce memory usage. Loaded Objects now: 3463.
-Total: 2.331000 ms (FindLiveObjects: 0.328000 ms CreateObjectMapping: 0.077900 ms MarkObjects: 1.758600 ms  DeleteObjects: 0.164600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.008818 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.38 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.263 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 1.48 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2877 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 166.0 MB.
-System memory in use after: 166.1 MB.
+Unloading 2878 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.6 MB.
+System memory in use after: 151.6 MB.
 
 Unloading 63 unused Assets to reduce memory usage. Loaded Objects now: 3465.
-Total: 2.828700 ms (FindLiveObjects: 0.277800 ms CreateObjectMapping: 0.076200 ms MarkObjects: 2.312300 ms  DeleteObjects: 0.160800 ms)
+Total: 2.655200 ms (FindLiveObjects: 0.377800 ms CreateObjectMapping: 0.144500 ms MarkObjects: 1.953000 ms  DeleteObjects: 0.178800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.005633 seconds.
+Registered in 0.005729 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.11 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.58 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.333 seconds
+- Completed reload, in  1.258 seconds
 Platform modules already initialized, skipping
 Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 3.43 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 2.03 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2877 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 166.0 MB.
-System memory in use after: 166.1 MB.
+Unloading 2878 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.6 MB.
+System memory in use after: 151.6 MB.
 
 Unloading 63 unused Assets to reduce memory usage. Loaded Objects now: 3467.
-Total: 2.427900 ms (FindLiveObjects: 0.292100 ms CreateObjectMapping: 0.077800 ms MarkObjects: 1.896100 ms  DeleteObjects: 0.159800 ms)
+Total: 2.470800 ms (FindLiveObjects: 0.349600 ms CreateObjectMapping: 0.092800 ms MarkObjects: 1.841500 ms  DeleteObjects: 0.185200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005513 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.39 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.268 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 2.03 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2878 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.6 MB.
+System memory in use after: 151.6 MB.
+
+Unloading 63 unused Assets to reduce memory usage. Loaded Objects now: 3469.
+Total: 2.333600 ms (FindLiveObjects: 0.314800 ms CreateObjectMapping: 0.077500 ms MarkObjects: 1.770700 ms  DeleteObjects: 0.169300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005719 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.65 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.273 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.53 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2878 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.6 MB.
+System memory in use after: 151.7 MB.
+
+Unloading 63 unused Assets to reduce memory usage. Loaded Objects now: 3471.
+Total: 2.406200 ms (FindLiveObjects: 0.335700 ms CreateObjectMapping: 0.087500 ms MarkObjects: 1.832200 ms  DeleteObjects: 0.149700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006712 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.75 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.271 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.55 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2878 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.6 MB.
+System memory in use after: 151.7 MB.
+
+Unloading 63 unused Assets to reduce memory usage. Loaded Objects now: 3473.
+Total: 2.641000 ms (FindLiveObjects: 0.307100 ms CreateObjectMapping: 0.085100 ms MarkObjects: 2.088200 ms  DeleteObjects: 0.159200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005601 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.14 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.341 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.79 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2878 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.6 MB.
+System memory in use after: 151.7 MB.
+
+Unloading 63 unused Assets to reduce memory usage. Loaded Objects now: 3475.
+Total: 2.365900 ms (FindLiveObjects: 0.279800 ms CreateObjectMapping: 0.077900 ms MarkObjects: 1.852400 ms  DeleteObjects: 0.154100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005628 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.44 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.292 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.97 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2878 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.6 MB.
+System memory in use after: 151.7 MB.
+
+Unloading 63 unused Assets to reduce memory usage. Loaded Objects now: 3477.
+Total: 2.689600 ms (FindLiveObjects: 0.334900 ms CreateObjectMapping: 0.082700 ms MarkObjects: 2.102700 ms  DeleteObjects: 0.167500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
 ========================================================================
 Received Import Request.
-  Time since last request: 1414.461987 seconds.
-  path: Assets/Scenes/LVL2.unity
-  artifactKey: Guid(602e42fee886a86438b7a2334c048513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/LVL2.unity using Guid(602e42fee886a86438b7a2334c048513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78a81cf238ae69fffd3b91204c3f14c3') in 0.016704 seconds 
+  Time since last request: 614.936134 seconds.
+  path: Assets/Prefabs/Characters/Enemy/Gigant_Criminal.prefab
+  artifactKey: Guid(28bd3d228ca773c4b9a744bb53e7358d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Characters/Enemy/Gigant_Criminal.prefab using Guid(28bd3d228ca773c4b9a744bb53e7358d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3fbe6bb2584bea63eabf84f8f40377da') in 0.925841 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 19.513031 seconds.
-  path: Assets/Scenes/LVL1.unity
-  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/LVL1.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c2c651e6612475c84c38ae7c98bd08d') in 0.003731 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 119.705542 seconds.
-  path: Assets/Scenes/LVL2.unity
-  artifactKey: Guid(602e42fee886a86438b7a2334c048513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/LVL2.unity using Guid(602e42fee886a86438b7a2334c048513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76ff20f08b4d8309b960e8a6a1fc2219') in 0.003645 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 53.942591 seconds.
+  Time since last request: 0.000270 seconds.
   path: Assets/Prefabs/Characters/Enemy/Runing_Criminal.prefab
   artifactKey: Guid(4a8caa064b9d7ac41ad64fdc64a11d45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Characters/Enemy/Runing_Criminal.prefab using Guid(4a8caa064b9d7ac41ad64fdc64a11d45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b8b62dc3f40b661f06c696c245d5e3b') in 0.113391 seconds 
+Start importing Assets/Prefabs/Characters/Enemy/Runing_Criminal.prefab using Guid(4a8caa064b9d7ac41ad64fdc64a11d45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3868d4e33a33c5dbb9176b2466579e0') in 0.100402 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.125333 seconds.
-  path: Assets/Prefabs/Environment/BinSliced.prefab
-  artifactKey: Guid(6d6e8ea4285c8594ea82ff3508b311b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Environment/BinSliced.prefab using Guid(6d6e8ea4285c8594ea82ff3508b311b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44e66e219e3143e0a475d4bc7b97d289') in 0.027764 seconds 
+  Time since last request: 3.200485 seconds.
+  path: Assets/Resources/SimpleFX/Prefabs/FX_Explosion_Rubble.prefab
+  artifactKey: Guid(079954accd64b32419ec069129c81273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimpleFX/Prefabs/FX_Explosion_Rubble.prefab using Guid(079954accd64b32419ec069129c81273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53489f9bb93b15e37266b0cd085ec35b') in 0.007441 seconds 
 ========================================================================
-Received Import Request.
-  Time since last request: 0.000246 seconds.
-  path: Assets/Prefabs/Environment/EnemiesAndEnvironments.prefab
-  artifactKey: Guid(8b386c928b5af5f4e89cafaf219e3a7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Environment/EnemiesAndEnvironments.prefab using Guid(8b386c928b5af5f4e89cafaf219e3a7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2952fe0f8132aa3aafb5c119d8831761') in 0.564017 seconds 
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006610 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.78 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.381 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.91 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2878 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 166.3 MB.
+System memory in use after: 166.3 MB.
+
+Unloading 63 unused Assets to reduce memory usage. Loaded Objects now: 3483.
+Total: 2.842600 ms (FindLiveObjects: 0.489100 ms CreateObjectMapping: 0.130800 ms MarkObjects: 2.021100 ms  DeleteObjects: 0.200300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
 ========================================================================
-Received Import Request.
-  Time since last request: 11.999977 seconds.
-  path: Assets/Prefabs/Environment/EnemiesAndEnvironments2lvl.prefab
-  artifactKey: Guid(2db66f0a65e146143af5f89177b4174f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Environment/EnemiesAndEnvironments2lvl.prefab using Guid(2db66f0a65e146143af5f89177b4174f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad1384eb2c4cbec200f893a27cc4f132') in 0.589845 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 16.038412 seconds.
-  path: Assets/Scenes/LVL1.unity
-  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/LVL1.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85fcd7d72a7bff31f257c40b08d744b9') in 0.006669 seconds 
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007402 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image D:\Git\Supa Dupa Man\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.73 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.406 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.66 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2878 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 166.3 MB.
+System memory in use after: 166.3 MB.
+
+Unloading 63 unused Assets to reduce memory usage. Loaded Objects now: 3485.
+Total: 2.416500 ms (FindLiveObjects: 0.363000 ms CreateObjectMapping: 0.078300 ms MarkObjects: 1.702200 ms  DeleteObjects: 0.271700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
