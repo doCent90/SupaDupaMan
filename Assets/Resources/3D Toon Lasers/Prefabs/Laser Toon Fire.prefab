@@ -8659,9 +8659,9 @@ ParticleSystem:
       properties: 0
       emitProbability: 1
   LightsModule:
-    enabled: 0
+    enabled: 1
     ratio: 0
-    light: {fileID: 0}
+    light: {fileID: 573093009252230262, guid: 509353d2e3196ad40b69b1ffab6ef1ab, type: 3}
     randomDistribution: 1
     color: 1
     range: 1
@@ -48300,7 +48300,7 @@ Transform:
   m_GameObject: {fileID: 1645209392318072}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4957122714549248}
   - {fileID: 4436512035279380}
@@ -48319,12 +48319,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7c107ae524aed749b3de3034023eb9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserScale: 1
   laserColor: {r: 1, g: 0.7129649, b: 0.41176474, a: 1}
   HitEffect: {fileID: 1289138102609960}
   FlashEffect: {fileID: 1583918059157746}
-  HitOffset: 0.01
-  MaxLength: 30
 --- !u!198 &198357081524885744
 ParticleSystem:
   m_ObjectHideFlags: 0

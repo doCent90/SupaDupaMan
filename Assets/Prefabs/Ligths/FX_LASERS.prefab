@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 573093009252230261}
   - component: {fileID: 573093009252230262}
   m_Layer: 0
-  m_Name: FX
+  m_Name: FX_LASERS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,9 +42,9 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.5991756, b: 0.10062885, a: 1}
-  m_Intensity: 10
-  m_Range: 15
+  m_Color: {r: 1, g: 0.9318202, b: 0.8930817, a: 1}
+  m_Intensity: 15
+  m_Range: 6
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
