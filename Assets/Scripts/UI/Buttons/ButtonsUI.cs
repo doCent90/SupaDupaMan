@@ -21,6 +21,7 @@ public class ButtonsUI : MonoBehaviour
 
     private CurrentCoinsViewer _coinsViewer;
     private SoundsFXSettings _soundMaster;
+    private PlayerRotater _playerRotater;
     private LevelsLoader _loadLevel;
     private GameWin _gameWin;
     private StartGame _game;
@@ -57,6 +58,7 @@ public class ButtonsUI : MonoBehaviour
     {
         IsPanelOpen = true;
         Time.timeScale = 0;
+        _playerRotater.enabled = false;
 
         _panelOptions.SetActive(true);
         _openShop.gameObject.SetActive(false);
@@ -70,6 +72,7 @@ public class ButtonsUI : MonoBehaviour
     {
         IsPanelOpen = false;
         Time.timeScale = 1;
+        _playerRotater.enabled = true;
 
         _panelOptions.SetActive(false);
         _openShop.gameObject.SetActive(true);
@@ -101,6 +104,7 @@ public class ButtonsUI : MonoBehaviour
     {
         IsPanelOpen = true;
         Time.timeScale = 0;
+        _playerRotater.enabled = false;
 
         _shop.SetActive(true);
         _openShop.gameObject.SetActive(false);
@@ -113,6 +117,7 @@ public class ButtonsUI : MonoBehaviour
     {
         IsPanelOpen = false;
         Time.timeScale = 1;
+        _playerRotater.enabled = true;
 
         _shop.SetActive(false);
         _openShop.gameObject.SetActive(true);
@@ -126,6 +131,7 @@ public class ButtonsUI : MonoBehaviour
         _game = FindObjectOfType<StartGame>();
         _gameWin = FindObjectOfType<GameWin>();
         _loadLevel = FindObjectOfType<LevelsLoader>();
+        _playerRotater = FindObjectOfType<PlayerRotater>();
         _soundMaster = FindObjectOfType<SoundsFXSettings>();
         _coinsViewer = FindObjectOfType<CurrentCoinsViewer>();
 

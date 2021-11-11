@@ -14,7 +14,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LVL2.unity
     guid: 602e42fee886a86438b7a2334c048513
-  - enabled: 1
-    path: Assets/Resources/SimpleFX/_Demo/Demo.unity
-    guid: dbe9743d9065a2445a22fa67fa9fdbb5
   m_configObjects: {}
