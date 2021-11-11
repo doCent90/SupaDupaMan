@@ -7,6 +7,7 @@ public class ObjectsSclicer : SlicerType1
     private MeshCollider _collider;
     private MeshRenderer _meshRenderer;
     private CellsDestroyer _cellsDestroyer;
+    private ParticleSystem _particleSystem;
 
     public event UnityAction<Transform> ApplyDamage;
     public event UnityAction Destroyed;
@@ -23,6 +24,7 @@ public class ObjectsSclicer : SlicerType1
         _cellsDestroyer.enabled = true;
         _meshRenderer.enabled = false;
         _collider.enabled = false;
+        _particleSystem.Play();
         Destroyed?.Invoke();
     }
 
@@ -31,5 +33,6 @@ public class ObjectsSclicer : SlicerType1
         _collider = GetComponent<MeshCollider>();
         _meshRenderer = GetComponent<MeshRenderer>();
         _cellsDestroyer = GetComponent<CellsDestroyer>();
+        _particleSystem = GetComponentInChildren<ParticleSystem>();
     }
 }
