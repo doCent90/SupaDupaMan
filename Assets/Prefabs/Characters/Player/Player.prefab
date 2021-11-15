@@ -154,7 +154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9148275758567973973}
   m_Layer: 0
-  m_Name: LookPoint
+  m_Name: LookAtPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2256,7 +2256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8927364002816186506}
   m_Layer: 0
-  m_Name: PointView
+  m_Name: Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2390,7 +2390,7 @@ GameObject:
   - component: {fileID: 7159700789899947910}
   - component: {fileID: 8936601988681150343}
   m_Layer: 0
-  m_Name: AimLinePointSelector
+  m_Name: AimPointSelector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
