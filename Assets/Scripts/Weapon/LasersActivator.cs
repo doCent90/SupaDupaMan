@@ -3,19 +3,17 @@ using UnityEngine.Events;
 
 public class LasersActivator : MonoBehaviour
 {
-    [Header("Lasers")]
-    [SerializeField] private int _laserNumber;
-    [SerializeField] private GameObject[] _lasers;
+    [Header("Standart Lsaer")]
+    [SerializeField] LaserRenderer2 _standartLaser;
     [Header("Settings of Shot")]
     [SerializeField] private Transform _shootPosition1;
     [SerializeField] private Transform _shootPosition2;
 
     private Enemy[] _enemies;
     private Transform _aimPoint;
-    private LaserRenderer2 _reset1;
-    private LaserRenderer2 _reset2;
-    private GameObject _laserPrefab1;
-    private GameObject _laserPrefab2;
+    private LaserRenderer2 _currentLaser;
+    private LaserRenderer2 _laserPrefab1;
+    private LaserRenderer2 _laserPrefab2;
     private PlayerMover _playerMover;
     private WallSlicer[] _wallsSliced;
     private ObjectsSclicer[] _objectsScliced;
@@ -25,6 +23,11 @@ public class LasersActivator : MonoBehaviour
     public event UnityAction<bool> ReadyToAttacked;
     public event UnityAction<bool> Fired;
     public event UnityAction Shoted;
+
+    public void SetLaser(LaserRenderer2 laser)
+    {
+        _currentLaser = laser;
+    }
 
     private void OnEnable()
     {
@@ -56,8 +59,6 @@ public class LasersActivator : MonoBehaviour
 
     private void OnDisable()
     {
-        Stop();
-
         ReadyToAttacked?.Invoke(false);
         Fired?.Invoke(false);
 
@@ -80,6 +81,11 @@ public class LasersActivator : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        _currentLaser = _standartLaser;
+    }
+
     private void Attack(Transform aimPoint)
     {
         _aimPoint = aimPoint;
@@ -91,37 +97,31 @@ public class LasersActivator : MonoBehaviour
     {
         _playerMover.enabled = false;
 
-        _laserPrefab1 = Instantiate(_lasers[_laserNumber], _shootPosition1.position, _shootPosition1.rotation);
-        _laserPrefab2 = Instantiate(_lasers[_laserNumber], _shootPosition2.position, _shootPosition2.rotation);
+        _laserPrefab1 = Instantiate(_currentLaser, _shootPosition1.position, _shootPosition1.rotation);
+        _laserPrefab2 = Instantiate(_currentLaser, _shootPosition2.position, _shootPosition2.rotation);
 
         LookAtAim(_laserPrefab1, _aimPoint);
         LookAtAim(_laserPrefab2, _aimPoint);
-
-        _reset1 = _laserPrefab1.GetComponent<LaserRenderer2>();
-        _reset2 = _laserPrefab2.GetComponent<LaserRenderer2>();
 
         Fired?.Invoke(true);
         Shoted?.Invoke();
     }
 
-    private void LookAtAim(GameObject laserPrefab, Transform aimPoint)
+    private void LookAtAim(LaserRenderer2 laserPrefab, Transform aimPoint)
     {        
         laserPrefab.transform.LookAt(aimPoint);
     }
 
     private void Stop()
     {
-        if (_reset1)
-        {
-            _reset1.DisablePrepare();
-            _reset2.DisablePrepare();
-        }
+        _laserPrefab1.DisablePrepare();
+        _laserPrefab2.DisablePrepare();
 
         _playerMover.enabled = true;
         Fired?.Invoke(false);
 
-        Destroy(_laserPrefab1, Delay);
-        Destroy(_laserPrefab2, Delay);
+        Destroy(_laserPrefab1.gameObject, Delay);
+        Destroy(_laserPrefab2.gameObject, Delay);
     }
 
     private void RotateShootPosition()

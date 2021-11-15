@@ -2,6 +2,9 @@
 
 public class LaserRenderer2 : MonoBehaviour
 {
+    [SerializeField] private int _price;
+    [SerializeField] private Sprite _icon;
+
     public Color laserColor = new Vector4(1,1,1,1);
     public GameObject HitEffect;
     public GameObject FlashEffect;
@@ -16,6 +19,7 @@ public class LaserRenderer2 : MonoBehaviour
     private Vector3[] _particlesPositions;
     private float _dissovleTimer = 0;
     private bool _isStartDissovle = false;
+    private bool _isBuyed;
 
     private float HitOffset = 0.1f;
     private const float laserScale = 1;
@@ -25,6 +29,10 @@ public class LaserRenderer2 : MonoBehaviour
     private const string EndPoint = "_EndPoint";
     private const string Dissolve = "_Dissolve";
     private const string Scale = "_Scale";
+
+    public int Price => _price;
+    public Sprite Icon => _icon;
+    public bool IsBuyed => _isBuyed;
 
     public void DisablePrepare()
     {
@@ -44,6 +52,11 @@ public class LaserRenderer2 : MonoBehaviour
                 if (AllFlashes.isPlaying) AllFlashes.Stop();
             }
         }
+    }
+
+    public void SetStatus(bool isBuyed)
+    {
+        _isBuyed = isBuyed;
     }
 
     private void Start()

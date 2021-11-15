@@ -7,6 +7,11 @@ public class TotalCoinsViewer : MonoBehaviour
 
     private const string Coins = "Coins";
 
+    public void Refresh()
+    {
+        Show();
+    }
+
     private void OnEnable()
     {
         _totalcoinsText = GetComponent<TMP_Text>();

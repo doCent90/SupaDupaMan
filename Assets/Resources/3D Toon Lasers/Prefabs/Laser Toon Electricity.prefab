@@ -5025,7 +5025,7 @@ Transform:
   m_GameObject: {fileID: 1182259029118156}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4950760755894796}
   - {fileID: 4182800222228490}
@@ -24407,6 +24407,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7c107ae524aed749b3de3034023eb9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _price: 0
+  _icon: {fileID: 21300000, guid: 2485c9e6454994b36a896bc87d27d1b3, type: 3}
   laserColor: {r: 0.49411762, g: 0.62241113, b: 1, a: 1}
   HitEffect: {fileID: 1182259029118156}
   FlashEffect: {fileID: 1877275532798436}

@@ -10,6 +10,8 @@ public class StartGame : MonoBehaviour
 
     private int _countStartSessions = 0;
 
+    private const string Coins = "Coins";
+
     private const string Key = "b2757e20bee8ecd447b0ed8c368abd50";
     private const string CountSessions = "CountSessions";
     private const string CountDaysGame = "days_in_game";
@@ -28,6 +30,9 @@ public class StartGame : MonoBehaviour
 
     private void OnEnable()
     {
+        PlayerPrefs.SetInt(Coins, 5000);
+        Debug.Log("Added Coins Default");
+
         _player = FindObjectOfType<Player>();
         _playerMover = _player.GetComponent<PlayerMover>();
         _objectsSelector = _player.GetComponentInChildren<ObjectsSelector>();
