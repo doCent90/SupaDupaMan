@@ -7,12 +7,12 @@ public class PlayerMover : MonoBehaviour
 {
     [SerializeField] private Transform _lookPoint;
 
-    private Exit _exit;
     private Enemy[] _enemies;
     private GameWin _gameWin;
     private PlayerRotater _rotater;
     private Vector3 _lookAtPoint;
 
+    private const float DurationMoveFinish = 5f;
     private const float Duration = 0.5f;
     private const float Distance = 65f;
 
@@ -29,20 +29,19 @@ public class PlayerMover : MonoBehaviour
 
     private void OnEnable()
     {
-        _exit = FindObjectOfType<Exit>();
         _enemies = FindObjectsOfType<Enemy>();
         _gameWin = FindObjectOfType<GameWin>();
         _rotater = GetComponent<PlayerRotater>();
 
         _rotater.enabled = true;
-        _gameWin.Win += MoveFinishView;
+        _gameWin.Win += LookAtFinish;
     }
 
 
     private void OnDisable()
     {
         _rotater.enabled = false;
-        _gameWin.Win -= MoveFinishView;
+        _gameWin.Win -= LookAtFinish;
     }
 
     private void LookAtClosetstEnemy() 
@@ -64,11 +63,16 @@ public class PlayerMover : MonoBehaviour
         tweenRotate.SetEase(Ease.InOutSine);
     }
 
-    private void MoveFinishView()
+    private void MoveFinishPoint()
     {
-        var tweeLookAt = transform.DOLookAt(_exit.transform.position, Duration);
-        var tweenMove = transform.DOMove(_gameWin.transform.position, Duration);
+        var tweenMove = transform.DOMove(_gameWin.transform.position, DurationMoveFinish);
 
         enabled = false;
+    }
+
+    private void LookAtFinish()
+    {
+        var tweeLookAt = transform.DOLookAt(_gameWin.transform.position, DurationMoveFinish / 2);
+        tweeLookAt.OnComplete(MoveFinishPoint);
     }
 }
