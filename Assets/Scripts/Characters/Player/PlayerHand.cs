@@ -1,7 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 
-public class PlayerHandMover : MonoBehaviour
+public class PlayerHand : MonoBehaviour
 {
     private GameWin _gameWin;
 

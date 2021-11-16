@@ -23,16 +23,16 @@ public class GameWin : MonoBehaviour
         _objectsSelector = _playerMover.GetComponentInChildren<ObjectsSelector>();
 
         _winText.gameObject.SetActive(false);
-        _enemy.Died += OnEnemyDied;
+        _enemy.Died += OnEnemysDied;
     }
 
     private void OnDisable()
     {
-        _enemy.Died -= OnEnemyDied;
+        _enemy.Died -= OnEnemysDied;
         DOTween.Clear();
     }
 
-    private void OnEnemyDied()
+    private void OnEnemysDied()
     {
         _playerRotater.enabled = false;
         _winText.gameObject.SetActive(true);
