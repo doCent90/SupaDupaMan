@@ -77,6 +77,11 @@ public class AimRenderer : MonoBehaviour
                     RotateAtLook(spriteRenderer, _red);
                 else if(hit.collider.TryGetComponent(out Platform platform))
                     RotateAtNormal(hit, spriteRenderer, _green);
+                else if(hit.collider.TryGetComponent(out BaseGround baseGround))
+                {
+                    SetSwitchMain(isEnable: false);
+                    SetSwitchOutOfRange(isEnable: true);
+                }
                 else
                     SetSwitchMain(isEnable: false);
             }
