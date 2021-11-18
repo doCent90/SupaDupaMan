@@ -10,10 +10,10 @@ public class AimAnimator : MonoBehaviour
     private Transform _outOfRange;
     private AimRenderer _renderer;
 
-    private const float OriginaMainlScale = 0.4f;
+    private const float OriginaMainlScale = 0.07f;
     private const float OriginaOutlScale = 0.06f;
     private const float OutScale = 0.1f;
-    private const float MainScale = 0.8f;
+    private const float MainScale = 0.2f;
     private const float Speed = 1f;
 
     private void OnEnable()

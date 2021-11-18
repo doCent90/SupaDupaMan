@@ -5,8 +5,8 @@ using UnityEngine.Events;
 [RequireComponent(typeof(ObjectsSelector))]
 public class AimRenderer : MonoBehaviour
 {
-    private LasersActivator _laser;
     private AimMain _mainPrefab;
+    private LasersActivator _laser;
     private PlayerRotater _playerRotater;
     private ObjectsSelector _objectsSelector;
     private AimOutOfRangeView _outOfViewPrefab;
@@ -15,6 +15,8 @@ public class AimRenderer : MonoBehaviour
     private float _maxLength;
     private readonly Color _red = Color.red;
     private readonly Color _green = Color.green;
+
+    private const float MinDistanceView = 5f;
 
     public event UnityAction<bool> MainEnabled;
     public event UnityAction<bool> OutOfRangeEnabled;
@@ -95,12 +97,14 @@ public class AimRenderer : MonoBehaviour
     {
         spriteRenderer.color = color;
         _mainPrefab.transform.rotation = transform.rotation;
+        _mainPrefab.transform.localPosition = new Vector3(0, 0, MinDistanceView);
     }
 
     private void RotateAtNormal(RaycastHit hit, SpriteRenderer spriteRenderer, Color color)
     {
         spriteRenderer.color = color;
         _mainPrefab.transform.rotation = Quaternion.FromToRotation(_mainPrefab.transform.forward, hit.normal) * _mainPrefab.transform.rotation;
+        _mainPrefab.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
     }
 
     private void SetSwitchMain(bool isEnable)
