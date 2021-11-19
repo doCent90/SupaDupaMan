@@ -12,7 +12,7 @@ public class PlayerMover : MonoBehaviour
     private PlayerRotater _rotater;
     private Vector3 _lookAtPoint;
 
-    private const float DurationMoveFinish = 5f;
+    private const float DurationMoveFinish = 4f;
     private const float Duration = 0.5f;
     private const float Distance = 65f;
 
@@ -72,7 +72,7 @@ public class PlayerMover : MonoBehaviour
 
     private void LookAtFinish()
     {
-        var tweeLookAt = transform.DOLookAt(_gameWin.transform.position, DurationMoveFinish / 2);
+        var tweeLookAt = transform.DOLookAt(_gameWin.transform.position, Duration * 2);
         tweeLookAt.OnComplete(MoveFinishPoint);
     }
 }

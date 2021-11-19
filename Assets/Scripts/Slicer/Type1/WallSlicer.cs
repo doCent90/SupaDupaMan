@@ -4,8 +4,12 @@ using UnityEngine.Events;
 [RequireComponent(typeof(BoxCollider))]
 public class WallSlicer : SlicerType1
 {
+    [SerializeField] private Material _targetMaterial;
+
+    private Sliceable _sliceable;
     private BoxCollider _boxCollider;
     private MeshCollider _meshCollider;
+    private MeshRenderer _meshRenderer;
     private Transform _damagePointPosition;
     private WallDamagePointMover _damagePointMover;
 
@@ -15,6 +19,7 @@ public class WallSlicer : SlicerType1
     protected override void InitDamage()
     {
         _elapsedTime = DestroingWallTime;
+        SetMaterial();
 
         _meshCollider.convex = true;
         _boxCollider.enabled = false;
@@ -32,9 +37,16 @@ public class WallSlicer : SlicerType1
     private void Start()
     {
         _boxCollider = GetComponent<BoxCollider>();
+        _sliceable = GetComponentInChildren<Sliceable>();
+        _meshRenderer = _sliceable.GetComponent<MeshRenderer>();
         _damagePointMover = GetComponentInChildren<WallDamagePointMover>();
 
         _meshCollider = GetComponentInChildren<MeshCollider>();
         _damagePointPosition = _damagePointMover.transform;
+    }
+
+    private void SetMaterial()
+    {
+        _meshRenderer.material = _targetMaterial;
     }
 }
