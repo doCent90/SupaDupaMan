@@ -184,7 +184,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2319532611187697846}
-  - component: {fileID: 1885562360622897687}
+  - component: {fileID: 8157623866483937152}
   m_Layer: 0
   m_Name: DamagePoint
   m_TagString: Untagged
@@ -207,7 +207,7 @@ Transform:
   m_Father: {fileID: 5511367442713800670}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1885562360622897687
+--- !u!114 &8157623866483937152
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -216,9 +216,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4447219243254439226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62e68a5e2be670348bec68539e65173c, type: 3}
+  m_Script: {fileID: 11500000, guid: e4fd5cf9e00f72f4a9b22df5bf06acac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 200
+  _rangeY: 10
+  _rangeZ: 29
 --- !u!1001 &1226624228914643443
 PrefabInstance:
   m_ObjectHideFlags: 0

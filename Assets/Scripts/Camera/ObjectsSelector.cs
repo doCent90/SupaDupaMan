@@ -66,9 +66,7 @@ public class ObjectsSelector : MonoBehaviour
                 if (hit.collider != null)
                 {
                     if (hit.collider.TryGetComponent(out Platform platform))
-                    {
                         _playerMover.Move(hit.point);
-                    }
                 }
             }
         }
@@ -84,9 +82,7 @@ public class ObjectsSelector : MonoBehaviour
                 if (hit.collider != null)
                 {
                     if (hit.collider.TryGetComponent(out Enemy enemy))
-                    {
                         enemy.TakeDamage();
-                    }
                 }
             }
         }
@@ -102,9 +98,9 @@ public class ObjectsSelector : MonoBehaviour
                 if (hit.collider != null)
                 {
                     if (hit.collider.TryGetComponent(out WallSlicer wall))
-                    {
                         wall.TakeDamage();
-                    }
+                    else if(hit.collider.TryGetComponent(out WallSlicer2 wall2))
+                        wall2.TakeDamage();
                 }
             }
         }
@@ -120,9 +116,7 @@ public class ObjectsSelector : MonoBehaviour
                 if (hit.collider != null)
                 {
                     if (hit.collider.TryGetComponent(out ObjectsSclicer objectSliced))
-                    {
                         objectSliced.TakeDamage();
-                    }
                 }
             }
         }
