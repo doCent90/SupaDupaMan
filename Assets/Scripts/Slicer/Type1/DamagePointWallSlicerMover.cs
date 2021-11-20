@@ -4,7 +4,7 @@ public class DamagePointWallSlicerMover : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _rangeY;
-    [SerializeField] private float _rangeZ;
+    [SerializeField] private float _rangeX;
 
     private LaserRenderer2[] _laserRenderers;
     private Vector3 _targetPosition;
@@ -62,9 +62,9 @@ public class DamagePointWallSlicerMover : MonoBehaviour
             _onTargetPosition = false;
 
             if (_direction % 2 == 0)
-                _targetPosition = new Vector3(0, _rangeY * Random.Range(Negative, Positive), -_rangeZ);
+                _targetPosition = new Vector3(-_rangeX, _rangeY * Random.Range(Negative, Positive), 0);
             else
-                _targetPosition = new Vector3(0, _rangeY * Random.Range(Negative, Positive), _rangeZ);
+                _targetPosition = new Vector3(_rangeX, _rangeY * Random.Range(Negative, Positive), 0);
 
             _direction = _direction > 100 ? _direction = 0 : _direction;
         }
