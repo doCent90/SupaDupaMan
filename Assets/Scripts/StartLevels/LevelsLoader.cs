@@ -59,8 +59,8 @@ public class LevelsLoader : MonoBehaviour
         _levelStart.Add(LevelStart, currentLevel);
         _levelLast.Add(LastLevel, currentLevel);
 
-        Amplitude.Instance.logEvent(LevelStart, (IDictionary<string, object>)_levelStart);
-        Amplitude.Instance.logEvent(LastLevel, (IDictionary<string, object>)_levelLast);
+        //Amplitude.Instance.logEvent(LevelStart, (IDictionary<string, object>)_levelStart);
+        //Amplitude.Instance.logEvent(LastLevel, (IDictionary<string, object>)_levelLast);
     }
 
     private void LoadScene(int numberLevel)

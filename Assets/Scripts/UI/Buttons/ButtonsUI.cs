@@ -27,7 +27,6 @@ public class ButtonsUI : MonoBehaviour
     private SoundsFXSettings _soundMaster;
     private PlayerRotater _playerRotater;
     private LevelsLoader _loadLevel;
-    private GameWin _gameWin;
     private StartGame _game;
 
     private float _elapsedTime = 0;
@@ -41,16 +40,26 @@ public class ButtonsUI : MonoBehaviour
     public bool IsPanelOpen { get; private set; } = false;
 
     public event UnityAction Clicked;
+    public event UnityAction StartButtonClicked;
+    public event UnityAction ContinueButtonClicked;
+
+    public void TapToStart()
+    {
+        StartButtonClicked?.Invoke();
+    }
 
     public void StartCurrentLevel()
     {
         _game.StartLevel();
-        _buttonStart.gameObject.SetActive(false);
+    }
+
+    public void Continue()
+    {
+        ContinueButtonClicked?.Invoke();
     }
 
     public void NextLevel()
     {
-        _buttonContinue.gameObject.SetActive(false);
         _loadLevel.LoadNext();
         Clicked?.Invoke();
 
@@ -138,27 +147,18 @@ public class ButtonsUI : MonoBehaviour
     private void OnEnable()
     {
         _game = FindObjectOfType<StartGame>();
-        _gameWin = FindObjectOfType<GameWin>();
         _loadLevel = FindObjectOfType<LevelsLoader>();
         _playerRotater = FindObjectOfType<PlayerRotater>();
         _soundMaster = FindObjectOfType<SoundsFXSettings>();
         _coinsViewer = FindObjectOfType<CurrentCoinsViewer>();
 
-        _gameWin.Win += ShowContinueButton;
-
         Init();
-    }
-
-    private void OnDisable()
-    {
-        _gameWin.Win -= ShowContinueButton;
     }
 
     private void Init()
     {
         _panelOptions.SetActive(false);
         _closeOptions.gameObject.SetActive(false);
-        _buttonContinue.gameObject.SetActive(false);
 
         if (_soundMaster.IsSoundEnable)
         {
@@ -170,11 +170,6 @@ public class ButtonsUI : MonoBehaviour
             _onSoundButton.gameObject.SetActive(false);
             _offSoundButton.gameObject.SetActive(true);
         }
-    }    
-
-    private void ShowContinueButton()
-    {
-        _buttonContinue.gameObject.SetActive(true);
     }
 
     private void Update()

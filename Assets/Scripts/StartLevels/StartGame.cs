@@ -69,7 +69,7 @@ public class StartGame : MonoBehaviour
         _gameStart.Add(GameStartCount, _countStartSessions);
 
         PlayerPrefs.SetInt(CountSessions, _countStartSessions);
-        Amplitude.Instance.logEvent(GameStart, (IDictionary<string, object>)_gameStart);
+        //Amplitude.Instance.logEvent(GameStart, (IDictionary<string, object>)_gameStart);
     }
 
     private void SetDaysInGame()
@@ -80,7 +80,7 @@ public class StartGame : MonoBehaviour
         _daysInGame.Add(Days, days);
 
         PlayerPrefs.SetInt(CountDaysGame, days);
-        Amplitude.Instance.logEvent(CountDaysGame, (IDictionary<string, object>)_daysInGame);
+        //Amplitude.Instance.logEvent(CountDaysGame, (IDictionary<string, object>)_daysInGame);
     }
 
     private void SetRegDay()
