@@ -1,10 +1,14 @@
 using UnityEngine;
 using IJunior.TypedScenes;
 using UnityEngine.Events;
+using System.Collections.Generic;
 
 public class LevelsLoader : MonoBehaviour
 {
     [SerializeField] protected int _levelIndex;
+
+    private Dictionary<string, int> _levelStart = new Dictionary<string, int>();
+    private Dictionary<string, int> _levelLast = new Dictionary<string, int>();
 
     private const int FirstLevel = 1;
     private const string LevelDone = "LevelDone";
@@ -52,8 +56,11 @@ public class LevelsLoader : MonoBehaviour
         if (currentLevel > _levelIndex)
             LoadScene(currentLevel);
 
-        Amplitude.Instance.logEvent(LevelStart, currentLevel);
-        Amplitude.Instance.logEvent(LastLevel, currentLevel);
+        _levelStart.Add(LevelStart, currentLevel);
+        _levelLast.Add(LastLevel, currentLevel);
+
+        Amplitude.Instance.logEvent(LevelStart, (IDictionary<string, object>)_levelStart);
+        Amplitude.Instance.logEvent(LastLevel, (IDictionary<string, object>)_levelLast);
     }
 
     private void LoadScene(int numberLevel)

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using System.Collections.Generic;
 
 public class ButtonsUI : MonoBehaviour
 {    
@@ -19,6 +20,9 @@ public class ButtonsUI : MonoBehaviour
     [SerializeField] private Button _onSoundButton;
     [SerializeField] private Button _offSoundButton;
 
+    private Dictionary<string, int> _levelComplete = new Dictionary<string, int>();
+    private Dictionary<string, int> _timeSpent = new Dictionary<string, int>();
+
     private CurrentCoinsViewer _coinsViewer;
     private SoundsFXSettings _soundMaster;
     private PlayerRotater _playerRotater;
@@ -29,7 +33,9 @@ public class ButtonsUI : MonoBehaviour
     private float _elapsedTime = 0;
     private bool _isLevelDone = false;
 
+    private const string Level = "level";
     private const string LevelComplete = "level_complete";
+    private const string TimeGame = "time_spent";
     private const string TimeSpent = "time_spent_lvl_complete";
 
     public bool IsPanelOpen { get; private set; } = false;
@@ -50,8 +56,11 @@ public class ButtonsUI : MonoBehaviour
 
         _isLevelDone = true;
 
-        Amplitude.Instance.logEvent(LevelComplete, _loadLevel.Level);
-        Amplitude.Instance.logEvent(TimeSpent, (int)_elapsedTime);
+        _timeSpent.Add(TimeGame, (int)_elapsedTime);
+        _levelComplete.Add(Level, _loadLevel.Level);
+
+        Amplitude.Instance.logEvent(TimeSpent, (IDictionary<string, object>)_timeSpent);
+        Amplitude.Instance.logEvent(LevelComplete, (IDictionary<string, object>)_levelComplete);
     }
 
     public void OpenSettings()
