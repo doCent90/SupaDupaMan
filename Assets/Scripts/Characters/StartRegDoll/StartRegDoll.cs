@@ -15,13 +15,13 @@ public class StartRegDoll : MonoBehaviour
         _regDoll = GetComponentInChildren<RegDoll>();
         _dollMover = GetComponent<StartRegDollMover>();
 
-        _gameWin.Win += OnWinned;
+        _gameWin.Won += OnWinned;
         _startGame.Started += OnStarted;
     }
 
     private void OnDisable()
     {
-        _gameWin.Win -= OnWinned;
+        _gameWin.Won -= OnWinned;
         _startGame.Started -= OnStarted;
     }
 

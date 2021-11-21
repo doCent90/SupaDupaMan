@@ -5,15 +5,10 @@ using System.Collections.Generic;
 
 public class ButtonsUI : MonoBehaviour
 {    
-    [Header("Buttons")]
-    [SerializeField] private Button _buttonStart;
-    [SerializeField] private Button _buttonContinue;
     [Header("Shop")]
-    [SerializeField] private GameObject _shop;
     [SerializeField] private Button _openShop;
     [SerializeField] private Button _closeShop;
     [Header("Settings")]
-    [SerializeField] private GameObject _panelOptions;
     [SerializeField] private Button _openOptions;
     [SerializeField] private Button _closeOptions;
     [Header("Sound")]
@@ -42,6 +37,9 @@ public class ButtonsUI : MonoBehaviour
     public event UnityAction Clicked;
     public event UnityAction StartButtonClicked;
     public event UnityAction ContinueButtonClicked;
+
+    public event UnityAction<bool> ShopClicked;
+    public event UnityAction<bool> SettingsClicked;
 
     public void TapToStart()
     {
@@ -75,28 +73,28 @@ public class ButtonsUI : MonoBehaviour
     public void OpenSettings()
     {
         IsPanelOpen = true;
-        Time.timeScale = 0;
         _playerRotater.enabled = false;
 
-        _panelOptions.SetActive(true);
         _openShop.gameObject.SetActive(false);
         _coinsViewer.gameObject.SetActive(false);
         _openOptions.gameObject.SetActive(false);
         _closeOptions.gameObject.SetActive(true);
+
+        SettingsClicked?.Invoke(true);
         Clicked?.Invoke();
     }
 
     public void CloseSettings()
     {
         IsPanelOpen = false;
-        Time.timeScale = 1;
         _playerRotater.enabled = true;
 
-        _panelOptions.SetActive(false);
         _openShop.gameObject.SetActive(true);
         _openOptions.gameObject.SetActive(true);
         _coinsViewer.gameObject.SetActive(true);
         _closeOptions.gameObject.SetActive(false);
+
+        SettingsClicked?.Invoke(false);
         Clicked?.Invoke();
     }
 
@@ -121,27 +119,29 @@ public class ButtonsUI : MonoBehaviour
     public void OpenShop()
     {
         IsPanelOpen = true;
-        Time.timeScale = 0;
         _playerRotater.enabled = false;
 
-        _shop.SetActive(true);
         _openShop.gameObject.SetActive(false);
         _closeShop.gameObject.SetActive(true);
         _coinsViewer.gameObject.SetActive(false);
         _openOptions.gameObject.SetActive(false);
+
+        ShopClicked?.Invoke(true);
+        Clicked?.Invoke();
     }
 
     public void CloseShop()
     {
         IsPanelOpen = false;
-        Time.timeScale = 1;
         _playerRotater.enabled = true;
 
-        _shop.SetActive(false);
         _openShop.gameObject.SetActive(true);
         _closeShop.gameObject.SetActive(false);
         _coinsViewer.gameObject.SetActive(true);
         _openOptions.gameObject.SetActive(true);
+
+        ShopClicked?.Invoke(false);
+        Clicked?.Invoke();
     }
 
     private void OnEnable()
@@ -157,7 +157,6 @@ public class ButtonsUI : MonoBehaviour
 
     private void Init()
     {
-        _panelOptions.SetActive(false);
         _closeOptions.gameObject.SetActive(false);
 
         if (_soundMaster.IsSoundEnable)

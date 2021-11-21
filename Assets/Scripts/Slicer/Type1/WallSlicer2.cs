@@ -6,6 +6,7 @@ public class WallSlicer2 : SlicerType1
 {
     private BoxCollider _boxCollider;
     private MeshRenderer _meshRenderer;
+    private ParticleSystem _particleSystem;
     private CellsDestroyer _cellsDestroyer;
     private Transform _damagePointPosition;
     private DamagePointWallSlicerMover _damagePoint;
@@ -28,6 +29,7 @@ public class WallSlicer2 : SlicerType1
         _meshRenderer.enabled = false;
         _damagePoint.enabled = false;
 
+        _particleSystem.Play();
         Destroyed?.Invoke();        
     }
 
@@ -36,6 +38,7 @@ public class WallSlicer2 : SlicerType1
         _boxCollider = GetComponent<BoxCollider>();
         _meshRenderer = GetComponent<MeshRenderer>();
         _cellsDestroyer = GetComponent<CellsDestroyer>();
+        _particleSystem = GetComponentInChildren<ParticleSystem>();
         _damagePoint = GetComponentInChildren<DamagePointWallSlicerMover>();
         _damagePointPosition = GetComponentInChildren<DamagePointWallSlicerMover>().transform;
     }

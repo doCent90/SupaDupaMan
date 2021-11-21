@@ -34,14 +34,14 @@ public class PlayerMover : MonoBehaviour
         _rotater = GetComponent<PlayerRotater>();
 
         _rotater.enabled = true;
-        _gameWin.Win += LookAtFinish;
+        _gameWin.Won += LookAtFinish;
     }
 
 
     private void OnDisable()
     {
         _rotater.enabled = false;
-        _gameWin.Win -= LookAtFinish;
+        _gameWin.Won -= LookAtFinish;
     }
 
     private void LookAtClosetstEnemy() 

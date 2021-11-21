@@ -31,8 +31,6 @@ public class Shop : MonoBehaviour
             AddItem(_lasers[i]);
             _lasers[i].SetStatus(isBuyed: false);
         }
-
-        gameObject.SetActive(false);
     }
 
     private void AddItem(LaserRenderer2 laser)

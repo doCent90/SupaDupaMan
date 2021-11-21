@@ -11,8 +11,8 @@ public class ButtonsAnimator : MonoBehaviour
 
     private GameWin _gameWin;
     private ButtonsUI _buttonsUI;
-    private Vector3 _startPosition;
     private Vector3 _backPosition;
+    private Vector3 _startPosition;
 
     private const float Duration = 1f;
 
@@ -24,11 +24,18 @@ public class ButtonsAnimator : MonoBehaviour
         _startPosition = _start.localPosition;
         _backPosition = _continue.localPosition;
 
-        _gameWin.Win += OnGameWinned;
+        _gameWin.Won += OnGameWon;
         _buttonsUI.StartButtonClicked += OnStartClicked;
         _buttonsUI.ContinueButtonClicked += OnContinueClicked;
 
         Move();
+    }
+
+    private void OnDisable()
+    {
+        _gameWin.Won -= OnGameWon;
+        _buttonsUI.StartButtonClicked -= OnStartClicked;
+        _buttonsUI.ContinueButtonClicked -= OnContinueClicked;
     }
 
     private void Move()
@@ -52,7 +59,7 @@ public class ButtonsAnimator : MonoBehaviour
         tweeMove.OnComplete(OnContinueButtonAnimated);
     }
 
-    private void OnGameWinned()
+    private void OnGameWon()
     {
         var tweeMove = _continue.DOLocalMoveY(_startPosition.y, Duration);
         tweeMove.SetEase(Ease.InOutBack);

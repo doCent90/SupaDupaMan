@@ -9,7 +9,7 @@ public abstract class SlicerType1 : MonoBehaviour
 
     protected const float DestroingWallTime = 1.5f;
     protected const float DestroingObjectsTime = 0.5f;
-    protected const float Range = 15f;
+    protected const float Range = 10f;
 
     public void TakeDamage()
     {
@@ -48,8 +48,8 @@ public abstract class SlicerType1 : MonoBehaviour
         foreach (var cell in _rigidbodies)
         {
             x = Random.Range(-Range, Range) * 2;
-            y = Random.Range(-Range, Range);
-            z = Random.Range(-Range, Range) * 2;
+            y = Random.Range(0, Range) * 2;
+            z = Random.Range(-Range, Range);
 
             cell.isKinematic = false;
             cell.AddForce(new Vector3(x, y, z), ForceMode.Impulse);

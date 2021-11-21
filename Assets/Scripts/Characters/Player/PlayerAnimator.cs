@@ -17,13 +17,13 @@ public class PlayerAnimator : MonoBehaviour
         _animator = _handMover.GetComponentInChildren<Animator>();
         _lasersActivator = GetComponentInChildren<LasersActivator>();
 
-        _gameWin.Win += OnGameWin;
+        _gameWin.Won += OnGameWin;
         _lasersActivator.Fired += OnAttack;
     }
 
     private void OnDisable()
     {
-        _gameWin.Win -= OnGameWin;
+        _gameWin.Won -= OnGameWin;
         _lasersActivator.Fired -= OnAttack;
     }
 
