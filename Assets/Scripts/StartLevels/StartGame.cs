@@ -10,7 +10,7 @@ public class StartGame : MonoBehaviour
     private ObjectsSelector _objectsSelector;
     private Dictionary<string, int> _gameStart = new Dictionary<string, int>();
     private Dictionary<string, int> _daysInGame = new Dictionary<string, int>();
-    private Dictionary<string, int> _registrationDay = new Dictionary<string, int>();
+    private Dictionary<string, string> _registrationDay = new Dictionary<string, string>();
 
     private int _countStartSessions = 0;
 
@@ -46,13 +46,13 @@ public class StartGame : MonoBehaviour
 
     private void Start()
     {
-        Init();
+        InitAmplitude();
         SetRegDay();
         SetDaysInGame();
         SetCountSessions();
     }
 
-    private void Init()
+    private void InitAmplitude()
     {
         Amplitude amplitude = Amplitude.getInstance();
         amplitude.setServerUrl("https://api2.amplitude.com");
@@ -67,9 +67,10 @@ public class StartGame : MonoBehaviour
         _countStartSessions++;
 
         _gameStart.Add(GameStartCount, _countStartSessions);
-
         PlayerPrefs.SetInt(CountSessions, _countStartSessions);
-        //Amplitude.Instance.logEvent(GameStart, (IDictionary<string, object>)_gameStart);
+
+        IDictionary<string, int> gameStart = _gameStart;
+        Amplitude.Instance.logEvent(GameStart, gameStart);
     }
 
     private void SetDaysInGame()
@@ -78,9 +79,10 @@ public class StartGame : MonoBehaviour
         days++;
 
         _daysInGame.Add(Days, days);
-
         PlayerPrefs.SetInt(CountDaysGame, days);
-        //Amplitude.Instance.logEvent(CountDaysGame, (IDictionary<string, object>)_daysInGame);
+
+        IDictionary<string, int> daysInGame = _daysInGame;
+        Amplitude.Instance.logEvent(CountDaysGame, daysInGame);
     }
 
     private void SetRegDay()
@@ -88,16 +90,16 @@ public class StartGame : MonoBehaviour
         int False = 0;
         int True = 1;
 
-        int day = DateTime.Now.Day;
-        int month = DateTime.Now.Month;
-        int year = DateTime.Now.Year;
+        DateTime dateTime = DateTime.Today;
 
         if (True != PlayerPrefs.GetInt(RegDay))
             return;
         else
         {
-            _registrationDay.Add(RegDay, day + month + year);
-            Amplitude.Instance.logEvent(RegDay, (IDictionary<string, object>)_registrationDay);
+            _registrationDay.Add(RegDay, dateTime.ToString());
+
+            IDictionary<string, string> registrationDay = _registrationDay;
+            Amplitude.Instance.logEvent(RegDay, registrationDay);
         }
 
         if (PlayerPrefs.GetInt(RegDay) == False)

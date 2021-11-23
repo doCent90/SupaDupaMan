@@ -14,7 +14,6 @@ public class CameraAnimator : MonoBehaviour
     private const float Range = 0.3f;
     private const float Duration = 3f;
     private const float Delay = 0.025f;
-
     private const float Multyply = 10f;
 
     public void StopShake()

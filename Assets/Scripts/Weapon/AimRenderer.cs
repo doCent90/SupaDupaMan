@@ -30,13 +30,13 @@ public class AimRenderer : MonoBehaviour
         _outOfViewPrefab = GetComponentInChildren<AimOutOfRangeView>();
 
         _maxLength = _objectsSelector.MaxLength;
-        _playerRotater.Rotate += OnPlayerRotated;
+        _playerRotater.Rotated += OnPlayerRotated;
         _laser.Fired += OnLasersFired;
     }
 
     private void OnDisable()
     {
-        _playerRotater.Rotate -= OnPlayerRotated;
+        _playerRotater.Rotated -= OnPlayerRotated;
         _laser.Fired -= OnLasersFired;
     }
 

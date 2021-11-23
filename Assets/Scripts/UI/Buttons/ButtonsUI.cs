@@ -15,8 +15,8 @@ public class ButtonsUI : MonoBehaviour
     [SerializeField] private Button _onSoundButton;
     [SerializeField] private Button _offSoundButton;
 
-    private Dictionary<string, int> _levelComplete = new Dictionary<string, int>();
     private Dictionary<string, int> _timeSpent = new Dictionary<string, int>();
+    private Dictionary<string, int> _levelComplete = new Dictionary<string, int>();
 
     private CurrentCoinsViewer _coinsViewer;
     private SoundsFXSettings _soundMaster;
@@ -66,8 +66,11 @@ public class ButtonsUI : MonoBehaviour
         _timeSpent.Add(TimeGame, (int)_elapsedTime);
         _levelComplete.Add(Level, _loadLevel.Level);
 
-        Amplitude.Instance.logEvent(TimeSpent, (IDictionary<string, object>)_timeSpent);
-        Amplitude.Instance.logEvent(LevelComplete, (IDictionary<string, object>)_levelComplete);
+        IDictionary<string, int> timeSpent = _timeSpent;
+        Amplitude.Instance.logEvent(TimeSpent, timeSpent);
+
+        IDictionary<string, int> levelComplete = _levelComplete;
+        Amplitude.Instance.logEvent(LevelComplete, levelComplete);
     }
 
     public void OpenSettings()

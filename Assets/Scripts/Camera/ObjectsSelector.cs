@@ -9,6 +9,8 @@ public class ObjectsSelector : MonoBehaviour
     private PlayerMover _playerMover;
     private AimRenderer _aimRenderer;
     private AimMain _aimMain;
+    private RaycastHit _hit;
+
     private bool _isFire = false;
 
     public readonly float MaxLength = 70f;
@@ -36,10 +38,20 @@ public class ObjectsSelector : MonoBehaviour
 
     private void Update()
     {
-        TryMove();
-        TryDestroyEnemy();
-        TryDestroyWall();
-        TryDestroyObject();
+        if (Input.GetMouseButtonUp(0) && !_isFire)
+        {
+            SetRaycast();
+
+            if (_hit.collider == null)
+                return;
+            else
+            {
+                TryMove(_hit);
+                TryDestroyEnemy(_hit);
+                TryDestroyWall(_hit);
+                TryDestroyObject(_hit);
+            }
+        }
     }
 
     private void OnLaserFired(bool isFire)
@@ -56,69 +68,36 @@ public class ObjectsSelector : MonoBehaviour
             _spriteRenderer.enabled = false;
     }
 
-    private void TryMove()
+    private void TryMove(RaycastHit hit)
     {
-        if (Input.GetMouseButtonUp(0) && !_isFire)
-        {
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, MaxLength))
-            {
-                if (hit.collider != null)
-                {
-                    if (hit.collider.TryGetComponent(out Platform platform))
-                        _playerMover.Move(hit.point);
-                }
-            }
-        }
+        if (hit.collider.TryGetComponent(out Platform platform))
+            _playerMover.Move(hit.point);
     }
 
-    private void TryDestroyEnemy()
+    private void TryDestroyEnemy(RaycastHit hit)
     {
-        if (Input.GetMouseButtonUp(0) && !_isFire)
-        {
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, MaxLength))
-            {
-                if (hit.collider != null)
-                {
-                    if (hit.collider.TryGetComponent(out Enemy enemy))
-                        enemy.TakeDamage();
-                }
-            }
-        }
+        if (hit.collider.TryGetComponent(out Enemy enemy))
+            enemy.TakeDamage();
     }
 
-    private void TryDestroyWall()
+    private void TryDestroyWall(RaycastHit hit)
     {
-        if (Input.GetMouseButtonUp(0) && !_isFire)
-        {
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, MaxLength))
-            {
-                if (hit.collider != null)
-                {
-                    if (hit.collider.TryGetComponent(out WallSlicer wall))
-                        wall.TakeDamage();
-                    else if(hit.collider.TryGetComponent(out WallSlicer2 wall2))
-                        wall2.TakeDamage();
-                }
-            }
-        }
+        if (hit.collider.TryGetComponent(out WallSlicer2 wall2))
+            wall2.TakeDamage();
     }
 
-    private void TryDestroyObject()
+    private void TryDestroyObject(RaycastHit hit)
     {
-        if (Input.GetMouseButtonUp(0) && !_isFire)
+        if (hit.collider.TryGetComponent(out ObjectsSclicer objectSliced))
+            objectSliced.TakeDamage();
+    }
+
+    private void SetRaycast()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, MaxLength))
         {
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, MaxLength))
-            {
-                if (hit.collider != null)
-                {
-                    if (hit.collider.TryGetComponent(out ObjectsSclicer objectSliced))
-                        objectSliced.TakeDamage();
-                }
-            }
+            _hit = hit;
         }
     }
 }
