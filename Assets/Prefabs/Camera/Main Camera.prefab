@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2920630240887227647}
   - component: {fileID: 2920630240887227646}
   - component: {fileID: 2920630240887227645}
-  - component: {fileID: 8124438220697408027}
   - component: {fileID: 5481283948098029280}
   - component: {fileID: 254131402233469131}
+  - component: {fileID: 3386086949002725809}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -30,11 +30,11 @@ Transform:
   m_GameObject: {fileID: 2920630240887227644}
   m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659259}
   m_LocalPosition: {x: 0, y: 13, z: -36.3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 39.43, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!20 &2920630240887227646
 Camera:
   m_ObjectHideFlags: 0
@@ -86,18 +86,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2920630240887227644}
   m_Enabled: 1
---- !u!114 &8124438220697408027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2920630240887227644}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b36780675f6a1640bf72dbab2c1bd26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5481283948098029280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,3 +130,37 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &3386086949002725809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2920630240887227644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
