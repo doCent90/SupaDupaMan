@@ -2,7 +2,6 @@ using AmplitudeNS.MiniJSON;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using System;
 
 #if (UNITY_IPHONE || UNITY_TVOS)
 using System.Runtime.InteropServices;
@@ -22,8 +21,6 @@ public class Amplitude {
 
 	public bool logging = false;
 	private string instanceName = null;
-
-    internal void logEvent(string regDay, IDictionary<string, string> registrationDay) => throw new NotImplementedException();
 
 #if (UNITY_IPHONE || UNITY_TVOS)
 	[DllImport ("__Internal")]
@@ -300,7 +297,7 @@ public class Amplitude {
 	private static extern void _Amplitude_removeUserPropertyStringArray(string instanceName, string property, string[] value, int length);
 #endif
 
-    public static Amplitude getInstance() {
+	public static Amplitude getInstance() {
 		return getInstance(null);
 	}
 	public static Amplitude getInstance(string instanceName) {
@@ -430,7 +427,7 @@ public class Amplitude {
 	/// Uploads are batched to occur every 30 events or every 30 seconds (whichever comes first), as well as on app close.
 	/// </summary>
 	/// <param name="evt">event type</param>
-	public void logEvent(string evt, IDictionary<string, int> levelStart) {
+	public void logEvent(string evt) {
 		Log (string.Format("C# sendEvent {0}", evt));
 #if (UNITY_IPHONE || UNITY_TVOS)
 		if (Application.platform == RuntimePlatform.IPhonePlayer || Application.platform == RuntimePlatform.tvOS) {

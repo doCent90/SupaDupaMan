@@ -67,10 +67,10 @@ public class ButtonsUI : MonoBehaviour
         _levelComplete.Add(Level, _loadLevel.Level);
 
         IDictionary<string, int> timeSpent = _timeSpent;
-        Amplitude.Instance.logEvent(TimeSpent, timeSpent);
+        //Amplitude.Instance.logEvent(TimeSpent, timeSpent);
 
         IDictionary<string, int> levelComplete = _levelComplete;
-        Amplitude.Instance.logEvent(LevelComplete, levelComplete);
+        //Amplitude.Instance.logEvent(LevelComplete, levelComplete);
     }
 
     public void OpenSettings()
