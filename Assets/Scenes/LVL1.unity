@@ -14,15 +14,15 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0, g: 0.00090810476, b: 0.14150941, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.002
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.66559863, g: 0.7346584, b: 0.745283, a: 1}
-  m_AmbientEquatorColor: {r: 0.6226415, g: 0.6114909, b: 0.40334636, a: 1}
-  m_AmbientGroundColor: {r: 0.1981132, g: 0.19126023, b: 0.16384834, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
+  m_AmbientEquatorColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
+  m_AmbientGroundColor: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.186
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18897939, g: 0.21260059, b: 0.2524192, a: 0.186}
+  m_IndirectSpecularColor: {r: 0.18897945, g: 0.21260077, b: 0.25241944, a: 0.186}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 505bc339a2a86fb429f1c839b185c2e8, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -666,6 +666,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2971590362164003169, guid: 83e2bb5de04f31348919cda15dcfadac, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.009765625
+      objectReference: {fileID: 0}
+    - target: {fileID: 2971590362164003169, guid: 83e2bb5de04f31348919cda15dcfadac, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.47998047
+      objectReference: {fileID: 0}
     - target: {fileID: 4555314582280023346, guid: 83e2bb5de04f31348919cda15dcfadac, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
@@ -720,7 +728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8117092801973962154, guid: 83e2bb5de04f31348919cda15dcfadac, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.00008869171
+      value: 0.000094395735
       objectReference: {fileID: 0}
     - target: {fileID: 8557163892854279914, guid: 83e2bb5de04f31348919cda15dcfadac, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -878,6 +886,26 @@ PrefabInstance:
     - target: {fileID: 6165837721354699552, guid: 2a75469f4f16d18438188768381ff3a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6165837721354699553, guid: 2a75469f4f16d18438188768381ff3a1, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6165837721354699553, guid: 2a75469f4f16d18438188768381ff3a1, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6165837721354699553, guid: 2a75469f4f16d18438188768381ff3a1, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6165837721354699553, guid: 2a75469f4f16d18438188768381ff3a1, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6165837721354699553, guid: 2a75469f4f16d18438188768381ff3a1, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6165837721354699554, guid: 2a75469f4f16d18438188768381ff3a1, type: 3}
       propertyPath: m_Name
