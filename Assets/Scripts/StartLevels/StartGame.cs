@@ -46,20 +46,20 @@ public class StartGame : MonoBehaviour
 
     private void Start()
     {
-        InitAmplitude();
+        //InitAmplitude();
         SetRegDay();
         SetDaysInGame();
         SetCountSessions();
     }
 
-    private void InitAmplitude()
-    {
-        Amplitude amplitude = Amplitude.getInstance();
-        amplitude.setServerUrl("https://api2.amplitude.com");
-        amplitude.logging = true;
-        amplitude.trackSessionEvents(true);
-        amplitude.init(Key);
-    }
+    //private void InitAmplitude()
+    //{
+    //    Amplitude amplitude = Amplitude.getInstance();
+    //    amplitude.setServerUrl("https://api2.amplitude.com");
+    //    amplitude.logging = true;
+    //    amplitude.trackSessionEvents(true);
+    //    amplitude.init(Key);
+    //}
 
     private void SetCountSessions()
     {
