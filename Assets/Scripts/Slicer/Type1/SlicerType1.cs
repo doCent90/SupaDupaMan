@@ -2,10 +2,10 @@ using UnityEngine;
 
 public abstract class SlicerType1 : MonoBehaviour
 {
-    protected Rigidbody[] _rigidbodies;
+    protected Rigidbody[] Rigidbodies;
 
-    protected float _elapsedTime = 0;
-    protected bool _isDamaged = false;
+    protected float ElapsedTime = 0;
+    protected bool IsDamaged = false;
 
     protected const float DestroingWallTime = 1.5f;
     protected const float DestroingObjectsTime = 0.5f;
@@ -13,7 +13,7 @@ public abstract class SlicerType1 : MonoBehaviour
 
     public void TakeDamage()
     {
-        _isDamaged = true;
+        IsDamaged = true;
         InitDamage();
     }
 
@@ -23,19 +23,19 @@ public abstract class SlicerType1 : MonoBehaviour
 
     protected void OnEnable()
     {
-        _rigidbodies = GetComponentsInChildren<Rigidbody>();
+        Rigidbodies = GetComponentsInChildren<Rigidbody>();
     }
 
     private void Update()
     {
-        if (!_isDamaged)
+        if (!IsDamaged)
             return;
         else
         {
-            if (_elapsedTime <= 0)
+            if (ElapsedTime <= 0)
                 Destroy();
 
-            _elapsedTime -= Time.deltaTime;
+            ElapsedTime -= Time.deltaTime;
         }
     }
 
@@ -45,7 +45,7 @@ public abstract class SlicerType1 : MonoBehaviour
         float y;
         float z;
 
-        foreach (var cell in _rigidbodies)
+        foreach (var cell in Rigidbodies)
         {
             x = Random.Range(-Range, Range) * 2;
             y = Random.Range(0, Range) * 2;

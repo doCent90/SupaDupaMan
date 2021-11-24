@@ -14,7 +14,7 @@ public class ObjectsSclicer : SlicerType1
 
     protected override void InitDamage()
     {
-        _elapsedTime = DestroingObjectsTime;
+        ElapsedTime = DestroingObjectsTime;
 
         ApplyDamage?.Invoke(transform);
     }

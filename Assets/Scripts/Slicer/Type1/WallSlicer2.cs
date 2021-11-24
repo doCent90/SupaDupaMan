@@ -16,7 +16,7 @@ public class WallSlicer2 : SlicerType1
 
     protected override void InitDamage()
     {
-        _elapsedTime = DestroingWallTime;
+        ElapsedTime = DestroingWallTime;
         _boxCollider.enabled = false;
 
         ApplyDamage?.Invoke(_damagePointPosition);

@@ -18,7 +18,7 @@ public class WallSlicer : SlicerType1
 
     protected override void InitDamage()
     {
-        _elapsedTime = DestroingWallTime;
+        ElapsedTime = DestroingWallTime;
         SetMaterial();
 
         _meshCollider.convex = true;
