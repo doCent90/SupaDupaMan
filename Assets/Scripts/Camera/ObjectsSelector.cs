@@ -9,11 +9,10 @@ public class ObjectsSelector : MonoBehaviour
     private PlayerMover _playerMover;
     private AimRenderer _aimRenderer;
     private AimMain _aimMain;
-    private RaycastHit _hit;
 
     private bool _isFire = false;
 
-    public readonly float MaxLength = 70f;
+    public readonly float MaxLength = 60f;
 
     private void OnEnable()
     {
@@ -40,16 +39,16 @@ public class ObjectsSelector : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0) && !_isFire)
         {
-            SetRaycast();
+            RaycastHit hit = GetRaycast();
 
-            if (_hit.collider == null)
+            if (hit.collider == null)
                 return;
             else
             {
-                TryMove(_hit);
-                TryDestroyEnemy(_hit);
-                TryDestroyWall(_hit);
-                TryDestroyObject(_hit);
+                TryMove(hit);
+                TryDestroyEnemy(hit);
+                TryDestroyWall(hit);
+                TryDestroyObject(hit);
             }
         }
     }
@@ -92,12 +91,14 @@ public class ObjectsSelector : MonoBehaviour
             objectSliced.TakeDamage();
     }
 
-    private void SetRaycast()
+    private RaycastHit GetRaycast()
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, MaxLength))
         {
-            _hit = hit;
+            return hit;
         }
+        else
+            return hit;
     }
 }

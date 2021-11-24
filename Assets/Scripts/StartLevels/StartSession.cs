@@ -18,6 +18,6 @@ public class StartSession : MonoBehaviour
             PlayerPrefs.SetInt(SessionCount, sessionCount);
         }
 
-        LVL1.Load();
+        Level_Visual.Load();
     }
 }

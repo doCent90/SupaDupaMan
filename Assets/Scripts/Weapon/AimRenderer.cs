@@ -16,6 +16,7 @@ public class AimRenderer : MonoBehaviour
     private readonly Color _red = Color.red;
     private readonly Color _green = Color.green;
 
+    private const float Scale = 0.4f;
     private const float MinDistanceView = 5f;
 
     public event UnityAction<bool> MainEnabled;
@@ -111,7 +112,7 @@ public class AimRenderer : MonoBehaviour
     {
         spriteRenderer.color = color;
         _mainPrefab.transform.rotation = Quaternion.FromToRotation(_mainPrefab.transform.forward, hit.normal) * _mainPrefab.transform.rotation;
-        _mainPrefab.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+        _mainPrefab.transform.localScale = new Vector3(Scale, Scale, Scale);
     }
 
     private void SetSwitchMain(bool isEnable)

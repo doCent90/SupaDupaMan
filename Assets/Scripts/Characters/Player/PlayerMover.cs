@@ -5,8 +5,6 @@ using UnityEngine.Events;
 [RequireComponent(typeof(PlayerRotater))]
 public class PlayerMover : MonoBehaviour
 {
-    [SerializeField] private Transform _lookPoint;
-
     private Enemy[] _enemies;
     private GameWin _gameWin;
     private PlayerRotater _rotater;
@@ -46,8 +44,6 @@ public class PlayerMover : MonoBehaviour
 
     private void LookAtClosetstEnemy() 
     {
-        _lookAtPoint = _lookPoint.position;
-
         foreach (var enemy in _enemies)
         {
             float distance = Vector3.Distance(transform.position, enemy.transform.position);
@@ -58,9 +54,6 @@ public class PlayerMover : MonoBehaviour
                 continue;
             }
         }
-
-        var tweenRotate = transform.DOLookAt(_lookAtPoint, Duration / 2);
-        tweenRotate.SetEase(Ease.InOutSine);
     }
 
     private void MoveFinishPoint()

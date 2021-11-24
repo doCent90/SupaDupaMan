@@ -92,7 +92,7 @@ public class ButtonsUI : MonoBehaviour
         IsPanelOpen = false;
         _playerRotater.enabled = true;
 
-        //_openShop.gameObject.SetActive(true);
+        _openShop.gameObject.SetActive(true);
         _openOptions.gameObject.SetActive(true);
         _coinsViewer.gameObject.SetActive(true);
         _closeOptions.gameObject.SetActive(false);

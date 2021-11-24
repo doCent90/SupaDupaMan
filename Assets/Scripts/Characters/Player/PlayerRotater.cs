@@ -19,12 +19,9 @@ public class PlayerRotater : MonoBehaviour
 
     private void Rotate()
     {
-        float x;
-        float y;
-
-
         if (Input.GetMouseButton(0))
         {
+            float x;
             x = Input.GetAxis(MouseX);
             _axisY += Input.GetAxis(MouseY);
             _axisY = Mathf.Clamp(_axisY, -Range, Range);
