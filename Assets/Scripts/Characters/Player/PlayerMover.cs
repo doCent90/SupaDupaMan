@@ -8,9 +8,8 @@ public class PlayerMover : MonoBehaviour
     private Enemy[] _enemies;
     private GameWin _gameWin;
     private PlayerRotater _rotater;
-    private Vector3 _lookAtPoint;
 
-    private const float DurationMoveFinish = 4f;
+    private const float DurationMoveFinish = 6f;
     private const float Duration = 0.5f;
     private const float Distance = 65f;
 
@@ -42,7 +41,7 @@ public class PlayerMover : MonoBehaviour
         _gameWin.Won -= LookAtFinish;
     }
 
-    private void LookAtClosetstEnemy() 
+    private void LookAtClosetstEnemy()
     {
         foreach (var enemy in _enemies)
         {
@@ -50,7 +49,10 @@ public class PlayerMover : MonoBehaviour
 
             if (distance < Distance && enemy.enabled)
             {
-                _lookAtPoint = enemy.transform.position;
+                Vector3 lookAtPoint;
+                lookAtPoint = enemy.transform.position;
+                var tweenRotate = transform.DOLookAt(lookAtPoint, Duration / 2);
+                tweenRotate.SetEase(Ease.InOutSine);
                 continue;
             }
         }
@@ -65,7 +67,7 @@ public class PlayerMover : MonoBehaviour
 
     private void LookAtFinish()
     {
-        var tweeLookAt = transform.DOLookAt(_gameWin.transform.position, Duration * 2);
+        var tweeLookAt = transform.DOLookAt(_gameWin.transform.position, Duration * 3);
         tweeLookAt.OnComplete(MoveFinishPoint);
     }
 }
