@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public class PlayerRotater : MonoBehaviour
 {
+    private GameWin _gameWin;
     private float _axisY;
 
     private const string MouseX = "Mouse X";
@@ -11,6 +12,18 @@ public class PlayerRotater : MonoBehaviour
     private const float Range = 60f;
 
     public event UnityAction<bool> Rotated;
+
+    private void OnEnable()
+    {
+        _gameWin = FindObjectOfType<GameWin>();
+
+        _gameWin.Won += OnWonGame;
+    }
+
+    private void OnDisable()
+    {
+        _gameWin.Won -= OnWonGame;
+    }
 
     private void Update()
     {
@@ -36,5 +49,10 @@ public class PlayerRotater : MonoBehaviour
         }
         else
             Rotated?.Invoke(false);
+    }
+
+    private void OnWonGame()
+    {
+        enabled = false;
     }
 }

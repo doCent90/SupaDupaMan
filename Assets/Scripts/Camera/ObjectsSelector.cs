@@ -9,6 +9,7 @@ public class ObjectsSelector : MonoBehaviour
     private PlayerMover _playerMover;
     private AimRenderer _aimRenderer;
     private AimMain _aimMain;
+    private GameWin _gameWin;
 
     private bool _isFire = false;
 
@@ -16,6 +17,7 @@ public class ObjectsSelector : MonoBehaviour
 
     private void OnEnable()
     {
+        _gameWin = FindObjectOfType<GameWin>();
         _aimRenderer = GetComponent<AimRenderer>();
         _aimMain = GetComponentInChildren<AimMain>();
         _playerMover = GetComponentInParent<PlayerMover>();
@@ -25,6 +27,7 @@ public class ObjectsSelector : MonoBehaviour
 
         _playerMover.Moved += OnMoved;
         _laser.Fired += OnLaserFired;
+        _gameWin.Won += OnWonGame;
     }
 
     private void OnDisable()
@@ -33,6 +36,7 @@ public class ObjectsSelector : MonoBehaviour
 
         _playerMover.Moved -= OnMoved;
         _laser.Fired -= OnLaserFired;
+        _gameWin.Won -= OnWonGame;
     }
 
     private void Update()
@@ -100,5 +104,10 @@ public class ObjectsSelector : MonoBehaviour
         }
         else
             return hit;
+    }
+
+    private void OnWonGame()
+    {
+        enabled = false;
     }
 }
