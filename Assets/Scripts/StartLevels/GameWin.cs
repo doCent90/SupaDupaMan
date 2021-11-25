@@ -31,6 +31,7 @@ public class GameWin : MonoBehaviour
 
     private void OnEnemysDied()
     {
+        Debug.Log("Win");
         _playerRotater.enabled = false;
         _objectsSelector.gameObject.SetActive(false);
 
