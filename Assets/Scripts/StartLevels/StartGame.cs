@@ -24,11 +24,14 @@ public class StartGame : MonoBehaviour
     private const string GameStartCount = "count";
     private const string RegDay = "reg_day";
 
+    public bool IsPlaying { get; private set; } = false;
+
     public event UnityAction Started;
 
     public void StartLevel()
     {
         Started?.Invoke();
+        IsPlaying = true;
 
         _playerMover.enabled = true;
         _objectsSelector.enabled = true;

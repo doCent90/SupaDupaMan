@@ -90,7 +90,9 @@ public class ButtonsUI : MonoBehaviour
     public void CloseSettings()
     {
         IsPanelOpen = false;
-        _playerRotater.enabled = true;
+
+        if(_game.IsPlaying)
+            _playerRotater.enabled = true;
 
         _openShop.gameObject.SetActive(true);
         _openOptions.gameObject.SetActive(true);
@@ -135,8 +137,8 @@ public class ButtonsUI : MonoBehaviour
 
     public void CloseShop()
     {
-        IsPanelOpen = false;
-        _playerRotater.enabled = true;
+        if (_game.IsPlaying)
+            _playerRotater.enabled = true;
 
         _openShop.gameObject.SetActive(true);
         _closeShop.gameObject.SetActive(false);
