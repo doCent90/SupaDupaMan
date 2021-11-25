@@ -1,33 +1,58 @@
 using UnityEngine;
 using UnityEngine.Events;
+using DG.Tweening;
 
 public class PlayerRotater : MonoBehaviour
 {
-    private GameWin _gameWin;
+    private Enemy[] _enemies;
+
+    private Vector3 _originalPosition;
     private float _axisY;
 
     private const string MouseX = "Mouse X";
     private const string MouseY = "Mouse Y";
-
+    private const float Duration = 0.25f;
+    private const float Distance = 65f;
     private const float Range = 60f;
+    private const float Multiply = 3f;
 
     public event UnityAction<bool> Rotated;
 
-    private void OnEnable()
+    public void LookAtClosetstEnemy()
     {
-        _gameWin = FindObjectOfType<GameWin>();
+        foreach (var enemy in _enemies)
+        {
+            float distance = Vector3.Distance(transform.position, enemy.transform.position);
 
-        _gameWin.Won += OnWonGame;
+            if (distance < Distance && enemy.enabled)
+            {
+                Vector3 lookAtPoint;
+                lookAtPoint = enemy.transform.position;
+                _originalPosition = transform.localEulerAngles;
+
+                var tweenRotate = transform.DOLookAt(lookAtPoint, Duration);
+                tweenRotate.SetEase(Ease.InOutSine);
+                tweenRotate.OnComplete(SetOriginalAngle);
+
+                continue;
+            }
+        }
     }
 
-    private void OnDisable()
+    private void OnEnable()
     {
-        _gameWin.Won -= OnWonGame;
+        _enemies = FindObjectsOfType<Enemy>();
     }
 
     private void Update()
     {
         Rotate();
+    }
+
+    private void SetOriginalAngle()
+    {
+        Vector3 target = new Vector3(_originalPosition.x, transform.localEulerAngles.y, transform.localEulerAngles.z);
+        transform.DORotate(target, Duration * Multiply);
     }
 
     private void Rotate()
@@ -49,10 +74,5 @@ public class PlayerRotater : MonoBehaviour
         }
         else
             Rotated?.Invoke(false);
-    }
-
-    private void OnWonGame()
-    {
-        enabled = false;
     }
 }

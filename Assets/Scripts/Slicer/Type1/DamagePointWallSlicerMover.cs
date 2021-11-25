@@ -16,6 +16,7 @@ public class DamagePointWallSlicerMover : MonoBehaviour
 
     private const float Positive = 1f;
     private const float Negative = -1f;
+    private const float UpEdgeWall = -0.5f;
 
     public void Init()
     {
@@ -62,9 +63,9 @@ public class DamagePointWallSlicerMover : MonoBehaviour
             _onTargetPosition = false;
 
             if (_direction % 2 == 0)
-                _targetPosition = new Vector3(-_rangeX, _rangeY * Random.Range(Negative, Positive), 0);
+                _targetPosition = new Vector3(-_rangeX, Random.Range(_rangeY, UpEdgeWall), 0);
             else
-                _targetPosition = new Vector3(_rangeX, _rangeY * Random.Range(Negative, Positive), 0);
+                _targetPosition = new Vector3(_rangeX, Random.Range(_rangeY, UpEdgeWall), 0);
 
             _direction = _direction > 100 ? _direction = 0 : _direction;
         }

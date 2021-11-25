@@ -1,125 +1,125 @@
 Using pre-set license
 Built from '2020.3/staging' branch; Version is '2020.3.23f1 (c5d91304a876) revision 12966163'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Pro; OS build 19043.1348; Version 2009; 64bit' Language: 'ru' Physical Memory: 16332 MB
+OS: 'Windows 10 Home Single Language; OS build 19044.1348; Version 2009; 64bit' Language: 'ru' Physical Memory: 15731 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
 COMMAND LINE ARGUMENTS:
-E:\Unity\2020.3.23f1\Editor\Unity.exe
+C:\Editor\2020.3.23f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-D:/Git/SupaDupaMan
+C:/Users/nghtm/Documents/GitHub/SupaDupaMan
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-50927
-Successfully changed project path to: D:/Git/SupaDupaMan
-D:/Git/SupaDupaMan
+59975
+Successfully changed project path to: C:/Users/nghtm/Documents/GitHub/SupaDupaMan
+C:/Users/nghtm/Documents/GitHub/SupaDupaMan
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 293.50 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 162.40 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.23f1 (c5d91304a876)
-[Subsystems] Discovering subsystems at path E:/Unity/2020.3.23f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/Git/SupaDupaMan/Assets
+[Subsystems] Discovering subsystems at path C:/Editor/2020.3.23f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/nghtm/Documents/GitHub/SupaDupaMan/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: Radeon RX 570 Series (ID=0x67df)
+    Renderer: NVIDIA GeForce GTX 1660 Ti (ID=0x2191)
     Vendor:   
-    VRAM:     8171 MB
-    Driver:   27.20.12029.1000
+    VRAM:     5991 MB
+    Driver:   30.0.14.9676
 Initialize mono
-Mono path[0] = 'E:/Unity/2020.3.23f1/Editor/Data/Managed'
-Mono path[1] = 'E:/Unity/2020.3.23f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'E:/Unity/2020.3.23f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56000
+Mono path[0] = 'C:/Editor/2020.3.23f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Editor/2020.3.23f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Editor/2020.3.23f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56756
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: E:/Unity/2020.3.23f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003751 seconds.
+Register platform support module: C:/Editor/2020.3.23f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001741 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 301.28 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 161.47 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.010 seconds
+- Completed reload, in  0.654 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1010ms)
-		BeginReloadAssembly (68ms)
+	ReloadAssembly (655ms)
+		BeginReloadAssembly (46ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (843ms)
-			LoadAssemblies (65ms)
+		EndReloadAssembly (540ms)
+			LoadAssemblies (44ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (183ms)
+			SetupTypeCache (136ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (37ms)
-			SetupLoadedEditorAssemblies (480ms)
+			RebuildScriptCaches (30ms)
+			SetupLoadedEditorAssemblies (284ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
+				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (301ms)
-				BeforeProcessingInitializeOnLoad (24ms)
-				ProcessInitializeOnLoadAttributes (112ms)
-				ProcessInitializeOnLoadMethodAttributes (37ms)
+				RefreshPlugins (162ms)
+				BeforeProcessingInitializeOnLoad (13ms)
+				ProcessInitializeOnLoadAttributes (78ms)
+				ProcessInitializeOnLoadMethodAttributes (27ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.012334 seconds.
+Registered in 0.008750 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Git\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Git\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\nghtm\Documents\GitHub\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\nghtm\Documents\GitHub\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 215.88 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 169.20 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.860 seconds
+- Completed reload, in  1.319 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1861ms)
-		BeginReloadAssembly (184ms)
+	ReloadAssembly (1320ms)
+		BeginReloadAssembly (130ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
+			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (21ms)
-		EndReloadAssembly (1593ms)
-			LoadAssemblies (130ms)
+			CreateAndSetChildDomain (20ms)
+		EndReloadAssembly (1131ms)
+			LoadAssemblies (90ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (531ms)
+			SetupTypeCache (360ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (79ms)
-			SetupLoadedEditorAssemblies (690ms)
+			RebuildScriptCaches (60ms)
+			SetupLoadedEditorAssemblies (513ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (216ms)
-				BeforeProcessingInitializeOnLoad (162ms)
-				ProcessInitializeOnLoadAttributes (283ms)
-				ProcessInitializeOnLoadMethodAttributes (12ms)
-				AfterProcessingInitializeOnLoad (12ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (169ms)
+				BeforeProcessingInitializeOnLoad (114ms)
+				ProcessInitializeOnLoadAttributes (213ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 1.88 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 2.70 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4825 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 214.8 MB.
-System memory in use after: 209.0 MB.
+Unloading 4824 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 218.1 MB.
+System memory in use after: 218.1 MB.
 
-Unloading 46 unused Assets to reduce memory usage. Loaded Objects now: 5271.
-Total: 8.566200 ms (FindLiveObjects: 0.599600 ms CreateObjectMapping: 0.160800 ms MarkObjects: 4.621700 ms  DeleteObjects: 3.182100 ms)
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 5283.
+Total: 4.458400 ms (FindLiveObjects: 0.610500 ms CreateObjectMapping: 0.246900 ms MarkObjects: 3.387600 ms  DeleteObjects: 0.211600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -133,264 +133,1326 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/G3.mat
-  artifactKey: Guid(ed6309fcf2465f8459ee0d575167c0ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/G3.mat using Guid(ed6309fcf2465f8459ee0d575167c0ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a63269b45dcd5972c4b86e7d9cdcedf1') in 0.277094 seconds 
-  Import took 0.316768 seconds .
+  path: Assets/Scenes/Level_Visual.unity
+  artifactKey: Guid(d58e2d6a6742e654882633ad59bebc6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level_Visual.unity using Guid(d58e2d6a6742e654882633ad59bebc6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbc0fcbaad8525c5d61329e83f7d69d3') in 0.021961 seconds 
+  Import took 0.030607 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000289 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/A2.mat
-  artifactKey: Guid(5188c7492ef51d143a7128aa9700788a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/A2.mat using Guid(5188c7492ef51d143a7128aa9700788a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37ddff71b795c833ec88cccd11701b6b') in 0.015481 seconds 
-  Import took 0.023122 seconds .
+  Time since last request: 0.000200 seconds.
+  path: Assets/Scenes/LVL3.unity
+  artifactKey: Guid(95e92d45f54bb5c468ae8f5b3ab65935) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/LVL3.unity using Guid(95e92d45f54bb5c468ae8f5b3ab65935) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '734c100c5ecbbb58cc9e1818ce01674c') in 0.006925 seconds 
+  Import took 0.015293 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000241 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/C2.mat
-  artifactKey: Guid(0510da7b3809d94478e8a6a4f562366e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/C2.mat using Guid(0510da7b3809d94478e8a6a4f562366e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8cb3f685922988f8c27654c96b80b823') in 0.041748 seconds 
-  Import took 0.049026 seconds .
+  Time since last request: 77.988234 seconds.
+  path: Assets/Resources/FPS Hands/Hands.fbx
+  artifactKey: Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/FPS Hands/Hands.fbx using Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04d6f0c774c9a9fcba144108c12148af') in 0.355881 seconds 
+  Import took 0.365634 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000307 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/E1.mat
-  artifactKey: Guid(76d6265878226dc409ce872e24203b86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/E1.mat using Guid(76d6265878226dc409ce872e24203b86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '879381999b3760775631599badb9310a') in 0.032561 seconds 
-  Import took 0.039937 seconds .
+  Time since last request: 14.146100 seconds.
+  path: Assets/Resources/FPS Hands/Hands.fbx
+  artifactKey: Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/FPS Hands/Hands.fbx using Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0eba0996c6869fc73f26dcb401dbafbb') in 0.051601 seconds 
+  Import took 0.060305 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000228 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/I3.mat
-  artifactKey: Guid(ce22e4b8667c6c4498256004a51def48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/I3.mat using Guid(ce22e4b8667c6c4498256004a51def48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96b6db517e884dfbd5f5199cff1c48e6') in 0.060318 seconds 
-  Import took 0.067423 seconds .
+  Time since last request: 26.855276 seconds.
+  path: Assets/Resources/FPS Hands/Hands.fbx
+  artifactKey: Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/FPS Hands/Hands.fbx using Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22bb11f4969d2191980624e24910d284') in 0.037412 seconds 
+  Import took 0.047300 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000223 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/A3.mat
-  artifactKey: Guid(c4d3a0c81c5ffb34889379e1a1cf85bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/A3.mat using Guid(c4d3a0c81c5ffb34889379e1a1cf85bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1b052def048523c59083e2cb231497a') in 0.014061 seconds 
-  Import took 0.022010 seconds .
+  Time since last request: 9.547565 seconds.
+  path: Assets/Resources/FPS Hands/Hands.fbx
+  artifactKey: Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/FPS Hands/Hands.fbx using Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6894b9c56e08af9c5654ae7560a427b') in 0.055817 seconds 
+  Import took 0.066100 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000315 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/E3.mat
-  artifactKey: Guid(4e806bb1fdee85a44aca49978bc274e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/E3.mat using Guid(4e806bb1fdee85a44aca49978bc274e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35f5eb9090c5707c2acc8e6254f6f930') in 0.013034 seconds 
-  Import took 0.020556 seconds .
+  Time since last request: 8.109567 seconds.
+  path: Assets/Resources/FPS Hands/Hands.fbx
+  artifactKey: Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/FPS Hands/Hands.fbx using Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '578536fd1f54e42698cb6b128c3a87a4') in 0.068700 seconds 
+  Import took 0.077785 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000233 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/H2.mat
-  artifactKey: Guid(6f227c8592ad80a41be32efd278da65a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/H2.mat using Guid(6f227c8592ad80a41be32efd278da65a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09c525bbc122716aede12d7c7f1f7845') in 0.041463 seconds 
-  Import took 0.049902 seconds .
+  Time since last request: 13.762205 seconds.
+  path: Assets/Resources/FPS Hands/Hands.fbx
+  artifactKey: Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/FPS Hands/Hands.fbx using Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5af7130b25c1564aa7b9f7d038b458e0') in 0.037651 seconds 
+  Import took 0.046808 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000409 seconds.
-  path: Assets/CustomShaders/FlatKit/Demos/[Demo] Mugs/Mugs-Materials/2 - OneColorVariousParameters/BlPrMugs-Scene_2_RampTextures/02.2-BlueprintGrid-Mug-14_CelStepTexture-ramp.png
-  artifactKey: Guid(953f01b1bb2df4bd29ea2cbb2576b45a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CustomShaders/FlatKit/Demos/[Demo] Mugs/Mugs-Materials/2 - OneColorVariousParameters/BlPrMugs-Scene_2_RampTextures/02.2-BlueprintGrid-Mug-14_CelStepTexture-ramp.png using Guid(953f01b1bb2df4bd29ea2cbb2576b45a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24e64b425c47539a21d230e61c2c0942') in 0.027042 seconds 
-  Import took 0.034896 seconds .
+  Time since last request: 7.351719 seconds.
+  path: Assets/Resources/FPS Hands/Hands.fbx
+  artifactKey: Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/FPS Hands/Hands.fbx using Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72738878ea767ac5b6af55bc5f153d58') in 0.052784 seconds 
+  Import took 0.062510 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008327 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\nghtm\Documents\GitHub\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\nghtm\Documents\GitHub\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.35 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.175 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1175ms)
+		BeginReloadAssembly (137ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (47ms)
+		EndReloadAssembly (980ms)
+			LoadAssemblies (89ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (350ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (302ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (97ms)
+				ProcessInitializeOnLoadAttributes (186ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (62ms)
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.93 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4602 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 220.2 MB.
+System memory in use after: 220.3 MB.
+
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 5374.
+Total: 4.888100 ms (FindLiveObjects: 0.533000 ms CreateObjectMapping: 0.150200 ms MarkObjects: 4.003300 ms  DeleteObjects: 0.199600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 394.203460 seconds.
+  path: Assets/Resources/FPS Hands/Hands.fbx
+  artifactKey: Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/FPS Hands/Hands.fbx using Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ac948bee6110e5c19d8472ec731498f') in 0.192076 seconds 
+  Import took 0.202561 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000300 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/D2.mat
-  artifactKey: Guid(527a2f1bf2a8e6b44a73711edbc69733) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/D2.mat using Guid(527a2f1bf2a8e6b44a73711edbc69733) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22125673202aa20fa9343c76b7e223e1') in 0.026795 seconds 
-  Import took 0.034892 seconds .
+  Time since last request: 22.658911 seconds.
+  path: Assets/Resources/FPS Hands/Hands.fbx
+  artifactKey: Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/FPS Hands/Hands.fbx using Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35fc39e62a1b61d4029633816d6f4fc3') in 0.034768 seconds 
+  Import took 0.044036 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000246 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/C1.mat
-  artifactKey: Guid(b46491bf8bcc7974e9c5b185ed3a64df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/C1.mat using Guid(b46491bf8bcc7974e9c5b185ed3a64df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90ae4fee45a9061ffa9b16b27744fb15') in 0.027852 seconds 
-  Import took 0.036446 seconds .
+  Time since last request: 7.916050 seconds.
+  path: Assets/Resources/FPS Hands/Hands.fbx
+  artifactKey: Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/FPS Hands/Hands.fbx using Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7486c414c4777d7ee9a4c83ba92464d') in 0.047798 seconds 
+  Import took 0.057256 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000248 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/D1.mat
-  artifactKey: Guid(be3dd0dbeba4e0e44b4a036604ec5247) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/D1.mat using Guid(be3dd0dbeba4e0e44b4a036604ec5247) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a730da66b350a875d709602c3e881e0c') in 0.024326 seconds 
-  Import took 0.032230 seconds .
+  Time since last request: 18.038850 seconds.
+  path: Assets/Animations/Hands/Hands.controller
+  artifactKey: Guid(4bcd4cbca1d201f49aca0d5564b4f6b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Hands/Hands.controller using Guid(4bcd4cbca1d201f49aca0d5564b4f6b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd614c392e370e264fbaeeb11a14a8cad') in 0.007854 seconds 
+  Import took 0.017544 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000271 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/D3.mat
-  artifactKey: Guid(08e170aeffe61fd49b962982cf27cd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/D3.mat using Guid(08e170aeffe61fd49b962982cf27cd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fb06af8bd7c3b0e560618b1cee89b3c') in 0.012632 seconds 
-  Import took 0.020058 seconds .
+  Time since last request: 71.790248 seconds.
+  path: Assets/Resources/FPS Hands
+  artifactKey: Guid(6f1e019d08c6e6c4fa54b6bb568ad56f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/FPS Hands using Guid(6f1e019d08c6e6c4fa54b6bb568ad56f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8307fe67b97caef0164a95d638cba383') in 0.006122 seconds 
+  Import took 0.014578 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000233 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/E2.mat
-  artifactKey: Guid(04ea80a7b7a8f25419eec6649973eba0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/E2.mat using Guid(04ea80a7b7a8f25419eec6649973eba0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '508a0f82d13bddb7f23befb052029eef') in 0.014188 seconds 
-  Import took 0.021788 seconds .
+  Time since last request: 2.511372 seconds.
+  path: Assets/Resources/FPS Hands/Hands.fbx
+  artifactKey: Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/FPS Hands/Hands.fbx using Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '681433f12964bd9aafa4713c451c556b') in 0.049308 seconds 
+  Import took 0.057304 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000269 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/K1.mat
-  artifactKey: Guid(1a0dec1fa084e1b4abd7c6cf33e568ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/K1.mat using Guid(1a0dec1fa084e1b4abd7c6cf33e568ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6863f3a0557fee917fa49441e870c7a7') in 0.012830 seconds 
-  Import took 0.030120 seconds .
+  Time since last request: 6.847261 seconds.
+  path: Assets/Resources/FPS Hands/Hands.fbx
+  artifactKey: Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/FPS Hands/Hands.fbx using Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc9da0d8d33f50468ba0093108d60b26') in 0.044139 seconds 
+  Import took 0.052511 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000358 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/F2.mat
-  artifactKey: Guid(125b8e3d7d52f1a4a9341372677b8015) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/F2.mat using Guid(125b8e3d7d52f1a4a9341372677b8015) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45494577eb9b50143bc467d2a9c5d5bd') in 0.014755 seconds 
-  Import took 0.023339 seconds .
+  Time since last request: 92.209825 seconds.
+  path: Assets/Resources/FPS Hands/Hands.fbx
+  artifactKey: Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/FPS Hands/Hands.fbx using Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99f05cb99630c6253c19097223b5413e') in 0.034942 seconds 
+  Import took 0.043745 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000250 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/B2.mat
-  artifactKey: Guid(792fa418de0281e4bab622f9a60c88b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/B2.mat using Guid(792fa418de0281e4bab622f9a60c88b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cf3ad5e33a57d51f8d0cdb509cdadf6') in 0.111041 seconds 
-  Import took 0.120229 seconds .
+  Time since last request: 28.513332 seconds.
+  path: Assets/Resources/FPS Hands/Hands.fbx
+  artifactKey: Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/FPS Hands/Hands.fbx using Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c8e3e8d87e5eef15719e0bcabb45c87') in 0.052106 seconds 
+  Import took 0.061098 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000641 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/F1.mat
-  artifactKey: Guid(0bce4c2bd5151644a8ec6f537140cbd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/F1.mat using Guid(0bce4c2bd5151644a8ec6f537140cbd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28a0c1d170fa7ab544e36fb89de30b33') in 0.018765 seconds 
-  Import took 0.029743 seconds .
+  Time since last request: 15.713371 seconds.
+  path: Assets/Resources/FPS Hands/Hands.fbx
+  artifactKey: Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/FPS Hands/Hands.fbx using Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5869537f57338fa0d111cb760f492e9') in 0.040617 seconds 
+  Import took 0.050788 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000401 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/I2.mat
-  artifactKey: Guid(cea0c4191eb5cb440aa5355d44958681) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/I2.mat using Guid(cea0c4191eb5cb440aa5355d44958681) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26c2ee0bf694589e574d3baaad11e9ce') in 0.029660 seconds 
-  Import took 0.038727 seconds .
+  Time since last request: 1087.470329 seconds.
+  path: Assets/Materials/Player
+  artifactKey: Guid(7c73a5ebd4946424c8f239e131474b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Player using Guid(7c73a5ebd4946424c8f239e131474b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82eff687883b4387910a1bd7c8340b18') in 0.006268 seconds 
+  Import took 0.015086 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008078 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\nghtm\Documents\GitHub\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\nghtm\Documents\GitHub\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.54 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.190 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1190ms)
+		BeginReloadAssembly (114ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (40ms)
+		EndReloadAssembly (1016ms)
+			LoadAssemblies (91ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (364ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (309ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (101ms)
+				ProcessInitializeOnLoadAttributes (189ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (59ms)
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.39 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4602 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 220.5 MB.
+System memory in use after: 220.6 MB.
+
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 5418.
+Total: 4.635100 ms (FindLiveObjects: 0.493600 ms CreateObjectMapping: 0.219100 ms MarkObjects: 3.701700 ms  DeleteObjects: 0.218900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008632 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\nghtm\Documents\GitHub\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\nghtm\Documents\GitHub\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.57 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.148 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1148ms)
+		BeginReloadAssembly (102ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (38ms)
+		EndReloadAssembly (990ms)
+			LoadAssemblies (84ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (347ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (307ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (3ms)
+				BeforeProcessingInitializeOnLoad (100ms)
+				ProcessInitializeOnLoadAttributes (188ms)
+				ProcessInitializeOnLoadMethodAttributes (8ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (60ms)
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.53 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4602 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 220.5 MB.
+System memory in use after: 220.6 MB.
+
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 5424.
+Total: 4.743400 ms (FindLiveObjects: 0.540500 ms CreateObjectMapping: 0.260000 ms MarkObjects: 3.706300 ms  DeleteObjects: 0.235200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 139.851651 seconds.
+  path: Assets/Resources/FPS Hands/Hands.fbx
+  artifactKey: Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/FPS Hands/Hands.fbx using Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fff8317995949ed24c8107d18f13e7fd') in 0.198770 seconds 
+  Import took 0.207424 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000295 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/G1.mat
-  artifactKey: Guid(73daffab7784ec040ba2d4d7302527f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/G1.mat using Guid(73daffab7784ec040ba2d4d7302527f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd14d4b42b620aa483eed24b98ac16e7f') in 0.019172 seconds 
-  Import took 0.029528 seconds .
+  Time since last request: 9.320731 seconds.
+  path: Assets/Resources/FPS Hands/Hands.fbx
+  artifactKey: Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/FPS Hands/Hands.fbx using Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e33d94a15da670ddc47a719cd120f920') in 0.056029 seconds 
+  Import took 0.067918 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000320 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/K2.mat
-  artifactKey: Guid(0b5ab4b8a0e43004ba5e294fbe6cf73a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/K2.mat using Guid(0b5ab4b8a0e43004ba5e294fbe6cf73a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1063c7fa88bd49938a56ef98e3e123b6') in 0.021023 seconds 
-  Import took 0.029873 seconds .
+  Time since last request: 9.527048 seconds.
+  path: Assets/Resources/FPS Hands/Hands.fbx
+  artifactKey: Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/FPS Hands/Hands.fbx using Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55291cb70518aa8cc938fbf035ce62c6') in 0.043407 seconds 
+  Import took 0.052186 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000254 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/B1.mat
-  artifactKey: Guid(b1aa805cd8c03914ea529c0d11595111) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/B1.mat using Guid(b1aa805cd8c03914ea529c0d11595111) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2c6feb4c01fce665ec7ecb807e85e31') in 0.020513 seconds 
-  Import took 0.029077 seconds .
+  Time since last request: 7.671079 seconds.
+  path: Assets/Resources/FPS Hands/Hands.fbx
+  artifactKey: Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/FPS Hands/Hands.fbx using Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c55c8df8eabdcb5d2fd9cb304a6f707') in 0.045459 seconds 
+  Import took 0.054685 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000220 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/H1.mat
-  artifactKey: Guid(764481942b4df2a40857026c71dfae1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/H1.mat using Guid(764481942b4df2a40857026c71dfae1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97ff25315259c83c39a0c9a48be2803c') in 0.013463 seconds 
-  Import took 0.020926 seconds .
+  Time since last request: 9.526658 seconds.
+  path: Assets/Resources/FPS Hands/Hands.fbx
+  artifactKey: Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/FPS Hands/Hands.fbx using Guid(71187ff939aaa644182ec8eb7152c619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ae423ab07bedf9c5726c8d8fd17500b') in 0.054938 seconds 
+  Import took 0.063543 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006898 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\nghtm\Documents\GitHub\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\nghtm\Documents\GitHub\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.53 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.164 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1165ms)
+		BeginReloadAssembly (114ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (40ms)
+		EndReloadAssembly (993ms)
+			LoadAssemblies (87ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (337ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (44ms)
+			SetupLoadedEditorAssemblies (311ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (100ms)
+				ProcessInitializeOnLoadAttributes (191ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (65ms)
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.67 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4602 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 220.7 MB.
+System memory in use after: 221.0 MB.
+
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 5468.
+Total: 4.291400 ms (FindLiveObjects: 0.382800 ms CreateObjectMapping: 0.157600 ms MarkObjects: 3.523200 ms  DeleteObjects: 0.226200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007870 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\nghtm\Documents\GitHub\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\nghtm\Documents\GitHub\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.40 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.194 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1195ms)
+		BeginReloadAssembly (105ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (38ms)
+		EndReloadAssembly (1035ms)
+			LoadAssemblies (89ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (370ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (45ms)
+			SetupLoadedEditorAssemblies (307ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (98ms)
+				ProcessInitializeOnLoadAttributes (190ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (65ms)
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.74 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4602 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 220.6 MB.
+System memory in use after: 220.8 MB.
+
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 5474.
+Total: 5.672300 ms (FindLiveObjects: 0.807600 ms CreateObjectMapping: 0.174800 ms MarkObjects: 4.448600 ms  DeleteObjects: 0.238800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007674 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\nghtm\Documents\GitHub\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\nghtm\Documents\GitHub\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.75 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.224 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1224ms)
+		BeginReloadAssembly (114ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (40ms)
+		EndReloadAssembly (1051ms)
+			LoadAssemblies (89ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (353ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (54ms)
+			SetupLoadedEditorAssemblies (325ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (102ms)
+				ProcessInitializeOnLoadAttributes (204ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (65ms)
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.50 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4602 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 220.7 MB.
+System memory in use after: 221.1 MB.
+
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 5480.
+Total: 5.108300 ms (FindLiveObjects: 0.610800 ms CreateObjectMapping: 0.181800 ms MarkObjects: 4.074900 ms  DeleteObjects: 0.239000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007088 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\nghtm\Documents\GitHub\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\nghtm\Documents\GitHub\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.42 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.194 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1194ms)
+		BeginReloadAssembly (103ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (39ms)
+		EndReloadAssembly (1032ms)
+			LoadAssemblies (82ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (353ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (51ms)
+			SetupLoadedEditorAssemblies (319ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (103ms)
+				ProcessInitializeOnLoadAttributes (198ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (60ms)
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.38 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4602 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 220.8 MB.
+System memory in use after: 221.1 MB.
+
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 5486.
+Total: 5.072700 ms (FindLiveObjects: 0.817600 ms CreateObjectMapping: 0.309100 ms MarkObjects: 3.692400 ms  DeleteObjects: 0.250400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008397 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\nghtm\Documents\GitHub\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\nghtm\Documents\GitHub\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.58 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.155 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1156ms)
+		BeginReloadAssembly (102ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (37ms)
+		EndReloadAssembly (995ms)
+			LoadAssemblies (81ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (339ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (44ms)
+			SetupLoadedEditorAssemblies (305ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (98ms)
+				ProcessInitializeOnLoadAttributes (187ms)
+				ProcessInitializeOnLoadMethodAttributes (10ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (59ms)
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.58 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4602 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 220.8 MB.
+System memory in use after: 221.1 MB.
+
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 5492.
+Total: 5.046400 ms (FindLiveObjects: 0.552500 ms CreateObjectMapping: 0.159700 ms MarkObjects: 4.030800 ms  DeleteObjects: 0.301600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007012 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\nghtm\Documents\GitHub\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\nghtm\Documents\GitHub\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.75 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.217 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1217ms)
+		BeginReloadAssembly (112ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (37ms)
+		EndReloadAssembly (1047ms)
+			LoadAssemblies (84ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (364ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (47ms)
+			SetupLoadedEditorAssemblies (313ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (106ms)
+				ProcessInitializeOnLoadAttributes (189ms)
+				ProcessInitializeOnLoadMethodAttributes (8ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (62ms)
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.99 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4602 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 220.8 MB.
+System memory in use after: 221.1 MB.
+
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 5498.
+Total: 5.007700 ms (FindLiveObjects: 0.781500 ms CreateObjectMapping: 0.434000 ms MarkObjects: 3.513000 ms  DeleteObjects: 0.277500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 2747.669698 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_03_Color01.prefab
+  artifactKey: Guid(9c3c2e2aa98433d43b0f95063d0b779e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_03_Color01.prefab using Guid(9c3c2e2aa98433d43b0f95063d0b779e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5edee4808cd96ed558c5751ff76526e6') in 0.232519 seconds 
+  Import took 0.242766 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000304 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/J3.mat
-  artifactKey: Guid(5fd1fed63457bc14abea612957703653) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/J3.mat using Guid(5fd1fed63457bc14abea612957703653) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d8108e39d477a5835ee3a55b216b239') in 0.013306 seconds 
-  Import took 0.021840 seconds .
+  Time since last request: 0.637709 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_04_Color01.prefab
+  artifactKey: Guid(15ceb1add7e05fe44ad540913eb35c86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_04_Color01.prefab using Guid(15ceb1add7e05fe44ad540913eb35c86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ea58c2d59d47e783ac12c0814005e2c') in 0.027062 seconds 
+  Import took 0.035482 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000239 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/J2.mat
-  artifactKey: Guid(fe6ba248f97095d49869fcb5611b50d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/J2.mat using Guid(fe6ba248f97095d49869fcb5611b50d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04312aa57cdd644d42bdff2c08cddf35') in 0.013212 seconds 
-  Import took 0.020937 seconds .
+  Time since last request: 0.912518 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_04_Color02.prefab
+  artifactKey: Guid(48f85994c4d04204ba5daa5a4f9ec5aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_04_Color02.prefab using Guid(48f85994c4d04204ba5daa5a4f9ec5aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2255a0f599ebebb4dd2c5595fb00d41') in 0.025766 seconds 
+  Import took 0.033821 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000287 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/B3.mat
-  artifactKey: Guid(6654366d45d22054abd260171b0f7c04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/B3.mat using Guid(6654366d45d22054abd260171b0f7c04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8e7b8ad724e61b2321ae117800678a7') in 0.012700 seconds 
-  Import took 0.020806 seconds .
+  Time since last request: 0.942382 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_02_Color01.prefab
+  artifactKey: Guid(a392c2a9ce81c9d4488e97fdb4b85482) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_02_Color01.prefab using Guid(a392c2a9ce81c9d4488e97fdb4b85482) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76f25904f1860006fe3319668304836c') in 0.015681 seconds 
+  Import took 0.025135 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000286 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/C3.mat
-  artifactKey: Guid(91155d9f14bc7c24885accb7c3b9025f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/C3.mat using Guid(91155d9f14bc7c24885accb7c3b9025f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80c98f163e4d19a4a6675a31de659b1e') in 0.016191 seconds 
-  Import took 0.025369 seconds .
+  Time since last request: 0.694331 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_01_Color02.prefab
+  artifactKey: Guid(7112d6588769a71448affaff971a40f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_01_Color02.prefab using Guid(7112d6588769a71448affaff971a40f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ccbdc65fa502823985ce0ae9484520d2') in 0.023658 seconds 
+  Import took 0.032185 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000263 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/H3.mat
-  artifactKey: Guid(9db90062b4af0004b94c5754b65e4379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/H3.mat using Guid(9db90062b4af0004b94c5754b65e4379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3849cfc3874af7cf8ef995bbc6329d0') in 0.013334 seconds 
-  Import took 0.022100 seconds .
+  Time since last request: 2.575457 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_01_Color01.prefab
+  artifactKey: Guid(83d1473533c0649408a6817f7e9ff617) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_01_Color01.prefab using Guid(83d1473533c0649408a6817f7e9ff617) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bfed966cf062592d610a13372d1bb4e') in 0.025486 seconds 
+  Import took 0.034417 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000322 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/I1.mat
-  artifactKey: Guid(09bb7389d12b7fe4cb01b4d2afb6b0a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/I1.mat using Guid(09bb7389d12b7fe4cb01b4d2afb6b0a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff4c733d68d06b266bbae7a76f10eee0') in 0.012934 seconds 
-  Import took 0.022400 seconds .
+  Time since last request: 2.084598 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_03_Color02.prefab
+  artifactKey: Guid(e05338870e015464e8c32f2efad5b2fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_03_Color02.prefab using Guid(e05338870e015464e8c32f2efad5b2fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dea5a1d6c6fb968b3bb282fd39bf0f06') in 0.023294 seconds 
+  Import took 0.031619 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000239 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/G2.mat
-  artifactKey: Guid(8a92d92c33dbd87489558551e9ce75ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/G2.mat using Guid(8a92d92c33dbd87489558551e9ce75ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66289737294beb5b730ae10df8ff50fc') in 0.012644 seconds 
-  Import took 0.021561 seconds .
+  Time since last request: 1.651474 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_04_Color03.prefab
+  artifactKey: Guid(224509e2ac651e34fa58d82ed97e810a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_04_Color03.prefab using Guid(224509e2ac651e34fa58d82ed97e810a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '777f0275cc24e5a00c3bb0c772c40e50') in 0.015109 seconds 
+  Import took 0.023173 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000296 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/F3.mat
-  artifactKey: Guid(2d6209e982156604ea6d7c513bc7b774) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/F3.mat using Guid(2d6209e982156604ea6d7c513bc7b774) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b03b87adc6d4d35e644a28ad6c3b331') in 0.013806 seconds 
-  Import took 0.022400 seconds .
+  Time since last request: 0.227103 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_05_Color01.prefab
+  artifactKey: Guid(5ff8fa53ca9388147a3414682bc5b9d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_05_Color01.prefab using Guid(5ff8fa53ca9388147a3414682bc5b9d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17d4095b93ad1d237ffd2ad31144beac') in 0.025995 seconds 
+  Import took 0.034310 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000230 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/J1.mat
-  artifactKey: Guid(8bf8e8eb3c4ec9c4e9f79488c39bff59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/J1.mat using Guid(8bf8e8eb3c4ec9c4e9f79488c39bff59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08fbd1bfb3fb97083a03da645da1ab0a') in 0.013724 seconds 
-  Import took 0.021259 seconds .
+  Time since last request: 0.152920 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_05_Color02.prefab
+  artifactKey: Guid(96248d80c47241d4fa69705b1fde0c9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_05_Color02.prefab using Guid(96248d80c47241d4fa69705b1fde0c9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c27c93e3050870390a7affeb5e4289c') in 0.025642 seconds 
+  Import took 0.034953 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 18.212100 seconds.
-  path: Assets/Resources/POLYGON city pack/Materials/Colors_buildings/F2.mat
-  artifactKey: Guid(125b8e3d7d52f1a4a9341372677b8015) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/POLYGON city pack/Materials/Colors_buildings/F2.mat using Guid(125b8e3d7d52f1a4a9341372677b8015) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81b9dd147a5da372be44eefc8dc77429') in 0.013901 seconds 
-  Import took 0.024545 seconds .
+  Time since last request: 0.224720 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_06_Color01.prefab
+  artifactKey: Guid(2092046b6f2352746872487c0f765f27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_06_Color01.prefab using Guid(2092046b6f2352746872487c0f765f27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82565dbad8f421c4106dddd91ec4b89e') in 0.027597 seconds 
+  Import took 0.036476 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 0.145504 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_06_Color02.prefab
+  artifactKey: Guid(3efdc87628dedb34b940f10ca83a0cbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_06_Color02.prefab using Guid(3efdc87628dedb34b940f10ca83a0cbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9eece9e465af6b99b741b5f458dad53c') in 0.026720 seconds 
+  Import took 0.035986 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.179625 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_06_Color03.prefab
+  artifactKey: Guid(646d83745aa840149bbb68f56c3a3cb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_06_Color03.prefab using Guid(646d83745aa840149bbb68f56c3a3cb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1db496cd3e22524e1c368a08b9167a4') in 0.024751 seconds 
+  Import took 0.033025 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.182385 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_07_Color01.prefab
+  artifactKey: Guid(58013906244e74b4ea47f63df3b0e64b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_07_Color01.prefab using Guid(58013906244e74b4ea47f63df3b0e64b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8c099320a903ae52d7cc38ed1d906ff') in 0.029015 seconds 
+  Import took 0.037901 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.131230 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_07_Color02.prefab
+  artifactKey: Guid(0abc79633d63ff640b61a41eb3c8d0f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_07_Color02.prefab using Guid(0abc79633d63ff640b61a41eb3c8d0f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fee6c6ef0938f4b63530a06544ea7258') in 0.027901 seconds 
+  Import took 0.036616 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.163475 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_07_Color03.prefab
+  artifactKey: Guid(f36bd5c546fa3d8409c20f0789c5e8d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_07_Color03.prefab using Guid(f36bd5c546fa3d8409c20f0789c5e8d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88ec346a6cc842d865c6c20ca180c51b') in 0.032293 seconds 
+  Import took 0.040699 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.195589 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_08_Color01.prefab
+  artifactKey: Guid(594735d93d6b5f347a9420538f52562d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_08_Color01.prefab using Guid(594735d93d6b5f347a9420538f52562d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36ba239ee1e3450a9f95c5a19eb6d689') in 0.027491 seconds 
+  Import took 0.036755 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.156785 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_08_Color02.prefab
+  artifactKey: Guid(5fd7507d23ec5d641a17c41172ab95eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_08_Color02.prefab using Guid(5fd7507d23ec5d641a17c41172ab95eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc5ad0b84b60321a2a5f08d794fbfe44') in 0.024401 seconds 
+  Import took 0.032674 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.176456 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_08_Color03.prefab
+  artifactKey: Guid(e87471807c7cc3d43905f873c8306695) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_08_Color03.prefab using Guid(e87471807c7cc3d43905f873c8306695) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13bd11db46782d656397634e7b65b8bb') in 0.016090 seconds 
+  Import took 0.025020 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.306150 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_09_Color01.prefab
+  artifactKey: Guid(446d04128f0908f498121ba697a89c9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_09_Color01.prefab using Guid(446d04128f0908f498121ba697a89c9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f806b4479da29a7f76381039d76bd96') in 0.027901 seconds 
+  Import took 0.035948 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.183255 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_09_Color02.prefab
+  artifactKey: Guid(e50097abe3e9535498b03d23990f99c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_09_Color02.prefab using Guid(e50097abe3e9535498b03d23990f99c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad621644e56b1edae0fd2c9589923c89') in 0.022096 seconds 
+  Import took 0.030954 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.802126 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_09_Color03.prefab
+  artifactKey: Guid(f4ffd6413454b454c98f9a6556cc8ce9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_09_Color03.prefab using Guid(f4ffd6413454b454c98f9a6556cc8ce9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67e0a8bb527b3efa8c1af027a1ff7a6d') in 0.023657 seconds 
+  Import took 0.032477 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.221703 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_10_Color01.prefab
+  artifactKey: Guid(e34d890ca8f8a23418315dce5fadad31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_10_Color01.prefab using Guid(e34d890ca8f8a23418315dce5fadad31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '246c1bfe408be759a691ea91c802b795') in 0.027525 seconds 
+  Import took 0.037112 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.224862 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_10_Color02.prefab
+  artifactKey: Guid(ddadc60f5bf6b4043a75bdde7eef5c5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_10_Color02.prefab using Guid(ddadc60f5bf6b4043a75bdde7eef5c5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '162155d1680e889c9ba0d95996c61c57') in 0.024132 seconds 
+  Import took 0.032717 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.203661 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_10_Color03.prefab
+  artifactKey: Guid(df7a2603257f3224291b497f4a7b1a16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_10_Color03.prefab using Guid(df7a2603257f3224291b497f4a7b1a16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73e7cfbe1e6aa720861af865bd7351eb') in 0.026387 seconds 
+  Import took 0.035431 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.224086 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_11_Color01.prefab
+  artifactKey: Guid(4c07743e1e38550478a192f335ca8ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_11_Color01.prefab using Guid(4c07743e1e38550478a192f335ca8ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e9434b353abb24f0faf52f58301c3b7') in 0.024925 seconds 
+  Import took 0.034065 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.137911 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_11_Color02.prefab
+  artifactKey: Guid(6efa112784b62c349ac10d0deeeb5a17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_11_Color02.prefab using Guid(6efa112784b62c349ac10d0deeeb5a17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f742ee9ee5c78808fc4aebd64338f133') in 0.026537 seconds 
+  Import took 0.035205 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.181241 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_11_Color03.prefab
+  artifactKey: Guid(a5d28dcbd3ac719499df5cd011bfc1b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_11_Color03.prefab using Guid(a5d28dcbd3ac719499df5cd011bfc1b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6130c50019d75f33bac62ec997f901b1') in 0.026127 seconds 
+  Import took 0.034084 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.237685 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_12_Color01.prefab
+  artifactKey: Guid(c6cbe5dc3bc11b44fa9480ab02465fd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_12_Color01.prefab using Guid(c6cbe5dc3bc11b44fa9480ab02465fd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0b9ea2a3ccd2dbf3725c0976d20a6d1') in 0.026606 seconds 
+  Import took 0.035157 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.176615 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_12_Color02.prefab
+  artifactKey: Guid(f8493556649c98c4dbec8467db9de353) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_12_Color02.prefab using Guid(f8493556649c98c4dbec8467db9de353) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4619be982696a677e3d56709f66881d2') in 0.027419 seconds 
+  Import took 0.036095 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.435401 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_12_Color03.prefab
+  artifactKey: Guid(ac1c717c7741d8247822b45e511de7a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_12_Color03.prefab using Guid(ac1c717c7741d8247822b45e511de7a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66877aea8d48db9f5cf62f2b0180a020') in 0.024984 seconds 
+  Import took 0.035057 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.226854 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_13_Color01.prefab
+  artifactKey: Guid(0d5d76a6007933f4a95f4c84acbc14c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_13_Color01.prefab using Guid(0d5d76a6007933f4a95f4c84acbc14c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be22ae0807f70f4df818df07fa9de5d6') in 0.035655 seconds 
+  Import took 0.044725 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.188336 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_13_Color02.prefab
+  artifactKey: Guid(01e245bd13421a1409d15e7a4b8a449d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_13_Color02.prefab using Guid(01e245bd13421a1409d15e7a4b8a449d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfb380ba2588759fc07afc5ae991f942') in 0.026439 seconds 
+  Import took 0.035411 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.332009 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_13_Color03.prefab
+  artifactKey: Guid(8e4558708ca6da44886ed5f201813ab7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_13_Color03.prefab using Guid(8e4558708ca6da44886ed5f201813ab7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8dfc66af165bbfae4a70af25171e54b1') in 0.026734 seconds 
+  Import took 0.035811 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.215188 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_14.prefab
+  artifactKey: Guid(a7444bbfd5156a6448f59c622a5a62cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_14.prefab using Guid(a7444bbfd5156a6448f59c622a5a62cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8b29f4ad81f9c932a4462451ac343fc') in 0.026048 seconds 
+  Import took 0.035014 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.200800 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_15.prefab
+  artifactKey: Guid(583d9611cd7a7ac48852d84a72fc5a60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_15.prefab using Guid(583d9611cd7a7ac48852d84a72fc5a60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0562cf22ffd1682dee9987e9c8f4710') in 0.016856 seconds 
+  Import took 0.025642 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.284918 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_17_Color02.prefab
+  artifactKey: Guid(a7a7c809bd2ddea4ab3b105b2da4ead1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_17_Color02.prefab using Guid(a7a7c809bd2ddea4ab3b105b2da4ead1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b6e43838b0a680239eb20bd98a3ffe0') in 0.026612 seconds 
+  Import took 0.035284 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.523095 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_Apartment_01_Color02.prefab
+  artifactKey: Guid(084854deb7528684c9a75e36550170bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_Apartment_01_Color02.prefab using Guid(084854deb7528684c9a75e36550170bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef9263a0374260b5ad187e21f461628d') in 0.028793 seconds 
+  Import took 0.036688 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.837111 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_Apartment_02_Color01.prefab
+  artifactKey: Guid(b63b42666a4726b46b8cff51852cfcdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_Apartment_02_Color01.prefab using Guid(b63b42666a4726b46b8cff51852cfcdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ea4f05f1d035706b19945521f269997') in 0.030656 seconds 
+  Import took 0.039656 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.539615 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_Gas Station_Color01.prefab
+  artifactKey: Guid(9b0b5ade92d85324b8dc1d1b05b5c50b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_Gas Station_Color01.prefab using Guid(9b0b5ade92d85324b8dc1d1b05b5c50b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e9f90ae072b757397b1d38dbc628b7c') in 0.027706 seconds 
+  Import took 0.037144 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.960244 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_Gas Station_Color02.prefab
+  artifactKey: Guid(1c12b19efbbc4b34f92ba956d67e7b32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_Gas Station_Color02.prefab using Guid(1c12b19efbbc4b34f92ba956d67e7b32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '076945b59d73b8c9536ecd62e60fea83') in 0.023305 seconds 
+  Import took 0.031770 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.576369 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_Shop_Color02.prefab
+  artifactKey: Guid(2288e7d13601cc94e9ff11865418b78a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_Shop_Color02.prefab using Guid(2288e7d13601cc94e9ff11865418b78a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a3826d833c03b6c6cb0bcfc233fa061') in 0.024831 seconds 
+  Import took 0.032893 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.105249 seconds.
+  path: Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_Shop_Small_Color01.prefab
+  artifactKey: Guid(cbe20c6465e026f41a258b5117270aa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/SimplePoly World/Prefab/Urban/Buildings/SPW_Urban_Bldg_Shop_Small_Color01.prefab using Guid(cbe20c6465e026f41a258b5117270aa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bffda34dae815d7afdf9919065eabe00') in 0.024656 seconds 
+  Import took 0.033428 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007081 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\nghtm\Documents\GitHub\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\nghtm\Documents\GitHub\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.41 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.234 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1234ms)
+		BeginReloadAssembly (116ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (51ms)
+		EndReloadAssembly (1061ms)
+			LoadAssemblies (91ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (359ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (45ms)
+			SetupLoadedEditorAssemblies (309ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (98ms)
+				ProcessInitializeOnLoadAttributes (191ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (63ms)
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537460736) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.47 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4605 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 221.0 MB.
+System memory in use after: 221.3 MB.
+
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 5545.
+Total: 5.372300 ms (FindLiveObjects: 0.492500 ms CreateObjectMapping: 0.156000 ms MarkObjects: 4.461200 ms  DeleteObjects: 0.261200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 86.148460 seconds.
+  path: Assets/FlatKit/[Render Pipeline] Universal (URP).unitypackage
+  artifactKey: Guid(41e59f562b69648719f2424c438758f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FlatKit/[Render Pipeline] Universal (URP).unitypackage using Guid(41e59f562b69648719f2424c438758f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9080a5c3c8e3eb92c863f2928daf3c50') in 0.033562 seconds 
+  Import took 0.042689 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 31.259262 seconds.
+  path: Assets/FlatKit/Utils
+  artifactKey: Guid(68effd0abad9742e89a8ddfce6ebf60f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FlatKit/Utils using Guid(68effd0abad9742e89a8ddfce6ebf60f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99b09574106dc63ebc951b1564696f86') in 0.006501 seconds 
+  Import took 0.014389 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.011628 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\nghtm\Documents\GitHub\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\nghtm\Documents\GitHub\SupaDupaMan\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+The file 'MemoryStream' is corrupted! Remove it and launch unity again!
+[Position out of bounds!]
+Fatal Error! The file 'MemoryStream' is corrupted! Remove it and launch unity again!
+[Position out of bounds!]
+Crash!!!
+SymInit: Symbol-SearchPath: 'C:/Editor/2020.3.23f1/Editor/Data/Mono;.;C:\Users\nghtm\Documents\GitHub\SupaDupaMan;C:\Editor\2020.3.23f1\Editor;C:\Windows;C:\Windows\system32;SRV*C:\websymbols*http://msdl.microsoft.com/download/symbols;', symOptions: 534, UserName: 'nghtm'
+OS-Version: 10.0.0
+C:\Editor\2020.3.23f1\Editor\Unity.exe:Unity.exe (00007FF6554A0000), size: 135475200 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2020.3.23.55571
+C:\Windows\SYSTEM32\ntdll.dll:ntdll.dll (00007FFD14930000), size: 2052096 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1288
+C:\Windows\System32\KERNEL32.DLL:KERNEL32.DLL (00007FFD13A60000), size: 778240 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1348
+C:\Windows\System32\KERNELBASE.dll:KERNELBASE.dll (00007FFD126B0000), size: 2916352 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1348
+C:\Windows\System32\CRYPT32.dll:CRYPT32.dll (00007FFD12450000), size: 1400832 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1320
+C:\Windows\System32\ucrtbase.dll:ucrtbase.dll (00007FFD125B0000), size: 1048576 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.789
+C:\Windows\System32\USER32.dll:USER32.dll (00007FFD13D90000), size: 1708032 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1202
+C:\Windows\System32\win32u.dll:win32u.dll (00007FFD12370000), size: 139264 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1320
+C:\Windows\System32\GDI32.dll:GDI32.dll (00007FFD12980000), size: 176128 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1202
+C:\Windows\System32\gdi32full.dll:gdi32full.dll (00007FFD120D0000), size: 1093632 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1110
+C:\Editor\2020.3.23f1\Editor\libfbxsdk.dll:libfbxsdk.dll (00007FFCB1D80000), size: 10215424 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2020.2.0.0
+C:\Editor\2020.3.23f1\Editor\optix.6.0.0.dll:optix.6.0.0.dll (00007FFD008F0000), size: 208896 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 6.0.0.0
+C:\Editor\2020.3.23f1\Editor\OpenImageDenoise.dll:OpenImageDenoise.dll (00007FFC9CC10000), size: 43806720 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Windows\System32\msvcp_win.dll:msvcp_win.dll (00007FFD122D0000), size: 643072 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.789
+C:\Windows\System32\ADVAPI32.dll:ADVAPI32.dll (00007FFD13530000), size: 704512 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1052
+C:\Windows\System32\msvcrt.dll:msvcrt.dll (00007FFD13CF0000), size: 647168 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 7.0.19041.546
+C:\Windows\System32\sechost.dll:sechost.dll (00007FFD13B20000), size: 634880 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.906
+C:\Windows\System32\RPCRT4.dll:RPCRT4.dll (00007FFD12E90000), size: 1220608 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1288
+C:\Editor\2020.3.23f1\Editor\umbraoptimizer64.dll:umbraoptimizer64.dll (00007FFCE2780000), size: 1306624 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Editor\2020.3.23f1\Editor\FreeImage.dll:FreeImage.dll (0000000180000000), size: 6582272 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 3.18.0.0
+C:\Editor\2020.3.23f1\Editor\ispc_texcomp.dll:ispc_texcomp.dll (00007FFCD53C0000), size: 1609728 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Windows\System32\WS2_32.dll:WS2_32.dll (00007FFD13F70000), size: 438272 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\System32\SHELL32.dll:SHELL32.dll (00007FFD140D0000), size: 7598080 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1320
+C:\Windows\System32\WLDAP32.dll:WLDAP32.dll (00007FFD12E30000), size: 352256 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\System32\Normaliz.dll:Normaliz.dll (00007FFD135E0000), size: 32768 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\System32\SHLWAPI.dll:SHLWAPI.dll (00007FFD13FE0000), size: 348160 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\Editor\2020.3.23f1\Editor\WinPixEventRuntime.dll:WinPixEventRuntime.dll (00007FFD0F340000), size: 45056 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 1.0.1812.6001
+C:\Windows\System32\ole32.dll:ole32.dll (00007FFD13BC0000), size: 1220608 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1202
+C:\Windows\System32\combase.dll:combase.dll (00007FFD12FC0000), size: 3493888 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1348
+C:\Editor\2020.3.23f1\Editor\tbb.dll:tbb.dll (00007FFD00850000), size: 413696 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2017.0.2016.1004
+C:\Windows\System32\IMM32.dll:IMM32.dll (00007FFD140A0000), size: 196608 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\VCRUNTIME140.dll:VCRUNTIME140.dll (00007FFCF69C0000), size: 106496 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 14.28.29914.0
+C:\Windows\System32\SETUPAPI.dll:SETUPAPI.dll (00007FFD129B0000), size: 4661248 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1237
+C:\Windows\System32\cfgmgr32.dll:cfgmgr32.dll (00007FFD12080000), size: 319488 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1151
+C:\Windows\SYSTEM32\MSVCP140.dll:MSVCP140.dll (00007FFCF4180000), size: 577536 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 14.28.29914.0
+C:\Windows\System32\bcrypt.dll:bcrypt.dll (00007FFD12050000), size: 159744 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\Windows\SYSTEM32\OPENGL32.dll:OPENGL32.dll (00007FFCD4640000), size: 1200128 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\Windows\SYSTEM32\GLU32.dll:GLU32.dll (00007FFD008C0000), size: 180224 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\Windows\System32\OLEAUT32.dll:OLEAUT32.dll (00007FFD13320000), size: 839680 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.985
+C:\Windows\SYSTEM32\MSVCP120.dll:MSVCP120.dll (00007FFCD4150000), size: 679936 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 12.0.40664.0
+C:\Windows\SYSTEM32\MSVCR120.dll:MSVCR120.dll (00007FFCD4200000), size: 978944 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 12.0.40664.0
+C:\Windows\System32\WINTRUST.dll:WINTRUST.dll (00007FFD12270000), size: 393216 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1266
+C:\Windows\SYSTEM32\IPHLPAPI.DLL:IPHLPAPI.DLL (00007FFD11420000), size: 241664 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\VCRUNTIME140_1.dll:VCRUNTIME140_1.dll (00007FFCF69B0000), size: 49152 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 14.28.29914.0
+C:\Windows\SYSTEM32\WINHTTP.dll:WINHTTP.dll (00007FFCFCCE0000), size: 1097728 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1320
+C:\Windows\SYSTEM32\WINMM.dll:WINMM.dll (00007FFD06EA0000), size: 159744 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\HID.DLL:HID.DLL (00007FFD108E0000), size: 53248 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Editor\2020.3.23f1\Editor\RadeonImageFilters.dll:RadeonImageFilters.dll (00007FFCB38B0000), size: 2535424 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 1.5.1.0
+C:\Editor\2020.3.23f1\Editor\SketchUpAPI.dll:SketchUpAPI.dll (00007FFCB03B0000), size: 8978432 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 19.0.753.0
+C:\Windows\SYSTEM32\VERSION.dll:VERSION.dll (00007FFD0A3C0000), size: 40960 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\WSOCK32.dll:WSOCK32.dll (00007FFD0DE50000), size: 36864 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1
+C:\Windows\SYSTEM32\Secur32.dll:Secur32.dll (00007FFCFC420000), size: 49152 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Editor\2020.3.23f1\Editor\SketchUpCommonPreferences.dll:SketchUpCommonPreferences.dll (00007FFCF68A0000), size: 483328 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 19.0.753.20342
+C:\Windows\SYSTEM32\SSPICLI.DLL:SSPICLI.DLL (00007FFD11F10000), size: 200704 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1266
+C:\Editor\2020.3.23f1\Editor\OpenRL.dll:OpenRL.dll (0000014BFEC50000), size: 12779520 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 1.5.0.2907
+C:\Windows\SYSTEM32\MSVCP100.dll:MSVCP100.dll (00000000729D0000), size: 622592 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.40219.325
+C:\Windows\SYSTEM32\MSVCR100.dll:MSVCR100.dll (0000000072A70000), size: 860160 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.40219.325
+C:\Editor\2020.3.23f1\Editor\embree.dll:embree.dll (00007FFCAEB60000), size: 16711680 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2.14.0.0
+C:\Windows\SYSTEM32\MSWSOCK.DLL:MSWSOCK.DLL (00007FFD11730000), size: 434176 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Editor\2020.3.23f1\Editor\OpenRL_pthread.dll:OpenRL_pthread.dll (0000014BFF8A0000), size: 61440 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2.9.0.0
+C:\Windows\SYSTEM32\MSASN1.dll:MSASN1.dll (00007FFD11BC0000), size: 73728 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\kernel.appcore.dll:kernel.appcore.dll (00007FFD0FF50000), size: 73728 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\System32\bcryptPrimitives.dll:bcryptPrimitives.dll (00007FFD121E0000), size: 536576 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1348
+C:\Windows\system32\uxtheme.dll:uxtheme.dll (00007FFD0FA70000), size: 647168 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1266
+C:\Windows\System32\shcore.dll:shcore.dll (00007FFD13480000), size: 708608 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1320
+C:\Windows\SYSTEM32\windows.storage.dll:windows.storage.dll (00007FFD10150000), size: 7929856 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1320
+C:\Windows\SYSTEM32\Wldp.dll:Wldp.dll (00007FFD11A30000), size: 188416 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1320
+C:\Windows\SYSTEM32\profapi.dll:profapi.dll (00007FFD11F90000), size: 126976 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.844
+C:\Windows\System32\clbcatq.dll:clbcatq.dll (00007FFD13940000), size: 692224 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2001.12.10941.16384
+C:\Windows\System32\netprofm.dll:netprofm.dll (00007FFD0CA20000), size: 253952 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.906
+C:\Windows\System32\npmproxy.dll:npmproxy.dll (00007FFD09EA0000), size: 65536 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.906
+C:\Windows\System32\NSI.dll:NSI.dll (00007FFD13F60000), size: 32768 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.610
+C:\Windows\SYSTEM32\dhcpcsvc6.DLL:dhcpcsvc6.DLL (00007FFD07BB0000), size: 94208 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\dhcpcsvc.DLL:dhcpcsvc.DLL (00007FFD09EB0000), size: 118784 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\DNSAPI.dll:DNSAPI.dll (00007FFD11460000), size: 831488 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1320
+C:\Windows\System32\fwpuclnt.dll:fwpuclnt.dll (00007FFCF9A50000), size: 520192 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1348
+C:\Windows\System32\rasadhlp.dll:rasadhlp.dll (00007FFCF99C0000), size: 40960 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Editor\2020.3.23f1\Editor\Data\Tools\astcenc-avx2.dll:astcenc-avx2.dll (00007FFCB3100000), size: 557056 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Windows\SYSTEM32\d3d11.dll:d3d11.dll (00007FFD0DFE0000), size: 2506752 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1202
+C:\Windows\SYSTEM32\dxgi.dll:dxgi.dll (00007FFD10940000), size: 999424 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1266
+C:\Windows\System32\DriverStore\FileRepository\nvhmi.inf_amd64_81b0e572c0ead3e1\nvldumdx.dll:nvldumdx.dll (00007FFCE14F0000), size: 1073152 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 30.0.14.9676
+C:\Windows\SYSTEM32\cryptnet.dll:cryptnet.dll (00007FFD02920000), size: 200704 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.906
+C:\Windows\SYSTEM32\drvstore.dll:drvstore.dll (00007FFD00020000), size: 1351680 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1320
+C:\Windows\SYSTEM32\devobj.dll:devobj.dll (00007FFD11D80000), size: 212992 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1151
+C:\Windows\SYSTEM32\cryptbase.dll:cryptbase.dll (00007FFD119A0000), size: 49152 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\System32\imagehlp.dll:imagehlp.dll (00007FFD13F40000), size: 118784 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\CRYPTSP.dll:CRYPTSP.dll (00007FFD11980000), size: 98304 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\system32\rsaenh.dll:rsaenh.dll (00007FFD110B0000), size: 212992 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1052
+C:\Windows\System32\DriverStore\FileRepository\nvhmi.inf_amd64_81b0e572c0ead3e1\nvwgf2umx.dll:nvwgf2umx.dll (00007FFCA2F30000), size: 43163648 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 30.0.14.9676
+C:\Windows\system32\nvspcap64.dll:nvspcap64.dll (00007FFCD20E0000), size: 2895872 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 3.23.0.74
+C:\Windows\SYSTEM32\ntmarta.dll:ntmarta.dll (00007FFD10D40000), size: 208896 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\dxcore.dll:dxcore.dll (00007FFD08980000), size: 241664 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\system32\wbem\wbemprox.dll:wbemprox.dll (00007FFD01BF0000), size: 69632 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1320
+C:\Windows\SYSTEM32\wbemcomn.dll:wbemcomn.dll (00007FFD0A270000), size: 598016 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\Windows\system32\wbem\wbemsvc.dll:wbemsvc.dll (00007FFD00CA0000), size: 81920 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1320
+C:\Windows\system32\wbem\fastprox.dll:fastprox.dll (00007FFD00CE0000), size: 1093632 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\amsi.dll:amsi.dll (00007FFD00BD0000), size: 102400 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.746
+C:\Windows\SYSTEM32\USERENV.dll:USERENV.dll (00007FFD11F50000), size: 188416 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.572
+C:\ProgramData\Microsoft\Windows Defender\platform\4.18.2110.6-0\MpOav.dll:MpOav.dll (00007FFD00B50000), size: 499712 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 4.18.2110.6
+C:\Editor\2020.3.23f1\Editor\cudart64_90.dll:cudart64_90.dll (00007FFCB3290000), size: 397312 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 6.14.11.9000
+C:\Windows\SYSTEM32\opencl.dll:opencl.dll (00007FFCB12C0000), size: 1474560 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 3.0.1.0
+C:\Editor\2020.3.23f1\Editor\radeonrays.dll:radeonrays.dll (00007FFCB2EE0000), size: 552960 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Editor\2020.3.23f1\Editor\Data\MonoBleedingEdge\EmbedRuntime\mono-2.0-bdwgc.dll:mono-2.0-bdwgc.dll (00007FFC9B370000), size: 7794688 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Windows\System32\PSAPI.DLL:PSAPI.DLL (00007FFD139F0000), size: 32768 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\ProgramData\Microsoft\VisualStudio\Setup\x64\Microsoft.VisualStudio.Setup.Configuration.Native.dll:Microsoft.VisualStudio.Setup.Configuration.Native.dll (00007FFCB30B0000), size: 327680 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2.11.47.9733
+C:\Windows\SYSTEM32\PROPSYS.dll:PROPSYS.dll (00007FFD0DD00000), size: 1007616 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 7.0.19041.1023
+C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\comctl32.dll:comctl32.dll (00007FFCFA8A0000), size: 2727936 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 6.10.19041.1110
+C:\Windows\SYSTEM32\WindowsCodecs.dll:WindowsCodecs.dll (00007FFD0C330000), size: 1785856 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1151
+C:\Windows\System32\MrmCoreR.dll:MrmCoreR.dll (00007FFCFC5A0000), size: 1003520 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1266
+C:\Windows\System32\iertutil.dll:iertutil.dll (00007FFCF7F60000), size: 2818048 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 11.0.19041.1266
+C:\Windows\SYSTEM32\windows.staterepositorycore.dll:windows.staterepositorycore.dll (00007FFD00CC0000), size: 69632 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.844
+C:\Windows\System32\thumbcache.dll:thumbcache.dll (00007FFCE5C60000), size: 417792 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1151
+C:\Windows\SYSTEM32\dbghelp.dll:dbghelp.dll (00007FFCFE7A0000), size: 1982464 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.867
+
+========== OUTPUTTING STACK TRACE ==================
+
+0x00007FFD126E4F69 (KERNELBASE) RaiseException
+0x00007FF657C34F9D (Unity) EditorMonoConsole::LogToConsoleImplementation
+0x00007FF657C35F1A (Unity) EditorMonoConsole::LogToConsoleImplementation
+0x00007FF65987043E (Unity) DebugStringToFilePostprocessedStacktrace
+0x00007FF65986F9EF (Unity) DebugStringToFile
+0x00007FF6569F4F1E (Unity) CachedReader::OutOfBoundsError
+0x00007FF6569F9FF4 (Unity) CachedReader::UpdateReadCache
+0x00007FF655719163 (Unity) TransferPPtr<StreamedBinaryRead>
+0x00007FF6570B6B3B (Unity) TransferField_NonArray<StreamedBinaryRead,Converter_UnityEngineObject>
+0x00007FF6570DC0A2 (Unity) Transfer_UnityEngineObject<StreamedBinaryRead,0>
+0x00007FF656B56B36 (Unity) ExecuteSerializationCommands<SafeBinaryRead>
+0x00007FF656B5DA7E (Unity) TransferScriptingObject<StreamedBinaryRead,0>
+0x00007FF656B78F2C (Unity) SerializableManagedRefTransfer::TransferBinaryInstanceOnly
+0x00007FF656B58D98 (Unity) SerializableManagedRefTransfer::RestoreBackupImpl<SerializableManagedRefBackupGenerator>
+0x00007FF656B58C3B (Unity) SerializableManagedRefTransfer::RestoreBackup<SerializableManagedRefBackupGenerator>
+0x00007FF6570F1747 (Unity) SerializableManagedRefsUtilities::RestoreBackups
+0x00007FF65702CFC4 (Unity) MonoManager::EndReloadAssembly
+0x00007FF657033F87 (Unity) MonoManager::ReloadAssembly
+0x00007FF658433A71 (Unity) LoadDomainAndUserAssemblies
+0x00007FF6584340D9 (Unity) LoadUserAssemblies
+0x00007FF6588AAF78 (Unity) <lambda_905da1b37eb57b5d14adff71480f0ceb>::operator()
+0x00007FF65894F662 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007FF6589517C0 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007FF658954F4E (Unity) asio::io_service::run
+0x00007FF6588D7E2B (Unity) RunAssetImportWorkerClientV2
+0x00007FF6588D7E80 (Unity) RunAssetImporterV2
+0x00007FF657D8FFC6 (Unity) Application::InitializeProject
+0x00007FF658746CA2 (Unity) WinMain
+0x00007FF65A5A7A66 (Unity) __scrt_common_main_seh
+0x00007FFD13A77034 (KERNEL32) BaseThreadInitThunk
+0x00007FFD14982651 (ntdll) RtlUserThreadStart
+
+========== END OF STACKTRACE ===========
+
+A crash has been intercepted by the crash handler. For call stack and other details, see the latest crash report generated in:
+ * C:/Users/nghtm/AppData/Local/Temp/Unity/Editor/Crashes

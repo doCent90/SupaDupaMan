@@ -33,6 +33,7 @@ public class ObjectsSelector : MonoBehaviour
     private void OnDisable()
     {
         _aimMain.gameObject.SetActive(false);
+        _aimRenderer.enabled = false;
 
         _playerMover.Moved -= OnMoved;
         _laser.Fired -= OnLaserFired;

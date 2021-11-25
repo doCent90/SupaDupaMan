@@ -5,7 +5,6 @@ using UnityEngine.Events;
 public class WallSlicer2 : SlicerType1
 {
     private BoxCollider _boxCollider;
-    private MeshRenderer _meshRenderer;
     private ParticleSystem _particleSystem;
     private CellsDestroyer _cellsDestroyer;
     private Transform _damagePointPosition;
@@ -26,7 +25,6 @@ public class WallSlicer2 : SlicerType1
     protected override void DisableDafaultObjects()
     {
         _cellsDestroyer.enabled = true;
-        _meshRenderer.enabled = false;
         _damagePoint.enabled = false;
 
         _particleSystem.Play();
@@ -36,7 +34,6 @@ public class WallSlicer2 : SlicerType1
     private void Start()
     {
         _boxCollider = GetComponent<BoxCollider>();
-        _meshRenderer = GetComponent<MeshRenderer>();
         _cellsDestroyer = GetComponent<CellsDestroyer>();
         _particleSystem = GetComponentInChildren<ParticleSystem>();
         _damagePoint = GetComponentInChildren<DamagePointWallSlicerMover>();
