@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(CellsDestroyer))]
-public class StickmanSlicer : SlicerType1
+public class StickmanSlicer : Slicer
 {
     private CellsDestroyer _cellsDestroyer;
 

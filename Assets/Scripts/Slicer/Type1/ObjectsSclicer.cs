@@ -1,8 +1,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(MeshCollider))]
 [RequireComponent(typeof(CellsDestroyer))]
-public class ObjectsSclicer : SlicerType1
+public class ObjectsSclicer : Slicer
 {
     private MeshCollider _collider;
     private MeshRenderer _meshRenderer;
