@@ -12,35 +12,34 @@ public class EnemyMover : MonoBehaviour
     private bool _onTargetPosition = false;
 
     private const float Speed = 8f;
-    private const int Multiply = 10;
-    private const float Duration = 0.2f;
+    private const float Duration = 0.5f;
 
     private void OnEnable()
     {
         _targetPosition = GetPosition();
+        LookAtDirection(_targetPosition);
+
         _direction = Random.Range(0, 2);
     }
 
     private void Update()
     {
-        Move();
+        TryMove();
     }
 
-    private void Move()
+    private void TryMove()
     {
-        Vector3 targetLookPoint;
-
         if (_onTargetPosition)
         {
             _onTargetPosition = false;
             _targetPosition = GetPosition();
-            targetLookPoint = transform.localPosition + _targetPosition * Multiply;
-            LookAtPoint(targetLookPoint);
+
+            LookAtDirection(_targetPosition);
         }
 
-        transform.localPosition = Vector3.MoveTowards(transform.localPosition, _targetPosition, Speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, _targetPosition, Speed * Time.deltaTime);
 
-        if (transform.localPosition == _targetPosition)
+        if (transform.position == _targetPosition)
             _onTargetPosition = true;
     }
 
@@ -50,16 +49,15 @@ public class EnemyMover : MonoBehaviour
         _direction++;
 
         if(_direction % 2 == 0)
-            targetPosition = new Vector3(_wayPoint1.localPosition.x, transform.localPosition.y, transform.localPosition.z);
+            targetPosition = _wayPoint1.position;
         else
-            targetPosition = new Vector3(_wayPoint2.localPosition.x, transform.localPosition.y, transform.localPosition.z);
+            targetPosition = _wayPoint2.position;
 
         return targetPosition;
     }
 
-    private void LookAtPoint(Vector3 target)
+    private void LookAtDirection(Vector3 target)
     {
         var tweeLookAtPoint = transform.DOLookAt(target, Duration);
-        tweeLookAtPoint.SetEase(Ease.InOutSine);
     }
 }
