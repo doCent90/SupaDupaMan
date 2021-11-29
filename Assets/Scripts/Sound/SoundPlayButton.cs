@@ -8,9 +8,14 @@ public class SoundPlayButton : MonoBehaviour
 
     private void OnEnable()
     {
-        _buttons = GetComponentInParent<ButtonsUI>();
+        _buttons = GetComponentInChildren<ButtonsUI>();
 
         _buttons.Clicked += Play;
+    }
+
+    private void OnDisable()
+    {
+        _buttons.Clicked -= Play;
     }
 
     private void Play()

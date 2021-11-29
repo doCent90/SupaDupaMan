@@ -1,15 +1,24 @@
-public class SoundsEnemy : SoundsPlaying
+using UnityEngine;
+
+public class SoundsEnemy : MonoBehaviour
 {
+    [SerializeField] private AudioSource _soundDeath;
+
     private Enemy _enemy;
 
     private void OnEnable()
     {
-        _enemy = GetComponentInParent<Enemy>();
-        _enemy.Died += Death;
+        _enemy = GetComponent<Enemy>();
+        _enemy.Died += OnDied;
     }
 
     private void OnDisable()
     {
-        _enemy.Died -= Death;
+        _enemy.Died -= OnDied;
+    }
+
+    private void OnDied()
+    {
+        _soundDeath.Play();
     }
 }

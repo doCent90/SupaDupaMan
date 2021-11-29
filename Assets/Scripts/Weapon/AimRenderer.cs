@@ -74,7 +74,7 @@ public class AimRenderer : MonoBehaviour
                     RotateAtNormal(hit, spriteRenderer, _red);
                 else if (hit.collider.TryGetComponent(out Enemy enemy))
                     RotateAtLook(spriteRenderer, _red);
-                else if (hit.collider.TryGetComponent(out ObjectsSclicer objectSliced))
+                else if (hit.collider.TryGetComponent(out ObjectsSlicer objectSliced))
                     RotateAtLook(spriteRenderer, _red);
                 else if(hit.collider.TryGetComponent(out Platform platform))
                     RotateAtNormal(hit, spriteRenderer, _green);

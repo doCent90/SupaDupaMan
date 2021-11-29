@@ -44,6 +44,7 @@ public class ButtonsUI : MonoBehaviour
     public void TapToStart()
     {
         StartButtonClicked?.Invoke();
+        Clicked?.Invoke();
     }
 
     public void StartCurrentLevel()
@@ -54,12 +55,12 @@ public class ButtonsUI : MonoBehaviour
     public void Continue()
     {
         ContinueButtonClicked?.Invoke();
+        Clicked?.Invoke();
     }
 
     public void NextLevel()
     {
         _loadLevel.LoadNext();
-        Clicked?.Invoke();
 
         _isLevelDone = true;
 

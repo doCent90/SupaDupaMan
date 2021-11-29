@@ -92,7 +92,7 @@ public class ObjectsSelector : MonoBehaviour
 
     private void TryDestroyObject(RaycastHit hit)
     {
-        if (hit.collider.TryGetComponent(out ObjectsSclicer objectSliced))
+        if (hit.collider.TryGetComponent(out ObjectsSlicer objectSliced))
             objectSliced.TakeDamage();
     }
 

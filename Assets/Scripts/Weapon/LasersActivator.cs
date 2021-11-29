@@ -16,7 +16,7 @@ public class LasersActivator : MonoBehaviour
     private LaserRenderer2 _laserPrefab2;
     private PlayerMover _playerMover;
     private WallSlicer[] _wallsSlicer2;
-    private ObjectsSclicer[] _objectsScliced;
+    private ObjectsSlicer[] _objectsScliced;
 
     private const float Delay = 0.6f;
 
@@ -34,7 +34,7 @@ public class LasersActivator : MonoBehaviour
         _enemies = FindObjectsOfType<Enemy>();
         _wallsSlicer2 = FindObjectsOfType<WallSlicer>();
         _playerMover = GetComponentInParent<PlayerMover>();
-        _objectsScliced = FindObjectsOfType<ObjectsSclicer>();
+        _objectsScliced = FindObjectsOfType<ObjectsSlicer>();
 
         ReadyToAttacked?.Invoke(true);
 

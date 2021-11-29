@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 [RequireComponent(typeof(MeshCollider))]
 [RequireComponent(typeof(CellsDestroyer))]
-public class ObjectsSclicer : Slicer
+public class ObjectsSlicer : Slicer
 {
     private MeshCollider _collider;
     private MeshRenderer _meshRenderer;
