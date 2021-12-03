@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(ComponentHandler))]
 public class StartGame : MonoBehaviour
 {
-    [SerializeField] private ComponentHandler _componentHandler;
 
     private Player _player;
     private PlayerMover _playerMover;
     private ObjectsSelector _objectsSelector;
+    private ComponentHandler _componentHandler;
     private Dictionary<string, int> _gameStart = new Dictionary<string, int>();
     private Dictionary<string, int> _daysInGame = new Dictionary<string, int>();
     private Dictionary<string, string> _registrationDay = new Dictionary<string, string>();
@@ -43,9 +44,8 @@ public class StartGame : MonoBehaviour
     {
         //PlayerPrefs.SetInt(Coins, 5000);
         //Debug.Log("Added Coins Default");
-        if (_componentHandler == null)
-            throw new InvalidOperationException();
 
+        _componentHandler = GetComponent<ComponentHandler>();
         _player = _componentHandler.Player;
         _playerMover = _player.GetComponent<PlayerMover>();
         _objectsSelector = _player.GetComponentInChildren<ObjectsSelector>();

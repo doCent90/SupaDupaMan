@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     private PlayerMover _mover;
     private StartGame _startGame;
     private PlayerRotater _rotater;
+    private EndLevelFyPoint _endLevelFyPoint;
     private ObjectsSelector _objectsSelector;
 
     private void Awake()
@@ -19,6 +20,8 @@ public class Player : MonoBehaviour
             throw new InvalidOperationException();
 
         _gameWin = _componentHandler.GameWin;
+        _endLevelFyPoint = _componentHandler.EndLevelFyPoint;
+
         _mover = GetComponent<PlayerMover>();
         _rotater = GetComponent<PlayerRotater>();
         _startGame = _componentHandler.StartGame;
@@ -43,7 +46,7 @@ public class Player : MonoBehaviour
 
     private void OnGameWon()
     {
-        _mover.LookAtFinish(_gameWin.transform);
+        _mover.LookAtFinish(_endLevelFyPoint.transform);
         _objectsSelector.enabled = false;
         _rotater.enabled = false;
     }
