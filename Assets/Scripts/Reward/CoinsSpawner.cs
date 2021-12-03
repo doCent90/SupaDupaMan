@@ -1,9 +1,14 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CoinsSpawner : MonoBehaviour
 {
+    [SerializeField] private ComponentHandler _componentHandler;
     [SerializeField] private Coin _coinPrefab;
+
+    private CoinScaler _coinScaler;
 
     private const float Delay = 0.1f;
     private const int CountCoinsMin = 10;
@@ -15,6 +20,14 @@ public class CoinsSpawner : MonoBehaviour
         StartCoroutine(Spawn(enemyGigant));
     }
 
+    private void Awake()
+    {
+        if (_componentHandler == null)
+            throw new InvalidOperationException();
+
+        _coinScaler = _componentHandler.UI.GetComponentInChildren<CoinScaler>();
+    }
+
     private IEnumerator Spawn(EnemyGigant enemyGigant)
     {
         var waitForSeconds = new WaitForSeconds(Delay);
@@ -23,6 +36,7 @@ public class CoinsSpawner : MonoBehaviour
         for (int i = 0; i < randomCount; i++)
         {
             var coin = Instantiate(_coinPrefab, RandomSpawnPosition(enemyGigant), Quaternion.identity);
+            coin.Init(_coinScaler);
 
             yield return waitForSeconds;
         }

@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.Events;
 using DG.Tweening;
+using System;
 
 public class PlayerRotater : MonoBehaviour
 {
+    [SerializeField] private ComponentHandler _componentHandler;
+
     private Enemy[] _enemies;
 
     private Vector3 _originalPosition;
@@ -39,9 +42,12 @@ public class PlayerRotater : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    private void Awake()
     {
-        _enemies = FindObjectsOfType<Enemy>();
+        if (_componentHandler == null)
+            throw new InvalidOperationException();
+
+        _enemies = _componentHandler.Enemies.GetComponentsInChildren<Enemy>();
     }
 
     private void Update()

@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Enemy))]
 [RequireComponent(typeof(Animator))]
 public class EnemyAnimator : MonoBehaviour
 {
+    [SerializeField] private ComponentHandler _componentHandler;
+
     private Enemy _enemy;
     private Animator _animator;
     private StartGame _startGame;
@@ -11,11 +14,14 @@ public class EnemyAnimator : MonoBehaviour
     private const string Run = "Run";
     private const string TakeDamage = "TakeDamage";
 
-    private void OnEnable()
+    private void Awake()
     {
+        if (_componentHandler == null)
+            throw new InvalidOperationException();
+
         _enemy = GetComponent<Enemy>();
         _animator = GetComponent<Animator>();
-        _startGame = FindObjectOfType<StartGame>();
+        _startGame = _componentHandler.StartGame;
 
         _startGame.Started += OnStarted;
         _enemy.Damaged += OnDamageTaked;

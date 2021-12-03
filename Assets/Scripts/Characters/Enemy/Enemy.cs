@@ -1,15 +1,14 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(EnemyMover))]
-[RequireComponent(typeof(EnemyAnimator))]
 [RequireComponent(typeof(CapsuleCollider))]
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] private ComponentHandler _componentHandler;
     [SerializeField] private Material _dieMaterial;
 
-    [SerializeField]
-    [Tooltip("If this Enemy is Last (Boss)")]
     private bool _isGigant;
 
     private EnemyMover _mover;
@@ -100,10 +99,18 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    private void Awake()
     {
+        if (_componentHandler == null)
+            throw new InvalidOperationException();
+
+        if (GetComponent<EnemyGigant>())
+            _isGigant = true;
+        else
+            _isGigant = false;
+
         _mover = GetComponent<EnemyMover>();
-        _startGame = FindObjectOfType<StartGame>();
+        _startGame = _componentHandler.StartGame;
         _capsuleCollider = GetComponent<CapsuleCollider>();
         _slicedRegDoll = GetComponentInChildren<SlicedRegDoll>();
         _shotPoint = GetComponentInChildren<ShotPointCharacter>();

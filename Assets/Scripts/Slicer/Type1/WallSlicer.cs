@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(CellsDestroyer))]
 public class WallSlicer : Slicer
 {
     private BoxCollider _boxCollider;

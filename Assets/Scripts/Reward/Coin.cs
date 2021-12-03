@@ -9,10 +9,10 @@ public class Coin : MonoBehaviour
     private const float Duration = 1f;
     private const float CanvasSize = 0.15f;
 
-    private void OnEnable()
+    public void Init(CoinScaler coinScaler)
     {
-        _scorePosition = FindObjectOfType<ScoreCoinPlace>().transform;
-        _coinScaler = FindObjectOfType<CoinScaler>();
+        _coinScaler = coinScaler;
+        _scorePosition = _coinScaler.GetComponent<ScoreCoinPlace>().transform;
 
         Rotate();
         Move();

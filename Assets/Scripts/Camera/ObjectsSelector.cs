@@ -1,13 +1,15 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(AimRenderer))]
 public class ObjectsSelector : MonoBehaviour
 {
-    [SerializeField] private LasersActivator _laser;
+    [SerializeField] private ComponentHandler _componentHandler;
 
     private SpriteRenderer _spriteRenderer;
     private PlayerMover _playerMover;
     private AimRenderer _aimRenderer;
+    private LasersActivator _laser;
     private AimMain _aimMain;
     private GameWin _gameWin;
 
@@ -15,19 +17,29 @@ public class ObjectsSelector : MonoBehaviour
 
     public readonly float MaxLength = 60f;
 
-    private void OnEnable()
+    private void Awake()
     {
-        _gameWin = FindObjectOfType<GameWin>();
+        if (_componentHandler == null)
+            throw new InvalidOperationException();
+
+        _gameWin = _componentHandler.GameWin;
         _aimRenderer = GetComponent<AimRenderer>();
         _aimMain = GetComponentInChildren<AimMain>();
         _playerMover = GetComponentInParent<PlayerMover>();
         _spriteRenderer = _aimMain.GetComponent<SpriteRenderer>();
+        _laser = _componentHandler.Player.GetComponentInChildren<LasersActivator>();
 
         _aimRenderer.enabled = true;
 
         _playerMover.Moved += OnMoved;
         _laser.Fired += OnLaserFired;
         _gameWin.Won += OnWonGame;
+    }
+
+    private void OnEnable()
+    {
+        if(_aimRenderer != null)
+            _aimRenderer.enabled = true;        
     }
 
     private void OnDisable()
@@ -100,9 +112,7 @@ public class ObjectsSelector : MonoBehaviour
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, MaxLength))
-        {
             return hit;
-        }
         else
             return hit;
     }

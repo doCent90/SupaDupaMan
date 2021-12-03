@@ -1,21 +1,27 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerMover))]
 [RequireComponent(typeof(PlayerRotater))]
 public class Player : MonoBehaviour
 {
+    [SerializeField] private ComponentHandler _componentHandler;
+
     private GameWin _gameWin;
     private PlayerMover _mover;
     private StartGame _startGame;
     private PlayerRotater _rotater;
     private ObjectsSelector _objectsSelector;
 
-    private void OnEnable()
+    private void Awake()
     {
+        if (_componentHandler == null)
+            throw new InvalidOperationException();
+
+        _gameWin = _componentHandler.GameWin;
         _mover = GetComponent<PlayerMover>();
-        _gameWin = FindObjectOfType<GameWin>();
         _rotater = GetComponent<PlayerRotater>();
-        _startGame = FindObjectOfType<StartGame>();
+        _startGame = _componentHandler.StartGame;
         _objectsSelector = GetComponentInChildren<ObjectsSelector>();
 
         _startGame.Started += OnStarted;

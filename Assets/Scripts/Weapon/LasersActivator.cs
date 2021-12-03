@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public class LasersActivator : MonoBehaviour
 {
+    [SerializeField] private ComponentHandler _componentHandler;
     [Header("Standart Lsaer")]
     [SerializeField] LaserRenderer2 _standartLaser;
     [Header("Settings of Shot")]
@@ -15,7 +16,7 @@ public class LasersActivator : MonoBehaviour
     private LaserRenderer2 _laserPrefab1;
     private LaserRenderer2 _laserPrefab2;
     private PlayerMover _playerMover;
-    private WallSlicer[] _wallsSlicer2;
+    private WallSlicer[] _wallsSlicer;
     private ObjectsSlicer[] _objectsScliced;
 
     private const float Delay = 0.6f;
@@ -29,12 +30,12 @@ public class LasersActivator : MonoBehaviour
         _currentLaser = laser;
     }
 
-    private void OnEnable()
+    private void Awake()
     {
-        _enemies = FindObjectsOfType<Enemy>();
-        _wallsSlicer2 = FindObjectsOfType<WallSlicer>();
         _playerMover = GetComponentInParent<PlayerMover>();
-        _objectsScliced = FindObjectsOfType<ObjectsSlicer>();
+        _enemies = _componentHandler.Enemies.GetComponentsInChildren<Enemy>();
+        _wallsSlicer = _componentHandler.Environments.GetComponentsInChildren<WallSlicer>();
+        _objectsScliced = _componentHandler.Environments.GetComponentsInChildren<ObjectsSlicer>();
 
         ReadyToAttacked?.Invoke(true);
 
@@ -44,7 +45,7 @@ public class LasersActivator : MonoBehaviour
             prop.Destroyed += Stop;
         }
 
-        foreach (var wall in _wallsSlicer2)
+        foreach (var wall in _wallsSlicer)
         {
             wall.ApplyDamage += Attack;
             wall.Destroyed += Stop;
@@ -68,7 +69,7 @@ public class LasersActivator : MonoBehaviour
             prop.Destroyed -= Stop;
         }
 
-        foreach (var wall in _wallsSlicer2)
+        foreach (var wall in _wallsSlicer)
         {
             wall.ApplyDamage -= Attack;
             wall.Destroyed -= Stop;

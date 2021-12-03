@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerMover))]
 public class SoundsPlayer : MonoBehaviour
 {
     [SerializeField] private AudioSource _soundShot;
@@ -8,7 +9,7 @@ public class SoundsPlayer : MonoBehaviour
     private PlayerMover _player;
     private LasersActivator _attack;
 
-    private void Start()
+    private void Awake()
     {
         _player = GetComponent<PlayerMover>();
         _attack = GetComponentInChildren<LasersActivator>();

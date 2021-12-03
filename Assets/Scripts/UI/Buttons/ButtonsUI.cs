@@ -2,9 +2,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using System.Collections.Generic;
+using System;
 
 public class ButtonsUI : MonoBehaviour
-{    
+{
+    [SerializeField] private ComponentHandler _componentHandler;
     [Header("Shop")]
     [SerializeField] private Button _openShop;
     [SerializeField] private Button _closeShop;
@@ -150,13 +152,16 @@ public class ButtonsUI : MonoBehaviour
         Clicked?.Invoke();
     }
 
-    private void OnEnable()
+    private void Awake()
     {
-        _game = FindObjectOfType<StartGame>();
-        _loadLevel = FindObjectOfType<LevelsLoader>();
-        _playerRotater = FindObjectOfType<PlayerRotater>();
-        _soundMaster = FindObjectOfType<SoundsFXSettings>();
-        _coinsViewer = FindObjectOfType<CurrentCoinsViewer>();
+        if (_componentHandler == null)
+            throw new InvalidOperationException();
+
+        _game = _componentHandler.StartGame;
+        _loadLevel = _componentHandler.LevelsLoader;
+        _soundMaster = _componentHandler.SoundsFXSettings;
+        _coinsViewer = GetComponentInChildren<CurrentCoinsViewer>();
+        _playerRotater = _componentHandler.Player.GetComponent<PlayerRotater>();
 
         Init();
     }

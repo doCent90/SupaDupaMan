@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 
+[RequireComponent(typeof(TMP_Text))]
 public class TotalCoinsViewer : MonoBehaviour
 {
     private TMP_Text _totalcoinsText;

@@ -1,11 +1,11 @@
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
 using DG.Tweening;
+using System;
 
 [RequireComponent(typeof(ButtonsUI))]
 public class ButtonsAnimator : MonoBehaviour
 {
+    [SerializeField] private ComponentHandler _componentHandler;
     [SerializeField] private RectTransform _start;
     [SerializeField] private RectTransform _continue;
 
@@ -16,10 +16,13 @@ public class ButtonsAnimator : MonoBehaviour
 
     private const float Duration = 1f;
 
-    private void OnEnable()
+    private void Awake()
     {
+        if (_componentHandler == null)
+            throw new InvalidOperationException();
+
+        _gameWin = _componentHandler.GameWin;
         _buttonsUI = GetComponent<ButtonsUI>();
-        _gameWin = FindObjectOfType<GameWin>();
 
         _startPosition = _start.localPosition;
         _backPosition = _continue.localPosition;

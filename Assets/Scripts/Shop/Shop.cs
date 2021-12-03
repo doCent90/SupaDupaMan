@@ -1,8 +1,9 @@
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
+    [SerializeField] private ComponentHandler _componentHandler;
     [SerializeField] private GameObject _itemContainer;
     [Header("Lasers In Shop")]
     [SerializeField] private LaserRenderer2[] _lasers;
@@ -16,9 +17,12 @@ public class Shop : MonoBehaviour
 
     private const string Coins = "Coins";
 
-    private void OnEnable()
+    private void Awake()
     {
-        _player = FindObjectOfType<Player>();
+        if (_componentHandler == null)
+            throw new InvalidOperationException();
+
+        _player = _componentHandler.Player;
         _coinsViewer = GetComponentInChildren<TotalCoinsViewer>();
         _lasersActivator = _player.GetComponentInChildren<LasersActivator>();
         _totalCurrentCoins = PlayerPrefs.GetInt(Coins);

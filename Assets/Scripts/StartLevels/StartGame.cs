@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class StartGame : MonoBehaviour
 {
+    [SerializeField] private ComponentHandler _componentHandler;
+
     private Player _player;
     private PlayerMover _playerMover;
     private ObjectsSelector _objectsSelector;
@@ -37,12 +39,14 @@ public class StartGame : MonoBehaviour
         _objectsSelector.enabled = true;
     }
 
-    private void OnEnable()
+    private void Awake()
     {
-        PlayerPrefs.SetInt(Coins, 5000);
-        Debug.Log("Added Coins Default");
+        //PlayerPrefs.SetInt(Coins, 5000);
+        //Debug.Log("Added Coins Default");
+        if (_componentHandler == null)
+            throw new InvalidOperationException();
 
-        _player = FindObjectOfType<Player>();
+        _player = _componentHandler.Player;
         _playerMover = _player.GetComponent<PlayerMover>();
         _objectsSelector = _player.GetComponentInChildren<ObjectsSelector>();
     }

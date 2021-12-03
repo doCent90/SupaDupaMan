@@ -14,8 +14,6 @@ public class DamagePointWallSlicerMover : MonoBehaviour
     private bool _isReady = false;
     private int _direction;
 
-    private const float Positive = 1f;
-    private const float Negative = -1f;
     private const float UpEdgeWall = -0.5f;
 
     public void Init()

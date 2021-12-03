@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class PanelsAnimator : MonoBehaviour
 {
+    [SerializeField] private ComponentHandler _componentHandler;
     [SerializeField] private Button _tapToStart;
 
     private Shop _shop;
@@ -19,7 +20,7 @@ public class PanelsAnimator : MonoBehaviour
     private const float FullAlpha = 1f;
     private const float ZeroAlpha = 0;
 
-    private void OnEnable()
+    private void Awake()
     {
         _youWinText = GetComponentInChildren<YouWin>();
         _youWinPanel = _youWinText.GetComponent<CanvasGroup>();
@@ -30,7 +31,7 @@ public class PanelsAnimator : MonoBehaviour
         _settings = GetComponentInChildren<SettingsPanel>();
         _settingsPanel = _settings.GetComponent<CanvasGroup>();
 
-        _gameWin = FindObjectOfType<GameWin>();
+        _gameWin = _componentHandler.GameWin;
         _buttonsUI = GetComponentInChildren<ButtonsUI>();
 
         _gameWin.Won += OnGameWon;

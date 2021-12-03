@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Enemy))]
 public class SoundsEnemy : MonoBehaviour
 {
     [SerializeField] private AudioSource _soundDeath;

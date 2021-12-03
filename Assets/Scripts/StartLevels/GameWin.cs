@@ -1,9 +1,10 @@
 using UnityEngine;
-using DG.Tweening;
 using UnityEngine.Events;
 
 public class GameWin : MonoBehaviour
 {
+    [SerializeField] private ComponentHandler _componentHandler;
+
     private Enemy _enemy;
     private EnemyGigant _enemyGigant;
 
@@ -11,7 +12,7 @@ public class GameWin : MonoBehaviour
 
     private void OnEnable()
     {
-        _enemyGigant = FindObjectOfType<EnemyGigant>();
+        _enemyGigant = _componentHandler.Enemies.GetComponentInChildren<EnemyGigant>();
         _enemy = _enemyGigant.GetComponent<Enemy>();
 
         _enemy.Died += OnEnemysDied;

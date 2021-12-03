@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(MeshCollider))]
+[RequireComponent(typeof(MeshRenderer))]
 [RequireComponent(typeof(CellsDestroyer))]
 public class ObjectsSlicer : Slicer
 {

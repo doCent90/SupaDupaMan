@@ -34,8 +34,9 @@ public class LaserView : MonoBehaviour
 
     private void OnEnable()
     {
-        _priceText = GetComponentInChildren<TMP_Text>();
         _sellButton = GetComponent<Button>();
+        _priceText = GetComponentInChildren<TMP_Text>();
+
         _sellButton.onClick.AddListener(OnButtonClick);
     }
 

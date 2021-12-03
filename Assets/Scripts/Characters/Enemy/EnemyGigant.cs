@@ -7,7 +7,7 @@ public class EnemyGigant : MonoBehaviour
     private Enemy[] _smallAliveEnemies;
     private CapsuleCollider _capsuleCollider;
 
-    private void OnEnable()
+    private void Start()
     {
         var enemies = FindObjectsOfType<Enemy>();
         _capsuleCollider = GetComponent<CapsuleCollider>();

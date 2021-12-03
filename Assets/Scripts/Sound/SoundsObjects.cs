@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(ObjectsSlicer))]
 public class SoundsObjects : MonoBehaviour
 {
     [SerializeField] private AudioSource _soundBoom;

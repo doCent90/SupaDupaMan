@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(AimAnimator))]
 [RequireComponent(typeof(ObjectsSelector))]
 public class AimRenderer : MonoBehaviour
 {
+    [SerializeField] private ComponentHandler _componentHandler;
+
     private AimMain _mainPrefab;
     private LasersActivator _laser;
     private PlayerRotater _playerRotater;
@@ -22,13 +23,13 @@ public class AimRenderer : MonoBehaviour
     public event UnityAction<bool> MainEnabled;
     public event UnityAction<bool> OutOfRangeEnabled;
 
-    private void OnEnable()
+    private void Awake()
     {
-        _laser = FindObjectOfType<LasersActivator>();
         _mainPrefab = GetComponentInChildren<AimMain>();
         _objectsSelector = GetComponent<ObjectsSelector>();
         _playerRotater = GetComponentInParent<PlayerRotater>();
         _outOfViewPrefab = GetComponentInChildren<AimOutOfRangeView>();
+        _laser = _componentHandler.Player.GetComponentInChildren<LasersActivator>();
 
         _maxLength = _objectsSelector.MaxLength;
         _playerRotater.Rotated += OnPlayerRotated;

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(WallSlicer))]
 public class SoundsWall : MonoBehaviour
 {
     [SerializeField] private AudioSource _soundBoom;
