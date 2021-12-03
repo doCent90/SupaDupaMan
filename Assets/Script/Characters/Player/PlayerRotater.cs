@@ -17,7 +17,7 @@ public class PlayerRotater : MonoBehaviour
     private const float Duration = 0.25f;
     private const float Distance = 65f;
     private const float Range = 60f;
-    private const float Multiply = 3f;
+    private const float Multiply = 2f;
 
     public event UnityAction<bool> Rotated;
 
