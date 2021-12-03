@@ -287,6 +287,7 @@ GameObject:
   - component: {fileID: 943402033}
   - component: {fileID: 943402035}
   - component: {fileID: 943402036}
+  - component: {fileID: 943402037}
   m_Layer: 0
   m_Name: GameData
   m_TagString: Untagged
@@ -352,6 +353,18 @@ MonoBehaviour:
   _environments: {fileID: 323422050}
   _endLevelFyPoint: {fileID: 173427772}
   _soundsFXSettings: {fileID: 1511204758}
+--- !u!114 &943402037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943402032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f83a2889f11b2049ad2885ed6322181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1187186529
 GameObject:
   m_ObjectHideFlags: 0
