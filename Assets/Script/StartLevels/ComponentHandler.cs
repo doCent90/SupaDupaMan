@@ -18,15 +18,15 @@ public class ComponentHandler : MonoBehaviour
     private LevelsLoader _levelsLoader;
 
     public UI UI => _uI;
-    public Player Player => _player;
-    public Camera Camera => _camera;
-    public GameWin GameWin => _gameWin;
-    public Enemies Enemies => _enemies;
-    public StartGame StartGame => _startGame;
-    public LevelsLoader LevelsLoader => _levelsLoader;
-    public Environments Environments => _environments;
-    public EndLevelFyPoint EndLevelFyPoint => _endLevelFyPoint;
-    public SoundsFXSettings SoundsFXSettings => _soundsFXSettings;
+    public Player Player { get; private set; }
+    public Camera Camera { get; private set; }
+    public GameWin GameWin { get; private set; }
+    public Enemies Enemies { get; private set; }
+    public StartGame StartGame { get; private set; }
+    public LevelsLoader LevelsLoader { get; private set; }
+    public Environments Environments { get; private set; }
+    public EndLevelFyPoint EndLevelFyPoint { get; private set; }
+    public SoundsFXSettings SoundsFXSettings { get; private set; }
 
 
     private void OnEnable()
@@ -34,6 +34,16 @@ public class ComponentHandler : MonoBehaviour
         _gameWin = GetComponent<GameWin>();
         _startGame = GetComponent<StartGame>();
         _levelsLoader = GetComponent<LevelsLoader>();
+
+        Player = _player;
+        Camera = _camera;
+        GameWin = _gameWin;
+        Enemies = _enemies;
+        StartGame = _startGame;
+        LevelsLoader = _levelsLoader;
+        Environments = _environments;
+        EndLevelFyPoint = _endLevelFyPoint;
+        SoundsFXSettings = _soundsFXSettings;
     }
 }
 
