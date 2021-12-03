@@ -137,7 +137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 173427773}
-  - component: {fileID: 173427774}
+  - component: {fileID: 173427772}
   m_Layer: 0
   m_Name: EndLevel_ViewPoint
   m_TagString: Untagged
@@ -145,6 +145,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &173427772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173427771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f83737832f6fe04b8bd5f1192054845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &173427773
 Transform:
   m_ObjectHideFlags: 0
@@ -157,21 +169,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -58.33, y: 28.83, z: 0}
---- !u!114 &173427774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173427771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f83a2889f11b2049ad2885ed6322181, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _componentHandler: {fileID: 943402036}
 --- !u!114 &323422050 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5131137097059665840, guid: 1fe16df9a5e5bb3458507e90bfcdffb2, type: 3}
@@ -334,7 +333,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa9fa5a945cd1934aaa604e0856b9e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentHandler: {fileID: 943402036}
 --- !u!114 &943402036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,9 +348,9 @@ MonoBehaviour:
   _uI: {fileID: 804612501}
   _player: {fileID: 682461103}
   _camera: {fileID: 11937059}
-  _gameWin: {fileID: 173427774}
   _enemies: {fileID: 1649336169}
   _environments: {fileID: 323422050}
+  _endLevelFyPoint: {fileID: 173427772}
   _soundsFXSettings: {fileID: 1511204758}
 --- !u!1 &1187186529
 GameObject:
@@ -439,7 +437,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1630894917
 PrefabInstance:
@@ -578,7 +576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8953673466499273708, guid: 83e2bb5de04f31348919cda15dcfadac, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8953673466499273708, guid: 83e2bb5de04f31348919cda15dcfadac, type: 3}
       propertyPath: m_AnchorMax.x
@@ -966,7 +964,7 @@ PrefabInstance:
       objectReference: {fileID: 943402036}
     - target: {fileID: 5835913480948791075, guid: 4bc03db68c5e22643899dba07c625306, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5835913480948791075, guid: 4bc03db68c5e22643899dba07c625306, type: 3}
       propertyPath: m_LocalPosition.x
