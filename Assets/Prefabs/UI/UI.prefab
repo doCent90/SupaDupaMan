@@ -8214,7 +8214,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.11789583}
   m_AnchorMax: {x: 0.5, y: 0.11789583}
-  m_AnchoredPosition: {x: 0, y: -1335}
+  m_AnchoredPosition: {x: 0, y: -1335.0001}
   m_SizeDelta: {x: 583.4, y: 206.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8953673465938778706
@@ -8455,7 +8455,6 @@ GameObject:
   - component: {fileID: 8953673466499273709}
   - component: {fileID: 8953673466499273706}
   - component: {fileID: 8953673466499273707}
-  - component: {fileID: 9089360114889300276}
   - component: {fileID: 1515073018888698880}
   - component: {fileID: 390294563781691099}
   - component: {fileID: 3388923003001219807}
@@ -8552,18 +8551,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &9089360114889300276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8953673466499273704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 283016f37050168479210d487426e1e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1515073018888698880
 MonoBehaviour:
   m_ObjectHideFlags: 0
