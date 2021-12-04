@@ -223,7 +223,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0380fbc292c20e44d91fa75f3e6d07cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentHandler: {fileID: 0}
+  _gameWin: {fileID: 0}
+  _startGame: {fileID: 0}
+  _endLevelFyPoint: {fileID: 0}
 --- !u!114 &5883864394105723289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,7 +250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36ca3f1fc1823d24a8eb11c9d5e77560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentHandler: {fileID: 0}
 --- !u!114 &5342702801936548387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,7 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35d2cb9dcc080a4459c335d26ba4d75e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentHandler: {fileID: 0}
+  _gameWin: {fileID: 0}
 --- !u!114 &2907619330762936804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,7 +367,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa062d4c2ebc55b4b98c7741c03fd6c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentHandler: {fileID: 0}
+  _laser: {fileID: 5842650130304189262}
+  _gameWin: {fileID: 0}
 --- !u!114 &4064003847254524796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,7 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e06ae488abd7649975a8ee20df7885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentHandler: {fileID: 0}
+  _laser: {fileID: 5842650130304189262}
 --- !u!114 &2828067265669170045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -680,7 +682,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d5ab1ff74487804b9d95af466184365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentHandler: {fileID: 0}
   _standartLaser: {fileID: 114339581892737702, guid: 647941694c90d4d4eb132695664de652, type: 3}
   _shootPosition1: {fileID: 7932518099513012876}
   _shootPosition2: {fileID: 5589049762238730954}

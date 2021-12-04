@@ -5223,8 +5223,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc2e3d38a625a844895091650dc3e1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentHandler: {fileID: 0}
   _coinPrefab: {fileID: -3097822159196171853, guid: 7ff13cef62df1674db7ffeda9390ffe7, type: 3}
+  _coinScaler: {fileID: 6986937792297846398}
 --- !u!114 &8436981223446112978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5249,7 +5249,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72342dea89bdbff40b67dff5eec17bd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentHandler: {fileID: 0}
 --- !u!1 &278884973991837919
 GameObject:
   m_ObjectHideFlags: 0
@@ -7075,7 +7074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5021139bc56624a49a7bdb83574ffeee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentHandler: {fileID: 0}
+  _player: {fileID: 0}
   _itemContainer: {fileID: 5901639223505048626}
   _lasers:
   - {fileID: 114657702856252536, guid: edd7286f469ea8f4b9055776dde1d063, type: 3}
@@ -8565,7 +8564,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283016f37050168479210d487426e1e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentHandler: {fileID: 0}
 --- !u!114 &1515073018888698880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8578,7 +8576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f18bd69ba298b274d89344e958e5d320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentHandler: {fileID: 0}
+  _gameWin: {fileID: 0}
   _tapToStart: {fileID: 8953673465668929553}
 --- !u!114 &390294563781691099
 MonoBehaviour:
@@ -8764,7 +8762,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 574ef96dfdb86e14699c337f9b95aab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentHandler: {fileID: 0}
+  _game: {fileID: 0}
+  _loadLevel: {fileID: 0}
+  _playerRotater: {fileID: 0}
+  _soundMaster: {fileID: 0}
   _openShop: {fileID: 4567671899041984884}
   _closeShop: {fileID: 5466325163510575374}
   _openOptions: {fileID: 8953673466030041297}
@@ -8783,7 +8784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f73ae588b0c2d6b45b0bfc88957ea02a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentHandler: {fileID: 0}
+  _gameWin: {fileID: 0}
   _start: {fileID: 8953673465668929566}
   _continue: {fileID: 8953673465938778705}
 --- !u!1 &8953673467256033428
