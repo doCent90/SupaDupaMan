@@ -20,18 +20,13 @@ public class ButtonsUI : MonoBehaviour
     [SerializeField] private Button _onSoundButton;
     [SerializeField] private Button _offSoundButton;
 
-    private Dictionary<string, int> _timeSpent = new Dictionary<string, int>();
-    private Dictionary<string, int> _levelComplete = new Dictionary<string, int>();
-
     private CurrentCoinsViewer _coinsViewer;
 
     private float _elapsedTime = 0;
     private bool _isLevelDone = false;
 
     private const string Level = "level";
-    private const string LevelComplete = "level_complete";
     private const string TimeGame = "time_spent";
-    private const string TimeSpent = "time_spent_lvl_complete";
 
     public bool IsPanelOpen { get; private set; } = false;
 
@@ -62,17 +57,10 @@ public class ButtonsUI : MonoBehaviour
     public void NextLevel()
     {
         _loadLevel.LoadNext();
-
         _isLevelDone = true;
 
-        _timeSpent.Add(TimeGame, (int)_elapsedTime);
-        _levelComplete.Add(Level, _loadLevel.Level);
-
-        IDictionary<string, int> timeSpent = _timeSpent;
-        //Amplitude.Instance.logEvent(TimeSpent, timeSpent);
-
-        IDictionary<string, int> levelComplete = _levelComplete;
-        //Amplitude.Instance.logEvent(LevelComplete, levelComplete);
+        SetAmplitudeValue(TimeGame, (int)_elapsedTime);
+        SetAmplitudeValue(Level, _loadLevel.Level);
     }
 
     public void OpenSettings()
@@ -164,6 +152,16 @@ public class ButtonsUI : MonoBehaviour
         _coinsViewer = GetComponentInChildren<CurrentCoinsViewer>();
 
         Init();
+    }
+
+    private void SetAmplitudeValue(string label, int value)
+    {
+        Dictionary<string, object> dictionary = new Dictionary<string, object>
+        {
+            {label, value.ToString()}
+        };
+
+        Amplitude.Instance.logEvent(label, dictionary);
     }
 
     private void Init()
