@@ -7,9 +7,6 @@ public class LevelsLoader : MonoBehaviour
 {
     [SerializeField] protected int _levelIndex;
 
-    private Dictionary<string, int> _levelStart = new Dictionary<string, int>();
-    private Dictionary<string, int> _levelLast = new Dictionary<string, int>();
-
     private const int FirstLevel = 1;
     private const string LevelDone = "LevelDone";
     private const string LastLevel = "last_level";
@@ -56,14 +53,18 @@ public class LevelsLoader : MonoBehaviour
         if (currentLevel > _levelIndex)
             LoadScene(currentLevel);
 
-        _levelStart.Add(LevelStart, currentLevel);
-        _levelLast.Add(LastLevel, currentLevel);
+        SetAmplitudeValue(LevelStart, currentLevel);
+        SetAmplitudeValue(LastLevel, currentLevel);
+    }
 
-        IDictionary<string, int> levelStart = _levelStart;
-        IDictionary<string, int> levelLast = _levelLast;
+    private void SetAmplitudeValue(string label, int value)
+    {
+        Dictionary<string, object> dictionary = new Dictionary<string, object>
+        {
+            {label, value.ToString()}
+        };
 
-        //Amplitude.Instance.logEvent(LevelStart, levelStart);
-        //Amplitude.Instance.logEvent(LastLevel, levelLast);
+        Amplitude.Instance.logEvent(label, dictionary);
     }
 
     private void LoadScene(int numberLevel)
