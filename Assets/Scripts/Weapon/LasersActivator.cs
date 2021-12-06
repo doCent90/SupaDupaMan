@@ -118,14 +118,17 @@ public class LasersActivator : MonoBehaviour
 
     private void Stop()
     {
-        _laserPrefab1.DisablePrepare();
-        _laserPrefab2.DisablePrepare();
+        if(_laserPrefab1 != null)
+        {
+            _laserPrefab1.DisablePrepare();
+            _laserPrefab2.DisablePrepare();
 
-        _playerMover.enabled = true;
-        Fired?.Invoke(false);
+            _playerMover.enabled = true;
+            Fired?.Invoke(false);
 
-        Destroy(_laserPrefab1.gameObject, Delay);
-        Destroy(_laserPrefab2.gameObject, Delay);
+            Destroy(_laserPrefab1.gameObject, Delay);
+            Destroy(_laserPrefab2.gameObject, Delay);
+        }
     }
 
     private void RotateShootPosition()

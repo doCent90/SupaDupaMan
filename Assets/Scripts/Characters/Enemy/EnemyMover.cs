@@ -5,6 +5,7 @@ public class EnemyMover : MonoBehaviour
 {
     [SerializeField] private Transform _wayPoint1;
     [SerializeField] private Transform _wayPoint2;
+    [SerializeField] private bool _isStanding = false;
 
     private Vector3 _targetPosition;
 
@@ -13,6 +14,8 @@ public class EnemyMover : MonoBehaviour
 
     private const float Speed = 2f;
     private const float Duration = 0.5f;
+
+    public bool IsStanding => _isStanding;
 
     private void OnEnable()
     {
@@ -24,7 +27,8 @@ public class EnemyMover : MonoBehaviour
 
     private void Update()
     {
-        TryMove();
+        if(!_isStanding)
+            TryMove();
     }
 
     private void TryMove()

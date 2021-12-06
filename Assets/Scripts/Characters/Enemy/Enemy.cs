@@ -47,6 +47,15 @@ public class Enemy : MonoBehaviour
         Damaged?.Invoke();
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.TryGetComponent(out Car car) && enabled)
+        {
+            _mover.enabled = false;
+            Die();
+        }
+    }
+
     private void Update()
     {
         if (!_isDamaged)

@@ -23,7 +23,7 @@ public class LaserRenderer2 : MonoBehaviour
 
     private float HitOffset = 0.1f;
     private const float laserScale = 1;
-    private const float MaxLength = 65f;
+    private const float MaxLength = 70f;
     private const string StartPoint = "_StartPoint";
     private const string Distance = "_Distance";
     private const string EndPoint = "_EndPoint";

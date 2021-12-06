@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(AimRenderer))]
 public class ObjectsSelector : MonoBehaviour
@@ -14,7 +15,9 @@ public class ObjectsSelector : MonoBehaviour
 
     private bool _isFire = false;
 
-    public readonly float MaxLength = 60f;
+    public readonly float MaxLength = 70f;
+
+    public event UnityAction RoadSelected;
 
     private void Awake()
     {
@@ -60,6 +63,8 @@ public class ObjectsSelector : MonoBehaviour
             else
             {
                 TryMove(hit);
+                TryMoveBuilding(hit);
+                TryFlyBuilding(hit);
                 TryDestroyEnemy(hit);
                 TryDestroyWall(hit);
                 TryDestroyObject(hit);
@@ -83,8 +88,28 @@ public class ObjectsSelector : MonoBehaviour
 
     private void TryMove(RaycastHit hit)
     {
-        if (hit.collider.TryGetComponent(out Platform platform))
+        if (hit.collider.TryGetComponent(out Platform platform) && platform.enabled)
+        {
+            RoadSelected?.Invoke();
             _playerMover.Move(hit.point);
+        }
+    }
+
+    private void TryMoveBuilding(RaycastHit hit)
+    {
+        if (hit.collider.TryGetComponent(out Building building) && building.IsPlayerOnBuilding)
+        {
+            _playerMover.Move(hit.point);
+        }
+    }
+
+    private void TryFlyBuilding(RaycastHit hit)
+    {
+        if (hit.collider.TryGetComponent(out Building building) && building.IsPlayerOnBuilding == false)
+        {
+            _playerMover.Fly(building.PointFirst.position);
+            building.OnBuildingSelect();
+        }
     }
 
     private void TryDestroyEnemy(RaycastHit hit)

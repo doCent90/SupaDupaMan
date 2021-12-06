@@ -75,11 +75,9 @@ public class AimRenderer : MonoBehaviour
 
                 if (hit.collider.TryGetComponent(out WallSlicer wall) && wall.enabled)
                     RotateAtNormal(hit, spriteRenderer, _red);
-                else if (hit.collider.TryGetComponent(out Enemy enemy))
+                else if (hit.collider.TryGetComponent(out Enemy enemy) || hit.collider.TryGetComponent(out ObjectsSlicer objectSliced))
                     RotateAtLook(spriteRenderer, _red);
-                else if (hit.collider.TryGetComponent(out ObjectsSlicer objectSliced))
-                    RotateAtLook(spriteRenderer, _red);
-                else if(hit.collider.TryGetComponent(out Platform platform))
+                else if(hit.collider.TryGetComponent(out Platform platform) || hit.collider.TryGetComponent(out Building building))
                     RotateAtNormal(hit, spriteRenderer, _green);
                 else if(hit.collider.TryGetComponent(out BaseGround baseGround))
                 {

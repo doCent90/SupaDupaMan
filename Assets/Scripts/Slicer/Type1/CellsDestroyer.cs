@@ -9,7 +9,7 @@ public class CellsDestroyer : MonoBehaviour
     private bool _isMeshesTrigger = false;
 
     private const float DelayDisable = 2f;
-    private const float DelayCollidersTriggerOn = 4f;
+    private const float DelayCollidersTriggerOn = 3f;
 
     private void OnEnable()
     {
