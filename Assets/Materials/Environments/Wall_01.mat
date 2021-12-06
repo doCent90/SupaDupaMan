@@ -150,9 +150,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
+    - _BaseColor: {r: 0.7264151, g: 0.40775186, b: 0.40775186, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorDim: {r: 0, g: 0.19544575, b: 0.5471698, a: 1}
+    - _ColorDim: {r: 0.4716981, g: 0.15797438, b: 0.16720155, a: 1}
     - _ColorDimCurve: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
     - _ColorDimExtra: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
     - _ColorDimSteps: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
@@ -163,7 +163,7 @@ Material:
     - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
     - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _UnityShadowColor: {r: 0.0990566, g: 0.353066, b: 1, a: 1}
+    - _UnityShadowColor: {r: 0.49056602, g: 0.17922828, b: 0.13652545, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &8677182698554354953
 MonoBehaviour:
