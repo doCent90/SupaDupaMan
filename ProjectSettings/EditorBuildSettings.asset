@@ -78,6 +78,12 @@ EditorBuildSettings:
     path: Assets/FlatKit/Demos/[Demo] Fruit Vase/_1_FruitVaseScene_CelShadingMode_None_CompletelyFlat.unity
     guid: 9f990b88fdff0194bb901515a9ef7dc3
   - enabled: 1
+    path: Assets/AssetStorePacks/LushkinR/Demo/OrthographicScene.unity
+    guid: 38af1b1900528bf44876e29cd7307f70
+  - enabled: 1
+    path: Assets/AssetStorePacks/LushkinR/Demo/PerspectiveScene.unity
+    guid: 3869a5f35b887134e965a710cd70734d
+  - enabled: 1
     path: Assets/Scenes/LVL2.unity
-    guid: fea21f84d0b63b748a17c314973609e6
+    guid: c3777d2d3d8182f41bcfa1b1017d1f63
   m_configObjects: {}

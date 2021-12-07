@@ -13,9 +13,9 @@ public class CoinsSpawner : MonoBehaviour
     private const int CountCoinsMax = 20;
     private const float RandomRangePosition = 0.5f;
 
-    public void StartSpawn(EnemyGigant enemyGigant)
+    public void StartSpawn(Transform enemy)
     {
-        StartCoroutine(Spawn(enemyGigant));
+        StartCoroutine(Spawn(enemy));
     }
 
     private void Awake()
@@ -24,23 +24,23 @@ public class CoinsSpawner : MonoBehaviour
             throw new InvalidOperationException();
     }
 
-    private IEnumerator Spawn(EnemyGigant enemyGigant)
+    private IEnumerator Spawn(Transform enemy)
     {
         var waitForSeconds = new WaitForSeconds(Delay);
         int randomCount = Random.Range(CountCoinsMin, CountCoinsMax);
 
         for (int i = 0; i < randomCount; i++)
         {
-            var coin = Instantiate(_coinPrefab, RandomSpawnPosition(enemyGigant), Quaternion.identity);
+            var coin = Instantiate(_coinPrefab, RandomSpawnPosition(enemy), Quaternion.identity);
             coin.Init(_coinScaler);
 
             yield return waitForSeconds;
         }
     }
 
-    private Vector3 RandomSpawnPosition(EnemyGigant enemyGigant)
+    private Vector3 RandomSpawnPosition(Transform enemy)
     {
-        var position = enemyGigant.transform.position;
+        var position = enemy.position;
         float x = Random.Range(-RandomRangePosition, RandomRangePosition);
         float y = Random.Range(-RandomRangePosition, RandomRangePosition);
         float z = Random.Range(-RandomRangePosition, RandomRangePosition);

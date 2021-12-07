@@ -37,8 +37,8 @@ public class PlayerMover : MonoBehaviour
     public void LookAtFinish(Transform finishPosition)
     {
         _finishPoint = finishPosition;
-        var tweeLookAt = transform.DOLookAt(_finishPoint.position, Duration * 3);
-        tweeLookAt.OnComplete(MoveFinishPoint);
+        var tweeLookAt = transform.DOLookAt(_finishPoint.position, Duration * 3).SetDelay(Duration * 2);
+        tweeLookAt.SetEase(Ease.InOutSine).OnComplete(MoveFinishPoint);
     }
 
     private void OnEnable()
@@ -62,6 +62,7 @@ public class PlayerMover : MonoBehaviour
     private void MoveFinishPoint()
     {
         var tweenMove = transform.DOMove(_finishPoint.position, DurationMoveFinish);
+        tweenMove.SetEase(Ease.InOutSine);
 
         enabled = false;
     }

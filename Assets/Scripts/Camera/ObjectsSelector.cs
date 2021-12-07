@@ -97,7 +97,7 @@ public class ObjectsSelector : MonoBehaviour
 
     private void TryMoveBuilding(RaycastHit hit)
     {
-        if (hit.collider.TryGetComponent(out Building building) && building.IsPlayerOnBuilding)
+        if (hit.collider.TryGetComponent(out Building building) && building.IsPlayerOnBuilding && building.enabled)
         {
             _playerMover.Move(hit.point);
         }
@@ -105,7 +105,7 @@ public class ObjectsSelector : MonoBehaviour
 
     private void TryFlyBuilding(RaycastHit hit)
     {
-        if (hit.collider.TryGetComponent(out Building building) && building.IsPlayerOnBuilding == false)
+        if (hit.collider.TryGetComponent(out Building building) && building.IsPlayerOnBuilding == false && building.enabled)
         {
             _playerMover.Fly(building.PointFirst.position);
             building.OnBuildingSelect();

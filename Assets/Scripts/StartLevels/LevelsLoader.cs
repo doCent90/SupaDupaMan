@@ -75,6 +75,7 @@ public class LevelsLoader : MonoBehaviour
                 LVL1.Load();
                 break;
             case 2:
+                LVL2.Load();
                 break;
             case 3:
                 break;

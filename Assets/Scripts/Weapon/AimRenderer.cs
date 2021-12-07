@@ -46,7 +46,7 @@ public class AimRenderer : MonoBehaviour
 
     private void Update()
     {
-        Draw();
+        TryDraw();
     }
 
     private void OnPlayerRotated(bool isReady)
@@ -59,7 +59,7 @@ public class AimRenderer : MonoBehaviour
         _isReady = true ? isFire = false : isFire = true;
     }
 
-    private void Draw()
+    private void TryDraw()
     {
         if (_isReady)
         {
@@ -74,18 +74,22 @@ public class AimRenderer : MonoBehaviour
                 var spriteRenderer = _mainPrefab.GetComponent<SpriteRenderer>();
 
                 if (hit.collider.TryGetComponent(out WallSlicer wall) && wall.enabled)
+                {
                     RotateAtNormal(hit, spriteRenderer, _red);
+                }
                 else if (hit.collider.TryGetComponent(out Enemy enemy) || hit.collider.TryGetComponent(out ObjectsSlicer objectSliced))
+                {
                     RotateAtLook(spriteRenderer, _red);
-                else if(hit.collider.TryGetComponent(out Platform platform) || hit.collider.TryGetComponent(out Building building))
+                }
+                else if(hit.collider.TryGetComponent(out Platform platform) || (hit.collider.TryGetComponent(out Building building) && building.enabled))
+                {
                     RotateAtNormal(hit, spriteRenderer, _green);
-                else if(hit.collider.TryGetComponent(out BaseGround baseGround))
+                }
+                else
                 {
                     SetSwitchMain(isEnable: false);
                     SetSwitchOutOfRange(isEnable: true);
                 }
-                else
-                    SetSwitchMain(isEnable: false);
             }
             else
             {

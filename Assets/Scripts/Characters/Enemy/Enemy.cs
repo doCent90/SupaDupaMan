@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
 
     public event UnityAction Died;
     public event UnityAction Damaged;
+    public event UnityAction<Transform> DiedPosition;
     public event UnityAction<Transform> ShotPointSeted;
 
     public bool IsGigant => _isGigant;
@@ -49,9 +50,11 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.TryGetComponent(out Car car) && enabled)
+        if((collision.collider.TryGetComponent(out Car car) || collision.collider.TryGetComponent(out Shrapnel shrapnel)) && enabled)
         {
-            car.GetComponent<BoxCollider>().enabled = false;
+            if(car != null)
+                car.GetComponent<BoxCollider>().enabled = false;
+
             _mover.enabled = false;
             Die();
         }
@@ -84,9 +87,10 @@ public class Enemy : MonoBehaviour
         enabled = false;
 
         Died?.Invoke();
-        SetDieMaterial();
+        DiedPosition?.Invoke(transform);
 
         PlayFX();
+        SetDieMaterial();
         _capsuleCollider.enabled = false;
 
         _prisonerRegDoll.gameObject.SetActive(false);

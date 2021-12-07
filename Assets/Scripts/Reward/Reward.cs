@@ -4,26 +4,30 @@ using UnityEngine;
 [RequireComponent(typeof(CoinsSpawner))]
 public class Reward : MonoBehaviour
 {
-    private Enemy _enemy;
-    private EnemyGigant _enemyGigant;
+    private Enemy[] _enemies;
     private CoinsSpawner _coinsSpawner;
 
     private void Awake()
     {
-        _enemyGigant = FindObjectOfType<EnemyGigant>();
+        _enemies = FindObjectsOfType<Enemy>();
         _coinsSpawner = GetComponent<CoinsSpawner>();
-        _enemy = _enemyGigant.GetComponent<Enemy>();
 
-        _enemy.Died += OnEnemyDied;
+        foreach (var enemy in _enemies)
+        {
+            enemy.DiedPosition += OnEnemyDied;
+        }
     }
 
     private void OnDisable()
     {
-        _enemy.Died -= OnEnemyDied;
+        foreach (var enemy in _enemies)
+        {
+            enemy.DiedPosition -= OnEnemyDied;
+        }
     }
 
-    private void OnEnemyDied()
+    private void OnEnemyDied(Transform enemy)
     {
-        _coinsSpawner.StartSpawn(_enemyGigant);
+        _coinsSpawner.StartSpawn(enemy);
     }
 }

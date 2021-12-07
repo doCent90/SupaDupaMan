@@ -308,6 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f7b945b1715ae4f98a1bc533097b24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _startGame: {fileID: 0}
 --- !u!114 &3708220797053431612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,7 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dieMaterial: {fileID: 2100000, guid: c8eb020621a62b941bd37ce4a7ae4914, type: 2}
-  _isGigant: 1
+  _startGame: {fileID: 0}
 --- !u!114 &2733481612470500236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,6 +337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _wayPoint1: {fileID: 0}
   _wayPoint2: {fileID: 0}
+  _isStanding: 0
 --- !u!114 &5303755160945898163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,6 +460,10 @@ PrefabInstance:
     - target: {fileID: 430288, guid: 09d9de58ef3bf5444ac94afa0e6013cb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19806904, guid: 09d9de58ef3bf5444ac94afa0e6013cb, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 19921718, guid: 09d9de58ef3bf5444ac94afa0e6013cb, type: 3}
       propertyPath: m_Materials.Array.size

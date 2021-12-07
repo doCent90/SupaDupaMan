@@ -88,7 +88,7 @@ Material:
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
-    - _CameraDistanceImpact: 0.5
+    - _CameraDistanceImpact: 0.459
     - _CelExtraEnabled: 0
     - _CelNumSteps: 3
     - _CelPrimaryMode: 1
@@ -121,10 +121,10 @@ Material:
     - _LightmapDirectionYaw: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _OutlineDepthOffset: 1
+    - _OutlineDepthOffset: 0.049
     - _OutlineEnabled: 1
     - _OutlineScale: 1
-    - _OutlineWidth: 2
+    - _OutlineWidth: 3
     - _OverrideLightmapDir: 0
     - _Parallax: 0.005
     - _QueueOffset: 0
