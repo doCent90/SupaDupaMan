@@ -51,6 +51,7 @@ public class Enemy : MonoBehaviour
     {
         if(collision.collider.TryGetComponent(out Car car) && enabled)
         {
+            car.GetComponent<BoxCollider>().enabled = false;
             _mover.enabled = false;
             Die();
         }

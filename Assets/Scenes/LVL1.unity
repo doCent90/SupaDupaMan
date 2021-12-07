@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 0
-  m_FogColor: {r: 0, g: 0.00090810476, b: 0.14150941, a: 1}
+  m_FogColor: {r: 0.69411767, g: 0.7960785, b: 0.7254902, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.002
   m_LinearFogStart: 0
@@ -800,6 +800,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1438432527501350573, guid: 1fe16df9a5e5bb3458507e90bfcdffb2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 32c81465594232542b99d5005395985a, type: 2}
+    - target: {fileID: 1450637212220752294, guid: 1fe16df9a5e5bb3458507e90bfcdffb2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 32c81465594232542b99d5005395985a, type: 2}
     - target: {fileID: 6219247702180848476, guid: 1fe16df9a5e5bb3458507e90bfcdffb2, type: 3}
       propertyPath: m_Name
       value: Environments
@@ -856,6 +864,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 8942536714699439124, guid: 1fe16df9a5e5bb3458507e90bfcdffb2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 32c81465594232542b99d5005395985a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fe16df9a5e5bb3458507e90bfcdffb2, type: 3}
 --- !u!1001 &7180097330521454052
