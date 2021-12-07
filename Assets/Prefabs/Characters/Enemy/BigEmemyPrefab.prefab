@@ -58,7 +58,7 @@ GameObject:
   m_Layer: 0
   m_Name: WayPoint1
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -88,7 +88,7 @@ GameObject:
   m_Layer: 0
   m_Name: WayPoint2
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -125,6 +125,26 @@ PrefabInstance:
       propertyPath: _wayPoint2
       value: 
       objectReference: {fileID: 5360802857376515071}
+    - target: {fileID: 3546702063041742012, guid: 28bd3d228ca773c4b9a744bb53e7358d, type: 3}
+      propertyPath: m_Height
+      value: 2.2627842
+      objectReference: {fileID: 0}
+    - target: {fileID: 3546702063041742012, guid: 28bd3d228ca773c4b9a744bb53e7358d, type: 3}
+      propertyPath: m_Radius
+      value: 0.47822565
+      objectReference: {fileID: 0}
+    - target: {fileID: 3546702063041742012, guid: 28bd3d228ca773c4b9a744bb53e7358d, type: 3}
+      propertyPath: m_Center.x
+      value: 0.025767416
+      objectReference: {fileID: 0}
+    - target: {fileID: 3546702063041742012, guid: 28bd3d228ca773c4b9a744bb53e7358d, type: 3}
+      propertyPath: m_Center.y
+      value: 1.056405
+      objectReference: {fileID: 0}
+    - target: {fileID: 3546702063041742012, guid: 28bd3d228ca773c4b9a744bb53e7358d, type: 3}
+      propertyPath: m_Center.z
+      value: 7.79121e-17
+      objectReference: {fileID: 0}
     - target: {fileID: 5043074714544650833, guid: 28bd3d228ca773c4b9a744bb53e7358d, type: 3}
       propertyPath: m_IsActive
       value: 1
