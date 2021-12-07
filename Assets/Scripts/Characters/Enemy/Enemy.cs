@@ -52,9 +52,6 @@ public class Enemy : MonoBehaviour
     {
         if((collision.collider.TryGetComponent(out Car car) || collision.collider.TryGetComponent(out Shrapnel shrapnel)) && enabled)
         {
-            if(car != null)
-                car.GetComponent<BoxCollider>().enabled = false;
-
             _mover.enabled = false;
             Die();
         }

@@ -32,9 +32,6 @@ public class PlayerRotater : MonoBehaviour
                 _originalPosition = transform.localEulerAngles;
 
                 var tweenRotate = transform.DOLookAt(lookAtPoint, Duration);
-                tweenRotate.SetEase(Ease.InOutSine);
-                tweenRotate.OnComplete(SetOriginalAngle);
-
                 continue;
             }
         }
@@ -48,12 +45,6 @@ public class PlayerRotater : MonoBehaviour
     private void Update()
     {
         Rotate();
-    }
-
-    private void SetOriginalAngle()
-    {
-        Vector3 target = new Vector3(_originalPosition.x, transform.localEulerAngles.y, transform.localEulerAngles.z);
-        transform.DORotate(target, Duration * Multiply);
     }
 
     private void Rotate()
