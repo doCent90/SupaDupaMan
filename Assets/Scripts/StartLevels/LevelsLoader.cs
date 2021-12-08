@@ -80,6 +80,18 @@ public class LevelsLoader : MonoBehaviour
             case 3:
                 LVL3.Load();
                 break;
+            case 4:
+                LVL4.Load();
+                break;
+            case 5:
+                LVL5.Load();
+                break;
+            case 6:
+                LVL6.Load();
+                break;
+            case 7:
+                LVL7.Load();
+                break;
         }
     }
 

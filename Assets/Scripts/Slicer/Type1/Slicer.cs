@@ -7,7 +7,7 @@ public abstract class Slicer : MonoBehaviour
     protected float ElapsedTime = 0;
     protected bool IsDamaged = false;
 
-    protected const float DestroingWallTime = 1.5f;
+    protected const float DestroingWallTime = 1f;
     protected const float DestroingObjectsTime = 0.5f;
     protected const float Range = 15f;
 

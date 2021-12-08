@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
     private float _elapsedTime;
     private bool _isDamaged = false;
 
-    private const float DestroyTime = 1f;
+    private const float DestroyTime = 0.5f;
 
     public event UnityAction Died;
     public event UnityAction Damaged;
