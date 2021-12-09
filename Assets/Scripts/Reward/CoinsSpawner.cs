@@ -8,9 +8,9 @@ public class CoinsSpawner : MonoBehaviour
     [SerializeField] private Coin _coinPrefab;
     [SerializeField] private CoinScaler _coinScaler;
 
-    private const float Delay = 0.1f;
-    private const int CountCoinsMin = 10;
-    private const int CountCoinsMax = 20;
+    private const float Delay = 0.08f;
+    private const int CountCoinsMin = 4;
+    private const int CountCoinsMax = 8;
     private const float RandomRangePosition = 0.5f;
 
     public void StartSpawn(Transform enemy)

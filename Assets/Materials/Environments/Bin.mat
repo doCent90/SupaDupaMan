@@ -150,7 +150,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.16190457, g: 0.4528302, b: 0.04983975, a: 1}
+    - _BaseColor: {r: 0.20603703, g: 0.3773585, b: 0.14121275, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorDim: {r: 0.038803846, g: 0.051705502, b: 0.0754717, a: 1}
     - _ColorDimCurve: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
@@ -161,7 +161,7 @@ Material:
     - _FlatRimColor: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
     - _FlatSpecularColor: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
     - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
-    - _OutlineColor: {r: 0, g: 1, b: 0.09080601, a: 1}
+    - _OutlineColor: {r: 0, g: 0.745283, b: 0.06722164, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _UnityShadowColor: {r: 0.0022694871, g: 0.058736604, b: 0.16037738, a: 1}
   m_BuildTextureStacks: []

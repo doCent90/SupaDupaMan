@@ -12911,7 +12911,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8958140235852894824}
   m_Layer: 0
-  m_Name: ExplosionBin
+  m_Name: ExplosBin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

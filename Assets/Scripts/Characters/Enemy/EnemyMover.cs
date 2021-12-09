@@ -12,7 +12,7 @@ public class EnemyMover : MonoBehaviour
     private int _direction;
     private bool _onTargetPosition = false;
 
-    private const float Speed = 2f;
+    private const float Speed = 3f;
     private const float Duration = 0.5f;
 
     public bool IsStanding => _isStanding;
