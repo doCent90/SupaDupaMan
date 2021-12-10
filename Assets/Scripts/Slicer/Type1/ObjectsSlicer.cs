@@ -10,8 +10,8 @@ public class ObjectsSlicer : Slicer
 
     private MeshRenderer _meshRenderer;
     private CellsDestroyer _cellsDestroyer;
-    private ParticleSystem _particleSystem;
     private CapsuleCollider _capsuleCollider;
+    private ParticleSystem[] _particleSystems;
 
     public event UnityAction<Transform> ApplyDamage;
     public event UnityAction Destroyed;
@@ -31,7 +31,12 @@ public class ObjectsSlicer : Slicer
         _capsuleCollider.enabled = false;
         _cellsDestroyer.enabled = true;
         _meshRenderer.enabled = false;
-        _particleSystem.Play();
+
+        foreach (var fx in _particleSystems)
+        {
+            fx.Play();
+        }
+
         Destroyed?.Invoke();
     }
 
@@ -40,6 +45,6 @@ public class ObjectsSlicer : Slicer
         _meshRenderer = GetComponent<MeshRenderer>();
         _cellsDestroyer = GetComponent<CellsDestroyer>();
         _capsuleCollider = GetComponent<CapsuleCollider>();
-        _particleSystem = GetComponentInChildren<ParticleSystem>();
+        _particleSystems = GetComponentsInChildren<ParticleSystem>();
     }
 }

@@ -36,7 +36,6 @@ Material:
         m_Texture: {fileID: 2800000, guid: 155f67fd8750f8e4e83c8efb1731f3a0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Ints: []
     m_Floats:
     - _AlphaClip: 0
     - _Blend: 0
@@ -76,7 +75,7 @@ Material:
     - _SoftParticleFadeParams: {r: 0, g: 3.3333333, b: 0, a: 0}
     - _TintColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 0.5019608}
   m_BuildTextureStacks: []
---- !u!114 &8717340605141963596
+--- !u!114 &5179429104388498686
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
