@@ -125,26 +125,6 @@ PrefabInstance:
       propertyPath: _wayPoint2
       value: 
       objectReference: {fileID: 5360802857376515071}
-    - target: {fileID: 3546702063041742012, guid: 28bd3d228ca773c4b9a744bb53e7358d, type: 3}
-      propertyPath: m_Height
-      value: 2.2627842
-      objectReference: {fileID: 0}
-    - target: {fileID: 3546702063041742012, guid: 28bd3d228ca773c4b9a744bb53e7358d, type: 3}
-      propertyPath: m_Radius
-      value: 0.47822565
-      objectReference: {fileID: 0}
-    - target: {fileID: 3546702063041742012, guid: 28bd3d228ca773c4b9a744bb53e7358d, type: 3}
-      propertyPath: m_Center.x
-      value: 0.025767416
-      objectReference: {fileID: 0}
-    - target: {fileID: 3546702063041742012, guid: 28bd3d228ca773c4b9a744bb53e7358d, type: 3}
-      propertyPath: m_Center.y
-      value: 1.056405
-      objectReference: {fileID: 0}
-    - target: {fileID: 3546702063041742012, guid: 28bd3d228ca773c4b9a744bb53e7358d, type: 3}
-      propertyPath: m_Center.z
-      value: 7.79121e-17
-      objectReference: {fileID: 0}
     - target: {fileID: 5043074714544650833, guid: 28bd3d228ca773c4b9a744bb53e7358d, type: 3}
       propertyPath: m_IsActive
       value: 1

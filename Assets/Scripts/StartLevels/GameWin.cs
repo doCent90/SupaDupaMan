@@ -3,26 +3,41 @@ using UnityEngine.Events;
 
 public class GameWin : MonoBehaviour
 {
-    private Enemy _enemy;
-    private EnemyGigant _enemyGigant;
+    private Enemy[] _enemies;
+    private int _enemyCount;
 
     public event UnityAction Won;
 
     private void OnEnable()
     {
-        _enemyGigant = FindObjectOfType<EnemyGigant>();
-        _enemy = _enemyGigant.GetComponent<Enemy>();
+        _enemies = FindObjectsOfType<Enemy>();
+        _enemyCount = _enemies.Length;
 
-        _enemy.Died += OnEnemysDied;
+        foreach (var enemy in _enemies)
+        {
+            enemy.Died += OnEnemyDied;
+        }
     }
 
     private void OnDisable()
     {
-        _enemy.Died -= OnEnemysDied;
+        foreach (var enemy in _enemies)
+        {
+            enemy.Died -= OnEnemyDied;
+        }
     }
 
-    private void OnEnemysDied()
+    private void OnEnemyDied()
     {
-        Won?.Invoke();
+        int diedEnemyCount = 0;
+
+        foreach (var enemy in _enemies)
+        {
+            if (!enemy.enabled)
+                diedEnemyCount++;
+        }
+
+        if(diedEnemyCount == _enemies.Length)
+            Won?.Invoke();
     }
 }
