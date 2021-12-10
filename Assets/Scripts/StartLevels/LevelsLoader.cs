@@ -23,7 +23,7 @@ public class LevelsLoader : MonoBehaviour
         numberLevel++;
 
         LoadScene(numberLevel);
-        SetLevelFinishPrefsValue(numberLevel);
+        SaveLevelFinish(numberLevel);
     }
 
     public void Retry()
@@ -92,10 +92,16 @@ public class LevelsLoader : MonoBehaviour
             case 7:
                 LVL7.Load();
                 break;
+            default:
+                {
+                    LVL1.Load();
+                    PlayerPrefs.DeleteAll();
+                }
+                break;
         }
     }
 
-    private void SetLevelFinishPrefsValue(int numberLevel)
+    private void SaveLevelFinish(int numberLevel)
     {
         var level = PlayerPrefs.GetInt(LevelDone);
 
