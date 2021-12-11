@@ -10,6 +10,7 @@ public class ButtonsUI : MonoBehaviour
     [SerializeField] private LevelsLoader _loadLevel;
     [SerializeField] private PlayerRotater _playerRotater;
     [SerializeField] private SoundsFXSettings _soundMaster;
+    [SerializeField] private CurrentCoinsViewer _coinsViewer;
     [Header("Shop")]
     [SerializeField] private Button _openShop;
     [SerializeField] private Button _closeShop;
@@ -19,8 +20,9 @@ public class ButtonsUI : MonoBehaviour
     [Header("Sound")]
     [SerializeField] private Button _onSoundButton;
     [SerializeField] private Button _offSoundButton;
-
-    private CurrentCoinsViewer _coinsViewer;
+    [Header("Game Buttons")]
+    [SerializeField] private Button _continue;
+    [SerializeField] private Button _tapToStart;
 
     private float _elapsedTime = 0;
     private bool _isLevelDone = false;
@@ -37,21 +39,9 @@ public class ButtonsUI : MonoBehaviour
     public event UnityAction<bool> ShopClicked;
     public event UnityAction<bool> SettingsClicked;
 
-    public void TapToStart()
-    {
-        StartButtonClicked?.Invoke();
-        Clicked?.Invoke();
-    }
-
     public void StartCurrentLevel()
     {
         _game.StartLevel();
-    }
-
-    public void Continue()
-    {
-        ContinueButtonClicked?.Invoke();
-        Clicked?.Invoke();
     }
 
     public void NextLevel()
@@ -63,13 +53,26 @@ public class ButtonsUI : MonoBehaviour
         SetAmplitudeValue(Level, _loadLevel.Level);
     }
 
-    public void OpenSettings()
+    private void TapToStart()
+    {
+        StartButtonClicked?.Invoke();
+        Clicked?.Invoke();
+    }
+
+    private void Continue()
+    {
+        ContinueButtonClicked?.Invoke();
+        Clicked?.Invoke();
+    }
+
+    private void OpenSettings()
     {
         IsPanelOpen = true;
         _playerRotater.enabled = false;
 
         _openShop.gameObject.SetActive(false);
         _coinsViewer.gameObject.SetActive(false);
+        Debug.Log("SETTINGS_OPEN");
         _openOptions.gameObject.SetActive(false);
         _closeOptions.gameObject.SetActive(true);
 
@@ -77,7 +80,7 @@ public class ButtonsUI : MonoBehaviour
         Clicked?.Invoke();
     }
 
-    public void CloseSettings()
+    private void CloseSettings()
     {
         IsPanelOpen = false;
 
@@ -93,7 +96,7 @@ public class ButtonsUI : MonoBehaviour
         Clicked?.Invoke();
     }
 
-    public void EnableSound()
+    private void EnableSound()
     {
         _soundMaster.EnableSound();
 
@@ -102,7 +105,7 @@ public class ButtonsUI : MonoBehaviour
         Clicked?.Invoke();
     }
 
-    public void DisableSound()
+    private void DisableSound()
     {
         _soundMaster.DisableSound();
 
@@ -111,13 +114,15 @@ public class ButtonsUI : MonoBehaviour
         Clicked?.Invoke();
     }
 
-    public void OpenShop()
+    private void OpenShop()
     {
         IsPanelOpen = true;
         _playerRotater.enabled = false;
 
         _openShop.gameObject.SetActive(false);
         _closeShop.gameObject.SetActive(true);
+        _continue.gameObject.SetActive(false);
+        _tapToStart.gameObject.SetActive(false);
         _coinsViewer.gameObject.SetActive(false);
         _openOptions.gameObject.SetActive(false);
 
@@ -125,13 +130,15 @@ public class ButtonsUI : MonoBehaviour
         Clicked?.Invoke();
     }
 
-    public void CloseShop()
+    private void CloseShop()
     {
         if (_game.IsPlaying)
             _playerRotater.enabled = true;
 
         _openShop.gameObject.SetActive(true);
         _closeShop.gameObject.SetActive(false);
+        _continue.gameObject.SetActive(true);
+        _tapToStart.gameObject.SetActive(true);
         _coinsViewer.gameObject.SetActive(true);
         _openOptions.gameObject.SetActive(true);
 
@@ -149,9 +156,8 @@ public class ButtonsUI : MonoBehaviour
             throw new InvalidOperationException();
         }
 
-        _coinsViewer = GetComponentInChildren<CurrentCoinsViewer>();
-
-        Init();
+        SubscribeButtons();
+        InitSoundStatus();
     }
 
     private void SetAmplitudeValue(string label, int value)
@@ -164,7 +170,22 @@ public class ButtonsUI : MonoBehaviour
         Amplitude.Instance.logEvent(label, dictionary);
     }
 
-    private void Init()
+    private void SubscribeButtons()
+    {
+        _openShop.onClick.AddListener(OpenShop);
+        _closeShop.onClick.AddListener(CloseShop);
+
+        _openOptions.onClick.AddListener(OpenSettings);
+        _closeOptions.onClick.AddListener(CloseSettings);
+
+        _onSoundButton.onClick.AddListener(EnableSound);
+        _offSoundButton.onClick.AddListener(DisableSound);
+
+        _continue.onClick.AddListener(Continue);
+        _tapToStart.onClick.AddListener(TapToStart);
+    }
+
+    private void InitSoundStatus()
     {
         _closeOptions.gameObject.SetActive(false);
 
@@ -184,5 +205,20 @@ public class ButtonsUI : MonoBehaviour
     {
         if(!_isLevelDone)
             _elapsedTime += Time.deltaTime;
+    }
+
+    private void OnDisable()
+    {
+        _openShop.onClick.RemoveListener(OpenShop);
+        _closeShop.onClick.RemoveListener(CloseShop);
+
+        _openOptions.onClick.RemoveListener(OpenSettings);
+        _closeOptions.onClick.RemoveListener(CloseSettings);
+
+        _onSoundButton.onClick.RemoveListener(EnableSound);
+        _offSoundButton.onClick.RemoveListener(DisableSound);
+
+        _continue.onClick.RemoveListener(Continue);
+        _tapToStart.onClick.RemoveListener(TapToStart);
     }
 }

@@ -5673,7 +5673,7 @@ RectTransform:
   m_Children:
   - {fileID: 278884973708711562}
   m_Father: {fileID: 8953673466499273708}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.57900006, y: 0.88231254}
   m_AnchorMax: {x: 0.92874074, y: 0.93000007}
@@ -6574,19 +6574,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5476185223247483257}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8953673467173649081}
-        m_TargetAssemblyTypeName: ButtonsUI, Assembly-CSharp
-        m_MethodName: CloseShop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &5270504510009769151
 GameObject:
   m_ObjectHideFlags: 0
@@ -7017,7 +7005,7 @@ RectTransform:
   m_Children:
   - {fileID: 856270657036243193}
   m_Father: {fileID: 8953673466499273708}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -7425,19 +7413,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3379570172636732060}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8953673467173649081}
-        m_TargetAssemblyTypeName: ButtonsUI, Assembly-CSharp
-        m_MethodName: OpenShop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &8803286863267418067
 GameObject:
   m_ObjectHideFlags: 0
@@ -7692,19 +7668,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8953673465404168740}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8953673467173649081}
-        m_TargetAssemblyTypeName: ButtonsUI, Assembly-CSharp
-        m_MethodName: EnableSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &8953673465668929567
 GameObject:
   m_ObjectHideFlags: 0
@@ -7825,19 +7789,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8953673465668929552}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8953673467173649081}
-        m_TargetAssemblyTypeName: ButtonsUI, Assembly-CSharp
-        m_MethodName: TapToStart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &8953673465699180162
 GameObject:
   m_ObjectHideFlags: 0
@@ -8033,19 +7985,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8953673465878164417}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8953673467173649081}
-        m_TargetAssemblyTypeName: ButtonsUI, Assembly-CSharp
-        m_MethodName: DisableSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &8953673465880940046
 GameObject:
   m_ObjectHideFlags: 0
@@ -8165,19 +8105,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8953673465880940035}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8953673467173649081}
-        m_TargetAssemblyTypeName: ButtonsUI, Assembly-CSharp
-        m_MethodName: CloseSettings
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &8953673465938778718
 GameObject:
   m_ObjectHideFlags: 0
@@ -8298,19 +8226,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8953673465938778707}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8953673467173649081}
-        m_TargetAssemblyTypeName: ButtonsUI, Assembly-CSharp
-        m_MethodName: Continue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &8953673466030041311
 GameObject:
   m_ObjectHideFlags: 0
@@ -8430,19 +8346,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8953673466030041296}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8953673467173649081}
-        m_TargetAssemblyTypeName: ButtonsUI, Assembly-CSharp
-        m_MethodName: OpenSettings
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &8953673466499273704
 GameObject:
   m_ObjectHideFlags: 0
@@ -8477,10 +8381,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 354721525624406702}
-  - {fileID: 3096517201320978696}
   - {fileID: 8953673466722465214}
   - {fileID: 708984444390658439}
   - {fileID: 8953673467173649734}
+  - {fileID: 3096517201320978696}
   - {fileID: 1186535226386031782}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -8625,7 +8529,7 @@ RectTransform:
   - {fileID: 8953673465404168738}
   - {fileID: 2971590362164003169}
   m_Father: {fileID: 8953673466499273708}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -8730,7 +8634,7 @@ RectTransform:
   - {fileID: 1132426022468292493}
   - {fileID: 8557163892854279914}
   m_Father: {fileID: 8953673466499273708}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -8753,12 +8657,15 @@ MonoBehaviour:
   _loadLevel: {fileID: 0}
   _playerRotater: {fileID: 0}
   _soundMaster: {fileID: 0}
+  _coinsViewer: {fileID: 8436981223446112978}
   _openShop: {fileID: 4567671899041984884}
   _closeShop: {fileID: 5466325163510575374}
   _openOptions: {fileID: 8953673466030041297}
   _closeOptions: {fileID: 8953673465880940032}
   _onSoundButton: {fileID: 8953673465404168741}
   _offSoundButton: {fileID: 8953673465878164430}
+  _continue: {fileID: 8953673465938778704}
+  _tapToStart: {fileID: 8953673465668929553}
 --- !u!114 &2973275432505271631
 MonoBehaviour:
   m_ObjectHideFlags: 0
