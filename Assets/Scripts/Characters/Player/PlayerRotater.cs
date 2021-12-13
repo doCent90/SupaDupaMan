@@ -11,8 +11,7 @@ public class PlayerRotater : MonoBehaviour
     private const string MouseX = "Mouse X";
     private const string MouseY = "Mouse Y";
     private const float Duration = 0.25f;
-    private const float Distance = 65f;
-    private const float Range = 60f;
+    private const float Distance = 90f;
 
     public event Action Started;
     public event Action<bool> Rotated;
