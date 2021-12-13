@@ -5,6 +5,7 @@ public class GlassWall : MonoBehaviour
 {
     private float _elapsedTime;
     private bool _isDamaged = false;
+    private ParticleSystem[] _particleSystems;
     private DamagePointWallSlicerMover _damagePointWallSlicerMover;
 
     private const float DestroingObjectsTime = 0.5f;
@@ -21,11 +22,18 @@ public class GlassWall : MonoBehaviour
 
     private void OnEnable()
     {
+        _particleSystems = GetComponentsInChildren<ParticleSystem>();
         _damagePointWallSlicerMover = GetComponentInChildren<DamagePointWallSlicerMover>();
     }
 
     private void Die()
     {
+        foreach (var part in _particleSystems)
+        {
+            part.Play();
+        }
+
+        _isDamaged = false;
         Destroyed?.Invoke();
     }
 
