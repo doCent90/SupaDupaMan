@@ -569,12 +569,16 @@ PrefabInstance:
       value: Wall_Transparent_interactable
       objectReference: {fileID: 0}
     - target: {fileID: 6683864090746626785, guid: 70d964fe62af2ed48811f312e9227306, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 26.074326
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683864090746626785, guid: 70d964fe62af2ed48811f312e9227306, type: 3}
       propertyPath: m_LocalPosition.x
       value: 48.7
       objectReference: {fileID: 0}
     - target: {fileID: 6683864090746626785, guid: 70d964fe62af2ed48811f312e9227306, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.392
+      value: 7.1337
       objectReference: {fileID: 0}
     - target: {fileID: 6683864090746626785, guid: 70d964fe62af2ed48811f312e9227306, type: 3}
       propertyPath: m_LocalPosition.z
