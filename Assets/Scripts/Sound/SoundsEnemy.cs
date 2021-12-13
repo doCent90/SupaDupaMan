@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Enemy))]
 public class SoundsEnemy : MonoBehaviour
 {
-    [SerializeField] private AudioSource _soundDeath;
+    [SerializeField] private AudioSource[] _effects;
 
     private Enemy _enemy;
 
@@ -20,6 +20,9 @@ public class SoundsEnemy : MonoBehaviour
 
     private void OnDied()
     {
-        _soundDeath.Play();
+        foreach (var sound in _effects)
+        {
+            sound.Play();
+        }
     }
 }
