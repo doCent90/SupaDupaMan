@@ -72,25 +72,25 @@ public class LevelsLoader : MonoBehaviour
         switch (numberLevel)
         {
             case 1:
-                LVL1.Load();
+                LVL1_WB.Load();
                 break;
             case 2:
-                LVL2.Load();
+                LVL2_WB.Load();
                 break;
             case 3:
-                LVL3.Load();
+                LVL3_WB.Load();
                 break;
             case 4:
-                LVL4.Load();
+                LVL4_WB.Load();
                 break;
             case 5:
-                LVL5.Load();
+                LVL5_WB.Load();
                 break;
             case 6:
-                LVL6.Load();
+                LVL6_WB.Load();
                 break;
             case 7:
-                LVL7.Load();
+                LVL7_WB.Load();
                 break;
         }
     }
