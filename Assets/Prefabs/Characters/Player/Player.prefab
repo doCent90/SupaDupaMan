@@ -682,7 +682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d5ab1ff74487804b9d95af466184365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _standartLaser: {fileID: 114339581892737702, guid: 647941694c90d4d4eb132695664de652, type: 3}
+  _standartLaser: {fileID: 114491215411067744, guid: d2d89a48f26d8e24fba34789fd97784e, type: 3}
   _shootPosition1: {fileID: 7932518099513012876}
   _shootPosition2: {fileID: 5589049762238730954}
 --- !u!1 &7541977196456997346
@@ -807,8 +807,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7541977197471421927}
-  m_LocalRotation: {x: -0.080630615, y: -0, z: -0, w: 0.99674404}
-  m_LocalPosition: {x: 0, y: 0.022926092, z: -0.76801395}
+  m_LocalRotation: {x: -0.080630556, y: -0.000000089406974, z: 0.00000003166497, w: 0.9967441}
+  m_LocalPosition: {x: 0.00000017881393, y: 0.022926092, z: -0.7680146}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 7541977196456997347}
