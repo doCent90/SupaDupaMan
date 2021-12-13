@@ -569,16 +569,12 @@ PrefabInstance:
       value: Wall_Transparent_interactable
       objectReference: {fileID: 0}
     - target: {fileID: 6683864090746626785, guid: 70d964fe62af2ed48811f312e9227306, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6683864090746626785, guid: 70d964fe62af2ed48811f312e9227306, type: 3}
       propertyPath: m_LocalPosition.x
       value: 48.7
       objectReference: {fileID: 0}
     - target: {fileID: 6683864090746626785, guid: 70d964fe62af2ed48811f312e9227306, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.6
+      value: 15.392
       objectReference: {fileID: 0}
     - target: {fileID: 6683864090746626785, guid: 70d964fe62af2ed48811f312e9227306, type: 3}
       propertyPath: m_LocalPosition.z
@@ -599,34 +595,6 @@ PrefabInstance:
     - target: {fileID: 6683864090746626785, guid: 70d964fe62af2ed48811f312e9227306, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6683864090746626785, guid: 70d964fe62af2ed48811f312e9227306, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6683864090746626785, guid: 70d964fe62af2ed48811f312e9227306, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6683864090746626785, guid: 70d964fe62af2ed48811f312e9227306, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6683864090746626786, guid: 70d964fe62af2ed48811f312e9227306, type: 3}
-      propertyPath: m_Size.y
-      value: 0.5052259
-      objectReference: {fileID: 0}
-    - target: {fileID: 6683864090746626786, guid: 70d964fe62af2ed48811f312e9227306, type: 3}
-      propertyPath: m_Center.x
-      value: -0.046352174
-      objectReference: {fileID: 0}
-    - target: {fileID: 6683864090746626786, guid: 70d964fe62af2ed48811f312e9227306, type: 3}
-      propertyPath: m_Center.y
-      value: 0.23979296
-      objectReference: {fileID: 0}
-    - target: {fileID: 6683864090746626786, guid: 70d964fe62af2ed48811f312e9227306, type: 3}
-      propertyPath: m_Center.z
-      value: 2.2193322e-17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70d964fe62af2ed48811f312e9227306, type: 3}
