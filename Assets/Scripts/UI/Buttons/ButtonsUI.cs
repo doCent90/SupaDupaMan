@@ -30,6 +30,8 @@ public class ButtonsUI : MonoBehaviour
     private const string Level = "level";
     private const string TimeGame = "time_spent";
 
+    public StartGame StartGame => _game;
+    public PlayerRotater PlayerRotater => _playerRotater;
     public bool IsPanelOpen { get; private set; } = false;
 
     public event UnityAction Clicked;

@@ -101,4 +101,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LVL1.unity
     guid: 903afeb8de1636b41947bc696126c679
+  - enabled: 1
+    path: Assets/Scenes/WebbyBoiLevels/LVL1_WB.unity
+    guid: 8eac5b13c71b647438b08e52c92e250d
+  - enabled: 1
+    path: Assets/Scenes/WebbyBoiLevels/LVL3_WB.unity
+    guid: e9747e044b853a3458f356d919bc6634
+  - enabled: 1
+    path: Assets/Scenes/WebbyBoiLevels/LVL2_WB.unity
+    guid: d35d7f39f097c0b47a58c8253a79d8cf
   m_configObjects: {}

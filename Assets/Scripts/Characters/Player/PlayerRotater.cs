@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
 using DG.Tweening;
 using System;
 
@@ -7,7 +6,6 @@ public class PlayerRotater : MonoBehaviour
 {
     private Enemy[] _enemies;
 
-    private Vector3 _originalPosition;
     private float _axisY;
 
     private const string MouseX = "Mouse X";
@@ -15,9 +13,9 @@ public class PlayerRotater : MonoBehaviour
     private const float Duration = 0.25f;
     private const float Distance = 65f;
     private const float Range = 60f;
-    private const float Multiply = 3f;
 
-    public event UnityAction<bool> Rotated;
+    public event Action Started;
+    public event Action<bool> Rotated;
 
     public void LookAtClosetstEnemy()
     {
@@ -29,7 +27,6 @@ public class PlayerRotater : MonoBehaviour
             {
                 Vector3 lookAtPoint;
                 lookAtPoint = enemy.transform.position;
-                _originalPosition = transform.localEulerAngles;
 
                 var tweenRotate = transform.DOLookAt(lookAtPoint, Duration);
                 continue;
@@ -49,19 +46,18 @@ public class PlayerRotater : MonoBehaviour
 
     private void Rotate()
     {
+
         if (Input.GetMouseButton(0))
         {
             float x;
+            float y;
+
             x = Input.GetAxis(MouseX);
-            _axisY += Input.GetAxis(MouseY);
-            _axisY = Mathf.Clamp(_axisY, -Range, Range);
+            y = Input.GetAxis(MouseY);
 
-            var euler = transform.localEulerAngles;
-            euler.x = _axisY;
+            transform.localEulerAngles += new Vector3(y, x, 0);
 
-            transform.localEulerAngles = euler;
-            transform.localEulerAngles += new Vector3(0, x, 0);
-
+            Started?.Invoke();
             Rotated?.Invoke(true);
         }
         else
