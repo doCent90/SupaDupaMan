@@ -10,7 +10,7 @@ public class PlayerMover : MonoBehaviour
 
     private const float DurationMoveFinish = 6f;
     private const float Duration = 0.5f;
-    private const float DistanceToGround = 20f;
+    private const float DistanceToGround = 35f;
 
     public event UnityAction<bool> Moved;
 

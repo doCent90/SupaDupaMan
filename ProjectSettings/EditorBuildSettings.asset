@@ -117,12 +117,12 @@ EditorBuildSettings:
     path: Assets/Scenes/WebbyBoiLevels/LVL4_WB.unity
     guid: 81b3d20100c0a5f44be5ab33fe68265f
   - enabled: 1
-    path: Assets/Scenes/WebbyBoiLevels/LVL6_WB.unity
-    guid: 80d41c841eeab5043b27ce8493660900
-  - enabled: 1
-    path: Assets/Scenes/WebbyBoiLevels/LVL7_WB.unity
-    guid: fb50f22a5fe359a4a86a5ece54b251dc
-  - enabled: 1
     path: Assets/PolygonCity/Scenes/Demo.unity
     guid: 35299a6a99d6dfe4bb709527ba95aab0
+  - enabled: 1
+    path: Assets/Scenes/WebbyBoiLevels/LVL7_WB.unity
+    guid: 6a88b7b7459998349b55c871fc138916
+  - enabled: 1
+    path: Assets/Scenes/WebbyBoiLevels/LVL6_WB.unity
+    guid: 312ede02848ade24e8f57f1dd857ce36
   m_configObjects: {}
