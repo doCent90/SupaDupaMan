@@ -68,6 +68,7 @@ public class ObjectsSelector : MonoBehaviour
                 TryDestroyEnemy(hit);
                 TryDestroyWall(hit);
                 TryDestroyObject(hit);
+                TryDestroyGlassWall(hit);
             }
         }
     }
@@ -128,6 +129,12 @@ public class ObjectsSelector : MonoBehaviour
     {
         if (hit.collider.TryGetComponent(out ObjectsSlicer objectSliced))
             objectSliced.TakeDamage();
+    }
+
+    private void TryDestroyGlassWall(RaycastHit hit)
+    {
+        if (hit.collider.TryGetComponent(out GlassWall glassWall))
+            glassWall.TakeDamage();
     }
 
     private RaycastHit GetRaycast()

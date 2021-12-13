@@ -10,12 +10,13 @@ public class LasersActivator : MonoBehaviour
     [SerializeField] private Transform _shootPosition1;
     [SerializeField] private Transform _shootPosition2;
 
-    private Enemy[] _enemies;
     private Transform _aimPoint;
     private LaserRenderer2 _currentLaser;
     private LaserRenderer2 _laserPrefab1;
     private LaserRenderer2 _laserPrefab2;
     private PlayerMover _playerMover;
+    private Enemy[] _enemies;
+    private GlassWall[] _glassWall;
     private WallSlicer[] _wallsSlicer;
     private ObjectsSlicer[] _objectsScliced;
 
@@ -37,10 +38,17 @@ public class LasersActivator : MonoBehaviour
 
         _playerMover = GetComponentInParent<PlayerMover>();
         _enemies = FindObjectsOfType<Enemy>();
+        _glassWall = FindObjectsOfType<GlassWall>();
         _wallsSlicer = FindObjectsOfType<WallSlicer>();
         _objectsScliced = FindObjectsOfType<ObjectsSlicer>();
 
         ReadyToAttacked?.Invoke(true);
+
+        foreach (var wall in _glassWall)
+        {
+            wall.ApplyDamage += Attack;
+            wall.Destroyed += Stop;
+        }
 
         foreach (var prop in _objectsScliced)
         {
@@ -65,6 +73,12 @@ public class LasersActivator : MonoBehaviour
     {
         ReadyToAttacked?.Invoke(false);
         Fired?.Invoke(false);
+
+        foreach (var wall in _glassWall)
+        {
+            wall.ApplyDamage -= Attack;
+            wall.Destroyed -= Stop;
+        }
 
         foreach (var prop in _objectsScliced)
         {

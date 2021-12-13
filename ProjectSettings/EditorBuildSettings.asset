@@ -122,4 +122,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WebbyBoiLevels/LVL7_WB.unity
     guid: fb50f22a5fe359a4a86a5ece54b251dc
+  - enabled: 1
+    path: Assets/Scenes/WebbyBoiLevels/LVL6_WB_1.unity
+    guid: 56cc2e8dca8595342b69b5f8ea9132f4
+  - enabled: 1
+    path: Assets/Scenes/WebbyBoiLevels/LVL7_WB_1.unity
+    guid: 22f5b3c040b9db044be95f6fe50c3bbd
   m_configObjects: {}
