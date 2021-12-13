@@ -6,8 +6,6 @@ public class PlayerRotater : MonoBehaviour
 {
     private Enemy[] _enemies;
 
-    private float _axisY;
-
     private const string MouseX = "Mouse X";
     private const string MouseY = "Mouse Y";
     private const float Duration = 0.25f;
