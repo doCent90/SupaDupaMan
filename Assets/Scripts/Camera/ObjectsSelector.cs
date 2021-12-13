@@ -15,7 +15,7 @@ public class ObjectsSelector : MonoBehaviour
 
     private bool _isFire = false;
 
-    public readonly float MaxLength = 70f;
+    public readonly float MaxLength = 80f;
 
     public event UnityAction RoadSelected;
 
