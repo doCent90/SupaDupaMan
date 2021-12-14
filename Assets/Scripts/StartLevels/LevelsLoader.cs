@@ -92,6 +92,21 @@ public class LevelsLoader : MonoBehaviour
             case 7:
                 LVL7_WB.Load();
                 break;
+            case 8:
+                LVL8_WB.Load();
+                break;
+            case 9:
+                LVL9_WB.Load();
+                break;
+            case 10:
+                LVL10_WB.Load();
+                break;
+            default:
+                {
+                    PlayerPrefs.DeleteAll();
+                    LVL1_WB.Load();
+                }
+                break;
         }
     }
 
