@@ -6,10 +6,9 @@ using UnityEngine;
 [RequireComponent(typeof(EnemyMover))]
 public class EnemyAnimator : MonoBehaviour
 {
-    [SerializeField] private StartGame _startGame;
-
     private Enemy _enemy;
     private Animator _animator;
+    private StartGame _startGame;
     private EnemyMover _enemyMover;
 
     private const string Run = "Run";
@@ -17,10 +16,8 @@ public class EnemyAnimator : MonoBehaviour
 
     private void Awake()
     {
-        if (_startGame == null)
-            throw new InvalidOperationException();
-
         _enemy = GetComponent<Enemy>();
+        _startGame = _enemy.StartGame;
         _animator = GetComponent<Animator>();
         _enemyMover = GetComponent<EnemyMover>();
 

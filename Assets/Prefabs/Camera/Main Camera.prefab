@@ -44,13 +44,13 @@ Camera:
   m_GameObject: {fileID: 2920630240887227644}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.21137416, g: 0.23154506, b: 0.3584906, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0.12}
+  m_LensShift: {x: 0, y: 0}
   m_FocalLength: 24.068275
   m_NormalizedViewPortRect:
     serializedVersion: 2

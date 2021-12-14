@@ -30,12 +30,13 @@ public class Enemy : MonoBehaviour
 
     private const float DestroyTime = 0.5f;
 
+    public bool IsGigant => _isGigant;
+    public StartGame StartGame => _startGame;
+
     public event UnityAction Died;
     public event UnityAction Damaged;
     public event UnityAction<Transform> DiedPosition;
     public event UnityAction<Transform> ShotPointSeted;
-
-    public bool IsGigant => _isGigant;
 
     public void TakeDamage()
     {
