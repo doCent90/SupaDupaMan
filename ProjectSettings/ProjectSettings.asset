@@ -247,7 +247,7 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: '{inproject}: KeyyStore/SupaDupaMan.keystore'
+  AndroidKeystoreName: '{inproject}: KeyStore/SupaDupaMan.keystore'
   AndroidKeyaliasName: ijunior
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
