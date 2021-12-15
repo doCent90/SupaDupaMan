@@ -9,6 +9,7 @@ public class PlayerRotater : MonoBehaviour
     private const string MouseX = "Mouse X";
     private const string MouseY = "Mouse Y";
     private const float Duration = 0.25f;
+    private const float Delay = 0.6f;
     private const float Distance = 100f;
 
     public event Action Started;
@@ -29,6 +30,11 @@ public class PlayerRotater : MonoBehaviour
                 continue;
             }
         }
+    }
+
+    public void LookAtFlyPoint(Transform point)
+    {
+        var tweenRotate = transform.DOLookAt(point.position, Duration).SetDelay(Delay);        
     }
 
     private void Awake()

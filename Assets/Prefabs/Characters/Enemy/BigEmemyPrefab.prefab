@@ -133,10 +133,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 01bbbb7134f34dc43953b9896f87aed0, type: 2}
-    - target: {fileID: 4648880523439352377, guid: 28bd3d228ca773c4b9a744bb53e7358d, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 01bbbb7134f34dc43953b9896f87aed0, type: 2}
     - target: {fileID: 4648880523439352379, guid: 28bd3d228ca773c4b9a744bb53e7358d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -216,6 +212,10 @@ PrefabInstance:
     - target: {fileID: 8442623690604886364, guid: 28bd3d228ca773c4b9a744bb53e7358d, type: 3}
       propertyPath: m_Name
       value: Soldiers_Gigant
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001997163697348173, guid: 28bd3d228ca773c4b9a744bb53e7358d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28bd3d228ca773c4b9a744bb53e7358d, type: 3}

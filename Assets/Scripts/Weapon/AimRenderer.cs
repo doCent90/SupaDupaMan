@@ -81,7 +81,7 @@ public class AimRenderer : MonoBehaviour
                 {
                     RotateAtLook(spriteRenderer, _red);
                 }
-                else if(hit.collider.TryGetComponent(out Platform platform) || (hit.collider.TryGetComponent(out Building building) && building.enabled))
+                else if(hit.collider.TryGetComponent(out Platform platform) || (hit.collider.TryGetComponent(out FlyPoint flyPoint) && flyPoint.enabled))
                 {
                     RotateAtNormal(hit, spriteRenderer, _green);
                 }

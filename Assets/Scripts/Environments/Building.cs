@@ -18,12 +18,12 @@ public class Building : MonoBehaviour
     private void OnEnable()
     {
         _objectsSelector = FindObjectOfType<ObjectsSelector>();
-        _objectsSelector.RoadSelected += OnRoadSelector;
+        _objectsSelector.TargetPointSelected += OnRoadSelector;
     }
 
     private void OnDisable()
     {
-        _objectsSelector.RoadSelected -= OnRoadSelector;
+        _objectsSelector.TargetPointSelected -= OnRoadSelector;
     }
 
     private void OnRoadSelector()

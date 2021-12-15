@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 [RequireComponent(typeof(AimRenderer))]
 public class ObjectsSelector : MonoBehaviour
@@ -8,16 +7,16 @@ public class ObjectsSelector : MonoBehaviour
     [SerializeField] private LasersActivator _laser;
     [SerializeField] private GameWin _gameWin;
 
-    private SpriteRenderer _spriteRenderer;
+    private AimMain _aimMain;
     private PlayerMover _playerMover;
     private AimRenderer _aimRenderer;
-    private AimMain _aimMain;
+    private SpriteRenderer _spriteRenderer;
 
     private bool _isFire = false;
 
     public readonly float MaxLength = 80f;
 
-    public event UnityAction RoadSelected;
+    public event Action TargetPointSelected;
 
     private void Awake()
     {
@@ -63,8 +62,7 @@ public class ObjectsSelector : MonoBehaviour
             else
             {
                 TryMove(hit);
-                TryMoveBuilding(hit);
-                TryFlyBuilding(hit);
+                TryFly(hit);
                 TryDestroyEnemy(hit);
                 TryDestroyWall(hit);
                 TryDestroyObject(hit);
@@ -91,25 +89,17 @@ public class ObjectsSelector : MonoBehaviour
     {
         if (hit.collider.TryGetComponent(out Platform platform) && platform.enabled)
         {
-            RoadSelected?.Invoke();
+            TargetPointSelected?.Invoke();
             _playerMover.Move(hit.point);
         }
     }
 
-    private void TryMoveBuilding(RaycastHit hit)
+    private void TryFly(RaycastHit hit)
     {
-        if (hit.collider.TryGetComponent(out Building building) && building.IsPlayerOnBuilding && building.enabled)
+        if (hit.collider.TryGetComponent(out FlyPoint flyPoint) && flyPoint.enabled)
         {
-            _playerMover.Move(hit.point);
-        }
-    }
-
-    private void TryFlyBuilding(RaycastHit hit)
-    {
-        if (hit.collider.TryGetComponent(out Building building) && building.IsPlayerOnBuilding == false && building.enabled)
-        {
-            _playerMover.Fly(building.PointFirst.position);
-            building.OnBuildingSelect();
+            TargetPointSelected?.Invoke();
+            _playerMover.Fly(flyPoint.Position, flyPoint.NextPoint);            
         }
     }
 

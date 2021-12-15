@@ -19,10 +19,13 @@ public class EnemyMover : MonoBehaviour
 
     private void OnEnable()
     {
-        _targetPosition = GetPosition();
-        LookAtDirection(_targetPosition);
+        if (!_isStanding)
+        {
+            _targetPosition = GetPosition();
+            LookAtDirection(_targetPosition);
 
-        _direction = Random.Range(0, 2);
+            _direction = Random.Range(0, 2);
+        }
     }
 
     private void Update()
@@ -37,7 +40,7 @@ public class EnemyMover : MonoBehaviour
         {
             _onTargetPosition = false;
             _targetPosition = GetPosition();
-
+            
             LookAtDirection(_targetPosition);
         }
 

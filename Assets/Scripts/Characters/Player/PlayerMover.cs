@@ -26,12 +26,14 @@ public class PlayerMover : MonoBehaviour
         tweenMove.OnComplete(LookAtClosetstEnemy);
     }
 
-    public void Fly(Vector3 point)
+    public void Fly(Transform pointToMove, Transform flyPoint)
     {
         Moved?.Invoke(true);
 
-        var tweenMove = transform.DOMove(point, Duration);
+        var tweenMove = transform.DOMove(pointToMove.position, Duration);
         tweenMove.SetEase(Ease.InOutSine);
+
+        LookAtNextFlyPoint(flyPoint);
     }
 
     public void LookAtFinish(Transform finishPosition)
@@ -52,6 +54,11 @@ public class PlayerMover : MonoBehaviour
     private void OnDisable()
     {
         _rotater.enabled = false;
+    }
+
+    private void LookAtNextFlyPoint(Transform transform)
+    {
+        _rotater.LookAtFlyPoint(transform);
     }
 
     private void LookAtClosetstEnemy()
