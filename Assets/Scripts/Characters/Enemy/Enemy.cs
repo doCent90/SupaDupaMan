@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 [RequireComponent(typeof(EnemyMover))]
 [RequireComponent(typeof(CapsuleCollider))]
@@ -33,10 +32,10 @@ public class Enemy : MonoBehaviour
     public bool IsGigant => _isGigant;
     public StartGame StartGame => _startGame;
 
-    public event UnityAction Died;
-    public event UnityAction Damaged;
-    public event UnityAction<Transform> DiedPosition;
-    public event UnityAction<Transform> ShotPointSeted;
+    public event Action Died;
+    public event Action Damaged;
+    public event Action<Transform> DiedPosition;
+    public event Action<Transform> ShotPointSeted;
 
     public void TakeDamage()
     {
@@ -47,6 +46,35 @@ public class Enemy : MonoBehaviour
         _isDamaged = true;
 
         Damaged?.Invoke();
+    }
+
+    private void Awake()
+    {
+        if (_startGame == null || _dieMaterial == null)
+            throw new InvalidOperationException();
+
+        if (GetComponent<EnemyGigant>())
+            _isGigant = true;
+        else
+            _isGigant = false;
+
+        _mover = GetComponent<EnemyMover>();
+        _capsuleCollider = GetComponent<CapsuleCollider>();
+        _slicedRegDoll = GetComponentInChildren<SlicedRegDoll>();
+        _shotPoint = GetComponentInChildren<ShotPointCharacter>();
+
+        _enemyParticals = GetComponentInChildren<EnemyParticals>();
+        _prisonerRegDoll = GetComponentInChildren<PrisonerRegDoll>();
+        _meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+        _stickmanSliced = _slicedRegDoll.GetComponentInChildren<StickmanSlicer>();
+
+        _renderer = GetComponentInChildren<SkinnedMeshRenderer>();
+        _particalFX = _enemyParticals.GetComponentsInChildren<ParticleSystem>();
+
+        _currentColor = _meshRenderer.material.color;
+        _slicedRegDoll.gameObject.SetActive(false);
+
+        _startGame.Started += EnableMover;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -107,35 +135,6 @@ public class Enemy : MonoBehaviour
         {
             partical.Play();
         }
-    }
-
-    private void Awake()
-    {
-        if (_startGame == null || _dieMaterial == null)
-            throw new InvalidOperationException();
-
-        if (GetComponent<EnemyGigant>())
-            _isGigant = true;
-        else
-            _isGigant = false;
-
-        _mover = GetComponent<EnemyMover>();
-        _capsuleCollider = GetComponent<CapsuleCollider>();
-        _slicedRegDoll = GetComponentInChildren<SlicedRegDoll>();
-        _shotPoint = GetComponentInChildren<ShotPointCharacter>();
-
-        _enemyParticals = GetComponentInChildren<EnemyParticals>();
-        _prisonerRegDoll = GetComponentInChildren<PrisonerRegDoll>();
-        _meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
-        _stickmanSliced = _slicedRegDoll.GetComponentInChildren<StickmanSlicer>();
-
-        _renderer = GetComponentInChildren<SkinnedMeshRenderer>();
-        _particalFX = _enemyParticals.GetComponentsInChildren<ParticleSystem>();
-
-        _currentColor = _meshRenderer.material.color;
-        _slicedRegDoll.gameObject.SetActive(false);
-
-        _startGame.Started += EnableMover;
     }
 
     private void OnDisable()

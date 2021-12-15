@@ -125,6 +125,14 @@ PrefabInstance:
       propertyPath: _wayPoint2
       value: 
       objectReference: {fileID: 5360802857376515071}
+    - target: {fileID: 4648880523425687373, guid: 28bd3d228ca773c4b9a744bb53e7358d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4648880523435070715, guid: 28bd3d228ca773c4b9a744bb53e7358d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ede373afa72e6f742852d6d2066272e2, type: 2}
     - target: {fileID: 4648880523439352369, guid: 28bd3d228ca773c4b9a744bb53e7358d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

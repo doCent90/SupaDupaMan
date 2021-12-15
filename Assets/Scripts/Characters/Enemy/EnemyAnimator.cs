@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Enemy))]
@@ -14,38 +13,31 @@ public class EnemyAnimator : MonoBehaviour
     private const string Run = "Run";
     private const string TakeDamage = "TakeDamage";
 
-    private void Awake()
+    private void Start()
     {
         _enemy = GetComponent<Enemy>();
-        _startGame = _enemy.StartGame;
         _animator = GetComponent<Animator>();
         _enemyMover = GetComponent<EnemyMover>();
+        _startGame = _enemy.StartGame;
 
         _startGame.Started += OnStarted;
         _enemy.Damaged += OnDamageTaked;
-        _enemy.Died += OnDied;
     }
 
     private void OnDisable()
     {
         _startGame.Started -= OnStarted;
         _enemy.Damaged -= OnDamageTaked;
-        _enemy.Died -= OnDied;
     }
 
     private void OnDamageTaked()
     {
-        _animator.SetBool(TakeDamage, true);
+        _animator.SetTrigger(TakeDamage);
     }
 
     private void OnStarted()
     {
         if(!_enemyMover.IsStanding)
             _animator.SetTrigger(Run);
-    }
-
-    private void OnDied()
-    {
-        _animator.SetBool(TakeDamage, false);
     }
 }
