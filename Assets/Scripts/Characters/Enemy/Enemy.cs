@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private Material _dieMaterial;
     [SerializeField] private StartGame _startGame;
+    [SerializeField] private bool _cantDamageShrapnel = false;
 
     private bool _isGigant;
     private EnemyMover _mover;
@@ -79,7 +80,7 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if((collision.collider.TryGetComponent(out Car car) || collision.collider.TryGetComponent(out Shrapnel shrapnel)) && enabled)
+        if((collision.collider.TryGetComponent(out Car car) || collision.collider.TryGetComponent(out Shrapnel shrapnel)) && enabled && !_cantDamageShrapnel)
         {
             _mover.enabled = false;
             Die();

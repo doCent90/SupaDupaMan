@@ -24,7 +24,7 @@ MonoBehaviour:
   status: 1
   xfbml: 0
   frictionlessRequests: 1
-  androidKeystorePath: E:\Unity\2020.3.23f1\Editor\Data\PlaybackEngines\AndroidPlayer\OpenJDK
+  androidKeystorePath: D:\Git\SupaDupaMan\KeyStore
   iosURLSuffix: 
   appLinkSchemes:
   - list: []
