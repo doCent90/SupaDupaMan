@@ -8,7 +8,7 @@ public class PlayerRotater : MonoBehaviour
 
     private const string MouseX = "Mouse X";
     private const string MouseY = "Mouse Y";
-    private const float Duration = 0.5f;
+    private const float Duration = 0.35f;
     private const float Distance = 100f;
     private const float Delay = 0.6f;
     private const int Multiply = 2;
