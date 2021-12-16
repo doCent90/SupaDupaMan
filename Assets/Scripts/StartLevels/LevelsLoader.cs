@@ -104,7 +104,7 @@ public class LevelsLoader : MonoBehaviour
             default:
                 {
                     PlayerPrefs.DeleteAll();
-                    LVL1_WB.Load();
+                    LVL5_WB.Load();
                 }
                 break;
         }
