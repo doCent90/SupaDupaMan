@@ -5,21 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(CapsuleCollider))]
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private Material _dieMaterial;
-    [SerializeField] private StartGame _startGame;
     [SerializeField] private bool _cantDamageShrapnel = false;
 
-    private bool _isGigant;
     private EnemyMover _mover;
+    private StartGame _startGame;
     private Vector4 _currentColor;
     private SlicedRegDoll _slicedRegDoll;
     private ParticleSystem[] _particalFX;
-
     private ShotPointCharacter _shotPoint;
-    private SkinnedMeshRenderer _renderer;
-    private StickmanSlicer _stickmanSliced;
-    private EnemyParticals _enemyParticals;
 
+    private StickmanSlicer _stickmanSliced;
     private PrisonerRegDoll _prisonerRegDoll;
     private CapsuleCollider _capsuleCollider;
     private SkinnedMeshRenderer _meshRenderer;
@@ -30,7 +25,6 @@ public class Enemy : MonoBehaviour
 
     private const float DestroyTime = 0.5f;
 
-    public bool IsGigant => _isGigant;
     public StartGame StartGame => _startGame;
 
     public event Action Died;
@@ -51,26 +45,17 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        if (_startGame == null || _dieMaterial == null)
-            throw new InvalidOperationException();
-
-        if (GetComponent<EnemyGigant>())
-            _isGigant = true;
-        else
-            _isGigant = false;
+        _startGame = FindObjectOfType<StartGame>();
 
         _mover = GetComponent<EnemyMover>();
         _capsuleCollider = GetComponent<CapsuleCollider>();
+        _particalFX = GetComponentsInChildren<ParticleSystem>();
         _slicedRegDoll = GetComponentInChildren<SlicedRegDoll>();
-        _shotPoint = GetComponentInChildren<ShotPointCharacter>();
 
-        _enemyParticals = GetComponentInChildren<EnemyParticals>();
+        _shotPoint = GetComponentInChildren<ShotPointCharacter>();
         _prisonerRegDoll = GetComponentInChildren<PrisonerRegDoll>();
         _meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         _stickmanSliced = _slicedRegDoll.GetComponentInChildren<StickmanSlicer>();
-
-        _renderer = GetComponentInChildren<SkinnedMeshRenderer>();
-        _particalFX = _enemyParticals.GetComponentsInChildren<ParticleSystem>();
 
         _currentColor = _meshRenderer.material.color;
         _slicedRegDoll.gameObject.SetActive(false);
@@ -117,7 +102,6 @@ public class Enemy : MonoBehaviour
         DiedPosition?.Invoke(transform);
 
         PlayFX();
-        SetDieMaterial();
         _capsuleCollider.enabled = false;
 
         _prisonerRegDoll.gameObject.SetActive(false);
@@ -141,11 +125,6 @@ public class Enemy : MonoBehaviour
     private void OnDisable()
     {
         _startGame.Started -= EnableMover;
-    }
-
-    private void SetDieMaterial()
-    {
-        _renderer.material = _dieMaterial;
     }
 
     private void EnableMover()

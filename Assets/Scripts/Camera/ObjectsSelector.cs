@@ -111,8 +111,8 @@ public class ObjectsSelector : MonoBehaviour
 
     private void TryDestroyWall(RaycastHit hit)
     {
-        if (hit.collider.TryGetComponent(out WallSlicer wall2))
-            wall2.TakeDamage();
+        if (hit.collider.TryGetComponent(out WallSlicer wall))
+            wall.TakeDamage();
     }
 
     private void TryDestroyObject(RaycastHit hit)
