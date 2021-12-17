@@ -9,16 +9,13 @@ public class Enemy : MonoBehaviour
 
     private EnemyMover _mover;
     private StartGame _startGame;
-    private Vector4 _currentColor;
     private SlicedRegDoll _slicedRegDoll;
     private ParticleSystem[] _particalFX;
-    private ShotPointCharacter _shotPoint;
 
+    private ShotPointCharacter _shotPoint;
     private StickmanSlicer _stickmanSliced;
     private PrisonerRegDoll _prisonerRegDoll;
     private CapsuleCollider _capsuleCollider;
-    private SkinnedMeshRenderer _meshRenderer;
-    private Vector4 _targetColor = Color.black;
 
     private float _elapsedTime;
     private bool _isDamaged = false;
@@ -50,14 +47,12 @@ public class Enemy : MonoBehaviour
         _mover = GetComponent<EnemyMover>();
         _capsuleCollider = GetComponent<CapsuleCollider>();
         _particalFX = GetComponentsInChildren<ParticleSystem>();
-        _slicedRegDoll = GetComponentInChildren<SlicedRegDoll>();
 
+        _slicedRegDoll = GetComponentInChildren<SlicedRegDoll>();
         _shotPoint = GetComponentInChildren<ShotPointCharacter>();
         _prisonerRegDoll = GetComponentInChildren<PrisonerRegDoll>();
-        _meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         _stickmanSliced = _slicedRegDoll.GetComponentInChildren<StickmanSlicer>();
 
-        _currentColor = _meshRenderer.material.color;
         _slicedRegDoll.gameObject.SetActive(false);
 
         _startGame.Started += EnableMover;
@@ -82,8 +77,6 @@ public class Enemy : MonoBehaviour
 
             if (_elapsedTime <= 0)
                 Die();
-
-            ChangeColor();
         }
     }
 
@@ -107,11 +100,6 @@ public class Enemy : MonoBehaviour
         _prisonerRegDoll.gameObject.SetActive(false);
         _slicedRegDoll.gameObject.SetActive(true);
         _stickmanSliced.TakeDamage();
-    }
-
-    private void ChangeColor()
-    {
-        _meshRenderer.material.color = Vector4.Lerp(_currentColor, _targetColor, _elapsedTime);
     }
 
     private void PlayFX()
