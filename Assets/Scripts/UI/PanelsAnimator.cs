@@ -19,6 +19,7 @@ public class PanelsAnimator : MonoBehaviour
     private const float Duration = 0.5f;
     private const float FullAlpha = 1f;
     private const float ZeroAlpha = 0;
+    private const float Delay = 1.5f;
 
     private void Awake()
     {
@@ -50,7 +51,7 @@ public class PanelsAnimator : MonoBehaviour
 
     private void OnGameWon()
     {
-        var tweenFade = _youWinPanel.DOFade(FullAlpha, Duration);
+        var tweenFade = _youWinPanel.DOFade(FullAlpha, Duration * 2).SetDelay(Delay);
     }
 
     private void OnShopButtonClicked(bool isOpen)

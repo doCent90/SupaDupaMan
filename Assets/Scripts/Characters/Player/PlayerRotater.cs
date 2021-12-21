@@ -59,7 +59,11 @@ public class PlayerRotater : MonoBehaviour
             x = Input.GetAxis(MouseX);
             y = Input.GetAxis(MouseY);
 
-            transform.localEulerAngles += new Vector3(y, x, 0);
+            Vector3 targetViewPosition = transform.localEulerAngles += new Vector3(y, x, 0);
+
+            transform.localEulerAngles = targetViewPosition;
+
+            Debug.Log(transform.localEulerAngles);
 
             Started?.Invoke();
             Rotated?.Invoke(true);
