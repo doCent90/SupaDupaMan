@@ -63,8 +63,6 @@ public class PlayerRotater : MonoBehaviour
 
             transform.localEulerAngles = targetViewPosition;
 
-            Debug.Log(transform.localEulerAngles);
-
             Started?.Invoke();
             Rotated?.Invoke(true);
         }
