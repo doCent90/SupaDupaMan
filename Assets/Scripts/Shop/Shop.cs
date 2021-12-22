@@ -5,16 +5,21 @@ public class Shop : MonoBehaviour
 {
     [SerializeField] private Player _player;
     [SerializeField] private GameObject _itemContainer;
+    [SerializeField] private CurrentCoinsViewer _currentCoinsViewer;
     [Header("Lasers In Shop")]
     [SerializeField] private LaserRenderer2[] _lasers;
     [SerializeField] private LaserView _template;
 
-    private LasersActivator _lasersActivator;
+    private LasersActivator _laserActivator;
     private TotalCoinsViewer _coinsViewer;
+    private LaserView[] _lasersView;
+    private Sprite _defaultSprite;
+    private Sprite _targetSprite;
 
     private int _totalCurrentCoins;
 
     private const string Coins = "Coins";
+    private const string LastUsedLaser = "LastUsedLaser";
 
     private void Awake()
     {
@@ -22,51 +27,92 @@ public class Shop : MonoBehaviour
             throw new InvalidOperationException();
 
         _coinsViewer = GetComponentInChildren<TotalCoinsViewer>();
-        _lasersActivator = _player.GetComponentInChildren<LasersActivator>();
+        _laserActivator = _player.GetComponentInChildren<LasersActivator>();
         _totalCurrentCoins = PlayerPrefs.GetInt(Coins);
+
+        UpdateScore();
+        Fill();
+
+        _currentCoinsViewer.ScoreChanged += UpdateScore;
     }
 
-    private void Start()
+    private void OnDisable()
     {
-        for (int i = 0; i < _lasers.Length; i++)
+        _currentCoinsViewer.ScoreChanged -= UpdateScore;
+
+        foreach (var view in _lasersView)
         {
-            AddItem(_lasers[i]);
-            _lasers[i].SetStatus(isBuyed: false);
+            view.UseButtonClick -= SetBuyedLaser;
         }
     }
 
-    private void AddItem(LaserRenderer2 laser)
+    private void AddItem(LaserRenderer2 laser, out LaserView laserView)
     {
-        var view = Instantiate(_template, _itemContainer.transform);
+        LaserView view = Instantiate(_template, _itemContainer.transform);
         view.SellButtonClick += OnSellButtonClick;
         view.UseButtonClick += SetBuyedLaser;
         view.Render(laser);
+        laserView = view;
     }
 
-    private void OnSellButtonClick(LaserRenderer2 laser, LaserView view)
+    private void Fill()
     {
-        TrySellLaser(laser, view);
+        _lasersView = new LaserView[_lasers.Length];
+
+        for (int i = 0; i < _lasers.Length; i++)
+        {
+            AddItem(_lasers[i], out LaserView laserView);
+            _lasersView[i] = laserView;
+            _targetSprite = laserView.BackGroundSpriteCellTarget;
+            _defaultSprite = laserView.BackGroundSpriteCellDefault;
+        }
     }
 
     private void TrySellLaser(LaserRenderer2 laser, LaserView view)
     {
         if (laser.Price <= _totalCurrentCoins)
         {
-            _lasersActivator.SetLaser(laser);
+            _laserActivator.SetLaser(laser);
             _totalCurrentCoins -= laser.Price;
 
             PlayerPrefs.SetInt(Coins, _totalCurrentCoins);
+            SetBackGroundCellDefault();
+
             view.SetTextSold();
+            view.SetBackGroundSprite(_targetSprite);
             view.SellButtonClick -= OnSellButtonClick;
 
-            _coinsViewer.Refresh();
-            laser.SetStatus(isBuyed: true);
+            UpdateScore();
+            laser.SetBuyStatus();
+
+            PlayerPrefs.SetString(LastUsedLaser, laser.Name);
         }
     }
 
     private void SetBuyedLaser(LaserRenderer2 laser, LaserView view)
     {
-        view.UseButtonClick -= SetBuyedLaser;
-        _lasersActivator.SetLaser(laser);
+        SetBackGroundCellDefault();
+        view.SetBackGroundSprite(_targetSprite);
+        _laserActivator.SetLaser(laser);
+
+        PlayerPrefs.SetString(LastUsedLaser, laser.Name);
+    }
+
+    private void UpdateScore()
+    {
+        _coinsViewer.Refresh();
+    }
+
+    private void SetBackGroundCellDefault()
+    {
+        foreach (var view in _lasersView)
+        {
+            view.SetBackGroundSprite(_defaultSprite);
+        }
+    }
+
+    private void OnSellButtonClick(LaserRenderer2 laser, LaserView view)
+    {
+        TrySellLaser(laser, view);
     }
 }

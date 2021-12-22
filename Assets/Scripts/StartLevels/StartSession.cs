@@ -3,10 +3,14 @@ using IJunior.TypedScenes;
 
 public class StartSession : MonoBehaviour
 {
+    private const string Coins = "Coins";
     private const string SessionCount = "Session_Count";
 
     private void Awake()
     {
+        PlayerPrefs.SetInt(Coins, 11245);
+        Debug.Log("Add Coins");
+
         int sessionCount = PlayerPrefs.GetInt(SessionCount);
 
         if (sessionCount <= 0)

@@ -74,7 +74,6 @@ public class ButtonsUI : MonoBehaviour
 
         _openShop.gameObject.SetActive(false);
         _coinsViewer.gameObject.SetActive(false);
-        Debug.Log("SETTINGS_OPEN");
         _openOptions.gameObject.SetActive(false);
         _closeOptions.gameObject.SetActive(true);
 

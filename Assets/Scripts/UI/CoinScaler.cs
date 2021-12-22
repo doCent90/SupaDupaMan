@@ -1,6 +1,6 @@
+using System;
 using UnityEngine;
 using DG.Tweening;
-using UnityEngine.Events;
 
 public class CoinScaler : MonoBehaviour
 {
@@ -10,7 +10,7 @@ public class CoinScaler : MonoBehaviour
     private const float ScaleDown = 0.8f;
     private const float Duration = 0.15f;
 
-    public event UnityAction Rewarded;
+    public event Action Rewarded;
 
     public void Increase()
     {

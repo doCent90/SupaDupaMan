@@ -231,12 +231,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1132426022468292493, guid: 83e2bb5de04f31348919cda15dcfadac, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -37.599976
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1132426022468292493, guid: 83e2bb5de04f31348919cda15dcfadac, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 122.69995
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1232910084579626710, guid: 83e2bb5de04f31348919cda15dcfadac, type: 3}
       propertyPath: _player
@@ -246,6 +246,10 @@ PrefabInstance:
       propertyPath: _gameWin
       value: 
       objectReference: {fileID: 943402037}
+    - target: {fileID: 2356830834309433484, guid: 83e2bb5de04f31348919cda15dcfadac, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2973275432505271631, guid: 83e2bb5de04f31348919cda15dcfadac, type: 3}
       propertyPath: _gameWin
       value: 
@@ -262,21 +266,25 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6731830079705540323, guid: 83e2bb5de04f31348919cda15dcfadac, type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8117092801973962154, guid: 83e2bb5de04f31348919cda15dcfadac, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.001373291
+      value: 0.0022277832
       objectReference: {fileID: 0}
     - target: {fileID: 8117092801973962154, guid: 83e2bb5de04f31348919cda15dcfadac, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000047227582
+      value: -0.0003004074
       objectReference: {fileID: 0}
     - target: {fileID: 8557163892854279914, guid: 83e2bb5de04f31348919cda15dcfadac, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -37.599976
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8557163892854279914, guid: 83e2bb5de04f31348919cda15dcfadac, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 117
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8953673466499273704, guid: 83e2bb5de04f31348919cda15dcfadac, type: 3}
       propertyPath: m_Name
