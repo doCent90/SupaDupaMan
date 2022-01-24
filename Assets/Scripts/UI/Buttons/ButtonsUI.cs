@@ -31,6 +31,7 @@ public class ButtonsUI : MonoBehaviour
     private const string TimeGame = "time_spent";
 
     public StartGame StartGame => _game;
+    public LevelsLoader LevelsLoader => _loadLevel;
     public PlayerRotater PlayerRotater => _playerRotater;
     public bool IsPanelOpen { get; private set; } = false;
 
@@ -154,7 +155,7 @@ public class ButtonsUI : MonoBehaviour
             || _openOptions == null || _closeOptions == null
             || _onSoundButton == null || _offSoundButton == null)
         {
-            throw new InvalidOperationException();
+            throw new NullReferenceException(nameof(ButtonsUI));
         }
 
         SubscribeButtons();
