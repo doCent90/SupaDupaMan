@@ -5,6 +5,7 @@ public class GlassWall : Selectable
 {
     private float _elapsedTime;
     private bool _isDamaged = false;
+
     private ParticleSystem[] _particleSystems;
     private DamagePointWallSlicerMover _damagePointWallSlicerMover;
 
@@ -28,7 +29,7 @@ public class GlassWall : Selectable
 
     private void Die()
     {
-        foreach (var part in _particleSystems)
+        foreach (ParticleSystem part in _particleSystems)
         {
             part.Play();
         }

@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 using DG.Tweening;
-using System;
 
 public class PlayerRotater : MonoBehaviour
 {
+    [SerializeField] private Enemies _allEnemies;
+
     private Enemy[] _enemies;
 
     private const string MouseX = "Mouse X";
@@ -18,7 +20,7 @@ public class PlayerRotater : MonoBehaviour
 
     public void LookAtClosetstEnemy()
     {
-        foreach (var enemy in _enemies)
+        foreach (Enemy enemy in _enemies)
         {
             float distance = Vector3.Distance(transform.position, enemy.transform.position);
 
@@ -38,17 +40,20 @@ public class PlayerRotater : MonoBehaviour
         var tweenRotate = transform.DOLookAt(point.position, Duration * Multiply).SetDelay(Delay);        
     }
 
-    private void Awake()
+    private void OnEnable()
     {
-        _enemies = FindObjectsOfType<Enemy>();
+        if (_allEnemies == null)
+            throw new NullReferenceException(nameof(PlayerRotater));
+
+        _enemies = _allEnemies.GetComponentsInChildren<Enemy>();
     }
 
     private void Update()
     {
-        Rotate();
+        TryRotate();
     }
 
-    private void Rotate()
+    private void TryRotate()
     {
 
         if (Input.GetMouseButton(0))

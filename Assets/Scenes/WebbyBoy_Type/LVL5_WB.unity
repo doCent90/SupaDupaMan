@@ -345,7 +345,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8117092801973962154, guid: 83e2bb5de04f31348919cda15dcfadac, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0012962432
+      value: 0.0014178992
       objectReference: {fileID: 0}
     - target: {fileID: 8953673466499273704, guid: 83e2bb5de04f31348919cda15dcfadac, type: 3}
       propertyPath: m_Name
@@ -1524,7 +1524,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1083055189}
-  - component: {fileID: 1259392529308809400}
   m_Layer: 0
   m_Name: Environments
   m_TagString: Untagged
@@ -2621,18 +2620,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071481772}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1259392529308809400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1083055188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a578d4260430a8842bb4491c54ac866b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4286897264005403942
 GameObject:
   m_ObjectHideFlags: 0
@@ -2817,6 +2804,10 @@ PrefabInstance:
       propertyPath: _componentHandler
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5634443607485046281, guid: 4bc03db68c5e22643899dba07c625306, type: 3}
+      propertyPath: _allEnemies
+      value: 
+      objectReference: {fileID: 7035597975831807345}
     - target: {fileID: 5634443607485046281, guid: 4bc03db68c5e22643899dba07c625306, type: 3}
       propertyPath: _componentHandler
       value: 

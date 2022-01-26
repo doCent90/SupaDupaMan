@@ -39,6 +39,7 @@ public class PlayerMover : MonoBehaviour
     public void LookAtFinish(Transform finishPosition)
     {
         _finishPoint = finishPosition;
+
         var tweeLookAt = transform.DOLookAt(_finishPoint.position, Duration * 3).SetDelay(Duration * 2);
         tweeLookAt.SetEase(Ease.InOutSine).OnComplete(MoveFinishPoint);
     }

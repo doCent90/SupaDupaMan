@@ -84,7 +84,7 @@ public class Enemy : Selectable
 
     private void SetShotPoint()
     {
-        var shotPoint = _shotPoint.transform;
+        Transform shotPoint = _shotPoint.transform;
 
         ShotPointSeted?.Invoke(shotPoint);
     }
@@ -106,7 +106,7 @@ public class Enemy : Selectable
 
     private void PlayFX()
     {
-        foreach (var partical in _particalFX)
+        foreach (ParticleSystem partical in _particalFX)
         {
             partical.Play();
         }

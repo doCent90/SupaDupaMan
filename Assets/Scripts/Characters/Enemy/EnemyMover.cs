@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using System;
 
 public class EnemyMover : MonoBehaviour
 {
@@ -19,12 +20,15 @@ public class EnemyMover : MonoBehaviour
 
     private void OnEnable()
     {
+        if (_wayPoint1 == null || _wayPoint2 == null)
+            throw new NullReferenceException(nameof(EnemyMover));
+
         if (!_isStanding)
         {
             _targetPosition = GetPosition();
             LookAtDirection(_targetPosition);
 
-            _direction = Random.Range(0, 2);
+            _direction = UnityEngine.Random.Range(0, 2);
         }
     }
 
