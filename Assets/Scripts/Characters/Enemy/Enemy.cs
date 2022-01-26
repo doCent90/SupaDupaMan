@@ -3,10 +3,11 @@ using UnityEngine;
 
 [RequireComponent(typeof(EnemyMover))]
 [RequireComponent(typeof(CapsuleCollider))]
-public class Enemy : MonoBehaviour
+public class Enemy : Selectable
 {
     [SerializeField] private bool _cantDamageShrapnel = false;
 
+    private Enemies _enemies;
     private EnemyMover _mover;
     private StartGame _startGame;
     private SlicedRegDoll _slicedRegDoll;
@@ -29,7 +30,7 @@ public class Enemy : MonoBehaviour
     public event Action<Transform> DiedPosition;
     public event Action<Transform> ShotPointSeted;
 
-    public void TakeDamage()
+    public override void TakeDamage()
     {
         SetShotPoint();
 
@@ -42,16 +43,17 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        _startGame = FindObjectOfType<StartGame>();
 
         _mover = GetComponent<EnemyMover>();
+        _enemies = GetComponentInParent<Enemies>();
         _capsuleCollider = GetComponent<CapsuleCollider>();
         _particalFX = GetComponentsInChildren<ParticleSystem>();
-
         _slicedRegDoll = GetComponentInChildren<SlicedRegDoll>();
+
         _shotPoint = GetComponentInChildren<ShotPointCharacter>();
         _prisonerRegDoll = GetComponentInChildren<PrisonerRegDoll>();
         _stickmanSliced = _slicedRegDoll.GetComponentInChildren<StickmanSlicer>();
+        _startGame = _enemies.StartGame;
 
         _slicedRegDoll.gameObject.SetActive(false);
 

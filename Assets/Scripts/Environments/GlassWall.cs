@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class GlassWall : MonoBehaviour
+public class GlassWall : Selectable
 {
     private float _elapsedTime;
     private bool _isDamaged = false;
@@ -13,7 +13,7 @@ public class GlassWall : MonoBehaviour
     public event Action Destroyed;
     public event Action<Transform> ApplyDamage;
 
-    public void TakeDamage()
+    public override void TakeDamage()
     {
         _isDamaged = true;
         _elapsedTime = DestroingObjectsTime;

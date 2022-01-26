@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Slicer : MonoBehaviour
+public abstract class Slicer : Selectable
 {
     protected Rigidbody[] Rigidbodies;
 
@@ -11,7 +11,7 @@ public abstract class Slicer : MonoBehaviour
     protected const float DestroingObjectsTime = 0.5f;
     protected const float Range = 30f;
 
-    public void TakeDamage()
+    public override void TakeDamage()
     {
         IsDamaged = true;
         InitDamage();
