@@ -699,7 +699,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8408232974831382110}
-  - component: {fileID: 1983917562}
+  - component: {fileID: 6322176258850179181}
   m_Layer: 0
   m_Name: DefaultHand
   m_TagString: Untagged
@@ -716,13 +716,13 @@ Transform:
   m_GameObject: {fileID: 9222206533578568932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.71, y: 3.4, z: -5.18}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 975628822741158558}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1983917562
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &6322176258850179181
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -731,12 +731,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 9222206533578568932}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0af1fe285b0fe4bb9aa8ad73078ae7d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e943ffff9c311b489cfa6b6e2c90c85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _distance: 36
   _animator: {fileID: 720743356367760216}
-  _clickDelay: 0.2
+  _clickDelay: 0.1
   _hitDelay: 0.1
-  _camera: {fileID: 0}
   _animationEvents: {fileID: 4791501020583468413}
