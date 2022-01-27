@@ -23,8 +23,8 @@ public class Shop : MonoBehaviour
 
     private void Awake()
     {
-        if (_player == null || _itemContainer == null || _lasers == null || _template == null)
-            throw new InvalidOperationException();
+        if (_player == null || _itemContainer == null || _lasers == null || _template == null || _currentCoinsViewer == null)
+            throw new NullReferenceException(nameof(Shop));
 
         _coinsViewer = GetComponentInChildren<TotalCoinsViewer>();
         _laserActivator = _player.GetComponentInChildren<LasersActivator>();
@@ -40,7 +40,7 @@ public class Shop : MonoBehaviour
     {
         _currentCoinsViewer.ScoreChanged -= UpdateScore;
 
-        foreach (var view in _lasersView)
+        foreach (LaserView view in _lasersView)
         {
             view.UseButtonClick -= SetBuyedLaser;
         }
@@ -105,7 +105,7 @@ public class Shop : MonoBehaviour
 
     private void SetBackGroundCellDefault()
     {
-        foreach (var view in _lasersView)
+        foreach (LaserView view in _lasersView)
         {
             view.SetBackGroundSprite(_defaultSprite);
         }

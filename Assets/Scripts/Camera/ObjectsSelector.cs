@@ -16,7 +16,7 @@ public class ObjectsSelector : MonoBehaviour
 
     public float MaxLength { get; private set; } = 80f;
 
-    public event Action TargetPointSelected;
+    public event Action<Vector3> TargetPointSelected;
 
     private void OnEnable()
     {
@@ -72,7 +72,7 @@ public class ObjectsSelector : MonoBehaviour
     {
         if (hit.collider.TryGetComponent(out Platform platform) && platform.enabled)
         {
-            TargetPointSelected?.Invoke();
+            TargetPointSelected?.Invoke(hit.point);
             _playerMover.Move(hit.point);
         }
     }
@@ -81,7 +81,7 @@ public class ObjectsSelector : MonoBehaviour
     {
         if (hit.collider.TryGetComponent(out FlyPoint flyPoint) && flyPoint.enabled)
         {
-            TargetPointSelected?.Invoke();
+            TargetPointSelected?.Invoke(flyPoint.Position.position);
             _playerMover.Fly(flyPoint.Position, flyPoint.NextPoint);            
         }
     }

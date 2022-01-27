@@ -1,17 +1,22 @@
+using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class GameWin : MonoBehaviour
 {
+    [SerializeField] private Enemies _allEnemies;
+
     private Enemy[] _enemies;
 
-    public event UnityAction Won;
+    public event Action Won;
 
     private void OnEnable()
     {
-        _enemies = FindObjectsOfType<Enemy>();
+        if (_allEnemies == null)
+            throw new NullReferenceException(nameof(GameWin));
 
-        foreach (var enemy in _enemies)
+        _enemies = _allEnemies.GetComponentsInChildren<Enemy>();
+
+        foreach (Enemy enemy in _enemies)
         {
             enemy.Died += OnEnemyDied;
         }
@@ -19,7 +24,7 @@ public class GameWin : MonoBehaviour
 
     private void OnDisable()
     {
-        foreach (var enemy in _enemies)
+        foreach (Enemy enemy in _enemies)
         {
             enemy.Died -= OnEnemyDied;
         }
@@ -29,7 +34,7 @@ public class GameWin : MonoBehaviour
     {
         int diedEnemyCount = 0;
 
-        foreach (var enemy in _enemies)
+        foreach (Enemy enemy in _enemies)
         {
             if (!enemy.enabled)
                 diedEnemyCount++;

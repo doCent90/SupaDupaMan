@@ -34,8 +34,11 @@ public class StartGame : MonoBehaviour
         _objectsSelector.enabled = true;
     }
 
-    private void Awake()
+    private void OnEnable()
     {
+        if (_player == null)
+            throw new NullReferenceException(nameof(StartGame));
+
         _playerMover = _player.GetComponent<PlayerMover>();
         _objectsSelector = _player.GetComponentInChildren<ObjectsSelector>();
     }
@@ -89,7 +92,7 @@ public class StartGame : MonoBehaviour
 
     private void SetDaysInGame()
     {
-        var days = PlayerPrefs.GetInt(CountDaysGame);
+        int days = PlayerPrefs.GetInt(CountDaysGame);
         days++;
 
         PlayerPrefs.SetInt(CountDaysGame, days);

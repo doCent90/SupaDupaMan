@@ -159,6 +159,50 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &4914795025830028955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9014059347508617285}
+  - component: {fileID: 3655861636189848187}
+  m_Layer: 0
+  m_Name: FreeWayColliderChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9014059347508617285
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4914795025830028955}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0.563}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_Children: []
+  m_Father: {fileID: 8442623690604717372}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3655861636189848187
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4914795025830028955}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7430614, y: 1.2930453, z: 0.59190464}
+  m_Center: {x: -0.086499214, y: -0.0778148, z: 0.20404685}
 --- !u!1 &7377432423586201375
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,6 +252,7 @@ GameObject:
   - component: {fileID: 3708220797053431612}
   - component: {fileID: 2733481612470500236}
   - component: {fileID: 2599875575819950107}
+  - component: {fileID: 595799565986376592}
   m_Layer: 3
   m_Name: Gigant_Criminal
   m_TagString: Untagged
@@ -231,6 +276,7 @@ Transform:
   - {fileID: 7331468410261493015}
   - {fileID: 5672082620213649643}
   - {fileID: 2222487684858776163}
+  - {fileID: 9014059347508617285}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -215.5, z: 0}
@@ -323,6 +369,7 @@ MonoBehaviour:
   _wayPoint1: {fileID: 0}
   _wayPoint2: {fileID: 0}
   _isStanding: 0
+  _isFollowing: 0
 --- !u!114 &2599875575819950107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,6 +385,19 @@ MonoBehaviour:
   _effects:
   - {fileID: 4475918417539095105}
   - {fileID: 6658536500461779290}
+--- !u!114 &595799565986376592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8442623690604886364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f59337156a49a3419601ca94cbc1996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _boxCollider: {fileID: 3655861636189848187}
 --- !u!1 &8532789841077088357
 GameObject:
   m_ObjectHideFlags: 0

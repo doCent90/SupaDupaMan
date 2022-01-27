@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(ObjectsSlicer))]
@@ -9,6 +10,9 @@ public class SoundsObjects : MonoBehaviour
 
     private void OnEnable()
     {
+        if (_soundBoom == null)
+            throw new NullReferenceException(nameof(SoundsObjects));
+
         _sclicedObject = GetComponent<ObjectsSlicer>();
         _sclicedObject.Destroyed += OnDied;
     }

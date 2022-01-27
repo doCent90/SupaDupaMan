@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -32,7 +33,7 @@ public class ObjectsSlicer : Slicer
         _cellsDestroyer.enabled = true;
         _meshRenderer.enabled = false;
 
-        foreach (var fx in _particleSystems)
+        foreach (ParticleSystem fx in _particleSystems)
         {
             fx.Play();
         }

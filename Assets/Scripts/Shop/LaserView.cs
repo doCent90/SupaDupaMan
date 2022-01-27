@@ -14,7 +14,6 @@ public class LaserView : MonoBehaviour
 
     private LaserRenderer2 _laserRenderer;
     private Image _backGroundSpriteCell;
-    private Sprite _defaultSprite;
     private TMP_Text _priceText;
     private Button _sellButton;
 
@@ -26,7 +25,7 @@ public class LaserView : MonoBehaviour
     private const int False = 0;
 
     public Sprite BackGroundSpriteCellTarget => _targetSprite;
-    public Sprite BackGroundSpriteCellDefault => _defaultSprite;
+    public Sprite BackGroundSpriteCellDefault { get; private set; }
 
     public event Action<LaserRenderer2, LaserView> SellButtonClick;
     public event Action<LaserRenderer2, LaserView> UseButtonClick;
@@ -59,11 +58,14 @@ public class LaserView : MonoBehaviour
 
     private void OnEnable()
     {
+        if (_icon == null || _targetSprite == null)
+            throw new NullReferenceException(nameof(LaserView));
+
         _sellButton = GetComponent<Button>();
         _backGroundSpriteCell = GetComponent<Image>();
         _priceText = GetComponentInChildren<TMP_Text>();
 
-        _defaultSprite = _backGroundSpriteCell.sprite;
+        BackGroundSpriteCellDefault = _backGroundSpriteCell.sprite;
         _sellButton.onClick.AddListener(OnButtonClick);
     }
 

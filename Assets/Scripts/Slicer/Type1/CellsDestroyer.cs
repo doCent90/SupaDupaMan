@@ -5,7 +5,6 @@ public class CellsDestroyer : MonoBehaviour
     private MeshCollider[] _meshColliders;
 
     private float _elapsedTime;
-    private bool _isDestroy = false;
     private bool _isMeshesTrigger = false;
 
     private const float DelayDisable = 2f;
@@ -19,14 +18,14 @@ public class CellsDestroyer : MonoBehaviour
 
     private void Update()
     {
-        if (!_isMeshesTrigger)
+        if (_isMeshesTrigger == false)
         {
             if (_elapsedTime <= 0)
                 SetCollidersTriggerOn();
 
             _elapsedTime -= Time.deltaTime;
         }
-        else if (!_isDestroy)
+        else if (_isMeshesTrigger == true)
         {
             if (_elapsedTime <= 0)
                 Disable();
@@ -39,7 +38,7 @@ public class CellsDestroyer : MonoBehaviour
 
     private void SetCollidersTriggerOn()
     {
-        foreach (var mesh in _meshColliders)
+        foreach (MeshCollider mesh in _meshColliders)
         {
             mesh.isTrigger = true;
         }
@@ -50,7 +49,7 @@ public class CellsDestroyer : MonoBehaviour
 
     private void Disable()
     {
-        foreach (var mesh in _meshColliders)
+        foreach (MeshCollider mesh in _meshColliders)
         {
             mesh.gameObject.SetActive(false);
         }

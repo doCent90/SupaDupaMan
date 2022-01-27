@@ -22,10 +22,9 @@ public class LaserRenderer2 : MonoBehaviour
     private bool _isStartDissovle = false;
     private bool _updateSaver = false;
     private int _particleCount;
-    private bool _isBought;
 
-    private float HitOffset = 0.1f;
-    private const float laserScale = 1;
+    private const float HitOffset = 0.1f;
+    private const float LaserScale = 1;
     private const float MaxLength = 85f;
 
     private const string StartPoint = "_StartPoint";
@@ -35,13 +34,12 @@ public class LaserRenderer2 : MonoBehaviour
     private const string Scale = "_Scale";
 
     private const int True = 1;
-    private const int False = 0;
 
     public string Name => _name;
     public int Price => _price;
     public Sprite Icon => _icon;
     public Sprite SoldIcon => _soldIcon;
-    public bool IsBought => _isBought;
+    public bool IsBought { get; private set; }
 
     public void DisablePrepare()
     {
@@ -65,7 +63,7 @@ public class LaserRenderer2 : MonoBehaviour
 
     public void SetBuyStatus()
     {
-        _isBought = true;
+        IsBought = true;
         _icon = _soldIcon;
         PlayerPrefs.SetInt(_name, True);
     }
@@ -77,7 +75,7 @@ public class LaserRenderer2 : MonoBehaviour
         _flashes = FlashEffect.GetComponentsInChildren<ParticleSystem>();
         _hits = HitEffect.GetComponentsInChildren<ParticleSystem>();
 
-        _laserMat.SetFloat(Scale, laserScale);
+        _laserMat.SetFloat(Scale, LaserScale);
 
         if (PlayerPrefs.GetInt(_name) == 1)
             SetBuyStatus();
@@ -92,8 +90,8 @@ public class LaserRenderer2 : MonoBehaviour
             RaycastHit rayHit;
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out rayHit, MaxLength))
             {
-                _particleCount = Mathf.RoundToInt(rayHit.distance / (2 * laserScale));
-                if (_particleCount < rayHit.distance / (2 * laserScale))
+                _particleCount = Mathf.RoundToInt(rayHit.distance / (2 * LaserScale));
+                if (_particleCount < rayHit.distance / (2 * LaserScale))
                 {
                     _particleCount += 1;
                 }
@@ -120,8 +118,8 @@ public class LaserRenderer2 : MonoBehaviour
             {
                 var endPosition = transform.position + transform.forward * MaxLength;
                 var distance = Vector3.Distance(endPosition, transform.position);
-                _particleCount = Mathf.RoundToInt(distance / (2 * laserScale));
-                if (_particleCount < distance / (2 * laserScale))
+                _particleCount = Mathf.RoundToInt(distance / (2 * LaserScale));
+                if (_particleCount < distance / (2 * LaserScale))
                 {
                     _particleCount += 1;
                 }
@@ -154,9 +152,9 @@ public class LaserRenderer2 : MonoBehaviour
 
         for (int i = 0; i < _particleCount; i++)
         {
-            _particlesPositions[i] = Vector3.zero + new Vector3(0f, 0f, i * 2 * laserScale);
+            _particlesPositions[i] = Vector3.zero + new Vector3(0f, 0f, i * 2 * LaserScale);
             _particles[i].position = _particlesPositions[i];
-            _particles[i].startSize3D = new Vector3(0.001f, 0.001f, 2 * laserScale);
+            _particles[i].startSize3D = new Vector3(0.001f, 0.001f, 2 * LaserScale);
             _particles[i].startColor = laserColor;
         }
         _laserParticalSysytem.SetParticles(_particles, _particles.Length);

@@ -15,6 +15,8 @@ public class PlayerRotater : MonoBehaviour
     private const float Delay = 0.6f;
     private const int Multiply = 2;
 
+    public Enemies Enemies => _allEnemies;
+
     public event Action Started;
     public event Action<bool> Rotated;
 

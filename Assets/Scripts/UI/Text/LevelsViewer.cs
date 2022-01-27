@@ -9,7 +9,7 @@ public class LevelsViewer : MonoBehaviour
 
     private void OnEnable()
     {
-        if (_buttonsUI == null)
+        if (_buttonsUI == null || _levelText == null)
             throw new NullReferenceException(nameof(_buttonsUI));
 
         Show();

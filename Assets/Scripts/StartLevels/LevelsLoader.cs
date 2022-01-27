@@ -33,7 +33,7 @@ public class LevelsLoader : MonoBehaviour
 
     private void OnEnable()
     {
-        var level = PlayerPrefs.GetInt(LevelDone);
+        int level = PlayerPrefs.GetInt(LevelDone);
 
         if(level <= FirstLevel)
             PlayerPrefs.SetInt(LevelDone, FirstLevel);
@@ -48,7 +48,7 @@ public class LevelsLoader : MonoBehaviour
 
     private void Start()
     {
-        var currentLevel = PlayerPrefs.GetInt(LevelDone);
+        int currentLevel = PlayerPrefs.GetInt(LevelDone);
 
         if (currentLevel > _levelIndex)
             LoadScene(currentLevel);
@@ -72,39 +72,39 @@ public class LevelsLoader : MonoBehaviour
         switch (numberLevel)
         {
             case 1:
-                LVL1_WB.Load();
+                LVL1.Load();
                 break;
             case 2:
-                LVL2_WB.Load();
+                LVL2.Load();
                 break;
             case 3:
-                LVL3_WB.Load();
+                LVL3.Load();
                 break;
             case 4:
-                LVL4_WB.Load();
+                LVL4.Load();
                 break;
             case 5:
-                LVL5_WB.Load();
+                LVL5.Load();
                 break;
             case 6:
-                LVL6_WB.Load();
+                LVL6.Load();
                 break;
             case 7:
-                LVL7_WB.Load();
+                LVL7.Load();
                 break;
             case 8:
-                LVL8_WB.Load();
+                LVL8.Load();
                 break;
             case 9:
-                LVL9_WB.Load();
+                LVL9.Load();
                 break;
             case 10:
-                LVL10_WB.Load();
+                LVL10.Load();
                 break;
             default:
                 {
                     PlayerPrefs.DeleteAll();
-                    LVL5_WB.Load();
+                    LVL5.Load();
                 }
                 break;
         }
@@ -112,7 +112,7 @@ public class LevelsLoader : MonoBehaviour
 
     private void SetLevelFinishPrefsValue(int numberLevel)
     {
-        var level = PlayerPrefs.GetInt(LevelDone);
+        int level = PlayerPrefs.GetInt(LevelDone);
 
         if(level < numberLevel)
         {

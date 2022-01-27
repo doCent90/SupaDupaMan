@@ -105,7 +105,7 @@ public class LasersActivator : MonoBehaviour
     {
         string name = PlayerPrefs.GetString(LastUsedLaser);
 
-        foreach (var laser in _laserRenderers)
+        foreach (LaserRenderer2 laser in _laserRenderers)
         {
             if (laser.Name == name)
             {

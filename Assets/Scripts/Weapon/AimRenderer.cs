@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 [RequireComponent(typeof(ObjectsSelector))]
 public class AimRenderer : MonoBehaviour
@@ -20,13 +19,13 @@ public class AimRenderer : MonoBehaviour
     private const float Scale = 0.4f;
     private const float MinDistanceView = 5f;
 
-    public event UnityAction<bool> MainEnabled;
-    public event UnityAction<bool> OutOfRangeEnabled;
+    public event Action<bool> MainEnabled;
+    public event Action<bool> OutOfRangeEnabled;
 
     private void Awake()
     {
         if (_laser == null)
-            throw new InvalidOperationException();
+            throw new NullReferenceException(nameof(AimRenderer));
 
         _mainPrefab = GetComponentInChildren<AimMain>();
         _objectsSelector = GetComponent<ObjectsSelector>();
@@ -63,9 +62,7 @@ public class AimRenderer : MonoBehaviour
     {
         if (_isReady)
         {
-            RaycastHit hit;
-
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, _maxLength))
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, _maxLength))
             {
                 SetSwitchMain(isEnable: true);
                 SetSwitchOutOfRange(isEnable: false);
@@ -81,7 +78,7 @@ public class AimRenderer : MonoBehaviour
                 {
                     RotateAtLook(spriteRenderer, _red);
                 }
-                else if(hit.collider.TryGetComponent(out Platform platform) || (hit.collider.TryGetComponent(out FlyPoint flyPoint) && flyPoint.enabled))
+                else if (hit.collider.TryGetComponent(out Platform platform) || (hit.collider.TryGetComponent(out FlyPoint flyPoint) && flyPoint.enabled))
                 {
                     RotateAtNormal(hit, spriteRenderer, _green);
                 }

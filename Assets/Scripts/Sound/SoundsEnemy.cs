@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Enemy))]
@@ -9,6 +10,9 @@ public class SoundsEnemy : MonoBehaviour
 
     private void OnEnable()
     {
+        if (_effects == null)
+            throw new NullReferenceException(nameof(SoundsEnemy));
+
         _enemy = GetComponent<Enemy>();
         _enemy.Died += OnDied;
     }
@@ -20,7 +24,7 @@ public class SoundsEnemy : MonoBehaviour
 
     private void OnDied()
     {
-        foreach (var sound in _effects)
+        foreach (AudioSource sound in _effects)
         {
             sound.Play();
         }

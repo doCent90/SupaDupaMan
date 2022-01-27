@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class SoundPlayButton : MonoBehaviour
@@ -8,6 +9,9 @@ public class SoundPlayButton : MonoBehaviour
 
     private void OnEnable()
     {
+        if (_buttonClick == null)
+            throw new NullReferenceException(nameof(SoundPlayButton));
+
         _buttons = GetComponentInChildren<ButtonsUI>();
 
         _buttons.Clicked += Play;

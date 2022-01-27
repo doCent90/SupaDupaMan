@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerMover))]
@@ -9,8 +10,11 @@ public class SoundsPlayer : MonoBehaviour
     private PlayerMover _player;
     private LasersActivator _attack;
 
-    private void Awake()
+    private void OnEnable()
     {
+        if (_soundFly == null || _soundShot == null)
+            throw new NullReferenceException(nameof(SoundsPlayer));
+
         _player = GetComponent<PlayerMover>();
         _attack = GetComponentInChildren<LasersActivator>();
 
@@ -26,17 +30,19 @@ public class SoundsPlayer : MonoBehaviour
 
     private void OnFired(bool isFired)
     {
-        if (isFired)
-            _soundShot.Play();
-        else
-            _soundShot.Stop();
+        ActivateSound(isFired, _soundShot);
     }
 
     private void OnFly(bool isFly)
     {
-        if (isFly)
-            _soundFly.Play();
+        ActivateSound(isFly, _soundFly);
+    }
+
+    private void ActivateSound(bool isReady, AudioSource sound)
+    {
+        if (isReady)
+            sound.Play();
         else
-            _soundFly.Stop();
+            sound.Stop();
     }
 }

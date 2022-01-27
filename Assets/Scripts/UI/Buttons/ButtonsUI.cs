@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Events;
 using System.Collections.Generic;
 using System;
 
@@ -35,12 +34,12 @@ public class ButtonsUI : MonoBehaviour
     public PlayerRotater PlayerRotater => _playerRotater;
     public bool IsPanelOpen { get; private set; } = false;
 
-    public event UnityAction Clicked;
-    public event UnityAction StartButtonClicked;
-    public event UnityAction ContinueButtonClicked;
+    public event Action Clicked;
+    public event Action StartButtonClicked;
+    public event Action ContinueButtonClicked;
 
-    public event UnityAction<bool> ShopClicked;
-    public event UnityAction<bool> SettingsClicked;
+    public event Action<bool> ShopClicked;
+    public event Action<bool> SettingsClicked;
 
     public void StartCurrentLevel()
     {
@@ -121,8 +120,8 @@ public class ButtonsUI : MonoBehaviour
         IsPanelOpen = true;
         _playerRotater.enabled = false;
 
-        _openShop.gameObject.SetActive(false);
         _closeShop.gameObject.SetActive(true);
+        _openShop.gameObject.SetActive(false);
         _continue.gameObject.SetActive(false);
         _tapToStart.gameObject.SetActive(false);
         _coinsViewer.gameObject.SetActive(false);
@@ -137,8 +136,8 @@ public class ButtonsUI : MonoBehaviour
         if (_game.IsPlaying)
             _playerRotater.enabled = true;
 
-        _openShop.gameObject.SetActive(true);
         _closeShop.gameObject.SetActive(false);
+        _openShop.gameObject.SetActive(true);
         _continue.gameObject.SetActive(true);
         _tapToStart.gameObject.SetActive(true);
         _coinsViewer.gameObject.SetActive(true);
@@ -148,7 +147,7 @@ public class ButtonsUI : MonoBehaviour
         Clicked?.Invoke();
     }
 
-    private void Awake()
+    private void OnEnable()
     {
         if (_game == null || _loadLevel == null || _playerRotater == null
             || _soundMaster == null || _openShop == null || _closeShop == null
