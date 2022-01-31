@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -24,6 +25,9 @@ public class SoundsFXSettings : MonoBehaviour
     
     private void OnEnable()
     {
+        if (_soundMaster == null)
+            throw new NullReferenceException(nameof(SoundsFXSettings));
+
         _soundMaster.audioMixer.GetFloat(MasterVolume, out float value);
         if (value <= MinVolume)
             IsSoundEnable = false;

@@ -22,7 +22,7 @@ public class TotalCoinsViewer : MonoBehaviour
 
     private void Show()
     {
-        var currentScore = PlayerPrefs.GetInt(Coins);
+        int currentScore = PlayerPrefs.GetInt(Coins);
 
         _totalcoinsText.text = $"Bank: {currentScore}";
     }

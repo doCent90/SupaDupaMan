@@ -3,9 +3,6 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
 public class FlatKitDepthNormals : ScriptableRendererFeature {
-    public bool overrideRenderEvent = false;
-    public RenderPassEvent renderEvent = RenderPassEvent.AfterRenderingTransparents;
-
     class DepthNormalsPass : ScriptableRenderPass {
         private RenderTargetHandle _depthAttachmentHandle;
         private RenderTextureDescriptor _descriptor;
@@ -65,7 +62,7 @@ public class FlatKitDepthNormals : ScriptableRendererFeature {
         }
 
         // public override void OnCameraCleanup(CommandBuffer cmd) {
-        public override void FrameCleanup(CommandBuffer cmd) {
+        public override void FrameCleanup(CommandBuffer cmd) { 
             if (_depthAttachmentHandle == RenderTargetHandle.CameraTarget) return;
             cmd.ReleaseTemporaryRT(_depthAttachmentHandle.id);
             _depthAttachmentHandle = RenderTargetHandle.CameraTarget;
@@ -83,7 +80,7 @@ public class FlatKitDepthNormals : ScriptableRendererFeature {
     public override void Create() {
         _depthNormalsMaterial = CoreUtils.CreateEngineMaterial("Hidden/Internal-DepthNormalsTexture");
         _depthNormalsPass = new DepthNormalsPass(RenderQueueRange.all, -1, _depthNormalsMaterial) {
-            renderPassEvent = overrideRenderEvent? renderEvent : RenderPassEvent.AfterRenderingTransparents
+            renderPassEvent = RenderPassEvent.AfterRenderingTransparents
         };
         _depthNormalsTexture.Init("_CameraDepthNormalsTexture");
     }

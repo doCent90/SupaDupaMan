@@ -36,9 +36,15 @@ half3 LightingPhysicallyBased_DSTRM(Light light, half3 normalWS, half3 viewDirec
 
     half4 c = _BaseColor;
 
+#if defined(_QUIBLI_GRADIENT)
+    _BaseColor = SAMPLE_TEXTURE2D(_ColorGradient, sampler_ColorGradient, float2(1.0, 0.5));
+    const half NdotLTPrimary = NdotLTransitionPrimary(normalWS, light.direction);
+    float2 gradient_uv = float2(NdotLTPrimary, 0.5);
+    c = SAMPLE_TEXTURE2D(_ColorGradient, sampler_ColorGradient, gradient_uv);
+#else
 #if defined(_CELPRIMARYMODE_SINGLE)
     const half NdotLTPrimary = NdotLTransitionPrimary(normalWS, light.direction);
-    c = lerp(_ColorDim, c, NdotLTPrimary);
+    c = lerp(UNITY_ACCESS_INSTANCED_PROP(Props, _ColorDim), c, NdotLTPrimary);
 #endif  // _CELPRIMARYMODE_SINGLE
 
 #if defined(_CELPRIMARYMODE_STEPS)
@@ -55,6 +61,7 @@ half3 LightingPhysicallyBased_DSTRM(Light light, half3 normalWS, half3 viewDirec
     const half NdotLTExtra = NdotLTransitionExtra(normalWS, light.direction);
     c = lerp(_ColorDimExtra, c, NdotLTExtra);
 #endif  // DR_CEL_EXTRA_ON
+#endif
 
 #if defined(DR_GRADIENT_ON)
     const float angleRadians = _GradientAngle / 180.0 * PI;
@@ -65,37 +72,34 @@ half3 LightingPhysicallyBased_DSTRM(Light light, half3 normalWS, half3 viewDirec
     c = lerp(c, _ColorGradient, gradientFactor);
 #endif  // DR_GRADIENT_ON
 
-    const half NdotL = dot(normalWS, light.direction);
-
 #if defined(DR_RIM_ON)
-    const float rim = 1.0 - dot(viewDirectionWS, normalWS);
-    const float rimSpread = 1.0 - _FlatRimSize - NdotL * _FlatRimLightAlign;
-    const float rimEdgeSmooth = _FlatRimEdgeSmoothness;
+    const half NdotL = dot(normalWS, light.direction);
+    const float4 rim = 1.0 - dot(viewDirectionWS, normalWS);
+    const float rimLightAlign = UNITY_ACCESS_INSTANCED_PROP(Props, _FlatRimLightAlign);
+    const float rimSize = UNITY_ACCESS_INSTANCED_PROP(Props, _FlatRimSize);
+    const float rimSpread = 1.0 - rimSize - NdotL * rimLightAlign;
+    const float rimEdgeSmooth = UNITY_ACCESS_INSTANCED_PROP(Props, _FlatRimEdgeSmoothness);
     const float rimTransition = smoothstep(rimSpread - rimEdgeSmooth * 0.5, rimSpread + rimEdgeSmooth * 0.5, rim);
-    c = lerp(c, _FlatRimColor, rimTransition);
+    c = lerp(c, UNITY_ACCESS_INSTANCED_PROP(Props, _FlatRimColor), rimTransition);
 #endif  // DR_RIM_ON
 
 #if defined(DR_SPECULAR_ON)
     // Halfway between lighting direction and view vector.
     const float3 halfVector = normalize(light.direction + viewDirectionWS);
     const float NdotH = dot(normalWS, halfVector) * 0.5 + 0.5;
-    const float specular = saturate(pow(abs(NdotH), 100.0 * (1.0 - _FlatSpecularSize) * (1.0 - _FlatSpecularSize)));
-    const float specularTransition = smoothstep(0.5 - _FlatSpecularEdgeSmoothness * 0.1,
-                                                0.5 + _FlatSpecularEdgeSmoothness * 0.1, specular);
-    c = lerp(c, _FlatSpecularColor, specularTransition);
+    const float specularSize = UNITY_ACCESS_INSTANCED_PROP(Props, _FlatSpecularSize);
+    const float specEdgeSmooth = UNITY_ACCESS_INSTANCED_PROP(Props, _FlatSpecularEdgeSmoothness);
+    const float specular = saturate(pow(NdotH, 100.0 * (1.0 - specularSize) * (1.0 - specularSize)));
+    const float specularTransition = smoothstep(0.5 - specEdgeSmooth * 0.1, 0.5 + specEdgeSmooth * 0.1, specular);
+    c = lerp(c, UNITY_ACCESS_INSTANCED_PROP(Props, _FlatSpecularColor), specularTransition);
 #endif  // DR_SPECULAR_ON
-
-#if defined(_UNITYSHADOW_OCCLUSION)
-    const float occludedAttenuation = smoothstep(0.25, 0.0, -min(NdotL, 0));
-    light.shadowAttenuation *= occludedAttenuation;
-    light.distanceAttenuation *= occludedAttenuation;
-#endif
 
 #if defined(_UNITYSHADOWMODE_MULTIPLY)
     c *= lerp(1, light.shadowAttenuation, _UnityShadowPower);
 #endif
 #if defined(_UNITYSHADOWMODE_COLOR)
-    c = lerp(lerp(c, _UnityShadowColor, _UnityShadowColor.a), c, light.shadowAttenuation);
+    const half4 unityShadowColor = UNITY_ACCESS_INSTANCED_PROP(Props, _UnityShadowColor);
+    c = lerp(lerp(c, unityShadowColor, unityShadowColor.a), c, light.shadowAttenuation);
 #endif
 
     c.rgb *= light.color * light.distanceAttenuation;
@@ -108,7 +112,7 @@ void StylizeLight(inout Light light)
     const half shadowAttenuation = saturate(light.shadowAttenuation * _UnityShadowSharpness);
     light.shadowAttenuation = shadowAttenuation;
 
-    const half distanceAttenuation = smoothstep(0, _LightFalloffSize + 0.001, light.distanceAttenuation);
+    const half distanceAttenuation = smoothstep(0, _LightFalloffSize, light.distanceAttenuation);
     light.distanceAttenuation = distanceAttenuation;
 
     const half3 lightColor = lerp(half3(1, 1, 1), light.color, _LightContribution);
@@ -117,47 +121,31 @@ void StylizeLight(inout Light light)
 
 half4 UniversalFragment_DSTRM(InputData inputData, half3 albedo, half3 emission, half alpha)
 {
-    // To ensure backward compatibility we have to avoid using shadowMask input, as it is not present in older shaders
-    #if defined(SHADOWS_SHADOWMASK) && defined(LIGHTMAP_ON)
-    const half4 shadowMask = inputData.shadowMask;
-    #elif !defined (LIGHTMAP_ON)
-    const half4 shadowMask = unity_ProbesOcclusion;
-    #else
-    const half4 shadowMask = half4(1, 1, 1, 1);
-    #endif
-
-    #if VERSION_GREATER_EQUAL(10, 0)
-    Light mainLight = GetMainLight(inputData.shadowCoord, inputData.positionWS, shadowMask);
-    #else
     Light mainLight = GetMainLight(inputData.shadowCoord);
-    #endif
-
 #if LIGHTMAP_ON
     mainLight.distanceAttenuation = 1.0;
 #endif
     StylizeLight(mainLight);
+    MixRealtimeAndBakedGI(mainLight, inputData.normalWS, inputData.bakedGI, half4(0, 0, 0, 0));
 
-    #if defined(_SCREEN_SPACE_OCCLUSION)
-        AmbientOcclusionFactor aoFactor = GetScreenSpaceAmbientOcclusion(inputData.normalizedScreenSpaceUV);
-        mainLight.color *= aoFactor.directAmbientOcclusion;
-        inputData.bakedGI *= aoFactor.indirectAmbientOcclusion;
-    #endif
-
-    MixRealtimeAndBakedGI(mainLight, inputData.normalWS, inputData.bakedGI, shadowMask);
-
-    // Apply Flat Kit stylizing to `inputData.bakedGI` (which is half3).
+    // Apply Flat Kit stylizing to `inputData.bakedGI`.
 #if LIGHTMAP_ON
     const half sharpness01 = (_UnityShadowSharpness - 1.0) / (10.0 - 1.0);  // UI range is set to 1.0 - 10.0.
     const half blur = max(1.0 - sharpness01, 0.001);
-    const half transitionPoint = 1.0 - (_LightFalloffSize + 0.001);
+    const half transitionPoint = 1.0 - _LightFalloffSize;
     inputData.bakedGI = smoothstep(transitionPoint, transitionPoint + blur, length(inputData.bakedGI));
 
+    /*
     #if defined(_UNITYSHADOWMODE_MULTIPLY)
         inputData.bakedGI *= _UnityShadowPower;
     #endif
     #if defined(_UNITYSHADOWMODE_COLOR)
-        inputData.bakedGI = lerp(inputData.bakedGI, _UnityShadowColor.rgb, _UnityShadowColor.a * inputData.bakedGI);
+        half4 unityShadowColor = UNITY_ACCESS_INSTANCED_PROP(Props, _UnityShadowColor);
+        inputData.bakedGI = lerp(inputData.bakedGI, unityShadowColor, unityShadowColor.a * inputData.bakedGI);
     #endif
+    */
+
+    // return half4(inputData.bakedGI, 1);
 #endif
 
     BRDFData brdfData;
@@ -169,16 +157,7 @@ half4 UniversalFragment_DSTRM(InputData inputData, half3 albedo, half3 emission,
     const uint pixelLightCount = GetAdditionalLightsCount();
     for (uint lightIndex = 0u; lightIndex < pixelLightCount; ++lightIndex)
     {
-        #if VERSION_GREATER_EQUAL(10, 0)
-        Light light = GetAdditionalLight(lightIndex, inputData.positionWS, shadowMask);
-        #else
         Light light = GetAdditionalLight(lightIndex, inputData.positionWS);
-        #endif
-
-        #if defined(_SCREEN_SPACE_OCCLUSION)
-            light.color *= aoFactor.directAmbientOcclusion;
-        #endif
-
         StylizeLight(light);
         color += LightingPhysicallyBased_DSTRM(light, inputData.normalWS, inputData.viewDirectionWS, inputData.positionWS);
     }

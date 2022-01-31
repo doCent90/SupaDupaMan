@@ -2,6 +2,8 @@ Shader "Hidden/FlatKit/FogFilter"
 {
     Properties
     {
+        [HideInInspector]_MainTex ("Base (RGB)", 2D) = "white" { }
+
         [Toggle(USE_DISTANCE_FOG)]_UseDistanceFog ("Use Distance", Float) = 0
         [Toggle(USE_DISTANCE_FOG_ON_SKY)]_UseDistanceFogOnSky ("Use Distance Fog On Sky", Float) = 0
 
@@ -37,8 +39,14 @@ Shader "Hidden/FlatKit/FogFilter"
         Pass
         {
             HLSLPROGRAM
-            #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl"
-            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/DeclareDepthTexture.hlsl"
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/SurfaceInput.hlsl"
+
+            TEXTURE2D(_CameraColorTexture);
+            SAMPLER(sampler_CameraColorTexture);
+            float4 _CameraColorTexture_TexelSize;
+
+            TEXTURE2D(_CameraDepthTexture);
+            SAMPLER(sampler_CameraDepthTexture);
 
             sampler2D _DistanceLUT;
             float _Near;
@@ -58,11 +66,6 @@ Shader "Hidden/FlatKit/FogFilter"
 
             #define ALMOST_ONE 0.999
 
-            // Using `_CameraColorTexture` instead of the opaque texture `SampleSceneColor` to handle transparency.
-            TEXTURE2D(_CameraColorTexture);
-            SAMPLER(sampler_CameraColorTexture);
-            float4 _CameraColorTexture_TexelSize;
-
             // Z buffer depth to linear 0-1 depth
             // Handles orthographic projection correctly
             float Linear01Depth(float z)
@@ -78,12 +81,20 @@ Shader "Hidden/FlatKit/FogFilter"
                 return rcp(_ZBufferParams.z * z + _ZBufferParams.w);
             }
 
+            float SampleDepth(float2 uv)
+            {
+                #if defined(UNITY_STEREO_INSTANCING_ENABLED) || defined(UNITY_STEREO_MULTIVIEW_ENABLED)
+					return SAMPLE_TEXTURE2D_ARRAY(_CameraDepthTexture, sampler_CameraDepthTexture, uv, unity_StereoEyeIndex).r;
+                #else
+                return SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, sampler_CameraDepthTexture, uv);
+                #endif
+            }
+
             float4 Fog(float2 uv, float3 screen_pos)
             {
-                float4 original = SAMPLE_TEXTURE2D_X(_CameraColorTexture, sampler_CameraColorTexture,
-                                                     UnityStereoTransformScreenSpaceTex(uv));
+                float4 original = SAMPLE_TEXTURE2D(_CameraColorTexture, sampler_CameraColorTexture, uv);
 
-                const float depthPacked = SampleSceneDepth(uv);
+                const float depthPacked = SampleDepth(uv);
                 const float depthEye = LinearEyeDepth(depthPacked);
                 const float depthCameraPlanes = Linear01Depth(depthPacked);
                 const float depthAbsolute = _ProjectionParams.y + (_ProjectionParams.z - _ProjectionParams.y) *
@@ -128,9 +139,6 @@ Shader "Hidden/FlatKit/FogFilter"
             Varyings vert(Attributes input)
             {
                 Varyings output = (Varyings)0;
-                
-                UNITY_SETUP_INSTANCE_ID(input);
-                UNITY_TRANSFER_INSTANCE_ID(input, output);
                 UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(output);
 
                 const VertexPositionInputs vertexInput = GetVertexPositionInputs(input.positionOS.xyz);
@@ -143,9 +151,7 @@ Shader "Hidden/FlatKit/FogFilter"
 
             half4 frag(Varyings input): SV_Target
             {
-                UNITY_SETUP_INSTANCE_ID(input);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(input);
-
                 float4 c = Fog(input.uv, input.screen_pos);
                 return c;
             }

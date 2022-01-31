@@ -4,15 +4,22 @@ using UnityEngine;
 [RequireComponent(typeof(CoinsSpawner))]
 public class Reward : MonoBehaviour
 {
+    [SerializeField] private ButtonsUI _buttonsUI;
+
     private Enemy[] _enemies;
+    private Enemies _allEnemies;
     private CoinsSpawner _coinsSpawner;
 
-    private void Awake()
+    private void OnEnable()
     {
-        _enemies = FindObjectsOfType<Enemy>();
-        _coinsSpawner = GetComponent<CoinsSpawner>();
+        if (_buttonsUI == null)
+            throw new NullReferenceException(nameof(Reward));
 
-        foreach (var enemy in _enemies)
+        _coinsSpawner = GetComponent<CoinsSpawner>();
+        _allEnemies = _buttonsUI.PlayerRotater.Enemies;
+        _enemies = _allEnemies.GetComponentsInChildren<Enemy>();
+
+        foreach (Enemy enemy in _enemies)
         {
             enemy.DiedPosition += OnEnemyDied;
         }
@@ -20,7 +27,7 @@ public class Reward : MonoBehaviour
 
     private void OnDisable()
     {
-        foreach (var enemy in _enemies)
+        foreach (Enemy enemy in _enemies)
         {
             enemy.DiedPosition -= OnEnemyDied;
         }

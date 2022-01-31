@@ -1,5 +1,6 @@
 using UnityEngine;
 using Cinemachine;
+using System;
 
 public class CameraShaker : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class CameraShaker : MonoBehaviour
 
     private void OnEnable()
     {
+        if (_lasersActivator == null)
+            throw new NullReferenceException(nameof(LasersActivator));
+
         _virtualCamera = GetComponent<CinemachineVirtualCamera>();
         _lasersActivator.Fired += TryShake;
     }

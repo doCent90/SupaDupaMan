@@ -19,8 +19,9 @@ public class PanelsAnimator : MonoBehaviour
     private const float Duration = 0.5f;
     private const float FullAlpha = 1f;
     private const float ZeroAlpha = 0;
+    private const float Delay = 1.5f;
 
-    private void Awake()
+    private void OnEnable()
     {
         if (_gameWin == null || _tapToStart == null)
             throw new InvalidOperationException();
@@ -50,45 +51,36 @@ public class PanelsAnimator : MonoBehaviour
 
     private void OnGameWon()
     {
-        var tweenFade = _youWinPanel.DOFade(FullAlpha, Duration);
+        var tweenFade = _youWinPanel.DOFade(FullAlpha, Duration * 2).SetDelay(Delay);
     }
 
     private void OnShopButtonClicked(bool isOpen)
     {
+        SetActivePanel(isOpen, _shopPanel);
+    }
+
+    private void OnSettingsButtonClicked(bool isOpen)
+    {
+        SetActivePanel(isOpen, _settingsPanel);
+    }
+
+    private void SetActivePanel(bool isOpen, CanvasGroup panel)
+    {
         if (isOpen)
         {
-            var tweenFadeOn = _shopPanel.DOFade(FullAlpha, Duration);
+            var tweenFadeOn = panel.DOFade(FullAlpha, Duration);
             tweenFadeOn.OnComplete(GameTimeStop);
             _tapToStart.interactable = false;
         }
         else
         {
             GameTimeGo();
-            var tweenFadeOff = _shopPanel.DOFade(ZeroAlpha, Duration);
+            var tweenFadeOff = panel.DOFade(ZeroAlpha, Duration);
             _tapToStart.interactable = true;
         }
 
-        _shopPanel.interactable = isOpen;
-        _shopPanel.blocksRaycasts = isOpen;
-    }
-
-    private void OnSettingsButtonClicked(bool isOpen)
-    {
-        if (isOpen)
-        {
-            var tweenFade = _settingsPanel.DOFade(FullAlpha, Duration);
-            tweenFade.OnComplete(GameTimeStop);
-            _tapToStart.interactable = false;
-        }
-        else
-        {
-            GameTimeGo();
-            var tweenFade = _settingsPanel.DOFade(ZeroAlpha, Duration);
-            _tapToStart.interactable = true;
-        }
-
-        _settingsPanel.interactable = isOpen;
-        _settingsPanel.blocksRaycasts = isOpen;
+        panel.interactable = isOpen;
+        panel.blocksRaycasts = isOpen;
     }
 
     private void GameTimeGo()

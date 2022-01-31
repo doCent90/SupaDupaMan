@@ -297,6 +297,50 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &6820837247141444753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7568334936008313333}
+  - component: {fileID: 2355214297299252034}
+  m_Layer: 0
+  m_Name: FreeWayColliderChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7568334936008313333
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6820837247141444753}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0.893}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8442623690604717372}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2355214297299252034
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6820837247141444753}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.89632356, y: 0.34447774, z: 0.13544847}
+  m_Center: {x: 0, y: -0.1341345, z: -0.024181547}
 --- !u!1 &7377432423586201375
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +350,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2077401724029373692}
-  - component: {fileID: 3983995262758150528}
   m_Layer: 3
   m_Name: ParticalSystems Die
   m_TagString: Untagged
@@ -331,18 +374,6 @@ Transform:
   m_Father: {fileID: 8442623690604717372}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3983995262758150528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7377432423586201375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7c13509e58642940bc4bc3c73776600, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7910533767718852846
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,6 +422,7 @@ GameObject:
   - component: {fileID: 3708220797053431612}
   - component: {fileID: 4231420704520199506}
   - component: {fileID: 6354693195482101931}
+  - component: {fileID: 3400182060611439880}
   m_Layer: 3
   m_Name: Criminal
   m_TagString: Untagged
@@ -414,6 +446,7 @@ Transform:
   - {fileID: 2077401724029373692}
   - {fileID: 6266670312846122599}
   - {fileID: 4045067723789363441}
+  - {fileID: 7568334936008313333}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -478,7 +511,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f7b945b1715ae4f98a1bc533097b24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startGame: {fileID: 0}
 --- !u!114 &3708220797053431612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -491,8 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e21a65b89f1f484898c056facfc2a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dieMaterial: {fileID: 2100000, guid: c8eb020621a62b941bd37ce4a7ae4914, type: 2}
-  _startGame: {fileID: 0}
+  _cantDamageShrapnel: 0
 --- !u!114 &4231420704520199506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,6 +539,7 @@ MonoBehaviour:
   _wayPoint1: {fileID: 0}
   _wayPoint2: {fileID: 0}
   _isStanding: 0
+  _isFollowing: 0
 --- !u!114 &6354693195482101931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,6 +555,19 @@ MonoBehaviour:
   _effects:
   - {fileID: 6968355258860002704}
   - {fileID: 4732960281926636279}
+--- !u!114 &3400182060611439880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8442623690604886364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f59337156a49a3419601ca94cbc1996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _boxCollider: {fileID: 2355214297299252034}
 --- !u!1001 &3301212819279120348
 PrefabInstance:
   m_ObjectHideFlags: 0

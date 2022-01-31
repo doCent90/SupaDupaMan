@@ -6,7 +6,7 @@ public class Coin : MonoBehaviour
     private CoinScaler _coinScaler;
     private Transform _scorePosition;
 
-    private const float Duration = 1f;
+    private const float Duration = 0.5f;
     private const float CanvasSize = 0.15f;
 
     public void Init(CoinScaler coinScaler)
@@ -23,7 +23,7 @@ public class Coin : MonoBehaviour
         var size = new Vector3(CanvasSize, CanvasSize, 0);
 
         var tweenScale = transform.DOScale(size, Duration);
-        var tweenMove = transform.DOMove(_scorePosition.position, Duration).SetEase(Ease.InOutSine);
+        var tweenMove = transform.DOMove(_scorePosition.position, Duration).SetEase(Ease.InSine);
 
         tweenMove.OnComplete(ScaleDown);
     }

@@ -1,11 +1,12 @@
 using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class LasersActivator : MonoBehaviour
 {
-    [Header("Standart Lsaer")]
-    [SerializeField] LaserRenderer2 _standartLaser;
+    [Header("List Lasers")]
+    [SerializeField] private LaserRenderer2[] _laserRenderers;
+    [Header("Standart laser")]
+    [SerializeField] private LaserRenderer2 _standartLaser;
     [Header("Settings of Shot")]
     [SerializeField] private Transform _shootPosition1;
     [SerializeField] private Transform _shootPosition2;
@@ -21,10 +22,13 @@ public class LasersActivator : MonoBehaviour
     private ObjectsSlicer[] _objectsScliced;
 
     private const float Delay = 0.6f;
+    private const string LastUsedLaser = "LastUsedLaser";
 
-    public event UnityAction<bool> ReadyToAttacked;
-    public event UnityAction<bool> Fired;
-    public event UnityAction Shoted;
+    public LaserRenderer2 CurrentLaser => _currentLaser;
+
+    public event Action<bool> ReadyToAttacked;
+    public event Action<bool> Fired;
+    public event Action Shoted;
 
     public void SetLaser(LaserRenderer2 laser)
     {
@@ -33,15 +37,13 @@ public class LasersActivator : MonoBehaviour
 
     private void Awake()
     {
-        if (_standartLaser == null)
-            throw new InvalidOperationException();
-
         _playerMover = GetComponentInParent<PlayerMover>();
         _enemies = FindObjectsOfType<Enemy>();
         _glassWall = FindObjectsOfType<GlassWall>();
         _wallsSlicer = FindObjectsOfType<WallSlicer>();
         _objectsScliced = FindObjectsOfType<ObjectsSlicer>();
 
+        SetStartLaser();
         ReadyToAttacked?.Invoke(true);
 
         foreach (var wall in _glassWall)
@@ -99,9 +101,22 @@ public class LasersActivator : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void SetStartLaser()
     {
-        _currentLaser = _standartLaser;
+        string name = PlayerPrefs.GetString(LastUsedLaser);
+
+        foreach (LaserRenderer2 laser in _laserRenderers)
+        {
+            if (laser.Name == name)
+            {
+                _currentLaser = laser;
+                break;
+            }
+            else
+            {
+                _currentLaser = _standartLaser;
+            }
+        }
     }
 
     private void Attack(Transform aimPoint)

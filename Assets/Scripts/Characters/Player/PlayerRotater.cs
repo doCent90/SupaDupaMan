@@ -1,23 +1,28 @@
+using System;
 using UnityEngine;
 using DG.Tweening;
-using System;
 
 public class PlayerRotater : MonoBehaviour
 {
+    [SerializeField] private Enemies _allEnemies;
+
     private Enemy[] _enemies;
 
     private const string MouseX = "Mouse X";
     private const string MouseY = "Mouse Y";
-    private const float Duration = 0.25f;
-    private const float Delay = 0.6f;
+    private const float Duration = 0.35f;
     private const float Distance = 100f;
+    private const float Delay = 0.6f;
+    private const int Multiply = 2;
+
+    public Enemies Enemies => _allEnemies;
 
     public event Action Started;
     public event Action<bool> Rotated;
 
     public void LookAtClosetstEnemy()
     {
-        foreach (var enemy in _enemies)
+        foreach (Enemy enemy in _enemies)
         {
             float distance = Vector3.Distance(transform.position, enemy.transform.position);
 
@@ -34,20 +39,23 @@ public class PlayerRotater : MonoBehaviour
 
     public void LookAtFlyPoint(Transform point)
     {
-        var tweenRotate = transform.DOLookAt(point.position, Duration).SetDelay(Delay);        
+        var tweenRotate = transform.DOLookAt(point.position, Duration * Multiply).SetDelay(Delay);        
     }
 
-    private void Awake()
+    private void OnEnable()
     {
-        _enemies = FindObjectsOfType<Enemy>();
+        if (_allEnemies == null)
+            throw new NullReferenceException(nameof(PlayerRotater));
+
+        _enemies = _allEnemies.GetComponentsInChildren<Enemy>();
     }
 
     private void Update()
     {
-        Rotate();
+        TryRotate();
     }
 
-    private void Rotate()
+    private void TryRotate()
     {
 
         if (Input.GetMouseButton(0))
@@ -58,7 +66,9 @@ public class PlayerRotater : MonoBehaviour
             x = Input.GetAxis(MouseX);
             y = Input.GetAxis(MouseY);
 
-            transform.localEulerAngles += new Vector3(y, x, 0);
+            Vector3 targetViewPosition = transform.localEulerAngles += new Vector3(y, x, 0);
+
+            transform.localEulerAngles = targetViewPosition;
 
             Started?.Invoke();
             Rotated?.Invoke(true);

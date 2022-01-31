@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class DamagePointWallSlicerMover : MonoBehaviour
@@ -24,6 +25,9 @@ public class DamagePointWallSlicerMover : MonoBehaviour
 
     private void OnEnable()
     {
+        if (_speed < 0)
+            throw new ArgumentOutOfRangeException(nameof(DamagePointWallSlicerMover));
+
         _direction = 0;
         _startPosition = transform.localPosition;
         _targetPosition = _startPosition;
@@ -36,24 +40,26 @@ public class DamagePointWallSlicerMover : MonoBehaviour
 
     private void Update()
     {
-        if (!_isReady)
+        if (_isReady == false)
+        {
             return;
+        }
         else
         {
-            Move();
+            TryMove();
             RotateLasers();
         }
     }
 
     private void RotateLasers()
     {
-        foreach (var laser in _laserRenderers)
+        foreach (LaserRenderer2 laser in _laserRenderers)
         {
             laser.transform.LookAt(transform.position);
         }
     }
 
-    private void Move()
+    private void TryMove()
     {
         if (_onTargetPosition)
         {
@@ -61,9 +67,9 @@ public class DamagePointWallSlicerMover : MonoBehaviour
             _onTargetPosition = false;
 
             if (_direction % 2 == 0)
-                _targetPosition = new Vector3(-_rangeX, Random.Range(_rangeY, UpEdgeWall), 0);
+                _targetPosition = new Vector3(-_rangeX, UnityEngine.Random.Range(_rangeY, UpEdgeWall), 0);
             else
-                _targetPosition = new Vector3(_rangeX, Random.Range(_rangeY, UpEdgeWall), 0);
+                _targetPosition = new Vector3(_rangeX, UnityEngine.Random.Range(_rangeY, UpEdgeWall), 0);
 
             _direction = _direction > 100 ? _direction = 0 : _direction;
         }

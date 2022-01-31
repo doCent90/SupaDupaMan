@@ -1,5 +1,8 @@
+using System;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class Finger : MonoBehaviour
 {
     [SerializeField] private ButtonsUI _buttonsUI;
@@ -11,6 +14,9 @@ public class Finger : MonoBehaviour
 
     private void OnEnable()
     {
+        if (_buttonsUI == null)
+            throw new NullReferenceException(nameof(Finger));
+
         _startGame = _buttonsUI.StartGame;
         _playerRotater = _buttonsUI.PlayerRotater;
 
@@ -29,13 +35,17 @@ public class Finger : MonoBehaviour
 
     private void OnGameStarted()
     {
-        _animator.enabled = true;
-        _spriteRenderer.enabled = true;
+        SetActivate(isActive: true);
     }
 
     private void OnFirstAction()
     {
-        _animator.enabled = false;
-        _spriteRenderer.enabled = false;
+        SetActivate(isActive: false);
+    }
+
+    private void SetActivate(bool isActive)
+    {
+        _animator.enabled = isActive;
+        _spriteRenderer.enabled = isActive;
     }
 }

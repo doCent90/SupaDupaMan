@@ -106,8 +106,8 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _FlatRimEdgeSmoothness: 1
-    - _FlatRimLightAlign: 0.659
+    - _FlatRimEdgeSmoothness: 0.88
+    - _FlatRimLightAlign: 0.709
     - _FlatRimSize: 0.079
     - _FlatSpecularEdgeSmoothness: 0
     - _FlatSpecularSize: 0.1
@@ -139,7 +139,7 @@ Material:
     - _RimEnabled: 1
     - _SelfShadingSize: 0.62
     - _SelfShadingSizeExtra: 0.6
-    - _ShadowEdgeSize: 0
+    - _ShadowEdgeSize: 0.13
     - _ShadowEdgeSizeExtra: 0.05
     - _Shininess: 0
     - _Smoothness: 0

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 namespace FlatKit {
 [CreateAssetMenu(fileName = "FogSettings", menuName = "FlatKit/Fog Settings")]
@@ -20,11 +19,8 @@ public class FogSettings : ScriptableObject {
     [Range(0, 1)] public float heightFogIntensity = 1.0f;
     public bool useHeightFogOnSky = false;
 
-    [Header("Blending")]
+    [Header("Blending")] 
     [Space] [Range(0, 1)] public float distanceHeightBlend = 0.5f;
-
-    [Header("Rendering")]
-    public RenderPassEvent renderEvent = RenderPassEvent.AfterRenderingTransparents;
 
     private void OnValidate() {
         if (low > high) {

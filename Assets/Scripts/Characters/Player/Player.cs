@@ -13,10 +13,12 @@ public class Player : MonoBehaviour
     private PlayerRotater _rotater;
     private ObjectsSelector _objectsSelector;
 
+    public GameWin GameWin => _gameWin;
+
     private void Awake()
     {
         if (_gameWin == null || _startGame == null || _endLevelFyPoint == null)
-            throw new InvalidOperationException();
+            throw new NullReferenceException(nameof(Player));
 
         _mover = GetComponent<PlayerMover>();
         _rotater = GetComponent<PlayerRotater>();
@@ -29,7 +31,7 @@ public class Player : MonoBehaviour
     private void OnDisable()
     {
         _startGame.Started -= OnStarted;
-        _gameWin.Won += OnGameWon;
+        _gameWin.Won -= OnGameWon;
     }
 
     private void OnStarted()

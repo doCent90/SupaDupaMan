@@ -1,10 +1,10 @@
-using System;
 using UnityEngine;
 
+[RequireComponent(typeof(Player))]
 public class PlayerAnimator : MonoBehaviour
 {
-    [SerializeField] private GameWin _gameWin;
-
+    private Player _player;
+    private GameWin _gameWin;
     private Animator _animator;
     private PlayerHand _handMover;
     private LasersActivator _lasersActivator;
@@ -14,12 +14,12 @@ public class PlayerAnimator : MonoBehaviour
 
     private void Awake()
     {
-        if (_gameWin == null)
-            throw new InvalidOperationException();
-
+        _player = GetComponent<Player>();
         _handMover = GetComponentInChildren<PlayerHand>();
         _animator = _handMover.GetComponentInChildren<Animator>();
         _lasersActivator = GetComponentInChildren<LasersActivator>();
+
+        _gameWin = _player.GameWin;
 
         _gameWin.Won += OnGameWin;
         _lasersActivator.Fired += OnAttack;

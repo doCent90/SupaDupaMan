@@ -18,10 +18,10 @@ public class CoinsSpawner : MonoBehaviour
         StartCoroutine(Spawn(enemy));
     }
 
-    private void Awake()
+    private void OnEnable()
     {
-        if (_coinScaler == null)
-            throw new InvalidOperationException();
+        if (_coinScaler == null || _coinPrefab == null)
+            throw new NullReferenceException(nameof(CoinsSpawner));
     }
 
     private IEnumerator Spawn(Transform enemy)
@@ -40,7 +40,8 @@ public class CoinsSpawner : MonoBehaviour
 
     private Vector3 RandomSpawnPosition(Transform enemy)
     {
-        var position = enemy.position;
+        Vector3 position = enemy.position;
+
         float x = Random.Range(-RandomRangePosition, RandomRangePosition);
         float y = Random.Range(-RandomRangePosition, RandomRangePosition);
         float z = Random.Range(-RandomRangePosition, RandomRangePosition);

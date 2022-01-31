@@ -82,7 +82,7 @@ public class FlatKitWaterEditor : ShaderGUI {
         if (opaque == 1) {
             targetMaterial.SetOverrideTag("RenderType", "Opaque");
             targetMaterial.SetInt("_ZWrite", 1);
-            targetMaterial.renderQueue = (int) RenderQueue.Geometry;
+            targetMaterial.renderQueue = (int)RenderQueue.Geometry;
         } else {
             targetMaterial.SetOverrideTag("RenderType", "Transparent");
             targetMaterial.SetInt("_ZWrite", 0);

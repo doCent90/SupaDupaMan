@@ -14,15 +14,21 @@ public class ObjectsSelector : MonoBehaviour
 
     private bool _isFire = false;
 
-    public readonly float MaxLength = 80f;
+    public float MaxLength { get; private set; } = 80f;
 
-    public event Action TargetPointSelected;
+    public event Action<Vector3> TargetPointSelected;
+
+    private void OnEnable()
+    {
+        if (_gameWin == null || _laser == null)
+            throw new NullReferenceException(nameof(ObjectsSelector));
+
+        if (_aimRenderer != null)
+            _aimRenderer.enabled = true;        
+    }
 
     private void Awake()
     {
-        if (_gameWin == null || _laser == null)
-            throw new InvalidOperationException();
-
         _aimRenderer = GetComponent<AimRenderer>();
         _aimMain = GetComponentInChildren<AimMain>();
         _playerMover = GetComponentInParent<PlayerMover>();
@@ -33,12 +39,6 @@ public class ObjectsSelector : MonoBehaviour
         _playerMover.Moved += OnMoved;
         _laser.Fired += OnLaserFired;
         _gameWin.Won += OnWonGame;
-    }
-
-    private void OnEnable()
-    {
-        if(_aimRenderer != null)
-            _aimRenderer.enabled = true;        
     }
 
     private void OnDisable()
@@ -63,12 +63,41 @@ public class ObjectsSelector : MonoBehaviour
             {
                 TryMove(hit);
                 TryFly(hit);
-                TryDestroyEnemy(hit);
-                TryDestroyWall(hit);
                 TryDestroyObject(hit);
-                TryDestroyGlassWall(hit);
             }
         }
+    }
+
+    private void TryMove(RaycastHit hit)
+    {
+        if (hit.collider.TryGetComponent(out Platform platform) && platform.enabled)
+        {
+            TargetPointSelected?.Invoke(hit.point);
+            _playerMover.Move(hit.point);
+        }
+    }
+
+    private void TryFly(RaycastHit hit)
+    {
+        if (hit.collider.TryGetComponent(out FlyPoint flyPoint) && flyPoint.enabled)
+        {
+            TargetPointSelected?.Invoke(flyPoint.Position.position);
+            _playerMover.Fly(flyPoint.Position, flyPoint.NextPoint);            
+        }
+    }
+
+    private void TryDestroyObject(RaycastHit hit)
+    {
+        if (hit.collider.TryGetComponent(out Selectable item))
+            item.TakeDamage();
+    }
+
+    private RaycastHit GetRaycast()
+    {
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, MaxLength))
+            return hit;
+        else
+            return hit;
     }
 
     private void OnLaserFired(bool isFire)
@@ -79,63 +108,12 @@ public class ObjectsSelector : MonoBehaviour
             _spriteRenderer.enabled = false;        
     }
 
+
     private void OnMoved(bool isMoving)
     {
         if(isMoving)
             _spriteRenderer.enabled = false;
     }
-
-    private void TryMove(RaycastHit hit)
-    {
-        if (hit.collider.TryGetComponent(out Platform platform) && platform.enabled)
-        {
-            TargetPointSelected?.Invoke();
-            _playerMover.Move(hit.point);
-        }
-    }
-
-    private void TryFly(RaycastHit hit)
-    {
-        if (hit.collider.TryGetComponent(out FlyPoint flyPoint) && flyPoint.enabled)
-        {
-            TargetPointSelected?.Invoke();
-            _playerMover.Fly(flyPoint.Position, flyPoint.NextPoint);            
-        }
-    }
-
-    private void TryDestroyEnemy(RaycastHit hit)
-    {
-        if (hit.collider.TryGetComponent(out Enemy enemy))
-            enemy.TakeDamage();
-    }
-
-    private void TryDestroyWall(RaycastHit hit)
-    {
-        if (hit.collider.TryGetComponent(out WallSlicer wall2))
-            wall2.TakeDamage();
-    }
-
-    private void TryDestroyObject(RaycastHit hit)
-    {
-        if (hit.collider.TryGetComponent(out ObjectsSlicer objectSliced))
-            objectSliced.TakeDamage();
-    }
-
-    private void TryDestroyGlassWall(RaycastHit hit)
-    {
-        if (hit.collider.TryGetComponent(out GlassWall glassWall))
-            glassWall.TakeDamage();
-    }
-
-    private RaycastHit GetRaycast()
-    {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, MaxLength))
-            return hit;
-        else
-            return hit;
-    }
-
     private void OnWonGame()
     {
         enabled = false;
