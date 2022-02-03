@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Shop : MonoBehaviour
+public class Shop : AmplitudeWriter
 {
     [SerializeField] private Player _player;
     [SerializeField] private GameObject _itemContainer;
@@ -19,9 +19,11 @@ public class Shop : MonoBehaviour
     private int _totalCurrentCoins;
 
     private const string Coins = "Coins";
+    private const string SoftSpent = "soft_spent";
+    private const string CurrentSoft = "current_soft";
     private const string LastUsedLaser = "LastUsedLaser";
 
-    private void Awake()
+    private void OnEnable()
     {
         if (_player == null || _itemContainer == null || _lasers == null || _template == null || _currentCoinsViewer == null)
             throw new NullReferenceException(nameof(Shop));
@@ -44,6 +46,11 @@ public class Shop : MonoBehaviour
         {
             view.UseButtonClick -= SetBuyedLaser;
         }
+    }
+
+    private void OnApplicationQuit()
+    {
+        SetAmplitudeValue(CurrentSoft, _totalCurrentCoins);
     }
 
     private void AddItem(LaserRenderer2 laser, out LaserView laserView)
@@ -86,6 +93,10 @@ public class Shop : MonoBehaviour
             laser.SetBuyStatus();
 
             PlayerPrefs.SetString(LastUsedLaser, laser.Name);
+
+            SetAmplitudeValue(SoftSpent, laser.Price, "Shop");
+            SetAmplitudeValue(SoftSpent, laser.Price, laser.Name);
+            SetAmplitudeValue(SoftSpent, laser.Price, laser.Price.ToString());
         }
     }
 
