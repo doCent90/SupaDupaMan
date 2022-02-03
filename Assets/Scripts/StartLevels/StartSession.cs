@@ -8,8 +8,7 @@ public class StartSession : MonoBehaviour
 
     private void Awake()
     {
-        PlayerPrefs.SetInt(Coins, 1245);
-        Debug.Log("Add Coins");
+        PlayerPrefs.SetInt(Coins, 0);
 
         int sessionCount = PlayerPrefs.GetInt(SessionCount);
 

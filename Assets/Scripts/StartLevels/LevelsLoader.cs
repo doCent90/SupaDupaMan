@@ -1,9 +1,9 @@
 using UnityEngine;
 using IJunior.TypedScenes;
-using UnityEngine.Events;
 using System.Collections.Generic;
+using System;
 
-public class LevelsLoader : MonoBehaviour
+public class LevelsLoader : AmplitudeWriter
 {
     [SerializeField] protected int _levelIndex;
 
@@ -13,9 +13,6 @@ public class LevelsLoader : MonoBehaviour
     private const string LevelStart = "level_start";
 
     public int Level => _levelIndex;
-
-    public event UnityAction<int> LevelStarted;
-    public event UnityAction<int> LevelFinished;
 
     public void LoadNext()
     {
@@ -33,17 +30,13 @@ public class LevelsLoader : MonoBehaviour
 
     private void OnEnable()
     {
+        if (_levelIndex < 0)
+            throw new ArgumentOutOfRangeException(nameof(LevelsLoader));
+
         int level = PlayerPrefs.GetInt(LevelDone);
 
         if(level <= FirstLevel)
             PlayerPrefs.SetInt(LevelDone, FirstLevel);
-
-        LevelStarted?.Invoke(_levelIndex);
-    }
-
-    private void OnDisable()
-    {
-        LevelFinished?.Invoke(_levelIndex);
     }
 
     private void Start()
@@ -55,16 +48,6 @@ public class LevelsLoader : MonoBehaviour
 
         SetAmplitudeValue(LevelStart, currentLevel);
         SetAmplitudeValue(LastLevel, currentLevel);
-    }
-
-    private void SetAmplitudeValue(string label, int value)
-    {
-        Dictionary<string, object> dictionary = new Dictionary<string, object>
-        {
-            {label, value.ToString()}
-        };
-
-        Amplitude.Instance.logEvent(label, dictionary);
     }
 
     private void LoadScene(int numberLevel)
@@ -103,7 +86,7 @@ public class LevelsLoader : MonoBehaviour
                 break;
             default:
                 {
-                    PlayerPrefs.DeleteAll();
+                    PlayerPrefs.SetInt(LevelDone, _levelIndex);
                     LVL5.Load();
                 }
                 break;
