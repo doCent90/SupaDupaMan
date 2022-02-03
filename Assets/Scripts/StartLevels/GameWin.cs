@@ -1,11 +1,13 @@
 using System;
 using UnityEngine;
 
+[RequireComponent(typeof(AdSettings))]
 public class GameWin : MonoBehaviour
 {
     [SerializeField] private Enemies _allEnemies;
 
     private Enemy[] _enemies;
+    private AdSettings _adSettings;
 
     public event Action Won;
 
@@ -14,6 +16,7 @@ public class GameWin : MonoBehaviour
         if (_allEnemies == null)
             throw new NullReferenceException(nameof(GameWin));
 
+        _adSettings = GetComponent<AdSettings>();
         _enemies = _allEnemies.GetComponentsInChildren<Enemy>();
 
         foreach (Enemy enemy in _enemies)
@@ -40,7 +43,13 @@ public class GameWin : MonoBehaviour
                 diedEnemyCount++;
         }
 
-        if(diedEnemyCount == _enemies.Length)
-            Won?.Invoke();
+        if (diedEnemyCount == _enemies.Length)
+            OnGameWon();
+    }
+
+    private void OnGameWon()
+    {
+        Won?.Invoke();
+        _adSettings.ShowInterstitial();
     }
 }
