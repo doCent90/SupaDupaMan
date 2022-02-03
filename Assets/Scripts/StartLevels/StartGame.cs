@@ -1,9 +1,8 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class StartGame : MonoBehaviour
+public class StartGame : AmplitudeWriter
 {
     [SerializeField] private Player _player;
 
@@ -13,13 +12,11 @@ public class StartGame : MonoBehaviour
     private int _countStartSessions = 0;
 
     private const string Coins = "Coins";
-    private const string Key = "b2757e20bee8ecd447b0ed8c368abd50";
-    private const string CountSessions = "CountSessions";
-    private const string CountDaysGame = "days_in_game";
-    private const string Days = "days";
+    private const string RegDay = "reg_day";
     private const string GameStart = "game_start";
     private const string GameStartCount = "count";
-    private const string RegDay = "reg_day";
+    private const string CountDaysGame = "days_in_game";
+    private const string CountSessions = "CountSessions";
 
     public bool IsPlaying { get; private set; } = false;
 
@@ -51,35 +48,6 @@ public class StartGame : MonoBehaviour
         SetCountSessions();
     }
 
-    private void InitAmplitude()
-    {
-        Amplitude amplitude = Amplitude.getInstance();
-        amplitude.setServerUrl("https://api2.amplitude.com");
-        amplitude.logging = true;
-        amplitude.trackSessionEvents(true);
-        amplitude.init(Key);
-    }
-
-    private void SetAmplitudeValue(string label, int value)
-    {
-        Dictionary<string, object> dictionary = new Dictionary<string, object>
-        {
-            {label, value.ToString()}
-        };
-
-        Amplitude.Instance.logEvent(label, dictionary);
-    }
-
-    private void SetAmplitudeValue(string label, string value)
-    {
-        Dictionary<string, object> dictionary = new Dictionary<string, object>
-        {
-            {label, value}
-        };
-
-        Amplitude.Instance.logEvent(label, dictionary);
-    }
-
     private void SetCountSessions()
     {
         _countStartSessions = PlayerPrefs.GetInt(CountSessions);
@@ -87,7 +55,7 @@ public class StartGame : MonoBehaviour
 
         PlayerPrefs.SetInt(CountSessions, _countStartSessions);
 
-        SetAmplitudeValue(GameStartCount, _countStartSessions);
+        SetAmplitudeValue(GameStart, _countStartSessions, GameStartCount);
     }
 
     private void SetDaysInGame()

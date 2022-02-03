@@ -4,15 +4,15 @@ using UnityEngine.Events;
 public class FixedHandPointer : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
-    [SerializeField] private float _clickDelay = 0.1f;
-    [SerializeField] private float _hitDelay = 0.1f;
+    //[SerializeField] private float _clickDelay = 0.1f;
+    //[SerializeField] private float _hitDelay = 0.1f;
     [SerializeField] private HandAnimatorEventListener _animationEvents;
 
     private int _anger = 1;
     private int _downAnger;
 
     public event UnityAction<Vector2> MouseDown;
-    public event UnityAction<Vector2> MouseUp;
+    //public event UnityAction<Vector2> MouseUp;
     public bool IsPressing { get; private set; } = false;
 
 

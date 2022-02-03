@@ -1,16 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEditor;
 
 public class HandPointer : MonoBehaviour
 {
     [SerializeField] private float _distance = 10;
     [SerializeField] private Animator _animator;
-    [SerializeField] private float _clickDelay = 0.1f;
-    [SerializeField] private float _hitDelay = 0.1f;
+    //[SerializeField] private float _clickDelay = 0.1f;
+    //[SerializeField] private float _hitDelay = 0.1f;
     [SerializeField] private Camera _camera;
     [SerializeField] private HandAnimatorEventListener _animationEvents;
 
@@ -21,7 +17,7 @@ public class HandPointer : MonoBehaviour
     private int _downAnger;
 
     public event UnityAction<Vector2> MouseDown;
-    public event UnityAction<Vector2> MouseUp;
+    //public event UnityAction<Vector2> MouseUp;
     public bool IsPressing { get; private set; } = false;
 
 

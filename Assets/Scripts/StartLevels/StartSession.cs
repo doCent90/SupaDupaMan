@@ -1,15 +1,12 @@
 using UnityEngine;
 using IJunior.TypedScenes;
 
-public class StartSession : MonoBehaviour
+public class StartSession : AmplitudeWriter
 {
-    private const string Coins = "Coins";
-    private const string SessionCount = "Session_Count";
+    private const string SessionCount = "session_count";
 
     private void Awake()
     {
-        PlayerPrefs.SetInt(Coins, 0);
-
         int sessionCount = PlayerPrefs.GetInt(SessionCount);
 
         if (sessionCount <= 0)
@@ -22,5 +19,7 @@ public class StartSession : MonoBehaviour
         }
 
         LVL1.Load();
+
+        SetAmplitudeValue(SessionCount, sessionCount);
     }
 }
