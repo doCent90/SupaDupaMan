@@ -1,6 +1,5 @@
 using UnityEngine;
 using IJunior.TypedScenes;
-using System.Collections.Generic;
 using System;
 
 public class LevelsLoader : AmplitudeWriter
